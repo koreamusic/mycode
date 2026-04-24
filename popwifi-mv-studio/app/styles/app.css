@@ -162,7 +162,30 @@ button { cursor: pointer; }
 .preview-card.wide { width: min(100%, 980px); aspect-ratio: 16/9; }
 .preview-card.vertical { height: min(70vh, 720px); aspect-ratio: 9/16; justify-self: center; }
 
-.preset-list { display: flex; flex-direction: column; gap: 10px; }
+.preset-list { display: flex; flex-direction: column; gap: 12px; }
+.batch-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 12px;
+}
+.batch-chip {
+  border: 1px solid var(--line);
+  background: var(--panel2);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 8px 11px;
+  font-size: 12px;
+}
+.batch-chip:hover { color: var(--text); border-color: rgba(200,167,106,0.35); }
+.batch-chip.active {
+  color: var(--gold);
+  border-color: rgba(200,167,106,0.55);
+  background: rgba(200,167,106,0.12);
+}
+.preset-list-inner { display: flex; flex-direction: column; gap: 10px; }
 .preset-row {
   display: grid;
   grid-template-columns: 1fr auto;
