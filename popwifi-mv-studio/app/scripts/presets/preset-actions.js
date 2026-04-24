@@ -1,5 +1,7 @@
 import { api } from '../core/api.js';
+import { getPresetById, setSelectedPreset } from '../core/state.js';
 import { loadPresetList } from './preset-loader.js';
+import { renderSelectedPresetPreview } from './preset-preview.js';
 
 export function bindPresetActions(options) {
   const ratio = options.ratio;
@@ -24,6 +26,11 @@ export function bindPresetActions(options) {
 
     if (action === 'select-preset') {
       markSelectedPreset(target, batchId, presetId);
+      const preset = getPresetById(kind, batchId, presetId);
+      if (preset) {
+        setSelectedPreset(kind, preset);
+        renderSelectedPresetPreview(kind, preset);
+      }
       return;
     }
 
