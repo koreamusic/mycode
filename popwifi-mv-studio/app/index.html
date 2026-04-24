@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pop WiFi MV Studio</title>
+  <link rel="stylesheet" href="./styles/app.css" />
+</head>
+<body>
+  <div class="studio-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">PW</div>
+        <div>
+          <strong>Pop WiFi</strong>
+          <span>MV Studio · PC First</span>
+        </div>
+      </div>
+      <div class="status-pills">
+        <span class="pill ok">서버 연결 대기</span>
+        <span class="pill warn">렌더 대기</span>
+        <span class="pill">모바일 확인용</span>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <button class="nav-btn active" data-page="project">프로젝트</button>
+      <button class="nav-btn" data-page="longform">롱폼 인트로</button>
+      <button class="nav-btn" data-page="shorts">숏츠 프리셋</button>
+      <button class="nav-btn" data-page="lyrics">가사 마킹</button>
+      <button class="nav-btn" data-page="landing">랜딩 검수</button>
+      <button class="nav-btn" data-page="queue">렌더 큐</button>
+      <button class="nav-btn" data-page="settings">설정</button>
+      <button class="nav-btn" data-page="faq">FAQ</button>
+    </aside>
+
+    <main class="page-area">
+      <section class="page active" id="page-project">
+        <div class="page-head">
+          <p>PROJECT</p>
+          <h1>프로젝트 생성</h1>
+          <span>PC에서 제작 흐름을 시작합니다. 모바일은 확인용입니다.</span>
+        </div>
+        <div class="grid two">
+          <article class="card"><h2>싱글 MV</h2><p>한국어 단일곡, 16:9, 인트로 CTA 포함.</p></article>
+          <article class="card"><h2>롱폼 플레이리스트</h2><p>영어 플레이리스트, 16:9, 곡 연결 중심.</p></article>
+          <article class="card"><h2>숏츠</h2><p>한국어 단일곡, 9:16, 모바일 확인 중요.</p></article>
+          <article class="card"><h2>최근 프로젝트</h2><p>다음 단계에서 프로젝트 저장 구조를 연결합니다.</p></article>
+        </div>
+      </section>
+
+      <section class="page" id="page-longform">
+        <div class="page-head"><p>16:9 PRESETS</p><h1>롱폼 인트로 프리셋</h1><span>숏츠 디자인 원형을 바탕으로 16:9로 재설계합니다.</span></div>
+        <div class="preview-card wide">16:9 PREVIEW</div>
+      </section>
+
+      <section class="page" id="page-shorts">
+        <div class="page-head"><p>9:16 PRESETS</p><h1>숏츠 프리셋</h1><span>업로드된 숏츠 프리셋을 기준 원형으로 정리합니다.</span></div>
+        <div class="preview-card vertical">9:16 PREVIEW</div>
+      </section>
+
+      <section class="page" id="page-lyrics">
+        <div class="page-head"><p>LYRICS</p><h1>가사 마킹</h1><span>Whisper 1차 + 사람 2차 보정 구조로 갑니다.</span></div>
+        <article class="card"><h2>마킹 도구 자리</h2><p>재생, 정지, 되감기, 라인별 시간 보정 UI가 들어갑니다.</p></article>
+      </section>
+
+      <section class="page" id="page-landing">
+        <div class="page-head"><p>LANDING REVIEW</p><h1>랜딩 검수</h1><span>720p 30초 / 1분 테스트 렌더 검수 페이지입니다.</span></div>
+        <article class="card"><h2>검수 체크리스트</h2><p>인트로, CTA, 하단바, 가사 싱크를 확인합니다.</p></article>
+      </section>
+
+      <section class="page" id="page-queue">
+        <div class="page-head"><p>RENDER QUEUE</p><h1>렌더 큐</h1><span>WebSocket 진행률과 FFmpeg 작업 큐가 연결될 자리입니다.</span></div>
+        <article class="card"><h2>큐 상태</h2><pre id="queueBox">대기 중</pre></article>
+      </section>
+
+      <section class="page" id="page-settings">
+        <div class="page-head"><p>SETTINGS</p><h1>설정</h1><span>FFmpeg, 폰트, 출력 경로, 자동 절전 설정.</span></div>
+        <article class="card"><h2>설정 연결 예정</h2><p>config.json과 연결합니다.</p></article>
+      </section>
+
+      <section class="page" id="page-faq">
+        <div class="page-head"><p>FAQ</p><h1>사용 설명 / 개발 설명</h1><span>프리셋 제작법과 전체 구조를 이 페이지에서 설명합니다.</span></div>
+        <article class="card"><h2>핵심 기준</h2><p>PC 중심, 모바일 확인용, 숏츠 기준 롱폼 재설계, 원페이지 금지.</p></article>
+      </section>
+    </main>
+  </div>
+
+  <script src="./scripts/app.js"></script>
+</body>
+</html>
