@@ -373,6 +373,62 @@ pre {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.preset-timeline-shell .preset-preview-frame {
+  position: relative;
+  overflow: hidden;
+}
+.preset-timeline-shell .preset-preview-frame::after {
+  content: '';
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 10px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--gold), rgba(255,255,255,0.65), rgba(200,167,106,0.3));
+  transform-origin: left center;
+  animation: presetTimelineProgress 12s linear infinite;
+}
+.preset-preview-stage {
+  grid-area: 1 / 1;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  text-align: center;
+  padding: clamp(10px, 1.5vw, 20px);
+}
+.preset-stage-title {
+  animation: presetTitleStage 12s ease-in-out infinite;
+}
+.preset-stage-cta {
+  opacity: 0;
+  transform: translateY(10px) scale(0.985);
+  animation: presetCtaStage 12s ease-in-out infinite;
+}
+.preset-timeline-shell .preset-preview-bottom {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: presetBottomStage 12s ease-in-out infinite;
+}
+@keyframes presetTimelineProgress {
+  0% { transform: scaleX(0); opacity: 0.55; }
+  8% { opacity: 1; }
+  100% { transform: scaleX(1); opacity: 1; }
+}
+@keyframes presetTitleStage {
+  0%, 38% { opacity: 1; transform: translateY(0) scale(1); }
+  45%, 100% { opacity: 0; transform: translateY(-10px) scale(0.985); }
+}
+@keyframes presetCtaStage {
+  0%, 40% { opacity: 0; transform: translateY(10px) scale(0.985); }
+  48%, 78% { opacity: 1; transform: translateY(0) scale(1); }
+  86%, 100% { opacity: 0; transform: translateY(-10px) scale(0.985); }
+}
+@keyframes presetBottomStage {
+  0%, 78% { opacity: 0; transform: translateY(10px); }
+  86%, 100% { opacity: 1; transform: translateY(0); }
+}
 
 @media (max-width: 980px) {
   .work-layout { grid-template-columns: 1fr; }
