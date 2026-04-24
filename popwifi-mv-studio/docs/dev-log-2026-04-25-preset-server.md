@@ -76,6 +76,37 @@ POPWIFI_API_BASE=http://localhost:3100 npm run test:preset-api
 POPWIFI_TEST_RATIO=9x16 POPWIFI_TEST_BATCH=batch-001-010 npm run test:preset-api
 ```
 
+### 4. 10-item preset batch import helper added
+
+Added:
+
+- `scripts/import-preset-batch.js`
+- `npm run import:preset-batch`
+- `shared/presets/examples/preset-batch-example.json`
+
+The importer reads a JSON payload with this shape:
+
+```json
+{
+  "ratio": "16x9",
+  "batchId": "batch-001-010",
+  "presets": []
+}
+```
+
+Rules:
+
+- `presets` must contain 1 to 10 presets.
+- Each preset must have a unique string `id`.
+- Duplicate preset ids inside the same import file are rejected.
+- The importer uses the existing preset create API, so the server data path remains single-route.
+
+Usage:
+
+```bash
+npm run import:preset-batch -- shared/presets/examples/preset-batch-example.json
+```
+
 ## Important Rules Preserved
 
 - Do not touch UI unless explicitly requested.
@@ -88,20 +119,22 @@ POPWIFI_TEST_RATIO=9x16 POPWIFI_TEST_BATCH=batch-001-010 npm run test:preset-api
 
 ## Current Progress
 
-Estimated total project progress after this patch: 29–30%.
+Estimated total project progress after this patch: 32–34%.
 
-The preset server layer now has a local smoke-test path and is ready for batch importer tooling.
+The preset server layer now has a local smoke-test path and 10-item batch import tooling.
 
 ## Next Recommended Work
 
 1. Run local server: `npm run dev`.
 2. In another terminal, run: `npm run test:preset-api`.
-3. Add batch import helper for 10 presets at a time.
-4. Connect the preset management UI to:
+3. Test batch import:
+   - `npm run import:preset-batch -- shared/presets/examples/preset-batch-example.json`
+4. Add a real intro preset batch JSON from the design source.
+5. Connect the preset management UI to:
    - batch list
    - preset list
    - create/update preset config
-5. Keep visual design untouched until data/API flow is confirmed stable.
+6. Keep visual design untouched until data/API flow is confirmed stable.
 
 ## Notes
 
