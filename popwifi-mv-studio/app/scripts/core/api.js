@@ -40,6 +40,12 @@ export const api = {
   presetBatches(ratio) {
     return readJson('/api/presets/' + ratio + '/batches');
   },
+  createNextPresetBatch(ratio) {
+    return writeJson('/api/presets/' + ratio + '/batches/next', {
+      method: 'POST',
+      body: JSON.stringify({})
+    });
+  },
   presetBatch(ratio, batchId) {
     return readJson('/api/presets/' + ratio + '/batch/' + batchId);
   },
