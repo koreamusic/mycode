@@ -6,6 +6,16 @@ async function readJson(url) {
   return response.json();
 }
 
+async function writeJson(url, options) {
+  const response = await fetch(url, Object.assign({
+    headers: { 'Content-Type': 'application/json' }
+  }, options));
+  if (!response.ok) {
+    throw new Error('API write error');
+  }
+  return response.json();
+}
+
 async function readText(url) {
   const response = await fetch(url, { cache: 'no-store' });
   if (!response.ok) {
@@ -26,6 +36,12 @@ export const api = {
   },
   presets(ratio) {
     return readJson('/api/presets/' + ratio);
+  },
+  deactivatePreset(ratio, presetId) {
+    return writeJson('/api/presets/' + ratio + '/' + presetId + '/deactivate', {
+      method: 'PATCH',
+      body: JSON.stringify({})
+    });
   },
   page(path) {
     return readText(path);
