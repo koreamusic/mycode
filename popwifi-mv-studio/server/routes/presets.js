@@ -5,6 +5,7 @@ const {
   readPresetBatch,
   readPresetConfig,
   writePresetConfig,
+  upsertPresetConfig,
   markPresetInactive
 } = require('../core/preset-store');
 
@@ -25,6 +26,33 @@ function registerPresetRoutes(app, context) {
   app.get('/api/presets/:ratio/batch/:batchId', (req, res) => {
     const includeInactive = req.query.includeInactive === '1';
     res.json(readPresetBatch(context.rootDir, req.params.ratio, req.params.batchId, { includeInactive }));
+  });
+
+  app.post('/api/presets/:ratio/batch/:batchId/:presetId', (req, res) => {
+    const result = upsertPresetConfig(
+      context.rootDir,
+      req.params.ratio,
+      req.params.batchId,
+      req.params.presetId,
+      req.body
+    );
+    if (!result.ok) return res.status(result.status || 400).json({ error: result.error });
+    res.json({ ok: true, preset: result.preset });
+  });
+
+  app.patch('/api/presets/:ratio/batch/:batchId/:presetId', (req, res) => {
+    const current = readPresetConfig(context.rootDir, req.params.ratio, req.params.batchId, req.params.presetId);
+    if (!current) return res.status(404).json({ error: 'preset not found' });
+
+    const result = upsertPresetConfig(
+      context.rootDir,
+      req.params.ratio,
+      req.params.batchId,
+      req.params.presetId,
+      Object.assign({}, current, req.body)
+    );
+    if (!result.ok) return res.status(result.status || 400).json({ error: result.error });
+    res.json({ ok: true, preset: result.preset });
   });
 
   app.get('/api/presets/:ratio/batch/:batchId/:presetId', (req, res) => {
@@ -48,6 +76,7 @@ module.exports = {
   readPresetBatch,
   readPresetConfig,
   writePresetConfig,
+  upsertPresetConfig,
   markPresetInactive,
   deactivatePreset: markPresetInactive
 };
