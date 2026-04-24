@@ -107,6 +107,38 @@ Usage:
 npm run import:preset-batch -- shared/presets/examples/preset-batch-example.json
 ```
 
+### 5. First real intro preset batch JSON added
+
+Added:
+
+- `shared/presets/imports/intro-batch-001-010.json`
+
+This file contains 10 real intro preset config entries for:
+
+1. Midnight Jazz Frame
+2. Lofi Window Glow
+3. Acoustic Spring Card
+4. K-Pop Neon Stage
+5. Ballad Memory Film
+6. City Pop Sunset Grid
+7. Blues Smoke Signature
+8. Anime Sky Breeze
+9. Chillwave Dream Tape
+10. Cafe Smooth Jazz
+
+Each preset preserves the required intro flow:
+
+- Frame: 10 seconds
+- Title: first 5 seconds
+- Like/Subscribe/Notification CTA: next 5 seconds
+- Bottom lyric/title bar: starts after 10 seconds and stays active
+
+Import command:
+
+```bash
+npm run import:preset-batch -- shared/presets/imports/intro-batch-001-010.json
+```
+
 ## Important Rules Preserved
 
 - Do not touch UI unless explicitly requested.
@@ -119,21 +151,19 @@ npm run import:preset-batch -- shared/presets/examples/preset-batch-example.json
 
 ## Current Progress
 
-Estimated total project progress after this patch: 32–34%.
+Estimated total project progress after this patch: 36–38%.
 
-The preset server layer now has a local smoke-test path and 10-item batch import tooling.
+The preset server layer now has a local smoke-test path, 10-item batch import tooling, and the first real 16:9 intro preset batch JSON.
 
 ## Next Recommended Work
 
 1. Run local server: `npm run dev`.
 2. In another terminal, run: `npm run test:preset-api`.
-3. Test batch import:
-   - `npm run import:preset-batch -- shared/presets/examples/preset-batch-example.json`
-4. Add a real intro preset batch JSON from the design source.
-5. Connect the preset management UI to:
-   - batch list
-   - preset list
-   - create/update preset config
+3. Test real batch import:
+   - `npm run import:preset-batch -- shared/presets/imports/intro-batch-001-010.json`
+4. Confirm imported files under:
+   - `shared/presets/16x9/batch-001-010/`
+5. Add preview/UI wiring only after the import path is confirmed stable.
 6. Keep visual design untouched until data/API flow is confirmed stable.
 
 ## Notes
