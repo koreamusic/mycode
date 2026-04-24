@@ -18,8 +18,7 @@ export function bindPresetActions(options) {
     const batchId = actionEl.dataset.batchId;
 
     if (action === 'select-batch') {
-      await loadPresetList({ ratio, kind, targetId, batchId });
-      bindPresetActions({ ratio, kind, targetId });
+      await reloadPresetTarget({ ratio, kind, targetId, batchId });
       return;
     }
 
@@ -30,10 +29,34 @@ export function bindPresetActions(options) {
 
     if (action === 'deactivate-preset') {
       await api.deactivatePreset(ratio, batchId, presetId);
-      await loadPresetList({ ratio, kind, targetId, batchId });
-      bindPresetActions({ ratio, kind, targetId });
+      await reloadPresetTarget({ ratio, kind, targetId, batchId });
     }
   };
+}
+
+export function bindPresetPanelActions(options) {
+  const ratio = options.ratio;
+  const kind = options.kind;
+  const targetId = options.targetId;
+  const root = options.root || document;
+
+  root.querySelectorAll('[data-action="create-preset-batch"][data-ratio="' + ratio + '"]').forEach((button) => {
+    button.onclick = async () => {
+      const result = await api.createNextPresetBatch(ratio);
+      await reloadPresetTarget({ ratio, kind, targetId, batchId: result.batch.id });
+    };
+  });
+
+  root.querySelectorAll('[data-action="refresh-presets"][data-ratio="' + ratio + '"]').forEach((button) => {
+    button.onclick = async () => {
+      await reloadPresetTarget({ ratio, kind, targetId });
+    };
+  });
+}
+
+async function reloadPresetTarget(options) {
+  await loadPresetList(options);
+  bindPresetActions(options);
 }
 
 function markSelectedPreset(target, batchId, presetId) {
