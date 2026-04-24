@@ -1,0 +1,34 @@
+{
+  "ratio": "16x9",
+  "batchId": "batch-001-010",
+  "presets": [
+    {
+      "id": "intro-001",
+      "title": "Intro Preset 001",
+      "category": "intro",
+      "description": "Example intro preset config. Replace with real frame, title, CTA, and bottom bar settings.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-002",
+      "title": "Intro Preset 002",
+      "category": "intro",
+      "description": "Example intro preset config for batch import testing.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10
+      },
+      "layers": []
+    }
+  ]
+}
