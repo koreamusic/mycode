@@ -6,7 +6,8 @@
   "type": "commonjs",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "test:preset-api": "node scripts/test-preset-api.js"
   },
   "dependencies": {
     "chokidar": "^3.6.0",
