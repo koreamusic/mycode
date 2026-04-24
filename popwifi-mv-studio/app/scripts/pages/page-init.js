@@ -1,11 +1,23 @@
 import { api } from '../core/api.js';
-import { setConfig, setPresets, setQueue } from '../core/state.js';
+import { setConfig, setQueue } from '../core/state.js';
+import { loadPresetList } from '../presets/preset-loader.js';
+import { bindPresetActions } from '../presets/preset-actions.js';
 
 export async function hydratePage(pageName) {
   if (pageName === 'queue') await hydrateQueuePage();
-  if (pageName === 'longform') await hydratePresetPage('16x9', 'longformPresetList', 'longform');
-  if (pageName === 'shorts') await hydratePresetPage('9x16', 'shortsPresetList', 'shorts');
+  if (pageName === 'longform') await hydrateLongformPage();
+  if (pageName === 'shorts') await hydrateShortsPage();
   if (pageName === 'settings') await hydrateSettingsPage();
+}
+
+async function hydrateLongformPage() {
+  await loadPresetList({ ratio: '16x9', kind: 'longform', targetId: 'longformPresetList' });
+  bindPresetActions({ ratio: '16x9', kind: 'longform', targetId: 'longformPresetList' });
+}
+
+async function hydrateShortsPage() {
+  await loadPresetList({ ratio: '9x16', kind: 'shorts', targetId: 'shortsPresetList' });
+  bindPresetActions({ ratio: '9x16', kind: 'shorts', targetId: 'shortsPresetList' });
 }
 
 async function hydrateQueuePage() {
@@ -16,28 +28,6 @@ async function hydrateQueuePage() {
     if (queueBox) queueBox.textContent = JSON.stringify(queue, null, 2);
   } catch (error) {
     if (queueBox) queueBox.textContent = '큐 정보를 불러오지 못했습니다.';
-  }
-}
-
-async function hydratePresetPage(ratio, targetId, kind) {
-  const target = document.getElementById(targetId);
-  if (!target) return;
-
-  try {
-    const presets = await api.presets(ratio);
-    setPresets(kind, presets);
-
-    if (!presets.length) {
-      target.innerHTML = '<div class="empty-state">등록된 프리셋이 없습니다. 다음 단계에서 업로드/생성 기능을 연결합니다.</div>';
-      return;
-    }
-
-    target.innerHTML = presets.map((preset) => {
-      const tags = Array.isArray(preset.tags) ? preset.tags.join(', ') : 'no tags';
-      return '<button class="preset-item" data-preset-id="' + preset.id + '"><strong>' + (preset.name || preset.id) + '</strong><span>' + (preset.ratio || ratio) + ' · ' + tags + '</span></button>';
-    }).join('');
-  } catch (error) {
-    target.innerHTML = '<div class="empty-state">프리셋 목록을 불러오지 못했습니다.</div>';
   }
 }
 
