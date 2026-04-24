@@ -5,6 +5,10 @@ export const appState = {
   presets: {
     longform: [],
     shorts: []
+  },
+  selectedPresets: {
+    longform: null,
+    shorts: null
   }
 };
 
@@ -22,4 +26,14 @@ export function setConfig(config) {
 
 export function setPresets(kind, presets) {
   appState.presets[kind] = presets;
+}
+
+export function setSelectedPreset(kind, preset) {
+  appState.selectedPresets[kind] = preset;
+}
+
+export function getPresetById(kind, batchId, presetId) {
+  return (appState.presets[kind] || []).find((preset) => {
+    return preset.id === presetId && preset.batchId === batchId;
+  }) || null;
 }
