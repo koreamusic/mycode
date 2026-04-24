@@ -2,9 +2,9 @@
 
 ## Scope
 
-This patch continues the Pop WiFi MV Studio handoff work by stabilizing the preset server layer only.
+This patch continues the Pop WiFi MV Studio handoff work by stabilizing the preset server layer and connecting the existing preset list UI to the richer intro preset data.
 
-No UI, sidebar, layout, preview design, intro preset visual design, or Remotion-facing page behavior was changed.
+No sidebar, page layout, preview design, intro preset visual design, or Remotion-facing page behavior was changed.
 
 ## Completed
 
@@ -139,6 +139,27 @@ Import command:
 npm run import:preset-batch -- shared/presets/imports/intro-batch-001-010.json
 ```
 
+### 6. Existing preset list UI connected to richer intro preset fields
+
+Updated:
+
+- `app/scripts/presets/preset-loader.js`
+- `app/styles/app.css`
+
+The longform and shorts pages already had preset list containers:
+
+- `longformPresetList`
+- `shortsPresetList`
+
+The renderer now displays:
+
+- `title` or fallback `name/id`
+- `mood` or fallback `category`
+- `description`
+- flow summary such as frame/title/CTA/bottom bar timing
+
+Only minimal CSS was added for `small` and `em` inside preset cards. The layout, sidebar, preview cards, and page structure were not changed.
+
 ## Important Rules Preserved
 
 - Do not touch UI unless explicitly requested.
@@ -151,9 +172,9 @@ npm run import:preset-batch -- shared/presets/imports/intro-batch-001-010.json
 
 ## Current Progress
 
-Estimated total project progress after this patch: 36–38%.
+Estimated total project progress after this patch: 40–42%.
 
-The preset server layer now has a local smoke-test path, 10-item batch import tooling, and the first real 16:9 intro preset batch JSON.
+The preset server layer now has a local smoke-test path, 10-item batch import tooling, the first real 16:9 intro preset batch JSON, and basic preset list UI rendering for the richer preset fields.
 
 ## Next Recommended Work
 
@@ -163,8 +184,8 @@ The preset server layer now has a local smoke-test path, 10-item batch import to
    - `npm run import:preset-batch -- shared/presets/imports/intro-batch-001-010.json`
 4. Confirm imported files under:
    - `shared/presets/16x9/batch-001-010/`
-5. Add preview/UI wiring only after the import path is confirmed stable.
-6. Keep visual design untouched until data/API flow is confirmed stable.
+5. Open the Longform Intro page and confirm the 10 imported presets display with title, mood, description, and flow summary.
+6. Next implementation target: selected preset preview binding, without changing the page layout.
 
 ## Notes
 
