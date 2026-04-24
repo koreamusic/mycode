@@ -70,6 +70,32 @@ function writePresetConfig(rootDir, ratio, batchId, presetId, nextConfig) {
   return nextConfig;
 }
 
+function normalizePresetConfig(rootDir, ratio, batchId, presetId, inputConfig) {
+  const now = new Date().toISOString();
+  const current = readPresetConfig(rootDir, ratio, batchId, presetId);
+  return Object.assign({}, inputConfig, {
+    id: presetId,
+    ratio,
+    batchId,
+    active: inputConfig.active === false ? false : true,
+    createdAt: current && current.createdAt ? current.createdAt : (inputConfig.createdAt || now),
+    updatedAt: now
+  });
+}
+
+function upsertPresetConfig(rootDir, ratio, batchId, presetId, inputConfig) {
+  if (!presetId || typeof presetId !== 'string') {
+    return { ok: false, status: 400, error: 'presetId is required' };
+  }
+  if (!inputConfig || typeof inputConfig !== 'object' || Array.isArray(inputConfig)) {
+    return { ok: false, status: 400, error: 'preset config body is required' };
+  }
+
+  const nextConfig = normalizePresetConfig(rootDir, ratio, batchId, presetId, inputConfig);
+  writePresetConfig(rootDir, ratio, batchId, presetId, nextConfig);
+  return { ok: true, preset: nextConfig };
+}
+
 function markPresetInactive(rootDir, ratio, batchId, presetId) {
   const current = readPresetConfig(rootDir, ratio, batchId, presetId);
   if (!current) return null;
@@ -84,5 +110,6 @@ module.exports = {
   readPresetBatch,
   readPresetConfig,
   writePresetConfig,
+  upsertPresetConfig,
   markPresetInactive
 };
