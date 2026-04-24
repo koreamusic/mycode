@@ -1,104 +1,12 @@
-const fs = require('fs');
-const path = require('path');
-
-function getPresetRoot(rootDir, ratio) {
-  return path.join(rootDir, 'shared', 'presets', ratio);
-}
-
-function isBatchDir(name) {
-  return /^batch-\d{3}-\d{3}$/.test(name);
-}
-
-function getBatchRoot(rootDir, ratio, batchId) {
-  return path.join(getPresetRoot(rootDir, ratio), batchId);
-}
-
-function getPresetDir(rootDir, ratio, batchId, presetId) {
-  return path.join(getBatchRoot(rootDir, ratio), presetId);
-}
-
-function getPresetConfigPath(rootDir, ratio, batchId, presetId) {
-  return path.join(getPresetDir(rootDir, ratio, batchId, presetId), 'config.json');
-}
-
-function getNextBatchId(batches) {
-  if (!batches.length) return 'batch-001-010';
-  const last = batches[batches.length - 1].id;
-  const match = last.match(/^batch-(\d{3})-(\d{3})$/);
-  if (!match) return 'batch-001-010';
-  const nextStart = Number(match[2]) + 1;
-  const nextEnd = nextStart + 9;
-  return 'batch-' + String(nextStart).padStart(3, '0') + '-' + String(nextEnd).padStart(3, '0');
-}
-
-function readBatches(rootDir, ratio) {
-  const presetRoot = getPresetRoot(rootDir, ratio);
-  if (!fs.existsSync(presetRoot)) return [];
-
-  return fs.readdirSync(presetRoot)
-    .filter(isBatchDir)
-    .sort()
-    .map((batchId) => {
-      const batchRoot = getBatchRoot(rootDir, ratio, batchId);
-      const count = fs.readdirSync(batchRoot)
-        .filter((presetId) => fs.existsSync(getPresetConfigPath(rootDir, ratio, batchId, presetId)))
-        .length;
-      return { id: batchId, ratio, count };
-    });
-}
-
-function createNextBatch(rootDir, ratio) {
-  const presetRoot = getPresetRoot(rootDir, ratio);
-  if (!fs.existsSync(presetRoot)) fs.mkdirSync(presetRoot, { recursive: true });
-  const batches = readBatches(rootDir, ratio);
-  const nextBatchId = getNextBatchId(batches);
-  const nextBatchRoot = getBatchRoot(rootDir, ratio, nextBatchId);
-  if (!fs.existsSync(nextBatchRoot)) fs.mkdirSync(nextBatchRoot, { recursive: true });
-  return { id: nextBatchId, ratio, count: 0 };
-}
-
-function readPresetConfig(rootDir, ratio, batchId, presetId) {
-  const configPath = getPresetConfigPath(rootDir, ratio, batchId, presetId);
-  if (!fs.existsSync(configPath)) return null;
-
-  try {
-    const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-    return Object.assign({ id: presetId, ratio, batchId }, config);
-  } catch (error) {
-    return null;
-  }
-}
-
-function readPresetBatch(rootDir, ratio, batchId, options = {}) {
-  const batchRoot = getBatchRoot(rootDir, ratio, batchId);
-  if (!fs.existsSync(batchRoot)) return [];
-
-  return fs.readdirSync(batchRoot)
-    .map((presetId) => readPresetConfig(rootDir, ratio, batchId, presetId))
-    .filter(Boolean)
-    .filter((preset) => options.includeInactive ? true : preset.active !== false)
-    .sort((a, b) => String(a.id).localeCompare(String(b.id)));
-}
-
-function readPresetList(rootDir, ratio, options = {}) {
-  const batches = readBatches(rootDir, ratio);
-  return batches.flatMap((batch) => readPresetBatch(rootDir, ratio, batch.id, options));
-}
-
-function writePresetConfig(rootDir, ratio, batchId, presetId, nextConfig) {
-  const presetDir = getPresetDir(rootDir, ratio, batchId, presetId);
-  if (!fs.existsSync(presetDir)) fs.mkdirSync(presetDir, { recursive: true });
-  const configPath = getPresetConfigPath(rootDir, ratio, batchId, presetId);
-  fs.writeFileSync(configPath, JSON.stringify(nextConfig, null, 2));
-  return nextConfig;
-}
-
-function deactivatePreset(rootDir, ratio, batchId, presetId) {
-  const current = readPresetConfig(rootDir, ratio, batchId, presetId);
-  if (!current) return null;
-  const nextConfig = Object.assign({}, current, { active: false, updatedAt: new Date().toISOString() });
-  return writePresetConfig(rootDir, ratio, batchId, presetId, nextConfig);
-}
+const {
+  readBatches,
+  createNextBatch,
+  readPresetList,
+  readPresetBatch,
+  readPresetConfig,
+  writePresetConfig,
+  markPresetInactive
+} = require('../core/preset-store');
 
 function registerPresetRoutes(app, context) {
   app.get('/api/presets/:ratio', (req, res) => {
@@ -126,7 +34,7 @@ function registerPresetRoutes(app, context) {
   });
 
   app.patch('/api/presets/:ratio/batch/:batchId/:presetId/deactivate', (req, res) => {
-    const preset = deactivatePreset(context.rootDir, req.params.ratio, req.params.batchId, req.params.presetId);
+    const preset = markPresetInactive(context.rootDir, req.params.ratio, req.params.batchId, req.params.presetId);
     if (!preset) return res.status(404).json({ error: 'preset not found' });
     res.json({ ok: true, preset });
   });
@@ -140,5 +48,6 @@ module.exports = {
   readPresetBatch,
   readPresetConfig,
   writePresetConfig,
-  deactivatePreset
+  markPresetInactive,
+  deactivatePreset: markPresetInactive
 };
