@@ -1,0 +1,17 @@
+{
+  "id": "moon-dust-window",
+  "name": "문더스트 윈도우",
+  "ratio": "9x16",
+  "sourceRole": "shorts-design-origin",
+  "accentColor": "#B8C6FF",
+  "tags": ["lofi", "night", "calm", "shorts"],
+  "fonts": {
+    "title": "Playfair Display",
+    "lyric": "Noto Sans KR",
+    "karaoke": "Noto Serif KR"
+  },
+  "karaokeMode": false,
+  "karaokeGlow": false,
+  "createdAt": "2026-04-25",
+  "active": true
+}
