@@ -29,6 +29,15 @@ export async function loadPresetList(options) {
   }
 }
 
+function escapeHtml(value) {
+  return String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 function renderPresetBatches(target, batches, activeBatchId, ratio) {
   const batchHtml = batches.map((batch) => {
     const active = batch.id === activeBatchId ? ' active' : '';
@@ -47,14 +56,26 @@ function renderPresetList(target, presets, ratio, batchId) {
   }
 
   listTarget.innerHTML = presets.map((preset) => {
-    const tags = Array.isArray(preset.tags) ? preset.tags.join(', ') : 'no tags';
+    const title = preset.title || preset.name || preset.id;
+    const mood = preset.mood || preset.category || 'intro preset';
+    const description = preset.description || '프리셋 설명이 아직 없습니다.';
+    const flow = preset.flow || {};
+    const flowText = [
+      flow.frameSeconds ? '프레임 ' + flow.frameSeconds + '초' : null,
+      flow.titleSeconds ? '제목 ' + flow.titleSeconds + '초' : null,
+      flow.ctaSeconds ? 'CTA ' + flow.ctaSeconds + '초' : null,
+      flow.bottomBarStartsAfterSeconds ? '하단바 ' + flow.bottomBarStartsAfterSeconds + '초 이후' : null
+    ].filter(Boolean).join(' · ');
+
     return [
-      '<div class="preset-row" data-preset-id="' + preset.id + '" data-batch-id="' + batchId + '">',
-      '  <button class="preset-item" data-action="select-preset" data-ratio="' + ratio + '" data-batch-id="' + batchId + '" data-preset-id="' + preset.id + '">',
-      '    <strong>' + (preset.name || preset.id) + '</strong>',
-      '    <span>' + (preset.ratio || ratio) + ' · ' + batchId + ' · ' + tags + '</span>',
+      '<div class="preset-row" data-preset-id="' + escapeHtml(preset.id) + '" data-batch-id="' + escapeHtml(batchId) + '">',
+      '  <button class="preset-item" data-action="select-preset" data-ratio="' + escapeHtml(ratio) + '" data-batch-id="' + escapeHtml(batchId) + '" data-preset-id="' + escapeHtml(preset.id) + '">',
+      '    <strong>' + escapeHtml(title) + '</strong>',
+      '    <span>' + escapeHtml(mood) + '</span>',
+      '    <small>' + escapeHtml(description) + '</small>',
+      flowText ? '    <em>' + escapeHtml(flowText) + '</em>' : '',
       '  </button>',
-      '  <button class="mini-danger" data-action="deactivate-preset" data-ratio="' + ratio + '" data-batch-id="' + batchId + '" data-preset-id="' + preset.id + '">비활성</button>',
+      '  <button class="mini-danger" data-action="deactivate-preset" data-ratio="' + escapeHtml(ratio) + '" data-batch-id="' + escapeHtml(batchId) + '" data-preset-id="' + escapeHtml(preset.id) + '">비활성</button>',
       '</div>'
     ].join('');
   }).join('');
