@@ -205,7 +205,22 @@ button { cursor: pointer; }
   padding: 13px 14px;
 }
 .preset-item strong { display: block; font-size: 14px; margin-bottom: 4px; }
-.preset-item span { color: var(--muted); font-size: 12px; }
+.preset-item span { display: block; color: var(--muted); font-size: 12px; line-height: 1.4; }
+.preset-item small {
+  display: block;
+  margin-top: 7px;
+  color: rgba(240,237,230,0.68);
+  font-size: 11px;
+  line-height: 1.45;
+}
+.preset-item em {
+  display: block;
+  margin-top: 8px;
+  color: var(--gold);
+  font-size: 10px;
+  font-style: normal;
+  line-height: 1.4;
+}
 .mini-danger {
   border: 1px solid rgba(214,111,111,0.28);
   background: rgba(214,111,111,0.08);
