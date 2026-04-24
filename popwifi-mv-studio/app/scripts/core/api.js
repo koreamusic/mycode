@@ -37,8 +37,14 @@ export const api = {
   presets(ratio) {
     return readJson('/api/presets/' + ratio);
   },
-  deactivatePreset(ratio, presetId) {
-    return writeJson('/api/presets/' + ratio + '/' + presetId + '/deactivate', {
+  presetBatches(ratio) {
+    return readJson('/api/presets/' + ratio + '/batches');
+  },
+  presetBatch(ratio, batchId) {
+    return readJson('/api/presets/' + ratio + '/batch/' + batchId);
+  },
+  deactivatePreset(ratio, batchId, presetId) {
+    return writeJson('/api/presets/' + ratio + '/batch/' + batchId + '/' + presetId + '/deactivate', {
       method: 'PATCH',
       body: JSON.stringify({})
     });
