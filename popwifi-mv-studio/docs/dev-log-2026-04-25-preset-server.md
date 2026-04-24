@@ -4,7 +4,7 @@
 
 This patch continues the Pop WiFi MV Studio handoff work by stabilizing the preset server layer and connecting the existing preset list UI to the richer intro preset data.
 
-No sidebar, page layout, preview design, intro preset visual design, or Remotion-facing page behavior was changed.
+No sidebar, page layout, intro preset source data, or Remotion-facing page behavior was changed.
 
 ## Completed
 
@@ -160,6 +160,29 @@ The renderer now displays:
 
 Only minimal CSS was added for `small` and `em` inside preset cards. The layout, sidebar, preview cards, and page structure were not changed.
 
+### 7. Selected preset preview binding added
+
+Updated/added:
+
+- `app/scripts/core/state.js`
+- `app/scripts/presets/preset-preview.js`
+- `app/scripts/presets/preset-actions.js`
+- `app/styles/app.css`
+
+Behavior:
+
+- Clicking a preset row marks it as selected.
+- The selected preset is stored in `appState.selectedPresets`.
+- The existing longform/shorts preview card is updated with:
+  - title
+  - mood
+  - description
+  - CTA placeholder
+  - frame/title/CTA/bottom bar timing summary
+  - frame style, title position, CTA style, bottom bar style, end animation, palette, and typography metadata
+
+This is still a safe metadata preview only. It does not yet render the final animated intro preset timeline, and it does not change the page layout or sidebar.
+
 ## Important Rules Preserved
 
 - Do not touch UI unless explicitly requested.
@@ -172,9 +195,9 @@ Only minimal CSS was added for `small` and `em` inside preset cards. The layout,
 
 ## Current Progress
 
-Estimated total project progress after this patch: 40–42%.
+Estimated total project progress after this patch: 44–46%.
 
-The preset server layer now has a local smoke-test path, 10-item batch import tooling, the first real 16:9 intro preset batch JSON, and basic preset list UI rendering for the richer preset fields.
+The preset server layer now has a local smoke-test path, 10-item batch import tooling, the first real 16:9 intro preset batch JSON, richer preset list rendering, and selected preset preview binding.
 
 ## Next Recommended Work
 
@@ -184,8 +207,9 @@ The preset server layer now has a local smoke-test path, 10-item batch import to
    - `npm run import:preset-batch -- shared/presets/imports/intro-batch-001-010.json`
 4. Confirm imported files under:
    - `shared/presets/16x9/batch-001-010/`
-5. Open the Longform Intro page and confirm the 10 imported presets display with title, mood, description, and flow summary.
-6. Next implementation target: selected preset preview binding, without changing the page layout.
+5. Open the Longform Intro page.
+6. Click each imported preset and confirm the preview card updates.
+7. Next implementation target: first-stage animated preview timeline shell for frame/title/CTA/bottom bar timing, without changing the page layout.
 
 ## Notes
 
