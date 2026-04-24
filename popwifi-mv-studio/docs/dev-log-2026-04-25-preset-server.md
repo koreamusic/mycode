@@ -47,6 +47,35 @@ Existing routes remain:
 - `GET /api/presets/:ratio/batch/:batchId/:presetId`
 - `PATCH /api/presets/:ratio/batch/:batchId/:presetId/deactivate`
 
+### 3. Local preset API test script added
+
+Added:
+
+- `scripts/test-preset-api.js`
+- `npm run test:preset-api`
+
+The script checks:
+
+1. Create preset config through `POST`.
+2. Read preset config through `GET`.
+3. Update preset config through `PATCH`.
+4. Confirm the preset appears in the batch list.
+5. Mark the preset inactive through the existing deactivate route.
+
+Default test target:
+
+- Base URL: `http://localhost:3100`
+- Ratio: `16x9`
+- Batch: `batch-001-010`
+- Preset: `test-api-preset`
+
+Environment override examples:
+
+```bash
+POPWIFI_API_BASE=http://localhost:3100 npm run test:preset-api
+POPWIFI_TEST_RATIO=9x16 POPWIFI_TEST_BATCH=batch-001-010 npm run test:preset-api
+```
+
 ## Important Rules Preserved
 
 - Do not touch UI unless explicitly requested.
@@ -59,19 +88,20 @@ Existing routes remain:
 
 ## Current Progress
 
-Estimated total project progress after this patch: 26–28%.
+Estimated total project progress after this patch: 29–30%.
 
-The preset server layer is now ready for the next phase: UI-side preset save/import wiring or batch importer tooling.
+The preset server layer now has a local smoke-test path and is ready for batch importer tooling.
 
 ## Next Recommended Work
 
-1. Add a small local validation/test script for preset APIs.
-2. Add batch import helper for 10 presets at a time.
-3. Connect the preset management UI to:
+1. Run local server: `npm run dev`.
+2. In another terminal, run: `npm run test:preset-api`.
+3. Add batch import helper for 10 presets at a time.
+4. Connect the preset management UI to:
    - batch list
    - preset list
    - create/update preset config
-4. Keep visual design untouched until data/API flow is confirmed stable.
+5. Keep visual design untouched until data/API flow is confirmed stable.
 
 ## Notes
 
