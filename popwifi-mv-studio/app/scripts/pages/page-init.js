@@ -1,7 +1,7 @@
 import { api } from '../core/api.js';
 import { setConfig, setQueue } from '../core/state.js';
 import { loadPresetList } from '../presets/preset-loader.js';
-import { bindPresetActions } from '../presets/preset-actions.js';
+import { bindPresetActions, bindPresetPanelActions } from '../presets/preset-actions.js';
 
 export async function hydratePage(pageName) {
   if (pageName === 'queue') await hydrateQueuePage();
@@ -13,11 +13,13 @@ export async function hydratePage(pageName) {
 async function hydrateLongformPage() {
   await loadPresetList({ ratio: '16x9', kind: 'longform', targetId: 'longformPresetList' });
   bindPresetActions({ ratio: '16x9', kind: 'longform', targetId: 'longformPresetList' });
+  bindPresetPanelActions({ ratio: '16x9', kind: 'longform', targetId: 'longformPresetList' });
 }
 
 async function hydrateShortsPage() {
   await loadPresetList({ ratio: '9x16', kind: 'shorts', targetId: 'shortsPresetList' });
   bindPresetActions({ ratio: '9x16', kind: 'shorts', targetId: 'shortsPresetList' });
+  bindPresetPanelActions({ ratio: '9x16', kind: 'shorts', targetId: 'shortsPresetList' });
 }
 
 async function hydrateQueuePage() {
