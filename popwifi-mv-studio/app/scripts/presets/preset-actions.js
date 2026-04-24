@@ -9,27 +9,36 @@ export function bindPresetActions(options) {
   const target = document.getElementById(targetId);
   if (!target) return;
 
-  target.addEventListener('click', async (event) => {
+  target.onclick = async (event) => {
     const actionEl = event.target.closest('[data-action]');
     if (!actionEl) return;
 
     const action = actionEl.dataset.action;
     const presetId = actionEl.dataset.presetId;
+    const batchId = actionEl.dataset.batchId;
+
+    if (action === 'select-batch') {
+      await loadPresetList({ ratio, kind, targetId, batchId });
+      bindPresetActions({ ratio, kind, targetId });
+      return;
+    }
 
     if (action === 'select-preset') {
-      markSelectedPreset(target, presetId);
+      markSelectedPreset(target, batchId, presetId);
       return;
     }
 
     if (action === 'deactivate-preset') {
-      await api.deactivatePreset(ratio, presetId);
-      await loadPresetList({ ratio, kind, targetId });
+      await api.deactivatePreset(ratio, batchId, presetId);
+      await loadPresetList({ ratio, kind, targetId, batchId });
+      bindPresetActions({ ratio, kind, targetId });
     }
-  });
+  };
 }
 
-function markSelectedPreset(target, presetId) {
+function markSelectedPreset(target, batchId, presetId) {
   target.querySelectorAll('.preset-row').forEach((row) => {
-    row.classList.toggle('selected', row.dataset.presetId === presetId);
+    const samePreset = row.dataset.presetId === presetId && row.dataset.batchId === batchId;
+    row.classList.toggle('selected', samePreset);
   });
 }
