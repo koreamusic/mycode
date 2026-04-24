@@ -163,6 +163,16 @@ button { cursor: pointer; }
 .preview-card.vertical { height: min(70vh, 720px); aspect-ratio: 9/16; justify-self: center; }
 
 .preset-list { display: flex; flex-direction: column; gap: 10px; }
+.preset-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: stretch;
+}
+.preset-row.selected .preset-item {
+  border-color: rgba(200,167,106,0.65);
+  background: rgba(200,167,106,0.12);
+}
 .preset-item {
   text-align: left;
   border: 1px solid var(--line);
@@ -173,6 +183,18 @@ button { cursor: pointer; }
 }
 .preset-item strong { display: block; font-size: 14px; margin-bottom: 4px; }
 .preset-item span { color: var(--muted); font-size: 12px; }
+.mini-danger {
+  border: 1px solid rgba(214,111,111,0.28);
+  background: rgba(214,111,111,0.08);
+  color: var(--err);
+  border-radius: 14px;
+  padding: 0 12px;
+  min-width: 68px;
+}
+.mini-danger:hover {
+  background: rgba(214,111,111,0.16);
+  border-color: rgba(214,111,111,0.42);
+}
 .empty-state {
   border: 1px dashed var(--line);
   border-radius: 16px;
@@ -236,4 +258,6 @@ pre {
   .nav-btn { white-space: nowrap; width: auto; }
   .page { padding: 18px; }
   .grid.two { grid-template-columns: 1fr; }
+  .preset-row { grid-template-columns: 1fr; }
+  .mini-danger { min-height: 38px; }
 }
