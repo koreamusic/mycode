@@ -5,6 +5,7 @@ import { bindPresetActions, bindPresetPanelActions } from '../presets/preset-act
 import { renderDraftPanel } from '../render/render-draft-panel.js';
 import { hydrateRenderResults } from '../project/render-results.js';
 import { hydrateLyricsPage } from './lyrics.js';
+import { hydrateLandingPage } from './landing.js';
 
 export async function hydratePage(pageName) {
   if (pageName === 'queue') await hydrateQueuePage();
@@ -13,6 +14,7 @@ export async function hydratePage(pageName) {
   if (pageName === 'settings') await hydrateSettingsPage();
   if (pageName === 'project') await hydrateProjectPage();
   if (pageName === 'lyrics') hydrateLyricsPage();
+  if (pageName === 'landing') await hydrateLandingPage();
 }
 
 async function hydrateLongformPage() {

@@ -2,17 +2,39 @@
   <div class="page-head">
     <p>LANDING REVIEW</p>
     <h1>랜딩 검수</h1>
-    <span>720p 30초 / 1분 테스트 렌더 검수 페이지입니다.</span>
+    <span>720p 테스트 렌더로 인트로·CTA·하단바·가사 싱크를 확인합니다.</span>
   </div>
 
   <div class="work-layout">
-    <div class="preview-card wide">LANDING PREVIEW</div>
+    <div class="preview-card wide" id="landingPreviewCard">
+      <div id="landingPreviewContent" class="landing-preview-empty">
+        <p>테스트 렌더 결과가 여기 표시됩니다.</p>
+        <small>좌측 패널에서 렌더 종류와 시간을 선택하고 실행하세요.</small>
+      </div>
+    </div>
+
     <aside class="side-panel">
-      <h2>검수 옵션</h2>
-      <button class="control-btn primary">720p 30초 테스트</button>
-      <button class="control-btn">720p 1분 테스트</button>
-      <button class="control-btn">최종 설정 확인</button>
-      <p>인트로, CTA, 하단바, 가사 싱크를 확인합니다.</p>
+      <h2>검수 대상</h2>
+      <div id="landingDraftStatus" class="landing-draft-status">
+        <p class="queue-empty">렌더 드래프트를 불러오는 중...</p>
+      </div>
+
+      <h2 style="margin-top:1rem;">렌더 종류</h2>
+      <div class="transport-row" style="margin-bottom:0.75rem;">
+        <button class="control-btn active" data-landing-kind="longform">롱폼 16:9</button>
+        <button class="control-btn" data-landing-kind="shorts">숏츠 9:16</button>
+      </div>
+
+      <h2>테스트 시간</h2>
+      <div class="transport-row" style="margin-bottom:1rem;">
+        <button class="control-btn active" data-landing-duration="30">30초</button>
+        <button class="control-btn" data-landing-duration="60">60초</button>
+      </div>
+
+      <button class="control-btn primary" id="landingRunBtn" data-action="run-landing-test">테스트 렌더 실행</button>
+      <button class="control-btn" id="landingCheckBtn" data-action="check-landing-draft" style="margin-top:0.5rem;">현재 설정 확인</button>
+
+      <div id="landingStatusMsg" style="margin-top:0.75rem;font-size:0.8rem;opacity:0.7;"></div>
     </aside>
   </div>
 </section>
