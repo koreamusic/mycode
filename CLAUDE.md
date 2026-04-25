@@ -47,11 +47,11 @@ mycode/
 |------|------|------|
 | 기획/구조 | 90% | **100%** |
 | 문서화 | 80% | **95%** |
-| 코드 구현 (페이지/API) | 0% | **75%** |
-| 프리셋 이식 (config+template+preview) | 0% | **90%** |
+| 코드 구현 (페이지/API) | 0% | **88%** |
+| 프리셋 이식 (config+template+preview) | 0% | **95%** |
 | 렌더 시스템 (캡처·FFmpeg) | 0% | **40%** |
 | 테스트/안정화 | 0% | **10%** |
-| **전체** | **12%** | **~63%** |
+| **전체** | **12%** | **~72%** |
 
 ---
 
@@ -96,21 +96,22 @@ mycode/
 ## 남은 작업
 
 ### 우선순위 높음
-- [x] `preview.jpg` 생성 — node-canvas 스크립트로 12개 자동 생성 완료
-- [ ] 렌더 파이프라인 실제 테스트 — FFmpeg 설치 환경에서 end-to-end 검증
-- [ ] 음원/이미지 파일 연결 UI — 프로젝트 페이지에서 파일 선택 기능
-- [ ] 큐 페이지 동적 렌더링 — currentJob/pending/completed 카드 렌더링 (현재 raw JSON)
+- [x] `preview.jpg` 생성 — node-canvas 스크립트로 14개 자동 생성 완료
+- [x] 음원/이미지 파일 연결 UI — 프로젝트 페이지 소스 폼 (title/artist/musicFile/coverImage/lyricsFile)
+- [x] 큐 페이지 동적 렌더링 — currentJob/pending/completed/failed 카드 + WebSocket 실시간 갱신
+- [ ] 렌더 파이프라인 실제 테스트 — FFmpeg 설치 환경에서 end-to-end 검증 (로컬 환경 필요)
 
 ### 우선순위 중간
-- [ ] 폰트 관리 기능 — Settings의 폰트 목록 새로고침 실제 구현
-- [ ] Whisper 연동 — 가사 자동 싱크 (현재 수동 타임코드 마킹만 가능)
-- [ ] 랜딩 검수 비디오 재생 — `<video>` 렌더링 실제 확인 필요 (FFmpeg 필요)
-- [ ] moon-dust-window 프리셋 — template.js 없어 preview.jpg 생성 불가
+- [x] 폰트 관리 기능 — GET /api/fonts + Settings UI + Google Fonts 링크
+- [x] moon-dust-window 프리셋 — template.js + preview.jpg 완료 (loose + batch 모두)
+- [x] 프리셋 일괄 비활성화/복원 UI — Settings 배치 단위 bulk 관리
+- [x] 구조화 에러 로깅 강화 — Express 500 핸들러 + uncaughtException/unhandledRejection
+- [ ] Whisper 연동 — 가사 자동 싱크 (외부 도구 필요)
+- [ ] 랜딩 검수 비디오 재생 — FFmpeg 필요
 
 ### 우선순위 낮음
+- [ ] intro-001~050 template.js — config만 있음, 50개 미구현
 - [ ] 인증/토큰 — 현재 localhost CORS만 있음
-- [ ] 구조화 에러 로깅 강화
-- [ ] 프리셋 일괄 비활성화/복원 UI
 
 ---
 
