@@ -34,6 +34,12 @@ export const api = {
   queue() {
     return readJson('/api/queue');
   },
+  createQueueJobFromRenderDraft(kind) {
+    return writeJson('/api/queue/from-render-draft/' + kind, {
+      method: 'POST',
+      body: JSON.stringify({})
+    });
+  },
   renderDraft() {
     return readJson('/api/render-draft');
   },
