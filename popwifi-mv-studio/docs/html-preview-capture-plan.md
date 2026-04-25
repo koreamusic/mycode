@@ -37,6 +37,7 @@ The project already has:
 - capture page skeleton
 - single screenshot capture helper script
 - reduced-FPS frame sequence capture helper script
+- frame sequence FFmpeg assembly helper script
 - Playwright dev dependency for Chromium screenshot capture
 
 The dummy MP4 proves FFmpeg path, output folders, logging, and queue transitions only.
@@ -121,20 +122,6 @@ The capture pipeline must preserve:
 - bottom bar: 10 seconds onward
 - total preview render target: 12 seconds
 
-## Frame Capture Plan
-
-Safe first real visual pipeline:
-
-```txt
-1. Start current queue job.
-2. Create output/temp/log folders.
-3. Generate manifest.
-4. Open capture page at 1920x1080.
-5. Capture still frames to temp/renders/<job-id>/frames/.
-6. Use FFmpeg to assemble frames into output/renders/<job-id>/intro-preview.mp4.
-7. Complete queue job.
-```
-
 ## Browser Tool
 
 Browser capture tool:
@@ -151,7 +138,7 @@ Reason:
 - no Remotion dependency
 - common Node ecosystem fit
 
-Playwright is now listed in `devDependencies`.
+Playwright is listed in `devDependencies`.
 
 Install browser runtime after `npm install`:
 
@@ -252,6 +239,65 @@ This helper:
 It does not assemble video.
 It does not run FFmpeg.
 
+## Frame Sequence Assembly Helper
+
+Added helper:
+
+```txt
+scripts/assemble-intro-frames.js
+```
+
+Package script:
+
+```bash
+npm run assemble:intro-frames -- <job-id>
+```
+
+Optional explicit paths:
+
+```bash
+npm run assemble:intro-frames -- <job-id> temp/captures/<job-id>/frames output/captures/<job-id>/intro-preview.mp4
+```
+
+Default input:
+
+```txt
+temp/captures/<job-id>/frames/frame-%06d.png
+```
+
+Default output:
+
+```txt
+output/captures/<job-id>/intro-preview.mp4
+```
+
+Default log:
+
+```txt
+logs/captures/<job-id>-assemble.log
+```
+
+Default FPS:
+
+```txt
+6fps
+```
+
+Environment override:
+
+```bash
+POPWIFI_CAPTURE_FPS=6 npm run assemble:intro-frames -- <job-id>
+```
+
+This helper:
+
+- validates that frame PNGs exist
+- assembles them with FFmpeg
+- writes an MP4 from captured preview frames
+- writes an assembly log
+
+This is still a local capture test path. It is not yet integrated into the queue processor.
+
 ## First Real Rendering Milestones
 
 ### Milestone 1 — Capture Page Static Proof
@@ -277,14 +323,14 @@ Status: helper added, Playwright dependency added.
 - Confirm animation phases visually.
 - Then move to 30fps.
 
-Status: reduced-FPS helper added, FFmpeg assembly not yet added.
+Status: reduced-FPS helper added.
 
 ### Milestone 4 — FFmpeg Assembly
 
 - Assemble PNG frames into MP4.
-- Output to `output/renders/<job-id>/intro-preview.mp4`.
+- Output to `output/captures/<job-id>/intro-preview.mp4` in the manual test path.
 
-Status: not implemented for real preview capture.
+Status: helper added for manual capture test path.
 
 ## Avoided Shortcut
 
@@ -307,10 +353,11 @@ Before real capture is considered successful:
 
 ## Current Progress Marker
 
-After this reduced-FPS frame sequence helper patch, estimated project progress is 95–96%.
+After this FFmpeg frame assembly helper patch, estimated project progress is 96–97%.
 
 Next safe implementation:
 
 - Run frame capture at 6fps.
-- Manually inspect title → CTA → bottom bar frames.
-- Then add FFmpeg frame assembly from captured PNGs.
+- Assemble captured frames into MP4.
+- Manually inspect the MP4.
+- Only after visual confirmation, integrate capture+assembly into the queue processor.
