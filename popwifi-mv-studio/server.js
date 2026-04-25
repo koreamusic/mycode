@@ -12,6 +12,7 @@ const { registerConfigRoutes } = require('./server/routes/config');
 const { registerQueueRoutes } = require('./server/routes/queue');
 const { registerPresetRoutes } = require('./server/routes/presets');
 const { registerRenderDraftRoutes } = require('./server/routes/render-draft');
+const logger = require('./server/core/logger');
 
 const rootDir = __dirname;
 const config = loadConfig(rootDir);
@@ -30,6 +31,20 @@ const context = {
   queuePath,
   wss
 };
+
+const allowedOrigin = 'http://localhost:' + config.port;
+
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (!origin || origin === allowedOrigin) {
+    res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    if (req.method === 'OPTIONS') return res.sendStatus(204);
+    return next();
+  }
+  res.status(403).json({ error: 'forbidden origin' });
+});
 
 app.use(express.json({ limit: '20mb' }));
 app.use('/app', express.static(path.join(rootDir, 'app')));
@@ -56,6 +71,6 @@ wss.on('connection', (ws) => {
 });
 
 server.listen(config.port, () => {
-  console.log(`Pop WiFi MV Studio running at http://localhost:${config.port}`);
-  console.log(`Preset imports materialized: created=${presetImportSummary.created} skipped=${presetImportSummary.skipped} failed=${presetImportSummary.failed}`);
+  logger.info('Pop WiFi MV Studio running at http://localhost:' + config.port);
+  logger.info('Preset imports materialized: created=' + presetImportSummary.created + ' skipped=' + presetImportSummary.skipped + ' failed=' + presetImportSummary.failed);
 });
