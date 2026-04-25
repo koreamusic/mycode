@@ -1,1 +1,53 @@
-{"id":"intro-002-lofi-window-glow","title":"Lofi Window Glow","category":"intro","mood":"soft, cozy, night-window lofi","description":"Gentle lofi intro with soft window-light frame, floating title card, friendly CTA, and calm rounded lyric bar.","active":true,"ratio":"16x9","batchId":"batch-001-010","flow":{"frameSeconds":10,"titleSeconds":5,"ctaSeconds":5,"bottomBarStartsAfterSeconds":10,"frameExit":"reverse-fade-slide"},"layout":{"frameStyle":"soft-window-light-frame","titlePosition":"center-middle","ctaPosition":"center-middle","bottomBarPosition":"bottom-safe","bottomBarAlign":"left"},"visual":{"palette":["night navy","dusty violet","warm lamp yellow","cream white"],"texture":"soft blur, dust particles, quiet room tone","typography":"rounded modern sans with relaxed spacing"},"cta":{"style":"pill-shaped cozy reaction buttons","items":["like","subscribe","notification"]},"bottomBar":{"style":"translucent lavender-black rounded bar","endAnimation":"small vinyl spin loop","contentFallback":"title"},"layers":[]}
+{
+  "id": "intro-002-lofi-window-glow",
+  "title": "02 · 깊은 밤 피아노",
+  "category": "intro",
+  "variant": "ballad",
+  "mood": "deep night, piano, quiet memory",
+  "description": "원본 presets_02_10.html의 02 깊은 밤 피아노 프리셋 기준 메타입니다. 원본 피아노 프레임, 음표 파티클, 좋아요/구독 CTA, 하단바, 피아노 EQ를 보존해야 합니다.",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-001-010",
+  "sourceOriginal": {
+    "sourceFile": "presets_02_10.html",
+    "sourceKey": "piano",
+    "sourceNumber": 2,
+    "sourceName": "02 · 깊은 밤 피아노",
+    "song": "깊은 밤의 선율",
+    "lyric": "건반 위에 흐르는 오래된 기억",
+    "frameFunction": "buildPianoFrame",
+    "particleFunction": "buildNoteParticles",
+    "equalizerFunction": "buildPianoEq",
+    "status": "metadata-aligned-renderer-not-yet-extracted"
+  },
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "source-original"
+  },
+  "layout": {
+    "frameStyle": "source: buildPianoFrame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-bottom",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "left"
+  },
+  "visual": {
+    "accent": "#c8a84a",
+    "palette": ["deep night blue", "piano gold", "soft ivory", "black"],
+    "texture": "source original piano-note particles and dark piano atmosphere",
+    "typography": "source original Nanum Myeongjo / serif mood"
+  },
+  "cta": {
+    "style": "source original animated like / subscribe bell CTA",
+    "items": ["like", "subscribe", "notification"]
+  },
+  "bottomBar": {
+    "style": "source original piano bottom bar with disk and piano EQ",
+    "endAnimation": "source original piano EQ",
+    "contentFallback": "title"
+  },
+  "layers": []
+}
