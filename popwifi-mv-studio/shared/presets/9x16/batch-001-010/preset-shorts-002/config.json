@@ -1,0 +1,57 @@
+{
+  "id": "preset-shorts-002",
+  "name": "Slide Frame",
+  "title": "Slide Frame",
+  "category": "shorts-preset",
+  "variant": "minimal",
+  "ratio": "9x16",
+  "batchId": "batch-001-010",
+  "accentColor": "#ffffff",
+  "tags": ["modern", "clean", "slide"],
+  "fonts": { "title": "Inter", "lyric": "Noto Sans KR", "karaoke": "Noto Sans KR" },
+  "karaokeMode": false,
+  "karaokeGlow": false,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-fade-slide"
+  },
+  "layout": {
+    "frameStyle": "slide-frame-clean-lines",
+    "titlePosition": "lower-third",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center",
+    "safeArea": "vertical-lower-third"
+  },
+  "visual": {
+    "accent": "#ffffff",
+    "accent2": "#b7b7b7",
+    "palette": ["black", "white", "deep blue", "clean gray"],
+    "texture": "clean sliding border lines and modern dark gradient",
+    "typography": "Inter title with Noto Sans KR lyric"
+  },
+  "motion": {
+    "frameExit": "reverse-fade-slide",
+    "title": "fade-up",
+    "cta": "soft-pop",
+    "bottomBar": "glass-slide",
+    "end": "glow-pulse",
+    "cadence": "standard"
+  },
+  "cta": {
+    "style": "clean monochrome CTA capsule",
+    "items": ["like", "subscribe", "notification"]
+  },
+  "bottomBar": {
+    "style": "clean dark rounded lyric bar",
+    "endAnimation": "line breathing loop",
+    "contentFallback": "title"
+  },
+  "templateFile": "template.js",
+  "sourceZip": "shorts-presets.zip",
+  "createdAt": "2026-04-25",
+  "active": true
+}
