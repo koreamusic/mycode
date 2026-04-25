@@ -2,9 +2,10 @@
 
 ## Scope
 
-This patch connects selected intro presets to a render/export preparation state and exposes that state in the existing preset pages.
+This patch connects selected intro presets to a render/export preparation state, exposes that state in the existing preset pages, and allows the confirmed render draft to be added to the local render queue as a pending job.
 
 It does not start actual rendering.
+It does not execute FFmpeg.
 It does not add a new render engine.
 It does not change the sidebar, page layout, preset list layout, or preview animation structure.
 
@@ -117,6 +118,50 @@ Behavior:
   - flow summary
   - variant
 
+### 7. Queue job creation from render draft added
+
+Updated:
+
+- `server/routes/queue.js`
+- `app/scripts/core/api.js`
+- `app/scripts/render/render-draft-panel.js`
+- `app/scripts/render/render-draft-actions.js`
+- `app/scripts/app.js`
+
+Server API:
+
+- `POST /api/queue/from-render-draft/:kind`
+
+Behavior:
+
+1. Reads `data/render-draft.json`.
+2. Finds selected preset for `longform` or `shorts`.
+3. Creates a pending queue job.
+4. Appends the job to `data/queue.json` under `pending`.
+5. Writes queue atomically through `.tmp` + rename.
+6. Returns `{ ok: true, job, queue }`.
+
+Job type:
+
+```txt
+intro-preview-render
+```
+
+Current job status:
+
+```txt
+pending
+```
+
+Frontend behavior:
+
+- Render draft panel now shows a `큐에 추가` button.
+- Clicking it calls `POST /api/queue/from-render-draft/:kind`.
+- Returned queue is stored in app state.
+- Panel status changes to `큐에 추가됨`.
+
+Important: this only queues the job. It does not run FFmpeg yet.
+
 ## Important Rules Preserved
 
 - Do not touch sidebar.
@@ -127,10 +172,11 @@ Behavior:
 - Do not add Remotion.
 - Keep selected preset as data, not hardcoded UI state.
 - Do not add a new CSS file for this panel.
+- Do not start FFmpeg until the queued job processing pipeline is explicitly designed.
 
 ## Current Progress
 
-Estimated total project progress after this patch: 78–80%.
+Estimated total project progress after this patch: 82–84%.
 
 The system now supports:
 
@@ -142,6 +188,7 @@ The system now supports:
 - Regression validation.
 - Selected preset render/export preparation state.
 - Visible render draft confirmation panel in existing preset pages.
+- Queue pending job creation from confirmed render draft.
 
 ## Next Recommended Work
 
@@ -173,10 +220,17 @@ npm run test:preset-api
 - render draft panel updates
 - `data/render-draft.json` is created/updated
 
-7. Next implementation target:
+7. Click `큐에 추가` and confirm:
 
-- Add a render/export preparation action that turns the confirmed render draft into a queued local render job. Do not start actual FFmpeg processing until the queue payload shape is defined and reviewed.
+- panel says `큐에 추가됨`
+- `data/queue.json` gets a new `pending` job
+- no FFmpeg process starts yet
+
+8. Next implementation target:
+
+- Define the local queue worker/processor shape for pending `intro-preview-render` jobs.
+- Only after that, connect FFmpeg-oriented processing.
 
 ## Handoff Note
 
-The next worker should not jump directly into rendering. First define the render job payload shape from `data/render-draft.json`, then queue it through the existing Node/Express workflow.
+The next worker should not jump directly into FFmpeg execution. First define and inspect the pending queue job payload shape, then build a queue processor around that shape.
