@@ -1,0 +1,17 @@
+{
+  "presetId": "intro-006-city-pop-sunset-grid",
+  "sourceFile": "presets_02_10.html",
+  "sourceKey": "rose",
+  "sourceNumber": 6,
+  "sourceName": "06 · 장미 정원",
+  "song": "붉은 장미",
+  "lyric": "가시 속에 피어난 너의 이름",
+  "sourceFunctions": {
+    "frame": "buildRoseFrame",
+    "particles": "buildRoseParticles",
+    "equalizer": "buildRoseEq"
+  },
+  "preserveOriginal": true,
+  "implementationStatus": "mapped-not-yet-renderer-extracted",
+  "notes": "Future renderer must preserve original rose garden frame, rose particles, CTA, bottom bar, and rose EQ from the source file."
+}
