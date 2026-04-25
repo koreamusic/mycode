@@ -2,10 +2,11 @@
 
 ## Scope
 
-This patch connects selected intro presets to a render/export preparation state, exposes that state in the existing preset pages, allows the confirmed render draft to be added to the local render queue as a pending job, adds a safe queue worker state-transition skeleton, defines the local render output artifact shape, adds manifest-only processing, and adds a minimal dummy MP4 FFmpeg validation step.
+This patch connects selected intro presets to a render/export preparation state, exposes that state in the existing preset pages, allows the confirmed render draft to be added to the local render queue as a pending job, adds a safe queue worker state-transition skeleton, defines the local render output artifact shape, adds manifest-only processing, adds a minimal dummy MP4 FFmpeg validation step, and defines the first HTML preview capture page skeleton.
 
 It does not implement final preset rendering.
-It does not render the HTML/CSS preview to video yet.
+It does not capture frames yet.
+It does not assemble the actual HTML/CSS preview into video yet.
 It does not add a new render engine.
 It does not change the sidebar, page layout, preset list layout, or preview animation structure.
 
@@ -17,6 +18,7 @@ Continue using:
 - Express
 - HTML/CSS/JS browser preview
 - JSON preset data
+- browser capture later
 - FFmpeg-oriented local workflow
 
 Do not introduce Remotion.
@@ -110,13 +112,7 @@ Behavior:
 - Existing preset pages now include a small render draft panel inside the existing side panel.
 - The panel reuses the existing `empty-state` style to avoid creating a new CSS route.
 - On page hydration, the panel reads `GET /api/render-draft` and displays any saved selected preset.
-- After clicking a preset, the panel updates immediately with:
-  - title
-  - ratio
-  - batchId
-  - presetId
-  - flow summary
-  - variant
+- After clicking a preset, the panel updates immediately with title, ratio, batchId, presetId, flow summary, and variant.
 
 ### 7. Queue job creation from render draft added
 
@@ -147,12 +143,6 @@ Job type:
 intro-preview-render
 ```
 
-Current job status:
-
-```txt
-pending
-```
-
 Frontend behavior:
 
 - Render draft panel now shows a `큐에 추가` button.
@@ -171,17 +161,8 @@ Added/updated:
 Server worker APIs:
 
 - `POST /api/queue/worker/start-next`
-  - Moves first pending job to `currentJob`.
-  - Sets job status to `running`.
-  - Refuses if another job is already running.
-
 - `POST /api/queue/worker/complete-current`
-  - Moves `currentJob` to `completed`.
-  - Sets job status to `completed`.
-
 - `POST /api/queue/worker/fail-current`
-  - Moves `currentJob` to `failed`.
-  - Sets job status to `failed`.
 
 Frontend API helpers added:
 
@@ -195,17 +176,7 @@ Added:
 
 - `docs/render-output-spec.md`
 
-Defines:
-
-- output root: `output/renders/`
-- temp root: `temp/renders/`
-- render log root: `logs/renders/`
-- job folder naming using queue job id
-- primary future output file: `intro-preview.mp4`
-- safe first processor output: `intro-preview-manifest.json`
-- completed job result payload shape
-- failed job error payload shape
-- 12-second intro preview target duration
+Defines output/temp/log roots, job folder naming, future `intro-preview.mp4`, safe `intro-preview-manifest.json`, result payload, error payload, and 12-second target duration.
 
 ### 10. Render output path helper added
 
@@ -213,13 +184,7 @@ Added:
 
 - `server/core/render-output.js`
 
-Provides:
-
-- `INTRO_PREVIEW_DURATION_SECONDS`
-- `getRenderOutputPaths(rootDir, job)`
-- `ensureRenderOutputDirs(rootDir, job)`
-- `createRenderResultPayload(rootDir, job)`
-- `createRenderErrorPayload(rootDir, job, message, code)`
+Provides render output path and payload helpers only. It does not run FFmpeg.
 
 ### 11. Manifest-only processor added
 
@@ -235,17 +200,9 @@ Server API:
 
 Behavior:
 
-1. Reads `queue.currentJob`.
-2. Requires the current job type to be `intro-preview-render`.
-3. Creates output/temp/log directories according to `render-output.js`.
-4. Writes:
-   - `output/renders/<job-id>/intro-preview-manifest.json`
-5. Completes the job with the standard render result payload.
-6. If manifest processing fails, moves the job to `failed` with the standard error payload.
-
-Frontend helper added:
-
-- `api.processCurrentQueueManifest()`
+- Creates output/temp/log directories.
+- Writes `output/renders/<job-id>/intro-preview-manifest.json`.
+- Completes the job with the standard render result payload.
 
 Important: this processor only creates a manifest JSON file. It does not run FFmpeg and does not create MP4 output.
 
@@ -263,38 +220,70 @@ Server API:
 
 Behavior:
 
-1. Reads `queue.currentJob`.
-2. Requires the current job type to be `intro-preview-render`.
-3. Creates output/temp/log directories.
-4. Writes `intro-preview-manifest.json` with mode `dummy-mp4`.
-5. Runs FFmpeg to create a 12-second black 1920x1080 MP4:
-   - `output/renders/<job-id>/intro-preview.mp4`
-6. Writes FFmpeg stdout/stderr to:
-   - `logs/renders/<job-id>.log`
-7. Completes the job with the standard result payload.
-8. If FFmpeg fails, moves the job to `failed` with a standard error payload.
-
-Frontend helper added:
-
-- `api.processCurrentQueueDummyMp4()`
+- Creates output/temp/log directories.
+- Writes `intro-preview-manifest.json` with mode `dummy-mp4`.
+- Runs FFmpeg to create a 12-second black 1920x1080 MP4.
+- Writes FFmpeg stdout/stderr to `logs/renders/<job-id>.log`.
+- Completes or fails the job with standard payloads.
 
 Important: this is a pipeline validation output only. It is not final preset rendering and does not capture the HTML/CSS intro design.
+
+### 13. HTML preview capture plan added
+
+Added:
+
+- `docs/html-preview-capture-plan.md`
+
+Defines the Remotion-free real rendering direction:
+
+```txt
+queue.currentJob
+-> capture page
+-> browser frame/screenshot capture
+-> FFmpeg assembly
+```
+
+The preferred later browser tool is Playwright with Chromium, but Playwright has not been added yet.
+
+### 14. Capture page skeleton added
+
+Added:
+
+- `app/capture/intro-preview.html`
+- `app/scripts/capture/intro-preview-capture.js`
+
+Behavior:
+
+- Opens a full-screen black capture canvas.
+- Accepts `jobId` as query parameter.
+- Reads `GET /api/queue`.
+- Finds matching job in `currentJob`, `pending`, `completed`, or `failed`.
+- Uses the existing `renderSelectedPresetPreview()` path to render the selected preset preview.
+- Hides normal app layout/sidebar by using a dedicated capture page.
+
+Example URL:
+
+```txt
+/app/capture/intro-preview.html?jobId=<job-id>
+```
+
+Important: this is only a capture page skeleton. It does not yet automate browser screenshots or create frame sequences.
 
 ## Important Rules Preserved
 
 - Do not touch sidebar.
-- Do not change page layout.
+- Do not change main page layout.
 - Do not create another preview engine.
 - Do not duplicate preset data paths.
 - Do not change intro timing.
 - Do not add Remotion.
 - Keep selected preset as data, not hardcoded UI state.
-- Do not add a new CSS file for this panel.
+- Do not add Playwright until capture page contract is reviewed.
 - Do not treat dummy MP4 as final rendering.
 
 ## Current Progress
 
-Estimated total project progress after this patch: 91–92%.
+Estimated total project progress after this patch: 92–93%.
 
 The system now supports:
 
@@ -311,6 +300,7 @@ The system now supports:
 - Render output path/result/error payload spec.
 - Manifest-only queue processing.
 - Dummy FFmpeg MP4 pipeline validation.
+- Dedicated capture page skeleton for future HTML/CSS preview rendering.
 
 ## Next Recommended Work
 
@@ -320,41 +310,26 @@ The system now supports:
 npm run dev
 ```
 
-2. Validate preset batches:
+2. Add a queue job and start it.
 
-```bash
-npm run validate:preset-batches
+3. Open capture page manually:
+
+```txt
+http://localhost:3100/app/capture/intro-preview.html?jobId=<job-id>
 ```
 
-3. Run API smoke test:
+4. Confirm:
 
-```bash
-npm run test:preset-api
-```
+- selected preset preview appears
+- no sidebar is visible
+- preview fills capture viewport
+- title → CTA → bottom bar animation loop works
 
-4. Import all five preset batches.
+5. Next implementation target:
 
-5. Add a queue job from the render draft.
-
-6. Test dummy MP4 worker flow manually:
-
-```bash
-curl -X POST http://localhost:3100/api/queue/worker/start-next
-curl -X POST http://localhost:3100/api/queue/worker/process-current-dummy-mp4
-```
-
-7. Confirm:
-
-- `output/renders/<job-id>/intro-preview-manifest.json` exists
-- `output/renders/<job-id>/intro-preview.mp4` exists
-- `logs/renders/<job-id>.log` exists
-- `data/queue.json` moved the job to `completed`
-
-8. Next implementation target:
-
-- Define how to render the actual HTML/CSS preview to frames/video without introducing Remotion.
-- Candidate path: browser capture/headless Chromium or SVG/HTML-to-frame pipeline, then FFmpeg assembly.
+- Add a single screenshot capture helper after capture page is visually confirmed.
+- Do not add full frame sequence capture yet.
 
 ## Handoff Note
 
-The next worker must not mistake the dummy MP4 for final rendering. It only proves output paths, queue status transitions, FFmpeg availability, and logging.
+The next worker should first open the capture page manually and inspect it. If the capture page is wrong, fix it before adding Playwright or any browser automation.
