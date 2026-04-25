@@ -1,0 +1,51 @@
+{
+  "id": "intro-051-basic-template",
+  "title": "Basic Template",
+  "ratio": "16x9",
+  "variant": "minimal",
+  "mood": "starter intro preset",
+  "description": "A safe starter template for creating new 16x9 intro presets.",
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10
+  },
+  "visual": {
+    "frameStyle": "thin-white",
+    "background": "dark-blur",
+    "colorTheme": "white-black",
+    "accent": "#ffffff",
+    "accent2": "#c8a76a",
+    "palette": ["black", "white", "soft-gold"],
+    "typography": "clean-sans"
+  },
+  "layout": {
+    "frameStyle": "thin-white-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom",
+    "safeArea": "title-center"
+  },
+  "cta": {
+    "type": "subscribe",
+    "style": "minimal-pill",
+    "motion": "soft-pop"
+  },
+  "bottomBar": {
+    "style": "rounded-dark",
+    "showLyric": true,
+    "fallbackText": "title",
+    "endAnimation": "soft-pulse",
+    "animationSlot": "right"
+  },
+  "motion": {
+    "titleIn": "fade-rise",
+    "titleOut": "fade-out",
+    "ctaIn": "soft-pop",
+    "ctaOut": "fade-out",
+    "frameOut": "reverse-collapse",
+    "bottomBarIn": "slide-up-soft",
+    "loop": "subtle-breathe"
+  }
+}
