@@ -10,7 +10,8 @@
     "test:preset-api": "node scripts/test-preset-api.js",
     "import:preset-batch": "node scripts/import-preset-batch.js",
     "validate:preset-batches": "node scripts/validate-preset-batches.js",
-    "capture:intro-screenshot": "node scripts/capture-intro-screenshot.js"
+    "capture:intro-screenshot": "node scripts/capture-intro-screenshot.js",
+    "install:browser": "npx playwright install chromium"
   },
   "dependencies": {
     "chokidar": "^3.6.0",
@@ -18,6 +19,8 @@
     "fluent-ffmpeg": "^2.1.2",
     "ws": "^8.16.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "playwright": "^1.48.2"
+  },
   "private": true
 }
