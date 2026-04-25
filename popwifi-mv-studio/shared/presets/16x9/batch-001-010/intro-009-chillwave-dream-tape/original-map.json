@@ -1,0 +1,17 @@
+{
+  "presetId": "intro-009-chillwave-dream-tape",
+  "sourceFile": "presets_02_10.html",
+  "sourceKey": "star",
+  "sourceNumber": 9,
+  "sourceName": "09 · 별빛 오르골",
+  "song": "별에게 닿는 노래",
+  "lyric": "별 하나에 담은 너의 이름",
+  "sourceFunctions": {
+    "frame": "buildStarFrame",
+    "particles": "buildStarParticles",
+    "equalizer": "buildStarEq"
+  },
+  "preserveOriginal": true,
+  "implementationStatus": "mapped-not-yet-renderer-extracted",
+  "notes": "Future renderer must preserve original star music-box frame, star particles, CTA, bottom bar, and star EQ from the source file."
+}
