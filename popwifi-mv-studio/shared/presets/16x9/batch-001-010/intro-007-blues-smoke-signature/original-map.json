@@ -1,0 +1,17 @@
+{
+  "presetId": "intro-007-blues-smoke-signature",
+  "sourceFile": "presets_02_10.html",
+  "sourceKey": "guitar",
+  "sourceNumber": 7,
+  "sourceName": "07 · 어쿠스틱 기타",
+  "song": "어쿠스틱 오후",
+  "lyric": "기타 한 줄에 실어 보낸 마음",
+  "sourceFunctions": {
+    "frame": "buildGuitarFrame",
+    "particles": "buildGuitarParticles",
+    "equalizer": "buildGuitarEq"
+  },
+  "preserveOriginal": true,
+  "implementationStatus": "mapped-not-yet-renderer-extracted",
+  "notes": "Future renderer must preserve original acoustic guitar frame, guitar note particles, CTA, bottom bar, and guitar EQ from the source file."
+}
