@@ -40,6 +40,24 @@ export const api = {
       body: JSON.stringify({})
     });
   },
+  startNextQueueJob() {
+    return writeJson('/api/queue/worker/start-next', {
+      method: 'POST',
+      body: JSON.stringify({})
+    });
+  },
+  completeCurrentQueueJob(result = {}) {
+    return writeJson('/api/queue/worker/complete-current', {
+      method: 'POST',
+      body: JSON.stringify(result)
+    });
+  },
+  failCurrentQueueJob(error = {}) {
+    return writeJson('/api/queue/worker/fail-current', {
+      method: 'POST',
+      body: JSON.stringify(error)
+    });
+  },
   renderDraft() {
     return readJson('/api/render-draft');
   },
