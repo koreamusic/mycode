@@ -22,6 +22,20 @@ function getFlowSummary(preset) {
   ].filter(Boolean).join(' · ');
 }
 
+function getPresetVariant(preset) {
+  const source = [preset.id, preset.title, preset.mood, preset.category].filter(Boolean).join(' ').toLowerCase();
+  if (source.includes('lofi')) return 'lofi';
+  if (source.includes('acoustic') || source.includes('spring')) return 'acoustic';
+  if (source.includes('k-pop') || source.includes('kpop') || source.includes('neon')) return 'kpop';
+  if (source.includes('ballad') || source.includes('memory')) return 'ballad';
+  if (source.includes('city') || source.includes('retro')) return 'citypop';
+  if (source.includes('blues') || source.includes('smoke')) return 'blues';
+  if (source.includes('anime') || source.includes('sky')) return 'anime';
+  if (source.includes('chillwave') || source.includes('dream')) return 'chillwave';
+  if (source.includes('cafe') || source.includes('smooth')) return 'cafe';
+  return 'jazz';
+}
+
 function getPresetMeta(preset) {
   const layout = preset.layout || {};
   const visual = preset.visual || {};
@@ -39,6 +53,7 @@ function getPresetMeta(preset) {
     endAnimation: bottomBar.endAnimation || 'end animation not set',
     palette: Array.isArray(visual.palette) ? visual.palette.join(' / ') : '',
     typography: visual.typography || '',
+    variant: getPresetVariant(preset),
     flowSummary: getFlowSummary(preset)
   };
 }
@@ -49,6 +64,7 @@ export function renderSelectedPresetPreview(kind, preset) {
 
   const meta = getPresetMeta(preset);
   target.classList.add('has-preset-preview');
+  target.dataset.presetVariant = meta.variant;
   target.innerHTML = [
     '<div class="preset-preview-inner preset-timeline-shell">',
     '  <div class="preset-preview-frame">',
