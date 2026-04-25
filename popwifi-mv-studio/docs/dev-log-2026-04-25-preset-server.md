@@ -222,6 +222,42 @@ Behavior:
 - Each variant changes preview accent colors, secondary accent, glow, frame line color, CTA glow, progress bar, and bottom bar tint.
 - This is still a browser preview layer only. It does not alter source preset JSON or introduce another engine.
 
+### 10. Preset regression guard added
+
+Added:
+
+- `scripts/validate-preset-batches.js`
+- `npm run validate:preset-batches`
+- `docs/preset-regression-rules.md`
+
+Purpose:
+
+- Prevent a new batch from breaking previous batches.
+- Prevent one preset group from silently changing timing, data shape, preview route, CSS route, or stack rules.
+- Lock the implementation path to Node/Express + HTML/CSS/JS + JSON + FFmpeg-oriented workflow.
+- Explicitly keep Remotion out of this project.
+
+Validation checks:
+
+- Import JSON files exist.
+- `batchId` matches `batch-001-010` format.
+- Each batch has 1 to 10 presets.
+- Preset ids are unique inside a batch and across import files.
+- Required fields exist: `id`, `title`, `category`, `description`.
+- Required intro timing remains locked:
+  - `frameSeconds: 10`
+  - `titleSeconds: 5`
+  - `ctaSeconds: 5`
+  - `bottomBarStartsAfterSeconds: 10`
+- Optional `variant` values are in the allowed list.
+- Optional visual token colors use `#RRGGBB` format.
+
+Before adding any future batch, run:
+
+```bash
+npm run validate:preset-batches
+```
+
 ## Important Rules Preserved
 
 - Do not touch UI unless explicitly requested.
@@ -233,26 +269,28 @@ Behavior:
 - Keep files modular so 10-preset batch import can be added safely later.
 - Keep implementation aligned with Node/Express + HTML/CSS/JS + JSON + FFmpeg-oriented local workflow.
 - Do not introduce Remotion.
+- Do not add a new preset batch until `npm run validate:preset-batches` passes.
 
 ## Current Progress
 
-Estimated total project progress after this patch: 52–54%.
+Estimated total project progress after this patch: 55–57%.
 
-The preset server layer now has a local smoke-test path, 10-item batch import tooling, the first real 16:9 intro preset batch JSON, richer preset list rendering, selected preset preview binding, animated HTML/CSS preview timeline, and variant-based preview styling for the first 10 intro presets.
+The preset server layer now has a local smoke-test path, 10-item batch import tooling, the first real 16:9 intro preset batch JSON, richer preset list rendering, selected preset preview binding, animated HTML/CSS preview timeline, variant-based preview styling for the first 10 intro presets, and regression validation to protect future batches.
 
 ## Next Recommended Work
 
 1. Run local server: `npm run dev`.
-2. In another terminal, run: `npm run test:preset-api`.
-3. Test real batch import:
+2. In another terminal, run: `npm run validate:preset-batches`.
+3. Run: `npm run test:preset-api`.
+4. Test real batch import:
    - `npm run import:preset-batch -- shared/presets/imports/intro-batch-001-010.json`
-4. Confirm imported files under:
+5. Confirm imported files under:
    - `shared/presets/16x9/batch-001-010/`
-5. Open the Longform Intro page.
-6. Click each imported preset and confirm:
+6. Open the Longform Intro page.
+7. Click each imported preset and confirm:
    - title → CTA → bottom bar loop works
    - each preset has a visually different accent/frame/glow direction
-7. Next implementation target: add a pause/replay preview control or connect selected preset to a render/export preparation state, without changing the page layout.
+8. Next implementation target: add `intro-batch-011-020.json` using the same schema, then validate before import.
 
 ## Notes
 
