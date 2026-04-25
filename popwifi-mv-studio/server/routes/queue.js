@@ -10,6 +10,7 @@ const {
   processIntroPreviewManifestOnly,
   processIntroPreviewDummyMp4
 } = require('../core/render-processor');
+const { processIntroPreviewCaptureMp4 } = require('../core/render-capture-processor');
 
 function readQueue(queuePath) {
   return JSON.parse(fs.readFileSync(queuePath, 'utf8'));
@@ -68,6 +69,22 @@ function processCurrentJob(context, processor) {
   return { status: 200, body: Object.assign({ processed }, completed) };
 }
 
+async function processCurrentJobAsync(context, processor) {
+  const queue = readQueueFromWorker(context.queuePath);
+  if (!queue.currentJob) {
+    return { status: 409, body: { ok: false, reason: 'no current job', queue } };
+  }
+
+  const processed = await processor(context.rootDir, queue.currentJob, { baseUrl: 'http://localhost:' + context.config.port });
+  if (!processed.ok) {
+    const failed = failCurrentJob(context.queuePath, processed.error);
+    return { status: 500, body: Object.assign({ processed }, failed) };
+  }
+
+  const completed = completeCurrentJob(context.queuePath, processed.result);
+  return { status: 200, body: Object.assign({ processed }, completed) };
+}
+
 function registerQueueRoutes(app, context) {
   app.get('/api/queue', (req, res) => {
     res.json(readQueue(context.queuePath));
@@ -106,6 +123,11 @@ function registerQueueRoutes(app, context) {
 
   app.post('/api/queue/worker/process-current-dummy-mp4', (req, res) => {
     const result = processCurrentJob(context, processIntroPreviewDummyMp4);
+    res.status(result.status).json(result.body);
+  });
+
+  app.post('/api/queue/worker/process-current-capture-mp4', async (req, res) => {
+    const result = await processCurrentJobAsync(context, processIntroPreviewCaptureMp4);
     res.status(result.status).json(result.body);
   });
 
