@@ -1,7 +1,8 @@
 import { api } from '../core/api.js';
-import { setConfig, setQueue } from '../core/state.js';
+import { setConfig, setQueue, setRenderDraft } from '../core/state.js';
 import { loadPresetList } from '../presets/preset-loader.js';
 import { bindPresetActions, bindPresetPanelActions } from '../presets/preset-actions.js';
+import { renderDraftPanel } from '../render/render-draft-panel.js';
 
 export async function hydratePage(pageName) {
   if (pageName === 'queue') await hydrateQueuePage();
@@ -14,12 +15,24 @@ async function hydrateLongformPage() {
   await loadPresetList({ ratio: '16x9', kind: 'longform', targetId: 'longformPresetList' });
   bindPresetActions({ ratio: '16x9', kind: 'longform', targetId: 'longformPresetList' });
   bindPresetPanelActions({ ratio: '16x9', kind: 'longform', targetId: 'longformPresetList' });
+  await hydrateRenderDraftPanel('longform');
 }
 
 async function hydrateShortsPage() {
   await loadPresetList({ ratio: '9x16', kind: 'shorts', targetId: 'shortsPresetList' });
   bindPresetActions({ ratio: '9x16', kind: 'shorts', targetId: 'shortsPresetList' });
   bindPresetPanelActions({ ratio: '9x16', kind: 'shorts', targetId: 'shortsPresetList' });
+  await hydrateRenderDraftPanel('shorts');
+}
+
+async function hydrateRenderDraftPanel(kind) {
+  try {
+    const draft = await api.renderDraft();
+    setRenderDraft(draft);
+    renderDraftPanel(kind, draft);
+  } catch (error) {
+    renderDraftPanel(kind, null);
+  }
 }
 
 async function hydrateQueuePage() {
