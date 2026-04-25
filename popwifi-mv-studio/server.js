@@ -35,6 +35,7 @@ app.use(express.json({ limit: '20mb' }));
 app.use('/app', express.static(path.join(rootDir, 'app')));
 app.use('/assets', express.static(path.join(rootDir, 'assets')));
 app.use('/output', express.static(path.join(rootDir, 'output')));
+app.use('/shared', express.static(path.join(rootDir, 'shared')));
 
 app.get('/', (req, res) => {
   res.redirect('/app/');
