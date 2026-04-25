@@ -164,6 +164,31 @@ async function hydrateSettingsPage() {
     });
   }
 
+  const bulkDeactivateBtn = document.getElementById('bulk-deactivate-btn');
+  const bulkActivateBtn = document.getElementById('bulk-activate-btn');
+  const bulkResult = document.getElementById('bulk-result');
+
+  async function runBulkAction(active) {
+    const ratio = (document.getElementById('bulk-ratio') || {}).value;
+    const batchId = ((document.getElementById('bulk-batch') || {}).value || '').trim();
+    if (!batchId) { if (bulkResult) bulkResult.textContent = '배치 ID를 입력하세요.'; return; }
+    try {
+      if (bulkDeactivateBtn) bulkDeactivateBtn.disabled = true;
+      if (bulkActivateBtn) bulkActivateBtn.disabled = true;
+      if (bulkResult) bulkResult.textContent = '처리 중...';
+      const result = active ? await api.activateAllInBatch(ratio, batchId) : await api.deactivateAllInBatch(ratio, batchId);
+      if (bulkResult) bulkResult.textContent = (active ? '복원' : '비활성화') + ' 완료: ' + (result.updated || 0) + '개';
+    } catch (error) {
+      if (bulkResult) bulkResult.textContent = '오류: ' + (error.message || '실패');
+    } finally {
+      if (bulkDeactivateBtn) bulkDeactivateBtn.disabled = false;
+      if (bulkActivateBtn) bulkActivateBtn.disabled = false;
+    }
+  }
+
+  if (bulkDeactivateBtn) bulkDeactivateBtn.addEventListener('click', () => runBulkAction(false));
+  if (bulkActivateBtn) bulkActivateBtn.addEventListener('click', () => runBulkAction(true));
+
   const fontsRefreshBtn = document.getElementById('fonts-refresh-btn');
   if (fontsRefreshBtn) {
     loadFontList();

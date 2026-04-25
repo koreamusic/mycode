@@ -31,5 +31,25 @@
       <button class="control-btn" id="preset-import-btn">배치 가져오기</button>
       <div id="preset-import-result" style="margin-top:0.5rem;font-size:0.8rem;opacity:0.7;"></div>
     </article>
+    <article class="card">
+      <h2>프리셋 일괄 관리</h2>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:12px;">배치 단위로 프리셋을 비활성화하거나 복원합니다.</p>
+      <div class="field-row">
+        <label class="field-label" for="bulk-ratio">비율</label>
+        <select class="field-input" id="bulk-ratio">
+          <option value="16x9">16x9 (롱폼)</option>
+          <option value="9x16">9x16 (숏츠)</option>
+        </select>
+      </div>
+      <div class="field-row">
+        <label class="field-label" for="bulk-batch">배치 ID</label>
+        <input class="field-input" type="text" id="bulk-batch" placeholder="batch-001-010" autocomplete="off" />
+      </div>
+      <div class="field-actions" style="flex-wrap:wrap;gap:8px;">
+        <button class="control-btn" id="bulk-deactivate-btn">전체 비활성화</button>
+        <button class="control-btn" id="bulk-activate-btn">전체 복원</button>
+        <span class="field-result" id="bulk-result"></span>
+      </div>
+    </article>
   </div>
 </section>

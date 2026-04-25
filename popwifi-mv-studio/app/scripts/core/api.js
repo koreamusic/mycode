@@ -112,6 +112,24 @@ export const api = {
       body: JSON.stringify({})
     });
   },
+  activatePreset(ratio, batchId, presetId) {
+    return writeJson('/api/presets/' + ratio + '/batch/' + batchId + '/' + presetId + '/activate', {
+      method: 'PATCH',
+      body: JSON.stringify({})
+    });
+  },
+  deactivateAllInBatch(ratio, batchId) {
+    return writeJson('/api/presets/' + ratio + '/batch/' + batchId + '/deactivate-all', {
+      method: 'PATCH',
+      body: JSON.stringify({})
+    });
+  },
+  activateAllInBatch(ratio, batchId) {
+    return writeJson('/api/presets/' + ratio + '/batch/' + batchId + '/activate-all', {
+      method: 'PATCH',
+      body: JSON.stringify({})
+    });
+  },
   saveConfig(updates) {
     return writeJson('/api/config', {
       method: 'PATCH',

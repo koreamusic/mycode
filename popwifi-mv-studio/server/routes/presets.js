@@ -6,7 +6,9 @@ const {
   readPresetConfig,
   writePresetConfig,
   upsertPresetConfig,
-  markPresetInactive
+  markPresetInactive,
+  markPresetActive,
+  bulkSetBatchActive
 } = require('../core/preset-store');
 const { materializeImportedPresetBatches } = require('../core/preset-import-materializer');
 const fs = require('fs');
@@ -96,6 +98,25 @@ function registerPresetRoutes(app, context) {
     const preset = markPresetInactive(context.rootDir, req.params.ratio, req.params.batchId, req.params.presetId);
     if (!preset) return res.status(404).json({ error: 'preset not found' });
     res.json({ ok: true, preset });
+  });
+
+  app.patch('/api/presets/:ratio/batch/:batchId/:presetId/activate', (req, res) => {
+    if (!validateParams(res, { ratio: req.params.ratio, batchId: req.params.batchId, presetId: req.params.presetId })) return;
+    const preset = markPresetActive(context.rootDir, req.params.ratio, req.params.batchId, req.params.presetId);
+    if (!preset) return res.status(404).json({ error: 'preset not found' });
+    res.json({ ok: true, preset });
+  });
+
+  app.patch('/api/presets/:ratio/batch/:batchId/deactivate-all', (req, res) => {
+    if (!validateParams(res, { ratio: req.params.ratio, batchId: req.params.batchId })) return;
+    const result = bulkSetBatchActive(context.rootDir, req.params.ratio, req.params.batchId, false);
+    res.json({ ok: true, updated: result.updated });
+  });
+
+  app.patch('/api/presets/:ratio/batch/:batchId/activate-all', (req, res) => {
+    if (!validateParams(res, { ratio: req.params.ratio, batchId: req.params.batchId })) return;
+    const result = bulkSetBatchActive(context.rootDir, req.params.ratio, req.params.batchId, true);
+    res.json({ ok: true, updated: result.updated });
   });
 
   app.post('/api/presets/import', (req, res) => {

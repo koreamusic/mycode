@@ -103,6 +103,26 @@ function markPresetInactive(rootDir, ratio, batchId, presetId) {
   return writePresetConfig(rootDir, ratio, batchId, presetId, nextConfig);
 }
 
+function markPresetActive(rootDir, ratio, batchId, presetId) {
+  const current = readPresetConfig(rootDir, ratio, batchId, presetId);
+  if (!current) return null;
+  const nextConfig = Object.assign({}, current, { active: true, updatedAt: new Date().toISOString() });
+  return writePresetConfig(rootDir, ratio, batchId, presetId, nextConfig);
+}
+
+function bulkSetBatchActive(rootDir, ratio, batchId, active) {
+  const batch = readPresetBatch(rootDir, ratio, batchId, { includeInactive: true });
+  if (!batch || !Array.isArray(batch.presets)) return { updated: 0 };
+  let updated = 0;
+  batch.presets.forEach((preset) => {
+    const current = readPresetConfig(rootDir, ratio, batchId, preset.id);
+    if (!current) return;
+    writePresetConfig(rootDir, ratio, batchId, preset.id, Object.assign({}, current, { active, updatedAt: new Date().toISOString() }));
+    updated++;
+  });
+  return { updated };
+}
+
 module.exports = {
   readBatches,
   createNextBatch,
@@ -111,5 +131,7 @@ module.exports = {
   readPresetConfig,
   writePresetConfig,
   upsertPresetConfig,
-  markPresetInactive
+  markPresetInactive,
+  markPresetActive,
+  bulkSetBatchActive
 };
