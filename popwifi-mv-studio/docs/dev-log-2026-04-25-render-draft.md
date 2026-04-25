@@ -2,7 +2,7 @@
 
 ## Scope
 
-This patch connects selected intro presets to a render/export preparation state, exposes that state in the existing preset pages, and allows the confirmed render draft to be added to the local render queue as a pending job.
+This patch connects selected intro presets to a render/export preparation state, exposes that state in the existing preset pages, allows the confirmed render draft to be added to the local render queue as a pending job, and adds a safe queue worker state-transition skeleton.
 
 It does not start actual rendering.
 It does not execute FFmpeg.
@@ -162,6 +162,37 @@ Frontend behavior:
 
 Important: this only queues the job. It does not run FFmpeg yet.
 
+### 8. Queue worker state-transition skeleton added
+
+Added/updated:
+
+- `server/core/queue-worker.js`
+- `server/routes/queue.js`
+- `app/scripts/core/api.js`
+
+Server worker APIs:
+
+- `POST /api/queue/worker/start-next`
+  - Moves first pending job to `currentJob`.
+  - Sets job status to `running`.
+  - Refuses if another job is already running.
+
+- `POST /api/queue/worker/complete-current`
+  - Moves `currentJob` to `completed`.
+  - Sets job status to `completed`.
+
+- `POST /api/queue/worker/fail-current`
+  - Moves `currentJob` to `failed`.
+  - Sets job status to `failed`.
+
+Frontend API helpers added:
+
+- `api.startNextQueueJob()`
+- `api.completeCurrentQueueJob(result)`
+- `api.failCurrentQueueJob(error)`
+
+Important: these are state-transition helpers only. They do not execute FFmpeg or create output files.
+
 ## Important Rules Preserved
 
 - Do not touch sidebar.
@@ -176,7 +207,7 @@ Important: this only queues the job. It does not run FFmpeg yet.
 
 ## Current Progress
 
-Estimated total project progress after this patch: 82–84%.
+Estimated total project progress after this patch: 85–87%.
 
 The system now supports:
 
@@ -189,6 +220,7 @@ The system now supports:
 - Selected preset render/export preparation state.
 - Visible render draft confirmation panel in existing preset pages.
 - Queue pending job creation from confirmed render draft.
+- Queue state transitions: pending → running → completed/failed.
 
 ## Next Recommended Work
 
@@ -226,11 +258,18 @@ npm run test:preset-api
 - `data/queue.json` gets a new `pending` job
 - no FFmpeg process starts yet
 
-8. Next implementation target:
+8. Test worker transition APIs manually:
 
-- Define the local queue worker/processor shape for pending `intro-preview-render` jobs.
+```bash
+curl -X POST http://localhost:3100/api/queue/worker/start-next
+curl -X POST http://localhost:3100/api/queue/worker/complete-current -H "Content-Type: application/json" -d "{}"
+```
+
+9. Next implementation target:
+
+- Define the actual local output artifact shape for pending `intro-preview-render` jobs.
 - Only after that, connect FFmpeg-oriented processing.
 
 ## Handoff Note
 
-The next worker should not jump directly into FFmpeg execution. First define and inspect the pending queue job payload shape, then build a queue processor around that shape.
+The next worker should not jump directly into FFmpeg execution. First define output file naming, temp folder behavior, and render job result payload shape, then build processing around that shape.
