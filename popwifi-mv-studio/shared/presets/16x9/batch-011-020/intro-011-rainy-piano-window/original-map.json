@@ -1,0 +1,17 @@
+{
+  "presetId": "intro-011-rainy-piano-window",
+  "sourceFile": "presets_11_30.html",
+  "sourceKey": "cassette",
+  "sourceNumber": 11,
+  "sourceName": "11 · 빈티지 카세트",
+  "song": "Tape Rewind",
+  "lyric": "낡은 테이프처럼 돌아가는 기억들",
+  "sourceFunctions": {
+    "frame": "cassette.frame",
+    "particles": "cassette.particles",
+    "equalizer": "cassette.eq"
+  },
+  "preserveOriginal": true,
+  "implementationStatus": "mapped-not-yet-renderer-extracted",
+  "notes": "Future renderer must preserve original cassette reel frame, dust particles, scanline overlay, CTA, bottom bar, and cassette EQ from the source file."
+}
