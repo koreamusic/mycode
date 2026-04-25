@@ -38,6 +38,7 @@ The project already has:
 - single screenshot capture helper script
 - reduced-FPS frame sequence capture helper script
 - frame sequence FFmpeg assembly helper script
+- queue-integrated capture MP4 processor
 - Playwright dev dependency for Chromium screenshot capture
 
 The dummy MP4 proves FFmpeg path, output folders, logging, and queue transitions only.
@@ -45,21 +46,21 @@ It is not final rendering.
 
 ## Target Rendering Strategy
 
-The first real visual render should use a browser-capture pipeline:
+The first real visual render uses this browser-capture pipeline:
 
 ```txt
 queue.currentJob
--> load selected preset data
--> open a local capture page in a browser engine
--> render the same HTML/CSS/JS preview at fixed viewport size
--> capture frames or screenshots for 12 seconds
--> assemble frames into intro-preview.mp4 with FFmpeg
+-> capture page
+-> Playwright Chromium screenshots
+-> PNG frame sequence
+-> FFmpeg assembly
+-> intro-preview.mp4
 ```
 
 ## Why Browser Capture
 
 The preview is already HTML/CSS/JS.
-To avoid duplicating design logic, the render should capture the existing preview route instead of recreating the design in another renderer.
+To avoid duplicating design logic, the render captures the existing preview route instead of recreating the design in another renderer.
 
 This prevents:
 
@@ -97,7 +98,8 @@ For 16:9 longform:
 
 ```txt
 1920x1080
-30fps
+30fps target later
+6fps current queue-integrated validation
 12 seconds
 ```
 
@@ -130,16 +132,6 @@ Browser capture tool:
 Playwright with Chromium
 ```
 
-Reason:
-
-- reliable local headless browser control
-- viewport control
-- screenshot capture
-- no Remotion dependency
-- common Node ecosystem fit
-
-Playwright is listed in `devDependencies`.
-
 Install browser runtime after `npm install`:
 
 ```bash
@@ -154,7 +146,7 @@ npx playwright install chromium
 
 ## Single Screenshot Helper
 
-Added helper:
+Helper:
 
 ```txt
 scripts/capture-intro-screenshot.js
@@ -166,32 +158,17 @@ Package script:
 npm run capture:intro-screenshot -- <job-id>
 ```
 
-Optional output path:
-
-```bash
-npm run capture:intro-screenshot -- <job-id> temp/captures/<job-id>/intro-preview.png
-```
-
 Default output:
 
 ```txt
 temp/captures/<job-id>/intro-preview.png
 ```
 
-This helper:
-
-- opens `/app/capture/intro-preview.html?jobId=<job-id>`
-- sets viewport to `1920x1080`
-- waits briefly for preview hydration
-- saves one PNG screenshot
-
-It does not capture frame sequences.
-It does not assemble video.
-It does not run FFmpeg.
+This helper does not capture frame sequences, assemble video, or run FFmpeg.
 
 ## Reduced-FPS Frame Sequence Helper
 
-Added helper:
+Helper:
 
 ```txt
 scripts/capture-intro-frame-sequence.js
@@ -201,12 +178,6 @@ Package script:
 
 ```bash
 npm run capture:intro-frames -- <job-id>
-```
-
-Optional output directory:
-
-```bash
-npm run capture:intro-frames -- <job-id> temp/captures/<job-id>/frames
 ```
 
 Default output:
@@ -230,18 +201,9 @@ Environment overrides:
 POPWIFI_CAPTURE_FPS=6 POPWIFI_CAPTURE_DURATION=12 npm run capture:intro-frames -- <job-id>
 ```
 
-This helper:
-
-- opens `/app/capture/intro-preview.html?jobId=<job-id>`
-- captures PNG frames over time
-- saves them as `frame-000001.png`, `frame-000002.png`, etc.
-
-It does not assemble video.
-It does not run FFmpeg.
-
 ## Frame Sequence Assembly Helper
 
-Added helper:
+Helper:
 
 ```txt
 scripts/assemble-intro-frames.js
@@ -251,12 +213,6 @@ Package script:
 
 ```bash
 npm run assemble:intro-frames -- <job-id>
-```
-
-Optional explicit paths:
-
-```bash
-npm run assemble:intro-frames -- <job-id> temp/captures/<job-id>/frames output/captures/<job-id>/intro-preview.mp4
 ```
 
 Default input:
@@ -277,60 +233,78 @@ Default log:
 logs/captures/<job-id>-assemble.log
 ```
 
-Default FPS:
+This is a manual capture test path.
+
+## Queue-Integrated Capture MP4 Processor
+
+Added processor:
 
 ```txt
-6fps
+server/core/render-capture-processor.js
 ```
 
-Environment override:
+Server route:
 
-```bash
-POPWIFI_CAPTURE_FPS=6 npm run assemble:intro-frames -- <job-id>
+```txt
+POST /api/queue/worker/process-current-capture-mp4
 ```
 
-This helper:
+Frontend helper:
 
-- validates that frame PNGs exist
-- assembles them with FFmpeg
-- writes an MP4 from captured preview frames
-- writes an assembly log
+```txt
+api.processCurrentQueueCaptureMp4()
+```
 
-This is still a local capture test path. It is not yet integrated into the queue processor.
+Behavior:
+
+```txt
+queue.currentJob
+-> ensure output/temp/log folders
+-> open /app/capture/intro-preview.html?jobId=<job-id>
+-> capture 6fps / 12s PNG frames to temp/renders/<job-id>/frames/
+-> write output/renders/<job-id>/intro-preview-manifest.json
+-> assemble frames into output/renders/<job-id>/intro-preview.mp4
+-> write logs/renders/<job-id>.log
+-> move currentJob to completed
+```
+
+Failure behavior:
+
+```txt
+capture/assembly error
+-> standard render error payload
+-> move currentJob to failed
+```
 
 ## First Real Rendering Milestones
 
 ### Milestone 1 — Capture Page Static Proof
 
-- Build `/app/capture/intro-preview.html`.
-- Load one preset by job id.
-- Render a still preview frame.
-- No FFmpeg.
-
 Status: implemented as capture page skeleton.
 
 ### Milestone 2 — Single Screenshot Capture
-
-- Add a Node capture helper.
-- Use browser automation to capture one PNG frame.
-- Save under `temp/captures/<job-id>/intro-preview.png` first.
 
 Status: helper added, Playwright dependency added.
 
 ### Milestone 3 — Frame Sequence Capture
 
-- Capture 12 seconds at reduced test FPS first, for example 6fps.
-- Confirm animation phases visually.
-- Then move to 30fps.
-
 Status: reduced-FPS helper added.
 
 ### Milestone 4 — FFmpeg Assembly
 
-- Assemble PNG frames into MP4.
-- Output to `output/captures/<job-id>/intro-preview.mp4` in the manual test path.
-
 Status: helper added for manual capture test path.
+
+### Milestone 5 — Queue-Integrated Capture MP4
+
+Status: implemented at 6fps validation level.
+
+Not yet final:
+
+- 30fps production capture
+- 9:16 capture-specific viewport
+- audio/music integration
+- subtitle/lyrics timing integration
+- final FFmpeg composition rules
 
 ## Avoided Shortcut
 
@@ -353,11 +327,10 @@ Before real capture is considered successful:
 
 ## Current Progress Marker
 
-After this FFmpeg frame assembly helper patch, estimated project progress is 96–97%.
+After queue-integrated capture MP4 processor, estimated project progress is 97–98%.
 
 Next safe implementation:
 
-- Run frame capture at 6fps.
-- Assemble captured frames into MP4.
-- Manually inspect the MP4.
-- Only after visual confirmation, integrate capture+assembly into the queue processor.
+- Run the queue-integrated capture MP4 processor locally.
+- Inspect generated MP4.
+- If visual match is acceptable, add UI button for `process-current-capture-mp4` or create a one-click local render flow.
