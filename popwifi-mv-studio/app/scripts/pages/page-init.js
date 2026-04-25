@@ -3,12 +3,14 @@ import { setConfig, setQueue, setRenderDraft } from '../core/state.js';
 import { loadPresetList } from '../presets/preset-loader.js';
 import { bindPresetActions, bindPresetPanelActions } from '../presets/preset-actions.js';
 import { renderDraftPanel } from '../render/render-draft-panel.js';
+import { hydrateRenderResults } from '../project/render-results.js';
 
 export async function hydratePage(pageName) {
   if (pageName === 'queue') await hydrateQueuePage();
   if (pageName === 'longform') await hydrateLongformPage();
   if (pageName === 'shorts') await hydrateShortsPage();
   if (pageName === 'settings') await hydrateSettingsPage();
+  if (pageName === 'project') await hydrateProjectPage();
 }
 
 async function hydrateLongformPage() {
@@ -23,6 +25,10 @@ async function hydrateShortsPage() {
   bindPresetActions({ ratio: '9x16', kind: 'shorts', targetId: 'shortsPresetList' });
   bindPresetPanelActions({ ratio: '9x16', kind: 'shorts', targetId: 'shortsPresetList' });
   await hydrateRenderDraftPanel('shorts');
+}
+
+async function hydrateProjectPage() {
+  await hydrateRenderResults();
 }
 
 async function hydrateRenderDraftPanel(kind) {
