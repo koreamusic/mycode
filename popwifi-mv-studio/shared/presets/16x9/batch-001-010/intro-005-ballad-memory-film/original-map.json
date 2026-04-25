@@ -1,0 +1,17 @@
+{
+  "presetId": "intro-005-ballad-memory-film",
+  "sourceFile": "presets_02_10.html",
+  "sourceKey": "bamboo",
+  "sourceNumber": 5,
+  "sourceName": "05 · 수묵 대나무",
+  "song": "대숲의 바람",
+  "lyric": "푸른 대숲 사이로 스며드는 새벽",
+  "sourceFunctions": {
+    "frame": "buildBambooFrame",
+    "particles": "buildBambooParticles",
+    "equalizer": "buildBambooEq"
+  },
+  "preserveOriginal": true,
+  "implementationStatus": "mapped-not-yet-renderer-extracted",
+  "notes": "Future renderer must preserve original ink-bamboo frame, bamboo particles, CTA, bottom bar, and bamboo EQ from the source file."
+}
