@@ -1,1 +1,53 @@
-{"id":"intro-003-acoustic-spring-card","title":"Acoustic Spring Card","category":"intro","mood":"fresh, acoustic, spring morning","description":"Bright acoustic intro with airy card frame, gentle title reveal, clean CTA, and light lyric bar.","active":true,"ratio":"16x9","batchId":"batch-001-010","flow":{"frameSeconds":10,"titleSeconds":5,"ctaSeconds":5,"bottomBarStartsAfterSeconds":10,"frameExit":"reverse-card-fold"},"layout":{"frameStyle":"rounded-cream-paper-frame","titlePosition":"center-middle","ctaPosition":"center-middle","bottomBarPosition":"bottom-safe","bottomBarAlign":"center"},"visual":{"palette":["cream","fresh green","soft sky blue","light wood"],"texture":"paper grain and soft daylight bloom","typography":"clean serif title with handwritten accent"},"cta":{"style":"light paper sticker CTA icons","items":["like","subscribe","notification"]},"bottomBar":{"style":"clear cream-tinted rounded bar","endAnimation":"small falling leaf loop","contentFallback":"title"},"layers":[]}
+{
+  "id": "intro-003-acoustic-spring-card",
+  "title": "03 · 가을 단풍",
+  "category": "intro",
+  "variant": "ballad",
+  "mood": "autumn maple, falling leaves, nostalgic ballad",
+  "description": "원본 presets_02_10.html의 03 가을 단풍 프리셋 기준 메타입니다. 원본 단풍 프레임, 낙엽 파티클, 좋아요/구독 CTA, 하단바, 단풍 EQ를 보존해야 합니다.",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-001-010",
+  "sourceOriginal": {
+    "sourceFile": "presets_02_10.html",
+    "sourceKey": "maple",
+    "sourceNumber": 3,
+    "sourceName": "03 · 가을 단풍",
+    "song": "가을 편지",
+    "lyric": "낙엽처럼 떨어지던 그날의 기억",
+    "frameFunction": "buildMapleFrame",
+    "particleFunction": "buildMapleParticles",
+    "equalizerFunction": "buildMapleEq",
+    "status": "metadata-aligned-renderer-not-yet-extracted"
+  },
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "source-original"
+  },
+  "layout": {
+    "frameStyle": "source: buildMapleFrame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-bottom",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "left"
+  },
+  "visual": {
+    "accent": "#d4701a",
+    "palette": ["autumn orange", "deep brown", "warm ivory", "dark background"],
+    "texture": "source original falling maple particles and autumn atmosphere",
+    "typography": "source original Nanum Myeongjo / serif mood"
+  },
+  "cta": {
+    "style": "source original animated leaf-like like / subscribe CTA",
+    "items": ["like", "subscribe", "notification"]
+  },
+  "bottomBar": {
+    "style": "source original autumn bottom bar with disk and maple EQ",
+    "endAnimation": "source original maple EQ",
+    "contentFallback": "title"
+  },
+  "layers": []
+}
