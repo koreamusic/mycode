@@ -1,0 +1,17 @@
+{
+  "presetId": "intro-003-acoustic-spring-card",
+  "sourceFile": "presets_02_10.html",
+  "sourceKey": "maple",
+  "sourceNumber": 3,
+  "sourceName": "03 · 가을 단풍",
+  "song": "가을 편지",
+  "lyric": "낙엽처럼 떨어지던 그날의 기억",
+  "sourceFunctions": {
+    "frame": "buildMapleFrame",
+    "particles": "buildMapleParticles",
+    "equalizer": "buildMapleEq"
+  },
+  "preserveOriginal": true,
+  "implementationStatus": "mapped-not-yet-renderer-extracted",
+  "notes": "Future renderer must preserve original maple frame, falling maple particles, CTA, bottom bar, and maple EQ from the source file."
+}
