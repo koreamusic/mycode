@@ -2,10 +2,10 @@
 
 ## Scope
 
-This patch connects selected intro presets to a render/export preparation state, exposes that state in the existing preset pages, allows the confirmed render draft to be added to the local render queue as a pending job, adds a safe queue worker state-transition skeleton, defines the local render output artifact shape, and adds manifest-only processing.
+This patch connects selected intro presets to a render/export preparation state, exposes that state in the existing preset pages, allows the confirmed render draft to be added to the local render queue as a pending job, adds a safe queue worker state-transition skeleton, defines the local render output artifact shape, adds manifest-only processing, and adds a minimal dummy MP4 FFmpeg validation step.
 
-It does not start actual video rendering.
-It does not execute FFmpeg.
+It does not implement final preset rendering.
+It does not render the HTML/CSS preview to video yet.
 It does not add a new render engine.
 It does not change the sidebar, page layout, preset list layout, or preview animation structure.
 
@@ -160,8 +160,6 @@ Frontend behavior:
 - Returned queue is stored in app state.
 - Panel status changes to `큐에 추가됨`.
 
-Important: this only queues the job. It does not run FFmpeg yet.
-
 ### 8. Queue worker state-transition skeleton added
 
 Added/updated:
@@ -190,8 +188,6 @@ Frontend API helpers added:
 - `api.startNextQueueJob()`
 - `api.completeCurrentQueueJob(result)`
 - `api.failCurrentQueueJob(error)`
-
-Important: these are state-transition helpers only. They do not execute FFmpeg or create output files.
 
 ### 9. Render output artifact spec added
 
@@ -225,8 +221,6 @@ Provides:
 - `createRenderResultPayload(rootDir, job)`
 - `createRenderErrorPayload(rootDir, job, message, code)`
 
-Important: this module only defines paths and payloads. It does not run FFmpeg.
-
 ### 11. Manifest-only processor added
 
 Added/updated:
@@ -255,6 +249,37 @@ Frontend helper added:
 
 Important: this processor only creates a manifest JSON file. It does not run FFmpeg and does not create MP4 output.
 
+### 12. Dummy MP4 FFmpeg validation processor added
+
+Updated:
+
+- `server/core/render-processor.js`
+- `server/routes/queue.js`
+- `app/scripts/core/api.js`
+
+Server API:
+
+- `POST /api/queue/worker/process-current-dummy-mp4`
+
+Behavior:
+
+1. Reads `queue.currentJob`.
+2. Requires the current job type to be `intro-preview-render`.
+3. Creates output/temp/log directories.
+4. Writes `intro-preview-manifest.json` with mode `dummy-mp4`.
+5. Runs FFmpeg to create a 12-second black 1920x1080 MP4:
+   - `output/renders/<job-id>/intro-preview.mp4`
+6. Writes FFmpeg stdout/stderr to:
+   - `logs/renders/<job-id>.log`
+7. Completes the job with the standard result payload.
+8. If FFmpeg fails, moves the job to `failed` with a standard error payload.
+
+Frontend helper added:
+
+- `api.processCurrentQueueDummyMp4()`
+
+Important: this is a pipeline validation output only. It is not final preset rendering and does not capture the HTML/CSS intro design.
+
 ## Important Rules Preserved
 
 - Do not touch sidebar.
@@ -265,11 +290,11 @@ Important: this processor only creates a manifest JSON file. It does not run FFm
 - Do not add Remotion.
 - Keep selected preset as data, not hardcoded UI state.
 - Do not add a new CSS file for this panel.
-- Do not start FFmpeg until the manifest-only pipeline is verified.
+- Do not treat dummy MP4 as final rendering.
 
 ## Current Progress
 
-Estimated total project progress after this patch: 89–90%.
+Estimated total project progress after this patch: 91–92%.
 
 The system now supports:
 
@@ -285,6 +310,7 @@ The system now supports:
 - Queue state transitions: pending → running → completed/failed.
 - Render output path/result/error payload spec.
 - Manifest-only queue processing.
+- Dummy FFmpeg MP4 pipeline validation.
 
 ## Next Recommended Work
 
@@ -308,38 +334,27 @@ npm run test:preset-api
 
 4. Import all five preset batches.
 
-5. Open Longform Intro page.
+5. Add a queue job from the render draft.
 
-6. Click a preset and confirm:
-
-- preview updates
-- render draft panel updates
-- `data/render-draft.json` is created/updated
-
-7. Click `큐에 추가` and confirm:
-
-- panel says `큐에 추가됨`
-- `data/queue.json` gets a new `pending` job
-- no FFmpeg process starts yet
-
-8. Test manifest-only worker flow manually:
+6. Test dummy MP4 worker flow manually:
 
 ```bash
 curl -X POST http://localhost:3100/api/queue/worker/start-next
-curl -X POST http://localhost:3100/api/queue/worker/process-current-manifest
+curl -X POST http://localhost:3100/api/queue/worker/process-current-dummy-mp4
 ```
 
-9. Confirm:
+7. Confirm:
 
 - `output/renders/<job-id>/intro-preview-manifest.json` exists
+- `output/renders/<job-id>/intro-preview.mp4` exists
+- `logs/renders/<job-id>.log` exists
 - `data/queue.json` moved the job to `completed`
-- no MP4 was created yet
 
-10. Next implementation target:
+8. Next implementation target:
 
-- Review generated manifest and define the first FFmpeg-oriented processor step.
-- Do not connect full video output until manifest data is confirmed correct.
+- Define how to render the actual HTML/CSS preview to frames/video without introducing Remotion.
+- Candidate path: browser capture/headless Chromium or SVG/HTML-to-frame pipeline, then FFmpeg assembly.
 
 ## Handoff Note
 
-The next worker should inspect the generated manifest and only then begin the FFmpeg-oriented processor. The first FFmpeg step should be minimal and reversible.
+The next worker must not mistake the dummy MP4 for final rendering. It only proves output paths, queue status transitions, FFmpeg availability, and logging.
