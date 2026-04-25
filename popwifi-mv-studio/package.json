@@ -11,6 +11,7 @@
     "import:preset-batch": "node scripts/import-preset-batch.js",
     "validate:preset-batches": "node scripts/validate-preset-batches.js",
     "capture:intro-screenshot": "node scripts/capture-intro-screenshot.js",
+    "capture:intro-frames": "node scripts/capture-intro-frame-sequence.js",
     "install:browser": "npx playwright install chromium"
   },
   "dependencies": {
