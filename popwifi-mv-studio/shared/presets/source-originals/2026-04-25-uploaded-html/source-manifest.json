@@ -1,0 +1,110 @@
+{
+  "createdAt": "2026-04-25",
+  "purpose": "Source-of-truth manifest for uploaded original Pop WiFi intro preset HTML files. Do not reinterpret designs. Preserve original frame, motion, particles, CTA, bottom bar, and equalizer behavior.",
+  "rules": [
+    "Original design fidelity is the highest priority.",
+    "Do not replace original design with generic shared frame/CTA/bottom-bar styling.",
+    "Do not merge all preset particle/motion code into one global file.",
+    "Implement source-faithful renderer modules in batches of 10.",
+    "Fix original errors separately and document every fix."
+  ],
+  "uploadedFiles": [
+    {
+      "fileName": "presets_02_10.html",
+      "conversationPath": "/mnt/data/presets_02_10.html",
+      "sha256": "e2804014133f2dc1ebc73fdd09f40882c940cc95b3954c7cf5b2015525186cfc",
+      "bytes": 63918,
+      "role": "Original source for presets 02 through 10",
+      "presetRange": "02-10",
+      "status": "received-in-conversation"
+    },
+    {
+      "fileName": "presets_11_30.html",
+      "conversationPath": "/mnt/data/presets_11_30.html",
+      "sha256": "5c72ecf7a7d07f2b98987c919ebbde3cedb7f0736b9b20ddf1109424e6544b7d",
+      "bytes": 97993,
+      "role": "Original source for presets 11 through 30",
+      "presetRange": "11-30",
+      "status": "received-in-conversation"
+    },
+    {
+      "fileName": "popwifi_presets_all_50.html",
+      "conversationPath": "/mnt/data/popwifi_presets_all_50.html",
+      "sha256": "b65a989bb6e3a88afd5cf86b9e321253e5a7e64783ac6f2c8b3d75d29f7ca5c6",
+      "bytes": 271638,
+      "role": "Consolidated master source for presets 01 through 50",
+      "presetRange": "01-50",
+      "status": "received-in-conversation"
+    },
+    {
+      "fileName": "popwifi_presets_31_60_prototype.html",
+      "conversationPath": "/mnt/data/popwifi_presets_31_60_prototype.html",
+      "sha256": "2a5de92d7e04fa386be2e1cc5d3910658242474e47e759c03d7f1cc044728388",
+      "bytes": 69839,
+      "role": "Extended prototype source for presets 31 through 60",
+      "presetRange": "31-60",
+      "status": "received-in-conversation"
+    }
+  ],
+  "rangePriority": [
+    {
+      "range": "01-01",
+      "primarySource": "popwifi_presets_all_50.html",
+      "secondarySource": null,
+      "notes": "Preset 01 exists in the consolidated all_50 source. Do not invent if not found elsewhere."
+    },
+    {
+      "range": "02-10",
+      "primarySource": "presets_02_10.html",
+      "secondarySource": "popwifi_presets_all_50.html",
+      "notes": "Use split 02-10 source for detailed implementation and all_50 for consistency validation."
+    },
+    {
+      "range": "11-30",
+      "primarySource": "presets_11_30.html",
+      "secondarySource": "popwifi_presets_all_50.html",
+      "notes": "Use split 11-30 source for detailed implementation and all_50 for consistency validation."
+    },
+    {
+      "range": "31-50",
+      "primarySource": "popwifi_presets_all_50.html",
+      "secondarySource": "popwifi_presets_31_60_prototype.html",
+      "notes": "Cross-check all_50 and 31-60 prototype. Preserve all_50 if there is a conflict for 31-50."
+    },
+    {
+      "range": "51-60",
+      "primarySource": "popwifi_presets_31_60_prototype.html",
+      "secondarySource": null,
+      "notes": "Future extension source only. Not part of the current 01-50 physical preset completion."
+    }
+  ],
+  "implementationStructure": {
+    "doNotUse": [
+      "one massive app.css with all preset designs",
+      "one massive preset-preview.js with all particles and frames",
+      "generic frame plus generic CTA for all presets",
+      "newly invented visual alternatives"
+    ],
+    "preferred": [
+      "per-preset renderer.html",
+      "per-preset renderer.css",
+      "per-preset renderer.js",
+      "per-preset particles.js when needed",
+      "per-preset original-map.json",
+      "iframe or isolated preview root to prevent CSS/keyframe collisions"
+    ]
+  },
+  "nextBatch": {
+    "range": "02-10",
+    "task": "Extract original-source-faithful modules from presets_02_10.html, one preset at a time, without changing design language.",
+    "completionCriteria": [
+      "config.json exists",
+      "original-map.json exists",
+      "renderer keeps original frame",
+      "renderer keeps original particles",
+      "renderer keeps original CTA behavior",
+      "renderer keeps original bottom bar and equalizer",
+      "any original error fix is separately logged"
+    ]
+  }
+}
