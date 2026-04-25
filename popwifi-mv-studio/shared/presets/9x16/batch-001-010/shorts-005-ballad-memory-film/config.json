@@ -1,0 +1,53 @@
+{
+  "id": "shorts-005-ballad-memory-film",
+  "title": "Ballad Memory Film Shorts",
+  "category": "intro-shorts",
+  "variant": "ballad",
+  "ratio": "9x16",
+  "batchId": "batch-001-010",
+  "mood": "emotional, nostalgic, cinematic ballad shorts",
+  "description": "Vertical shorts ballad intro with a tall film-photo frame, restrained title, soft CTA, and quiet lyric bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-film-fade"
+  },
+  "motion": {
+    "frameExit": "reverse-film-fade",
+    "title": "film-fade",
+    "cta": "stamp-in",
+    "bottomBar": "warm-fade",
+    "end": "piano-shimmer",
+    "cadence": "cinematic"
+  },
+  "layout": {
+    "frameStyle": "vertical-soft-film-photo-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center",
+    "safeArea": "vertical-title-center"
+  },
+  "visual": {
+    "accent": "#E8B69F",
+    "accent2": "#F8DDC8",
+    "palette": ["warm black", "sepia brown", "soft beige", "muted rose"],
+    "texture": "old film grain and faint light leak optimized for vertical shorts",
+    "typography": "emotional serif title with simple sans body"
+  },
+  "cta": {
+    "style": "compact subtle soft-glow CTA buttons",
+    "items": ["like", "subscribe", "notification"]
+  },
+  "bottomBar": {
+    "style": "vertical-safe transparent sepia rounded bar",
+    "endAnimation": "small piano-key shimmer",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "createdAt": "2026-04-25",
+  "updatedAt": "2026-04-25"
+}
