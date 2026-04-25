@@ -34,6 +34,8 @@ The project already has:
 - queue state transitions
 - manifest-only processor
 - dummy 12-second FFmpeg MP4 validation
+- capture page skeleton
+- single screenshot capture helper script
 
 The dummy MP4 proves FFmpeg path, output folders, logging, and queue transitions only.
 It is not final rendering.
@@ -65,21 +67,22 @@ This prevents:
 
 ## Capture Page Requirement
 
-Create a dedicated capture page later:
+Current capture page:
 
 ```txt
 /app/capture/intro-preview.html
 ```
 
-It should:
+It:
 
-- accept job id or preset id as query params
-- load the selected preset data from the server
-- render only the intro preview canvas area
-- hide sidebars, panels, controls, debug UI
-- use deterministic viewport and timing
+- accepts `jobId` as a query param
+- loads queue data from the server
+- finds the matching job from current/pending/completed/failed queue groups
+- renders only the intro preview canvas area
+- hides sidebars, panels, controls, and debug UI
+- reuses the existing preview renderer
 
-Recommended route later:
+Manual route:
 
 ```txt
 /app/capture/intro-preview.html?jobId=<job-id>
@@ -146,7 +149,52 @@ Reason:
 - no Remotion dependency
 - common Node ecosystem fit
 
-But do not add Playwright until the capture page contract is implemented.
+Important: Playwright has not been added to `package.json` yet.
+The screenshot helper fails with a clear install message if Playwright is missing.
+
+Install later only after capture page is visually confirmed:
+
+```bash
+npm install -D playwright
+npx playwright install chromium
+```
+
+## Single Screenshot Helper
+
+Added helper:
+
+```txt
+scripts/capture-intro-screenshot.js
+```
+
+Package script:
+
+```bash
+npm run capture:intro-screenshot -- <job-id>
+```
+
+Optional output path:
+
+```bash
+npm run capture:intro-screenshot -- <job-id> temp/captures/<job-id>/intro-preview.png
+```
+
+Default output:
+
+```txt
+temp/captures/<job-id>/intro-preview.png
+```
+
+This helper:
+
+- opens `/app/capture/intro-preview.html?jobId=<job-id>`
+- sets viewport to `1920x1080`
+- waits briefly for preview hydration
+- saves one PNG screenshot
+
+It does not capture frame sequences.
+It does not assemble video.
+It does not run FFmpeg.
 
 ## First Real Rendering Milestones
 
@@ -157,11 +205,15 @@ But do not add Playwright until the capture page contract is implemented.
 - Render a still preview frame.
 - No FFmpeg.
 
+Status: implemented as capture page skeleton.
+
 ### Milestone 2 — Single Screenshot Capture
 
 - Add a Node capture helper.
 - Use browser automation to capture one PNG frame.
-- Save under `temp/renders/<job-id>/frames/frame-000001.png`.
+- Save under `temp/captures/<job-id>/intro-preview.png` first.
+
+Status: helper added, Playwright dependency not yet added.
 
 ### Milestone 3 — Frame Sequence Capture
 
@@ -169,10 +221,14 @@ But do not add Playwright until the capture page contract is implemented.
 - Confirm animation phases visually.
 - Then move to 30fps.
 
+Status: not implemented.
+
 ### Milestone 4 — FFmpeg Assembly
 
 - Assemble PNG frames into MP4.
 - Output to `output/renders/<job-id>/intro-preview.mp4`.
+
+Status: not implemented for real preview capture.
 
 ## Avoided Shortcut
 
@@ -195,10 +251,10 @@ Before real capture is considered successful:
 
 ## Current Progress Marker
 
-After this capture plan, estimated project progress is 92–93%.
+After this single screenshot helper patch, estimated project progress is 93–94%.
 
 Next safe implementation:
 
-- Add capture page skeleton only.
-- Do not add Playwright yet.
-- Do not run FFmpeg for actual HTML capture yet.
+- Manually confirm capture page and single screenshot output.
+- Then add Playwright dependency only if the user approves or local test requires it.
+- After screenshot works, add reduced-FPS frame sequence capture.
