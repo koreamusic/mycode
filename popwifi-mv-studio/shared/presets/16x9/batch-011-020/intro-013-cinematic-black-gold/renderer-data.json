@@ -1,0 +1,40 @@
+{
+  "presetId": "intro-013-cinematic-black-gold",
+  "sourceFile": "presets_11_30.html",
+  "sourceKey": "bookshop",
+  "sourceNumber": 13,
+  "sourceName": "13 - Old Bookshop",
+  "song": "Page Turner",
+  "lyric": "먼지 쌓인 책장 사이로 흐르는 시간",
+  "brandMain": "POP WiFi",
+  "brandSub": "팝 와이파이",
+  "diskIcon": "📖",
+  "theme": {
+    "background": "radial-gradient(ellipse at 25% 35%, rgba(140,110,70,0.13) 0%, transparent 55%), linear-gradient(158deg,#160e08 0%,#100c06 40%,#0c0a06 100%)",
+    "accent": "#a08050",
+    "accentSoft": "rgba(160,128,80,0.25)",
+    "titleColor": "#f5ecd8",
+    "titleGlow": "rgba(160,128,80,0.55)",
+    "subTextColor": "rgba(210,180,130,0.68)",
+    "subBg": "rgba(14,10,5,0.85)",
+    "subBorder": "rgba(160,128,80,0.23)",
+    "barGradient": "linear-gradient(180deg,rgba(10,8,4,0) 0%,rgba(10,8,4,0.82) 28%,rgba(7,6,3,0.97) 100%)",
+    "barTopline": "linear-gradient(90deg,transparent,rgba(160,128,80,0.15) 20%,rgba(160,128,80,0.27) 50%,rgba(160,128,80,0.15) 80%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#180e08 0deg,#100a04 60deg,#180e08 120deg,#100a04 180deg,#180e08 240deg,#100a04 300deg,#180e08 360deg)",
+    "diskCenterBg": "#0c0904"
+  },
+  "sourceFunctions": {
+    "frame": "bookshop.frame",
+    "particles": "bookshop.particles",
+    "equalizer": "bookshop.eq"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0.4,
+    "titleIn": 1,
+    "titleOut": 5,
+    "ctaIn": 5,
+    "ctaOut": 10,
+    "bottomBarIn": 10
+  }
+}
