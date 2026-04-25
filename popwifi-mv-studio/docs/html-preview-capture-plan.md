@@ -39,6 +39,7 @@ The project already has:
 - reduced-FPS frame sequence capture helper script
 - frame sequence FFmpeg assembly helper script
 - queue-integrated capture MP4 processor
+- one-click UI render execution from the render draft panel
 - Playwright dev dependency for Chromium screenshot capture
 
 The dummy MP4 proves FFmpeg path, output folders, logging, and queue transitions only.
@@ -276,6 +277,27 @@ capture/assembly error
 -> move currentJob to failed
 ```
 
+## One-Click UI Render Execution
+
+The existing render draft panel now includes:
+
+```txt
+큐에 추가
+렌더 실행
+```
+
+The `렌더 실행` button runs this sequence:
+
+```txt
+createQueueJobFromRenderDraft(kind)
+-> startNextQueueJob()
+-> processCurrentQueueCaptureMp4()
+-> update panel status to 렌더 완료
+-> show primary output path when available
+```
+
+This creates an actual captured preview MP4 through the queue-integrated 6fps validation pipeline.
+
 ## First Real Rendering Milestones
 
 ### Milestone 1 — Capture Page Static Proof
@@ -297,6 +319,10 @@ Status: helper added for manual capture test path.
 ### Milestone 5 — Queue-Integrated Capture MP4
 
 Status: implemented at 6fps validation level.
+
+### Milestone 6 — One-Click UI Render
+
+Status: implemented through the render draft panel.
 
 Not yet final:
 
@@ -327,10 +353,11 @@ Before real capture is considered successful:
 
 ## Current Progress Marker
 
-After queue-integrated capture MP4 processor, estimated project progress is 97–98%.
+After one-click UI render execution, estimated project progress is 98–99% for the intro preset render pipeline.
 
 Next safe implementation:
 
-- Run the queue-integrated capture MP4 processor locally.
+- Run the one-click render locally.
 - Inspect generated MP4.
-- If visual match is acceptable, add UI button for `process-current-capture-mp4` or create a one-click local render flow.
+- If visual match is acceptable, add a 30fps option or production quality toggle.
+- Then plan 9:16 capture and music/lyrics integration separately.
