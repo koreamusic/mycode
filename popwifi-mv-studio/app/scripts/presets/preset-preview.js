@@ -61,6 +61,39 @@ function getPresetVariant(preset) {
   return 'jazz';
 }
 
+function isHexColor(value) {
+  return typeof value === 'string' && /^#[0-9a-fA-F]{6}$/.test(value);
+}
+
+function hexToRgba(hex, alpha) {
+  if (!isHexColor(hex)) return '';
+  const value = hex.replace('#', '');
+  const r = parseInt(value.slice(0, 2), 16);
+  const g = parseInt(value.slice(2, 4), 16);
+  const b = parseInt(value.slice(4, 6), 16);
+  return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+}
+
+function applyPresetTokens(target, meta) {
+  if (!target || !meta) return;
+
+  if (isHexColor(meta.accent)) {
+    target.style.setProperty('--preview-accent', meta.accent);
+    target.style.setProperty('--preview-bg-1', hexToRgba(meta.accent, 0.24));
+    target.style.setProperty('--preview-frame-line', hexToRgba(meta.accent, 0.56));
+  } else {
+    target.style.removeProperty('--preview-accent');
+    target.style.removeProperty('--preview-bg-1');
+    target.style.removeProperty('--preview-frame-line');
+  }
+
+  if (isHexColor(meta.accent2)) {
+    target.style.setProperty('--preview-accent-2', meta.accent2);
+  } else {
+    target.style.removeProperty('--preview-accent-2');
+  }
+}
+
 function getPresetMeta(preset) {
   const layout = preset.layout || {};
   const visual = preset.visual || {};
@@ -78,6 +111,8 @@ function getPresetMeta(preset) {
     endAnimation: bottomBar.endAnimation || 'end animation not set',
     palette: Array.isArray(visual.palette) ? visual.palette.join(' / ') : '',
     typography: visual.typography || '',
+    accent: visual.accent || '',
+    accent2: visual.accent2 || '',
     variant: getPresetVariant(preset),
     flowSummary: getFlowSummary(preset)
   };
@@ -90,6 +125,8 @@ export function renderSelectedPresetPreview(kind, preset) {
   const meta = getPresetMeta(preset);
   target.classList.add('has-preset-preview');
   target.dataset.presetVariant = meta.variant;
+  applyPresetTokens(target, meta);
+
   target.innerHTML = [
     '<div class="preset-preview-inner preset-timeline-shell">',
     '  <div class="preset-preview-frame">',
