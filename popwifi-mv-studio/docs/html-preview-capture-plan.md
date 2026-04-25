@@ -36,6 +36,7 @@ The project already has:
 - dummy 12-second FFmpeg MP4 validation
 - capture page skeleton
 - single screenshot capture helper script
+- Playwright dev dependency for Chromium screenshot capture
 
 The dummy MP4 proves FFmpeg path, output folders, logging, and queue transitions only.
 It is not final rendering.
@@ -133,9 +134,9 @@ Safe first real visual pipeline:
 7. Complete queue job.
 ```
 
-## Browser Tool Candidate
+## Browser Tool
 
-Preferred candidate:
+Browser capture tool:
 
 ```txt
 Playwright with Chromium
@@ -149,13 +150,17 @@ Reason:
 - no Remotion dependency
 - common Node ecosystem fit
 
-Important: Playwright has not been added to `package.json` yet.
-The screenshot helper fails with a clear install message if Playwright is missing.
+Playwright is now listed in `devDependencies`.
 
-Install later only after capture page is visually confirmed:
+Install browser runtime after `npm install`:
 
 ```bash
-npm install -D playwright
+npm run install:browser
+```
+
+This runs:
+
+```bash
 npx playwright install chromium
 ```
 
@@ -213,7 +218,7 @@ Status: implemented as capture page skeleton.
 - Use browser automation to capture one PNG frame.
 - Save under `temp/captures/<job-id>/intro-preview.png` first.
 
-Status: helper added, Playwright dependency not yet added.
+Status: helper added, Playwright dependency added.
 
 ### Milestone 3 — Frame Sequence Capture
 
@@ -251,10 +256,11 @@ Before real capture is considered successful:
 
 ## Current Progress Marker
 
-After this single screenshot helper patch, estimated project progress is 93–94%.
+After this Playwright dependency patch, estimated project progress is 94–95%.
 
 Next safe implementation:
 
-- Manually confirm capture page and single screenshot output.
-- Then add Playwright dependency only if the user approves or local test requires it.
+- Run `npm install`.
+- Run `npm run install:browser`.
+- Confirm single screenshot output.
 - After screenshot works, add reduced-FPS frame sequence capture.
