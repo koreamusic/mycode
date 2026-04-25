@@ -106,6 +106,12 @@ export const api = {
       body: JSON.stringify({})
     });
   },
+  importPresetBatch(payload) {
+    return writeJson('/api/presets/import', {
+      method: 'POST',
+      body: JSON.stringify(payload)
+    });
+  },
   page(path) {
     return readText(path);
   }

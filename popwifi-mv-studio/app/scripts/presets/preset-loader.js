@@ -67,9 +67,11 @@ function renderPresetList(target, presets, ratio, batchId) {
       flow.bottomBarStartsAfterSeconds ? '하단바 ' + flow.bottomBarStartsAfterSeconds + '초 이후' : null
     ].filter(Boolean).join(' · ');
 
+    const previewSrc = '/preset-files/' + encodeURIComponent(ratio) + '/' + encodeURIComponent(batchId) + '/' + encodeURIComponent(preset.id) + '/preview.jpg';
     return [
       '<div class="preset-row" data-preset-id="' + escapeHtml(preset.id) + '" data-batch-id="' + escapeHtml(batchId) + '">',
       '  <button class="preset-item" data-action="select-preset" data-ratio="' + escapeHtml(ratio) + '" data-batch-id="' + escapeHtml(batchId) + '" data-preset-id="' + escapeHtml(preset.id) + '">',
+      '    <img class="preset-thumb" src="' + previewSrc + '" alt="" loading="lazy" onerror="this.style.display=\'none\'">',
       '    <strong>' + escapeHtml(title) + '</strong>',
       '    <span>' + escapeHtml(mood) + '</span>',
       '    <small>' + escapeHtml(description) + '</small>',

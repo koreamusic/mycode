@@ -9,14 +9,22 @@
     <article class="card">
       <h2>렌더 설정</h2>
       <label class="field-label">FFmpeg Path</label>
-      <input class="text-input" value="ffmpeg" />
+      <input class="text-input" data-config-key="ffmpegPath" value="ffmpeg" />
       <label class="field-label">Output Folder</label>
-      <input class="text-input" value="output" />
+      <input class="text-input" data-config-key="outputDir" value="output" />
     </article>
     <article class="card">
       <h2>폰트 관리</h2>
       <p>Google Fonts 기반 다운로드/등록 구조를 다음 단계에서 연결합니다.</p>
       <button class="control-btn">폰트 목록 새로고침</button>
+    </article>
+    <article class="card">
+      <h2>프리셋 배치 가져오기</h2>
+      <p>배치 JSON 파일을 업로드해서 프리셋을 등록합니다.</p>
+      <label class="field-label">JSON 파일 선택</label>
+      <input type="file" id="preset-import-file" accept=".json" style="margin-bottom:0.75rem;" />
+      <button class="control-btn" id="preset-import-btn">배치 가져오기</button>
+      <div id="preset-import-result" style="margin-top:0.5rem;font-size:0.8rem;opacity:0.7;"></div>
     </article>
   </div>
 </section>

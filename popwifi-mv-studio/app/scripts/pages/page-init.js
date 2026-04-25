@@ -4,6 +4,7 @@ import { loadPresetList } from '../presets/preset-loader.js';
 import { bindPresetActions, bindPresetPanelActions } from '../presets/preset-actions.js';
 import { renderDraftPanel } from '../render/render-draft-panel.js';
 import { hydrateRenderResults } from '../project/render-results.js';
+import { hydrateLyricsPage } from './lyrics.js';
 
 export async function hydratePage(pageName) {
   if (pageName === 'queue') await hydrateQueuePage();
@@ -11,6 +12,7 @@ export async function hydratePage(pageName) {
   if (pageName === 'shorts') await hydrateShortsPage();
   if (pageName === 'settings') await hydrateSettingsPage();
   if (pageName === 'project') await hydrateProjectPage();
+  if (pageName === 'lyrics') hydrateLyricsPage();
 }
 
 async function hydrateLongformPage() {
@@ -62,5 +64,34 @@ async function hydrateSettingsPage() {
     });
   } catch (error) {
     // keep static settings page available
+  }
+
+  const importBtn = document.getElementById('preset-import-btn');
+  const importFile = document.getElementById('preset-import-file');
+  const importResult = document.getElementById('preset-import-result');
+
+  if (importBtn && importFile) {
+    importBtn.addEventListener('click', async () => {
+      const file = importFile.files[0];
+      if (!file) {
+        if (importResult) importResult.textContent = 'JSON 파일을 먼저 선택하세요.';
+        return;
+      }
+      try {
+        const text = await file.text();
+        const payload = JSON.parse(text);
+        importBtn.disabled = true;
+        if (importResult) importResult.textContent = '가져오는 중...';
+        const result = await api.importPresetBatch(payload);
+        if (importResult) {
+          const s = result.summary || result;
+          importResult.textContent = '완료: 생성 ' + (s.created || 0) + ' · 건너뜀 ' + (s.skipped || 0) + ' · 실패 ' + (s.failed || 0);
+        }
+      } catch (error) {
+        if (importResult) importResult.textContent = '오류: ' + (error.message || '파일을 확인하세요.');
+      } finally {
+        importBtn.disabled = false;
+      }
+    });
   }
 }

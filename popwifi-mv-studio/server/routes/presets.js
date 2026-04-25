@@ -8,6 +8,9 @@ const {
   upsertPresetConfig,
   markPresetInactive
 } = require('../core/preset-store');
+const { materializeImportedPresetBatches } = require('../core/preset-import-materializer');
+const fs = require('fs');
+const path = require('path');
 
 const VALID_RATIO = /^(16x9|9x16)$/;
 const VALID_BATCH_ID = /^batch-\d{3}-\d{3}$/;
@@ -93,6 +96,33 @@ function registerPresetRoutes(app, context) {
     const preset = markPresetInactive(context.rootDir, req.params.ratio, req.params.batchId, req.params.presetId);
     if (!preset) return res.status(404).json({ error: 'preset not found' });
     res.json({ ok: true, preset });
+  });
+
+  app.post('/api/presets/import', (req, res) => {
+    const payload = req.body;
+    if (!payload || typeof payload !== 'object' || Array.isArray(payload)) {
+      return res.status(400).json({ error: 'JSON batch payload required' });
+    }
+    if (!VALID_RATIO.test(payload.ratio)) {
+      return res.status(400).json({ error: 'invalid ratio' });
+    }
+    if (!VALID_BATCH_ID.test(payload.batchId)) {
+      return res.status(400).json({ error: 'invalid batchId' });
+    }
+    if (!Array.isArray(payload.presets) || !payload.presets.length) {
+      return res.status(400).json({ error: 'presets array required' });
+    }
+
+    const tmpName = 'ui-import-' + Date.now() + '.json';
+    const tmpPath = path.join(context.rootDir, 'shared', 'presets', 'imports', tmpName);
+    try {
+      fs.mkdirSync(path.dirname(tmpPath), { recursive: true });
+      fs.writeFileSync(tmpPath, JSON.stringify(payload, null, 2));
+      const summary = materializeImportedPresetBatches(context.rootDir);
+      res.json({ ok: true, summary });
+    } catch (error) {
+      res.status(500).json({ error: 'import failed: ' + error.message });
+    }
   });
 }
 
