@@ -48,10 +48,10 @@ mycode/
 | 기획/구조 | 90% | **100%** |
 | 문서화 | 80% | **95%** |
 | 코드 구현 (페이지/API) | 0% | **88%** |
-| 프리셋 이식 (config+template+preview) | 0% | **95%** |
+| 프리셋 이식 (config+template+preview) | 0% | **98%** |
 | 렌더 시스템 (캡처·FFmpeg) | 0% | **40%** |
 | 테스트/안정화 | 0% | **10%** |
-| **전체** | **12%** | **~72%** |
+| **전체** | **12%** | **~76%** |
 
 ---
 
@@ -114,31 +114,37 @@ mycode/
 
 ---
 
-## GPT 위임 작업 (별도 진행)
+## 프리셋 완료 현황
 
-### intro-001~050 template.js 구현 (50개)
+### 16x9 intro-001~050 template.js — **완료**
 
-**작업 명세 문서:** `docs/INTRO_PRESET_TEMPLATE_TASK.md`  
-**담당:** GPT  
-**Claude 역할:** GPT 완성 후 검수 + preview.jpg 생성 + 커밋
+- batch-001-010 ~ batch-041-050 각 10개, 총 50개
+- 구조: `drawBackground + drawRetroGrid/drawFrame + drawTitle + drawSocial + drawBottomBar`
+- `t < 5`: 제목만, `t < 10`: CTA 3버튼, `t >= 10`: 하단바 (좋아요/구독/알림)
+- 커밋: `cabca5d` (intro-001~010), 이후 배치들 추가 커밋
 
-대상 폴더:
-```
-shared/presets/16x9/batch-001-010/intro-001 ~ intro-010  (10개)
-shared/presets/16x9/batch-011-020/intro-011 ~ intro-020  (10개)
-shared/presets/16x9/batch-021-030/intro-021 ~ intro-030  (10개)
-shared/presets/16x9/batch-031-040/intro-031 ~ intro-040  (10개)
-shared/presets/16x9/batch-041-050/intro-041 ~ intro-050  (10개)
-```
+### 9x16 숏츠 intro-001~050 config.json — **완료**
 
-각 폴더에 `template.js` 추가 필요. config.json은 이미 있음.  
-작업 명세 문서에 디자인 방향, 규칙, 체크리스트 전부 기술되어 있음.
+- batch-001-010 ~ batch-041-050 각 10개, 총 50개
+- 커밋: `270d6fa`
 
-**GPT 작업 완료 후 Claude가 할 일:**
-1. `node popwifi-mv-studio/scripts/generate-preset-previews.js` 실행
-2. 실패 항목 수정
-3. 전체 커밋 & 푸시
-4. 9x16 숏츠 intro 프리셋 50개 설계 착수
+### 9x16 숏츠 intro-001~050 template.js — **완료**
+
+- intro-001~010: 커밋 `ffe9271`
+- intro-011~050: 커밋 `4ee7268`
+- **구조 원칙 (16x9와 다름):**
+  - 하단바(bottomBar) 없음
+  - `draw()`: drawBackground + drawFrame + drawTitle + (t>=5) drawSocial
+  - drawSocial: `['좋아요', '구독']` 2버튼만, 세로 스택, `H*0.62` 시작
+  - drawFrame: `roundRect(W*0.06, H*0.10, W*0.88, H*0.72, W*0.035)`
+  - drawTitle: `W/2, H*0.40`, font `W*0.055`
+- 신규 생성 (기존 `preset-shorts-001~005`와 무관)
+
+### preview.jpg — **미생성 (다음 세션 작업)**
+
+- 16x9 intro 50개 + 9x16 intro 50개 = 100개 생성 필요
+- 실행 명령: `node popwifi-mv-studio/scripts/generate-preset-previews.js`
+- node-canvas 환경에서 실행
 
 ---
 
