@@ -135,12 +135,6 @@ Each preset preserves the required intro flow:
 - Like/Subscribe/Notification CTA: next 5 seconds
 - Bottom lyric/title bar: starts after 10 seconds and stays active
 
-Import command:
-
-```bash
-npm run import:preset-batch -- shared/presets/imports/intro-batch-001-010.json
-```
-
 ### 6. Existing preset list UI connected to richer intro preset fields
 
 Updated:
@@ -148,19 +142,7 @@ Updated:
 - `app/scripts/presets/preset-loader.js`
 - `app/styles/app.css`
 
-The longform and shorts pages already had preset list containers:
-
-- `longformPresetList`
-- `shortsPresetList`
-
-The renderer now displays:
-
-- `title` or fallback `name/id`
-- `mood` or fallback `category`
-- `description`
-- flow summary such as frame/title/CTA/bottom bar timing
-
-Only minimal CSS was added for `small` and `em` inside preset cards. The layout, sidebar, preview cards, and page structure were not changed.
+The renderer now displays title, mood, description, and flow summary in the existing longform/shorts preset list containers.
 
 ### 7. Selected preset preview binding added
 
@@ -171,17 +153,7 @@ Updated/added:
 - `app/scripts/presets/preset-actions.js`
 - `app/styles/app.css`
 
-Behavior:
-
-- Clicking a preset row marks it as selected.
-- The selected preset is stored in `appState.selectedPresets`.
-- The existing longform/shorts preview card is updated with:
-  - title
-  - mood
-  - description
-  - CTA placeholder
-  - frame/title/CTA/bottom bar timing summary
-  - frame style, title position, CTA style, bottom bar style, end animation, palette, and typography metadata
+Clicking a preset row marks it as selected, stores it in state, and updates the existing preview card.
 
 ### 8. HTML/CSS/JS animated preview timeline shell added
 
@@ -205,11 +177,7 @@ Updated:
 - `app/scripts/presets/preset-preview.js`
 - `app/styles/app.css`
 
-Behavior:
-
-- Selected presets are mapped to a preview variant through `data-preset-variant`.
-- Each variant changes preview accent colors, secondary accent, glow, frame line color, CTA glow, progress bar, and bottom bar tint.
-- This is still a browser preview layer only. It does not alter source preset JSON or introduce another engine.
+Selected presets are mapped to preview variants and visual tokens. The preview also respects `visual.accent` and `visual.accent2` so future batches can differ visually without one CSS rule per preset.
 
 ### 10. Preset regression guard added
 
@@ -251,13 +219,6 @@ This file contains 10 additional intro preset config entries:
 19. Folk Paper Diary
 20. Dreamy Cloud Pop
 
-Each preset preserves the same locked intro flow:
-
-- Frame: 10 seconds
-- Title: first 5 seconds
-- Like/Subscribe/Notification CTA: next 5 seconds
-- Bottom lyric/title bar: starts after 10 seconds and stays active
-
 ### 12. Preview token path hardened for 50+ presets
 
 Updated:
@@ -269,7 +230,6 @@ Fix:
 - Explicit `preset.variant` now has priority over inferred variant.
 - `visual.accent` and `visual.accent2` are injected as CSS variables directly onto the preview card.
 - This avoids creating one hardcoded CSS rule per preset.
-- This protects future batches from breaking older preview variants.
 
 ### 13. Third real intro preset batch JSON added
 
@@ -290,7 +250,26 @@ This file contains 10 additional intro preset config entries:
 29. Tape Haze Chillwave
 30. Cafe Rain Jazz
 
-This batch reuses existing variants and relies on `visual.accent` / `visual.accent2` tokens for visual differentiation, so no new CSS selectors or preview engine paths were required.
+### 14. Fourth real intro preset batch JSON added
+
+Added:
+
+- `shared/presets/imports/intro-batch-031-040.json`
+
+This file contains 10 additional intro preset config entries:
+
+31. Moonlit Ballad Frame
+32. Lofi Cat Desk
+33. Golden Hour Folk
+34. Pink Stage Pop
+35. Harbor Citypop
+36. Deep Road Blues
+37. Anime Rain Platform
+38. Cosmic Chillwave
+39. Cafe Book Corner
+40. Clean Night Minimal
+
+This batch continues the same data-only approach: existing variants are reused, `visual.accent` and `visual.accent2` provide differentiation, and no new CSS/JS path was introduced.
 
 ## Important Rules Preserved
 
@@ -307,9 +286,9 @@ This batch reuses existing variants and relies on `visual.accent` / `visual.acce
 
 ## Current Progress
 
-Estimated total project progress after this patch: 64–66%.
+Estimated total project progress after this patch: 68–70%.
 
-The preset server layer now has a local smoke-test path, 10-item batch import tooling, 30 real 16:9 intro preset configs across three batches, richer preset list rendering, selected preset preview binding, animated HTML/CSS preview timeline, variant-based preview styling, token-based visual override, and regression validation to protect future batches.
+The preset server layer now has a local smoke-test path, 10-item batch import tooling, 40 real 16:9 intro preset configs across four batches, richer preset list rendering, selected preset preview binding, animated HTML/CSS preview timeline, variant-based preview styling, token-based visual override, and regression validation to protect future batches.
 
 ## Next Recommended Work
 
@@ -320,16 +299,14 @@ The preset server layer now has a local smoke-test path, 10-item batch import to
    - `npm run import:preset-batch -- shared/presets/imports/intro-batch-001-010.json`
    - `npm run import:preset-batch -- shared/presets/imports/intro-batch-011-020.json`
    - `npm run import:preset-batch -- shared/presets/imports/intro-batch-021-030.json`
+   - `npm run import:preset-batch -- shared/presets/imports/intro-batch-031-040.json`
 5. Confirm imported files under:
    - `shared/presets/16x9/batch-001-010/`
    - `shared/presets/16x9/batch-011-020/`
    - `shared/presets/16x9/batch-021-030/`
-6. Open the Longform Intro page.
-7. Click presets from all three batches and confirm:
-   - title → CTA → bottom bar loop works
-   - old batches still work
-   - new batch has visually distinct accent/frame/glow from JSON tokens
-8. Next implementation target: add `intro-batch-031-040.json` only after local validation passes.
+   - `shared/presets/16x9/batch-031-040/`
+6. Open the Longform Intro page and click presets from all four batches.
+7. Next implementation target: add `intro-batch-041-050.json` only after local validation passes.
 
 ## Notes
 
