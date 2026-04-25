@@ -208,17 +208,6 @@ Updated:
 Behavior:
 
 - Selected presets are mapped to a preview variant through `data-preset-variant`.
-- Variants currently include:
-  - `jazz`
-  - `lofi`
-  - `acoustic`
-  - `kpop`
-  - `ballad`
-  - `citypop`
-  - `blues`
-  - `anime`
-  - `chillwave`
-  - `cafe`
 - Each variant changes preview accent colors, secondary accent, glow, frame line color, CTA glow, progress bar, and bottom bar tint.
 - This is still a browser preview layer only. It does not alter source preset JSON or introduce another engine.
 
@@ -236,21 +225,6 @@ Purpose:
 - Prevent one preset group from silently changing timing, data shape, preview route, CSS route, or stack rules.
 - Lock the implementation path to Node/Express + HTML/CSS/JS + JSON + FFmpeg-oriented workflow.
 - Explicitly keep Remotion out of this project.
-
-Validation checks:
-
-- Import JSON files exist.
-- `batchId` matches `batch-001-010` format.
-- Each batch has 1 to 10 presets.
-- Preset ids are unique inside a batch and across import files.
-- Required fields exist: `id`, `title`, `category`, `description`.
-- Required intro timing remains locked:
-  - `frameSeconds: 10`
-  - `titleSeconds: 5`
-  - `ctaSeconds: 5`
-  - `bottomBarStartsAfterSeconds: 10`
-- Optional `variant` values are in the allowed list.
-- Optional visual token colors use `#RRGGBB` format.
 
 Before adding any future batch, run:
 
@@ -297,6 +271,27 @@ Fix:
 - This avoids creating one hardcoded CSS rule per preset.
 - This protects future batches from breaking older preview variants.
 
+### 13. Third real intro preset batch JSON added
+
+Added:
+
+- `shared/presets/imports/intro-batch-021-030.json`
+
+This file contains 10 additional intro preset config entries:
+
+21. Sax Club Corner
+22. Blue Hour Lofi
+23. Guitar Sunbeam
+24. Pop Glass Pulse
+25. Old Photo Ballad
+26. City Night Sign
+27. Rust Blues Lamp
+28. Schoolyard Anime Spring
+29. Tape Haze Chillwave
+30. Cafe Rain Jazz
+
+This batch reuses existing variants and relies on `visual.accent` / `visual.accent2` tokens for visual differentiation, so no new CSS selectors or preview engine paths were required.
+
 ## Important Rules Preserved
 
 - Do not touch UI unless explicitly requested.
@@ -312,9 +307,9 @@ Fix:
 
 ## Current Progress
 
-Estimated total project progress after this patch: 60–62%.
+Estimated total project progress after this patch: 64–66%.
 
-The preset server layer now has a local smoke-test path, 10-item batch import tooling, 20 real 16:9 intro preset configs across two batches, richer preset list rendering, selected preset preview binding, animated HTML/CSS preview timeline, variant-based preview styling, token-based visual override, and regression validation to protect future batches.
+The preset server layer now has a local smoke-test path, 10-item batch import tooling, 30 real 16:9 intro preset configs across three batches, richer preset list rendering, selected preset preview binding, animated HTML/CSS preview timeline, variant-based preview styling, token-based visual override, and regression validation to protect future batches.
 
 ## Next Recommended Work
 
@@ -324,15 +319,17 @@ The preset server layer now has a local smoke-test path, 10-item batch import to
 4. Test batch imports:
    - `npm run import:preset-batch -- shared/presets/imports/intro-batch-001-010.json`
    - `npm run import:preset-batch -- shared/presets/imports/intro-batch-011-020.json`
+   - `npm run import:preset-batch -- shared/presets/imports/intro-batch-021-030.json`
 5. Confirm imported files under:
    - `shared/presets/16x9/batch-001-010/`
    - `shared/presets/16x9/batch-011-020/`
+   - `shared/presets/16x9/batch-021-030/`
 6. Open the Longform Intro page.
-7. Click presets from both batches and confirm:
+7. Click presets from all three batches and confirm:
    - title → CTA → bottom bar loop works
-   - old batch still works
+   - old batches still work
    - new batch has visually distinct accent/frame/glow from JSON tokens
-8. Next implementation target: add `intro-batch-021-030.json` only after local validation passes.
+8. Next implementation target: add `intro-batch-031-040.json` only after local validation passes.
 
 ## Notes
 
