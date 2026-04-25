@@ -1,5 +1,5 @@
 import { api } from '../core/api.js';
-import { getPresetById, setSelectedPreset } from '../core/state.js';
+import { getPresetById, setRenderDraft, setSelectedPreset } from '../core/state.js';
 import { loadPresetList } from './preset-loader.js';
 import { renderSelectedPresetPreview } from './preset-preview.js';
 
@@ -30,6 +30,7 @@ export function bindPresetActions(options) {
       if (preset) {
         setSelectedPreset(kind, preset);
         renderSelectedPresetPreview(kind, preset);
+        await saveSelectedPresetForRender(kind, ratio, batchId, preset);
       }
       return;
     }
@@ -59,6 +60,22 @@ export function bindPresetPanelActions(options) {
       await reloadPresetTarget({ ratio, kind, targetId });
     };
   });
+}
+
+async function saveSelectedPresetForRender(kind, ratio, batchId, preset) {
+  const payload = Object.assign({}, preset, {
+    kind,
+    ratio,
+    batchId,
+    presetId: preset.id
+  });
+
+  try {
+    const result = await api.saveRenderDraftPreset(kind, payload);
+    if (result && result.draft) setRenderDraft(result.draft);
+  } catch (error) {
+    // keep preview usable even when draft save fails
+  }
 }
 
 async function reloadPresetTarget(options) {
