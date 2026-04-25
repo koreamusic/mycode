@@ -2,8 +2,18 @@ import { api } from '../core/api.js';
 import { setQueue } from '../core/state.js';
 import { renderDraftPanel } from './render-draft-panel.js';
 
+let selectedFps = 6;
+
 export function bindRenderDraftActions(root = document) {
   root.addEventListener('click', async (event) => {
+    const fpsBtn = event.target.closest('[data-fps]');
+    if (fpsBtn) {
+      selectedFps = Number(fpsBtn.dataset.fps || 6);
+      root.querySelectorAll('[data-fps]').forEach(b => b.classList.remove('active'));
+      fpsBtn.classList.add('active');
+      return;
+    }
+
     const queueButton = event.target.closest('[data-action="queue-render-draft"]');
     const renderButton = event.target.closest('[data-action="run-capture-render"]');
 
@@ -14,6 +24,14 @@ export function bindRenderDraftActions(root = document) {
 
     if (renderButton) {
       await handleRunCaptureRender(renderButton);
+    }
+
+    const copyOutput = event.target.closest('[data-action="copy-render-output"]');
+    if (copyOutput) {
+      const path = copyOutput.dataset.output;
+      if (navigator.clipboard && path) navigator.clipboard.writeText(path);
+      copyOutput.textContent = '복사됨';
+      setTimeout(() => (copyOutput.textContent = '경로 복사'), 1000);
     }
   });
 }
@@ -53,7 +71,7 @@ async function handleRunCaptureRender(button) {
     const started = await api.startNextQueueJob();
     if (started && started.queue) setQueue(started.queue);
 
-    const rendered = await api.processCurrentQueueCaptureMp4();
+    const rendered = await api.processCurrentQueueCaptureMp4({ fps: selectedFps });
     if (rendered && rendered.queue) setQueue(rendered.queue);
 
     const draft = await api.renderDraft();
