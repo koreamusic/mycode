@@ -1,0 +1,36 @@
+{
+  "presetId": "intro-012-vinyl-room-lofi",
+  "sourceFile": "presets_11_30.html",
+  "sourceKey": "vinyl",
+  "sourceNumber": 12,
+  "sourceName": "12 - Vinyl Room Lofi",
+  "song": "Vinyl Room",
+  "lyric": "먼지 낀 방 안에 천천히 도는 밤",
+  "brandMain": "POP WiFi",
+  "brandSub": "팝 와이파이",
+  "diskIcon": "◎",
+  "theme": {
+    "accent": "#d7c0ff",
+    "accent2": "#ffd78a",
+    "titleColor": "#fff6df",
+    "subTextColor": "rgba(255,232,185,0.78)",
+    "roomBlack": "#100c18",
+    "lampAmber": "#ffd78a",
+    "dustViolet": "#d7c0ff"
+  },
+  "sourceFunctions": {
+    "frame": "vinyl.frame",
+    "particles": "vinyl.particles",
+    "record": "vinyl.record",
+    "needle": "vinyl.needle"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0.4,
+    "titleIn": 1,
+    "titleOut": 5,
+    "ctaIn": 5,
+    "ctaOut": 10,
+    "bottomBarIn": 10
+  }
+}
