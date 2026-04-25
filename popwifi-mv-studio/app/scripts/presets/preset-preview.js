@@ -7,6 +7,24 @@ function escapeHtml(value) {
     .replace(/'/g, '&#039;');
 }
 
+const ALLOWED_PRESET_VARIANTS = new Set([
+  'jazz',
+  'lofi',
+  'acoustic',
+  'kpop',
+  'ballad',
+  'citypop',
+  'blues',
+  'anime',
+  'chillwave',
+  'cafe',
+  'cinematic',
+  'retro',
+  'minimal',
+  'spring',
+  'night'
+]);
+
 function getPreviewTargetId(kind) {
   if (kind === 'shorts') return 'shortsPreview';
   return 'longformPreview';
@@ -23,16 +41,23 @@ function getFlowSummary(preset) {
 }
 
 function getPresetVariant(preset) {
+  if (preset.variant && ALLOWED_PRESET_VARIANTS.has(preset.variant)) return preset.variant;
+
   const source = [preset.id, preset.title, preset.mood, preset.category].filter(Boolean).join(' ').toLowerCase();
   if (source.includes('lofi')) return 'lofi';
-  if (source.includes('acoustic') || source.includes('spring')) return 'acoustic';
+  if (source.includes('acoustic')) return 'acoustic';
+  if (source.includes('spring')) return 'spring';
   if (source.includes('k-pop') || source.includes('kpop') || source.includes('neon')) return 'kpop';
   if (source.includes('ballad') || source.includes('memory')) return 'ballad';
-  if (source.includes('city') || source.includes('retro')) return 'citypop';
+  if (source.includes('city')) return 'citypop';
+  if (source.includes('retro')) return 'retro';
   if (source.includes('blues') || source.includes('smoke')) return 'blues';
   if (source.includes('anime') || source.includes('sky')) return 'anime';
   if (source.includes('chillwave') || source.includes('dream')) return 'chillwave';
   if (source.includes('cafe') || source.includes('smooth')) return 'cafe';
+  if (source.includes('cinematic')) return 'cinematic';
+  if (source.includes('minimal')) return 'minimal';
+  if (source.includes('night')) return 'night';
   return 'jazz';
 }
 
