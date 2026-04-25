@@ -1,0 +1,57 @@
+{
+  "id": "preset-shorts-004",
+  "name": "Twist Box",
+  "title": "Twist Box",
+  "category": "shorts-preset",
+  "variant": "kpop",
+  "ratio": "9x16",
+  "batchId": "batch-001-010",
+  "accentColor": "#ff6432",
+  "tags": ["dynamic", "hip", "colorful"],
+  "fonts": { "title": "Black Han Sans", "lyric": "Black Han Sans", "karaoke": "Noto Sans KR" },
+  "karaokeMode": false,
+  "karaokeGlow": false,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-grid-slide"
+  },
+  "layout": {
+    "frameStyle": "twist-box-color-layer-frame",
+    "titlePosition": "center-lower",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center",
+    "safeArea": "vertical-center-lower"
+  },
+  "visual": {
+    "accent": "#ff6432",
+    "accent2": "#32c8ff",
+    "palette": ["deep blue", "violet", "orange red", "cyan", "yellow"],
+    "texture": "twisted layered squares, colorful hip motion, central cross lines",
+    "typography": "Black Han Sans title and lyric"
+  },
+  "motion": {
+    "frameExit": "reverse-grid-slide",
+    "title": "neon-pop",
+    "cta": "arcade-blink",
+    "bottomBar": "neon-rise",
+    "end": "equalizer-pulse",
+    "cadence": "snappy"
+  },
+  "cta": {
+    "style": "dynamic colorful CTA chips",
+    "items": ["like", "subscribe", "notification"]
+  },
+  "bottomBar": {
+    "style": "colorful dark rounded lyric bar",
+    "endAnimation": "tiny equalizer pulse",
+    "contentFallback": "title"
+  },
+  "templateFile": "template.js",
+  "sourceZip": "shorts-presets.zip",
+  "createdAt": "2026-04-25",
+  "active": true
+}
