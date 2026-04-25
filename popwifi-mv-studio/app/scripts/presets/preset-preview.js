@@ -195,6 +195,25 @@ function applyPresetTokens(target, meta) {
   }
 }
 
+function getSourceRendererUrl(preset) {
+  if (!preset || !preset.ratio || !preset.batchId || !preset.id) return '';
+  if (!preset.sourceOriginal) return '';
+  return '../shared/presets/' + encodeURIComponent(preset.ratio) + '/' + encodeURIComponent(preset.batchId) + '/' + encodeURIComponent(preset.id) + '/renderer.html';
+}
+
+function renderSourceIframe(target, preset) {
+  const url = getSourceRendererUrl(preset);
+  if (!url) return false;
+
+  target.classList.add('has-preset-preview', 'has-source-renderer');
+  target.removeAttribute('data-preset-variant');
+  target.innerHTML = [
+    '<iframe class="source-preset-frame" title="source faithful preset preview" src="' + escapeHtml(url) + '" loading="eager"></iframe>',
+    '<div class="source-preset-label">SOURCE ORIGINAL · ' + escapeHtml(preset.title || preset.id) + '</div>'
+  ].join('');
+  return true;
+}
+
 function getPresetMeta(preset) {
   const layout = preset.layout || {};
   const visual = preset.visual || {};
@@ -226,8 +245,11 @@ export function renderSelectedPresetPreview(kind, preset) {
   const target = document.getElementById(getPreviewTargetId(kind));
   if (!target || !preset) return;
 
+  if (renderSourceIframe(target, preset)) return;
+
   const meta = getPresetMeta(preset);
   target.classList.add('has-preset-preview');
+  target.classList.remove('has-source-renderer');
   target.dataset.presetVariant = meta.variant;
   applyPresetMotion(target, meta.motion);
   applyPresetTokens(target, meta);
