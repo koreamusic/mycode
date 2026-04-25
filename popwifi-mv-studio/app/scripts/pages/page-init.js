@@ -68,6 +68,26 @@ async function hydrateSettingsPage() {
     // keep static settings page available
   }
 
+  const saveBtn = document.getElementById('settings-save-btn');
+  const saveResult = document.getElementById('settings-save-result');
+  if (saveBtn) {
+    saveBtn.addEventListener('click', async () => {
+      const updates = {};
+      document.querySelectorAll('[data-config-key]').forEach((input) => {
+        updates[input.dataset.configKey] = input.value;
+      });
+      try {
+        saveBtn.disabled = true;
+        await api.saveConfig(updates);
+        if (saveResult) saveResult.textContent = '저장 완료';
+      } catch (error) {
+        if (saveResult) saveResult.textContent = '저장 실패: ' + (error.message || '오류');
+      } finally {
+        saveBtn.disabled = false;
+      }
+    });
+  }
+
   const importBtn = document.getElementById('preset-import-btn');
   const importFile = document.getElementById('preset-import-file');
   const importResult = document.getElementById('preset-import-result');

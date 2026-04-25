@@ -106,6 +106,12 @@ export const api = {
       body: JSON.stringify({})
     });
   },
+  saveConfig(updates) {
+    return writeJson('/api/config', {
+      method: 'PATCH',
+      body: JSON.stringify(updates)
+    });
+  },
   importPresetBatch(payload) {
     return writeJson('/api/presets/import', {
       method: 'POST',
