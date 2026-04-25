@@ -1,1 +1,53 @@
-{"id":"intro-007-blues-smoke-signature","title":"Blues Smoke Signature","category":"intro","mood":"deep, smoky, old soul blues","description":"Heavy blues intro with smoke-shaped frame, signature-like title, restrained CTA, and moody lyric bar.","active":true,"ratio":"16x9","batchId":"batch-001-010","flow":{"frameSeconds":10,"titleSeconds":5,"ctaSeconds":5,"bottomBarStartsAfterSeconds":10,"frameExit":"reverse-smoke-dissolve"},"layout":{"frameStyle":"smoke-trace-ink-frame","titlePosition":"center-middle","ctaPosition":"center-middle","bottomBarPosition":"bottom-safe","bottomBarAlign":"center"},"visual":{"palette":["black","deep blue","rust brown","aged ivory"],"texture":"dense smoke, scratched film, old club air","typography":"rough elegant serif with signature accent"},"cta":{"style":"low-key stamped CTA marks","items":["like","subscribe","notification"]},"bottomBar":{"style":"dark blue-black transparent bar with rust line","endAnimation":"tiny harmonica breath wave","contentFallback":"title"},"layers":[]}
+{
+  "id": "intro-007-blues-smoke-signature",
+  "title": "07 · 어쿠스틱 기타",
+  "category": "intro",
+  "variant": "ballad",
+  "mood": "acoustic guitar, warm afternoon, heartfelt memory",
+  "description": "원본 presets_02_10.html의 07 어쿠스틱 기타 프리셋 기준 메타입니다. 원본 기타 프레임, 기타 음표 파티클, 좋아요/구독 CTA, 하단바, 기타 EQ를 보존해야 합니다.",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-001-010",
+  "sourceOriginal": {
+    "sourceFile": "presets_02_10.html",
+    "sourceKey": "guitar",
+    "sourceNumber": 7,
+    "sourceName": "07 · 어쿠스틱 기타",
+    "song": "어쿠스틱 오후",
+    "lyric": "기타 한 줄에 실어 보낸 마음",
+    "frameFunction": "buildGuitarFrame",
+    "particleFunction": "buildGuitarParticles",
+    "equalizerFunction": "buildGuitarEq",
+    "status": "metadata-aligned-renderer-not-yet-extracted"
+  },
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "source-original"
+  },
+  "layout": {
+    "frameStyle": "source: buildGuitarFrame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-bottom",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "left"
+  },
+  "visual": {
+    "accent": "#c89040",
+    "palette": ["warm brown", "acoustic gold", "dark wood", "soft ivory"],
+    "texture": "source original acoustic guitar frame and guitar note particles",
+    "typography": "source original Nanum Myeongjo mood"
+  },
+  "cta": {
+    "style": "source original guitar-pick like / subscribe CTA",
+    "items": ["like", "subscribe", "notification"]
+  },
+  "bottomBar": {
+    "style": "source original guitar bottom bar with disk and guitar EQ",
+    "endAnimation": "source original guitar EQ",
+    "contentFallback": "title"
+  },
+  "layers": []
+}
