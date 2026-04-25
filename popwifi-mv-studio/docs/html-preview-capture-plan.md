@@ -1,0 +1,204 @@
+# Pop WiFi MV Studio — HTML Preview Capture Plan
+
+## Purpose
+
+This document defines how the existing HTML/CSS/JS intro preview should become an actual video without introducing Remotion or a second render engine.
+
+This is the step after dummy FFmpeg validation and before real visual rendering.
+
+## Fixed Stack
+
+Use:
+
+- Node.js
+- Express
+- HTML/CSS/JS preview
+- JSON preset data
+- Local browser capture
+- FFmpeg-oriented assembly
+
+Do not use:
+
+- Remotion
+- A second preset engine
+- A parallel preview implementation
+
+## Current State
+
+The project already has:
+
+- 50 intro preset JSON configs
+- HTML/CSS/JS browser preview
+- render draft state
+- queue pending jobs
+- queue state transitions
+- manifest-only processor
+- dummy 12-second FFmpeg MP4 validation
+
+The dummy MP4 proves FFmpeg path, output folders, logging, and queue transitions only.
+It is not final rendering.
+
+## Target Rendering Strategy
+
+The first real visual render should use a browser-capture pipeline:
+
+```txt
+queue.currentJob
+-> load selected preset data
+-> open a local capture page in a browser engine
+-> render the same HTML/CSS/JS preview at fixed viewport size
+-> capture frames or screenshots for 12 seconds
+-> assemble frames into intro-preview.mp4 with FFmpeg
+```
+
+## Why Browser Capture
+
+The preview is already HTML/CSS/JS.
+To avoid duplicating design logic, the render should capture the existing preview route instead of recreating the design in another renderer.
+
+This prevents:
+
+- preview and output mismatch
+- duplicate animation logic
+- second engine drift
+- Remotion dependency
+
+## Capture Page Requirement
+
+Create a dedicated capture page later:
+
+```txt
+/app/capture/intro-preview.html
+```
+
+It should:
+
+- accept job id or preset id as query params
+- load the selected preset data from the server
+- render only the intro preview canvas area
+- hide sidebars, panels, controls, debug UI
+- use deterministic viewport and timing
+
+Recommended route later:
+
+```txt
+/app/capture/intro-preview.html?jobId=<job-id>
+```
+
+## Viewport Rules
+
+For 16:9 longform:
+
+```txt
+1920x1080
+30fps
+12 seconds
+```
+
+For 9:16 shorts later:
+
+```txt
+1080x1920
+30fps
+12 seconds
+```
+
+Do not mix these in the same capture stage.
+Longform should be stabilized first.
+
+## Timing Rules
+
+The capture pipeline must preserve:
+
+- frame: 10 seconds
+- title: 0–5 seconds
+- CTA: 5–10 seconds
+- bottom bar: 10 seconds onward
+- total preview render target: 12 seconds
+
+## Frame Capture Plan
+
+Safe first real visual pipeline:
+
+```txt
+1. Start current queue job.
+2. Create output/temp/log folders.
+3. Generate manifest.
+4. Open capture page at 1920x1080.
+5. Capture still frames to temp/renders/<job-id>/frames/.
+6. Use FFmpeg to assemble frames into output/renders/<job-id>/intro-preview.mp4.
+7. Complete queue job.
+```
+
+## Browser Tool Candidate
+
+Preferred candidate:
+
+```txt
+Playwright with Chromium
+```
+
+Reason:
+
+- reliable local headless browser control
+- viewport control
+- screenshot capture
+- no Remotion dependency
+- common Node ecosystem fit
+
+But do not add Playwright until the capture page contract is implemented.
+
+## First Real Rendering Milestones
+
+### Milestone 1 — Capture Page Static Proof
+
+- Build `/app/capture/intro-preview.html`.
+- Load one preset by job id.
+- Render a still preview frame.
+- No FFmpeg.
+
+### Milestone 2 — Single Screenshot Capture
+
+- Add a Node capture helper.
+- Use browser automation to capture one PNG frame.
+- Save under `temp/renders/<job-id>/frames/frame-000001.png`.
+
+### Milestone 3 — Frame Sequence Capture
+
+- Capture 12 seconds at reduced test FPS first, for example 6fps.
+- Confirm animation phases visually.
+- Then move to 30fps.
+
+### Milestone 4 — FFmpeg Assembly
+
+- Assemble PNG frames into MP4.
+- Output to `output/renders/<job-id>/intro-preview.mp4`.
+
+## Avoided Shortcut
+
+Do not directly generate the intro design in FFmpeg filters.
+That would create a second design engine and drift from the HTML/CSS preview.
+
+## Required Regression Checks
+
+Before real capture is considered successful:
+
+1. Existing longform preset UI still works.
+2. Existing preview still works.
+3. Render draft still saves.
+4. Queue job still works.
+5. Manifest-only processor still works.
+6. Dummy MP4 processor still works.
+7. Capture output visually matches the selected preset preview.
+8. No Remotion dependency added.
+9. No new duplicate preview renderer added.
+
+## Current Progress Marker
+
+After this capture plan, estimated project progress is 92–93%.
+
+Next safe implementation:
+
+- Add capture page skeleton only.
+- Do not add Playwright yet.
+- Do not run FFmpeg for actual HTML capture yet.
