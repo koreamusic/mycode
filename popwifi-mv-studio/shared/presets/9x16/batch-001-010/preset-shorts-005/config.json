@@ -1,0 +1,57 @@
+{
+  "id": "preset-shorts-005",
+  "name": "Minimal Line",
+  "title": "Minimal Line",
+  "category": "shorts-preset",
+  "variant": "minimal",
+  "ratio": "9x16",
+  "batchId": "batch-001-010",
+  "accentColor": "#1e1e1e",
+  "tags": ["minimal", "premium", "slide"],
+  "fonts": { "title": "Cormorant Garamond", "lyric": "Noto Sans KR", "karaoke": "Noto Sans KR" },
+  "karaokeMode": false,
+  "karaokeGlow": false,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-line-fade"
+  },
+  "layout": {
+    "frameStyle": "minimal-line-layer-frame",
+    "titlePosition": "center-left",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "left",
+    "safeArea": "vertical-left-center"
+  },
+  "visual": {
+    "accent": "#1e1e1e",
+    "accent2": "#f5f0e8",
+    "palette": ["paper cream", "deep black", "soft gray", "premium beige"],
+    "texture": "paper grain, minimal layered rectangles, premium line composition",
+    "typography": "Cormorant Garamond title with Noto Sans KR lyric"
+  },
+  "motion": {
+    "frameExit": "reverse-film-fade",
+    "title": "slide-left",
+    "cta": "soft-pop",
+    "bottomBar": "glass-slide",
+    "end": "glow-pulse",
+    "cadence": "slow"
+  },
+  "cta": {
+    "style": "premium minimal monochrome CTA",
+    "items": ["like", "subscribe", "notification"]
+  },
+  "bottomBar": {
+    "style": "paper-tone minimal rounded lyric bar",
+    "endAnimation": "thin line breathing loop",
+    "contentFallback": "title"
+  },
+  "templateFile": "template.js",
+  "sourceZip": "shorts-presets.zip",
+  "createdAt": "2026-04-25",
+  "active": true
+}
