@@ -36,6 +36,7 @@ The project already has:
 - dummy 12-second FFmpeg MP4 validation
 - capture page skeleton
 - single screenshot capture helper script
+- reduced-FPS frame sequence capture helper script
 - Playwright dev dependency for Chromium screenshot capture
 
 The dummy MP4 proves FFmpeg path, output folders, logging, and queue transitions only.
@@ -201,6 +202,56 @@ It does not capture frame sequences.
 It does not assemble video.
 It does not run FFmpeg.
 
+## Reduced-FPS Frame Sequence Helper
+
+Added helper:
+
+```txt
+scripts/capture-intro-frame-sequence.js
+```
+
+Package script:
+
+```bash
+npm run capture:intro-frames -- <job-id>
+```
+
+Optional output directory:
+
+```bash
+npm run capture:intro-frames -- <job-id> temp/captures/<job-id>/frames
+```
+
+Default output:
+
+```txt
+temp/captures/<job-id>/frames/frame-000001.png
+```
+
+Default capture settings:
+
+```txt
+6fps
+12 seconds
+72 PNG frames
+1920x1080 viewport
+```
+
+Environment overrides:
+
+```bash
+POPWIFI_CAPTURE_FPS=6 POPWIFI_CAPTURE_DURATION=12 npm run capture:intro-frames -- <job-id>
+```
+
+This helper:
+
+- opens `/app/capture/intro-preview.html?jobId=<job-id>`
+- captures PNG frames over time
+- saves them as `frame-000001.png`, `frame-000002.png`, etc.
+
+It does not assemble video.
+It does not run FFmpeg.
+
 ## First Real Rendering Milestones
 
 ### Milestone 1 — Capture Page Static Proof
@@ -226,7 +277,7 @@ Status: helper added, Playwright dependency added.
 - Confirm animation phases visually.
 - Then move to 30fps.
 
-Status: not implemented.
+Status: reduced-FPS helper added, FFmpeg assembly not yet added.
 
 ### Milestone 4 — FFmpeg Assembly
 
@@ -256,11 +307,10 @@ Before real capture is considered successful:
 
 ## Current Progress Marker
 
-After this Playwright dependency patch, estimated project progress is 94–95%.
+After this reduced-FPS frame sequence helper patch, estimated project progress is 95–96%.
 
 Next safe implementation:
 
-- Run `npm install`.
-- Run `npm run install:browser`.
-- Confirm single screenshot output.
-- After screenshot works, add reduced-FPS frame sequence capture.
+- Run frame capture at 6fps.
+- Manually inspect title → CTA → bottom bar frames.
+- Then add FFmpeg frame assembly from captured PNGs.
