@@ -12,9 +12,12 @@
     "equalizer": "buildPianoEq"
   },
   "preserveOriginal": true,
-  "implementationStatus": "renderer-extracted-source-faithful-v1",
+  "implementationStatus": "renderer-extracted-source-faithful-separated-v1",
   "rendererFiles": [
-    "renderer.html"
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
   ],
   "preserved": {
     "frame": true,
@@ -25,5 +28,5 @@
     "timeline": true
   },
   "fixedErrors": [],
-  "notes": "Renderer v1 preserves the original piano frame, note particles, animated like/subscription CTA, bottom bar, disk, and piano EQ inside an isolated iframe renderer."
+  "notes": "Renderer v1 is separated into HTML/CSS/JS/data files and preserves the original piano frame, note particles, animated like/subscription CTA, bottom bar, disk, and piano EQ inside an isolated iframe renderer."
 }
