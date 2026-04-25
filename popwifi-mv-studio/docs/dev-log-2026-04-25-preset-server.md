@@ -198,6 +198,30 @@ Behavior:
 - The preview loops every 12 seconds for quick inspection.
 - This is browser preview only, using HTML/CSS/JS. No Remotion or other external render framework is used.
 
+### 9. Intro preset visual variants added
+
+Updated:
+
+- `app/scripts/presets/preset-preview.js`
+- `app/styles/app.css`
+
+Behavior:
+
+- Selected presets are mapped to a preview variant through `data-preset-variant`.
+- Variants currently include:
+  - `jazz`
+  - `lofi`
+  - `acoustic`
+  - `kpop`
+  - `ballad`
+  - `citypop`
+  - `blues`
+  - `anime`
+  - `chillwave`
+  - `cafe`
+- Each variant changes preview accent colors, secondary accent, glow, frame line color, CTA glow, progress bar, and bottom bar tint.
+- This is still a browser preview layer only. It does not alter source preset JSON or introduce another engine.
+
 ## Important Rules Preserved
 
 - Do not touch UI unless explicitly requested.
@@ -212,9 +236,9 @@ Behavior:
 
 ## Current Progress
 
-Estimated total project progress after this patch: 48–50%.
+Estimated total project progress after this patch: 52–54%.
 
-The preset server layer now has a local smoke-test path, 10-item batch import tooling, the first real 16:9 intro preset batch JSON, richer preset list rendering, selected preset preview binding, and a first-stage animated HTML/CSS preview timeline.
+The preset server layer now has a local smoke-test path, 10-item batch import tooling, the first real 16:9 intro preset batch JSON, richer preset list rendering, selected preset preview binding, animated HTML/CSS preview timeline, and variant-based preview styling for the first 10 intro presets.
 
 ## Next Recommended Work
 
@@ -225,8 +249,10 @@ The preset server layer now has a local smoke-test path, 10-item batch import to
 4. Confirm imported files under:
    - `shared/presets/16x9/batch-001-010/`
 5. Open the Longform Intro page.
-6. Click each imported preset and confirm the preview card updates and loops title → CTA → bottom bar.
-7. Next implementation target: improve the visual differentiation of the 10 intro presets inside the HTML/CSS preview without changing the page layout.
+6. Click each imported preset and confirm:
+   - title → CTA → bottom bar loop works
+   - each preset has a visually different accent/frame/glow direction
+7. Next implementation target: add a pause/replay preview control or connect selected preset to a render/export preparation state, without changing the page layout.
 
 ## Notes
 
