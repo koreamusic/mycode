@@ -1,0 +1,406 @@
+{
+  "ratio": "16x9",
+  "batchId": "batch-041-050",
+  "presets": [
+    {
+      "id": "intro-041-midnight-cinema-rain",
+      "title": "Midnight Cinema Rain",
+      "category": "intro",
+      "variant": "cinematic",
+      "mood": "midnight, cinematic, rain-lit city",
+      "description": "Cinematic rain-night intro with silver-gold frame, dramatic title, refined CTA, and rain-glass lower bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-cinema-rain-fade"
+      },
+      "layout": {
+        "frameStyle": "cinema-rain-glass-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "center"
+      },
+      "visual": {
+        "accent": "#D8B870",
+        "accent2": "#BFD7FF",
+        "palette": ["midnight black", "rain blue", "old gold", "soft white"],
+        "texture": "rain glass, cinema grain, soft highlight streaks",
+        "typography": "premium serif title with narrow cinematic sans"
+      },
+      "cta": {
+        "style": "cinematic rain CTA capsule",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "rain-glass black-gold rounded bar",
+        "endAnimation": "tiny rain light sweep",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-042-minimal-dust-light",
+      "title": "Minimal Dust Light",
+      "category": "intro",
+      "variant": "minimal",
+      "mood": "minimal, quiet, dust-light modern",
+      "description": "Minimal dust-light intro with calm thin frame, precise title, subtle CTA, and restrained lower bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-dust-line"
+      },
+      "layout": {
+        "frameStyle": "dust-light-thin-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "center"
+      },
+      "visual": {
+        "accent": "#E6E1D7",
+        "accent2": "#9EA7B8",
+        "palette": ["soft white", "gray beige", "black", "muted blue"],
+        "texture": "fine dust light, matte black, subtle grain",
+        "typography": "precise modern sans with airy tracking"
+      },
+      "cta": {
+        "style": "minimal thin-line CTA",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "soft black transparent minimal bar",
+        "endAnimation": "tiny dust line breath",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-043-retro-cassette-orange",
+      "title": "Retro Cassette Orange",
+      "category": "intro",
+      "variant": "retro",
+      "mood": "analog, orange, cassette retro",
+      "description": "Cassette retro intro with orange analog frame, bold title, tactile CTA, and tape-style lower bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-cassette-click"
+      },
+      "layout": {
+        "frameStyle": "orange-cassette-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "left"
+      },
+      "visual": {
+        "accent": "#F08A38",
+        "accent2": "#F6D47D",
+        "palette": ["orange", "warm cream", "brown black", "analog gray"],
+        "texture": "cassette plastic, tape grain, analog scanline",
+        "typography": "retro display sans with tape-label support"
+      },
+      "cta": {
+        "style": "cassette button CTA badges",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "tape-label lower-third rounded bar",
+        "endAnimation": "tiny cassette click loop",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-044-spring-picnic-pop",
+      "title": "Spring Picnic Pop",
+      "category": "intro",
+      "variant": "spring",
+      "mood": "picnic, bright, soft spring pop",
+      "description": "Spring picnic intro with pastel frame, fresh title, friendly CTA, and cream-green lyric bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-picnic-petal"
+      },
+      "layout": {
+        "frameStyle": "pastel-picnic-line-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "center"
+      },
+      "visual": {
+        "accent": "#F9B8CF",
+        "accent2": "#C7EFA8",
+        "palette": ["picnic pink", "fresh green", "cream", "sky blue"],
+        "texture": "soft daylight, picnic cloth grain, petal air",
+        "typography": "soft rounded serif with clean subtitle"
+      },
+      "cta": {
+        "style": "picnic sticker CTA set",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "cream-green translucent rounded bar",
+        "endAnimation": "tiny picnic leaf loop",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-045-night-subway-glow",
+      "title": "Night Subway Glow",
+      "category": "intro",
+      "variant": "night",
+      "mood": "subway, dark, neon night motion",
+      "description": "Night subway intro with moving light frame, sleek title, neon CTA, and dark motion lower bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-subway-light"
+      },
+      "layout": {
+        "frameStyle": "subway-light-motion-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "center"
+      },
+      "visual": {
+        "accent": "#56D9FF",
+        "accent2": "#B477FF",
+        "palette": ["subway black", "cyan", "violet", "steel gray"],
+        "texture": "subway reflection, light streaks, night haze",
+        "typography": "sleek condensed sans with glowing title"
+      },
+      "cta": {
+        "style": "subway neon CTA capsule",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "dark neon motion rounded bar",
+        "endAnimation": "tiny subway light streak",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-046-smooth-lounge-rnb",
+      "title": "Smooth Lounge R&B",
+      "category": "intro",
+      "variant": "minimal",
+      "mood": "smooth, lounge, intimate R&B",
+      "description": "Smooth lounge R&B intro with velvet frame, elegant title, soft CTA, and muted mauve lyric bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-velvet-glide"
+      },
+      "layout": {
+        "frameStyle": "velvet-lounge-soft-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "center"
+      },
+      "visual": {
+        "accent": "#CFA0C9",
+        "accent2": "#F6D6B8",
+        "palette": ["mauve", "cream", "black", "warm gray"],
+        "texture": "velvet sheen, low light, smooth grain",
+        "typography": "thin elegant serif with soft sans metadata"
+      },
+      "cta": {
+        "style": "velvet soft CTA lozenges",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "mauve velvet translucent lyric bar",
+        "endAnimation": "tiny velvet wave loop",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-047-country-dust-road",
+      "title": "Country Dust Road",
+      "category": "intro",
+      "variant": "acoustic",
+      "mood": "dusty, warm, country acoustic road",
+      "description": "Country road intro with dusty paper frame, honest title, warm CTA, and sun-brown lyric bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-country-dust"
+      },
+      "layout": {
+        "frameStyle": "country-road-paper-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "left"
+      },
+      "visual": {
+        "accent": "#C99557",
+        "accent2": "#F2D39B",
+        "palette": ["dust brown", "sun cream", "field green", "warm black"],
+        "texture": "road dust, paper grain, acoustic warmth",
+        "typography": "warm folk serif with simple sans caption"
+      },
+      "cta": {
+        "style": "country paper stamp CTA",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "dusty sun-brown rounded lyric bar",
+        "endAnimation": "tiny dust road drift",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-048-dream-school-sky",
+      "title": "Dream School Sky",
+      "category": "intro",
+      "variant": "anime",
+      "mood": "dreamy, school sky, anime youth",
+      "description": "Dreamy anime school-sky intro with bright frame, floating title, pastel CTA, and clean sky lyric bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-school-sky-wipe"
+      },
+      "layout": {
+        "frameStyle": "school-sky-dream-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "center"
+      },
+      "visual": {
+        "accent": "#8DDCFF",
+        "accent2": "#FFD0EA",
+        "palette": ["sky blue", "cloud white", "soft pink", "pale green"],
+        "texture": "clean anime sky, soft bloom, floating dust",
+        "typography": "rounded anime sans with open spacing"
+      },
+      "cta": {
+        "style": "school-sky pastel CTA icons",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "sky-white rounded lyric bar",
+        "endAnimation": "tiny paper plane cloud loop",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-049-purple-dawn-chillwave",
+      "title": "Purple Dawn Chillwave",
+      "category": "intro",
+      "variant": "chillwave",
+      "mood": "purple dawn, dreamy, synth haze",
+      "description": "Purple dawn chillwave intro with haze frame, airy synth title, glowing CTA, and soft neon lower bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-purple-dawn"
+      },
+      "layout": {
+        "frameStyle": "purple-dawn-haze-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "left"
+      },
+      "visual": {
+        "accent": "#BA8CFF",
+        "accent2": "#7AF2FF",
+        "palette": ["purple dawn", "cyan", "soft pink", "dark violet"],
+        "texture": "synth haze, dawn glow, light chromatic shimmer",
+        "typography": "thin futuristic sans with dreamy glow"
+      },
+      "cta": {
+        "style": "purple synth CTA capsules",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "purple-cyan translucent lyric bar",
+        "endAnimation": "tiny dawn wave loop",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-050-jazz-candle-table",
+      "title": "Jazz Candle Table",
+      "category": "intro",
+      "variant": "jazz",
+      "mood": "candlelit, warm, intimate jazz table",
+      "description": "Candlelit jazz intro with warm table frame, refined title, small CTA, and amber-black lyric bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-candle-dim"
+      },
+      "layout": {
+        "frameStyle": "candle-table-gold-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "center"
+      },
+      "visual": {
+        "accent": "#D6A85C",
+        "accent2": "#F9E0A8",
+        "palette": ["candle amber", "black", "old gold", "warm cream"],
+        "texture": "candle flicker, table grain, smoky jazz room",
+        "typography": "classic serif title with elegant sans caption"
+      },
+      "cta": {
+        "style": "candlelit gold CTA marks",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "amber black-glass rounded lyric bar",
+        "endAnimation": "tiny candle flicker loop",
+        "contentFallback": "title"
+      },
+      "layers": []
+    }
+  ]
+}
