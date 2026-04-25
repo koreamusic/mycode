@@ -2,9 +2,9 @@
 
 ## Scope
 
-This patch connects selected intro presets to a render/export preparation state, exposes that state in the existing preset pages, allows the confirmed render draft to be added to the local render queue as a pending job, adds a safe queue worker state-transition skeleton, and defines the local render output artifact shape.
+This patch connects selected intro presets to a render/export preparation state, exposes that state in the existing preset pages, allows the confirmed render draft to be added to the local render queue as a pending job, adds a safe queue worker state-transition skeleton, defines the local render output artifact shape, and adds manifest-only processing.
 
-It does not start actual rendering.
+It does not start actual video rendering.
 It does not execute FFmpeg.
 It does not add a new render engine.
 It does not change the sidebar, page layout, preset list layout, or preview animation structure.
@@ -227,6 +227,34 @@ Provides:
 
 Important: this module only defines paths and payloads. It does not run FFmpeg.
 
+### 11. Manifest-only processor added
+
+Added/updated:
+
+- `server/core/render-processor.js`
+- `server/routes/queue.js`
+- `app/scripts/core/api.js`
+
+Server API:
+
+- `POST /api/queue/worker/process-current-manifest`
+
+Behavior:
+
+1. Reads `queue.currentJob`.
+2. Requires the current job type to be `intro-preview-render`.
+3. Creates output/temp/log directories according to `render-output.js`.
+4. Writes:
+   - `output/renders/<job-id>/intro-preview-manifest.json`
+5. Completes the job with the standard render result payload.
+6. If manifest processing fails, moves the job to `failed` with the standard error payload.
+
+Frontend helper added:
+
+- `api.processCurrentQueueManifest()`
+
+Important: this processor only creates a manifest JSON file. It does not run FFmpeg and does not create MP4 output.
+
 ## Important Rules Preserved
 
 - Do not touch sidebar.
@@ -237,11 +265,11 @@ Important: this module only defines paths and payloads. It does not run FFmpeg.
 - Do not add Remotion.
 - Keep selected preset as data, not hardcoded UI state.
 - Do not add a new CSS file for this panel.
-- Do not start FFmpeg until the queued job processing pipeline is explicitly designed.
+- Do not start FFmpeg until the manifest-only pipeline is verified.
 
 ## Current Progress
 
-Estimated total project progress after this patch: 87–88%.
+Estimated total project progress after this patch: 89–90%.
 
 The system now supports:
 
@@ -256,6 +284,7 @@ The system now supports:
 - Queue pending job creation from confirmed render draft.
 - Queue state transitions: pending → running → completed/failed.
 - Render output path/result/error payload spec.
+- Manifest-only queue processing.
 
 ## Next Recommended Work
 
@@ -293,18 +322,24 @@ npm run test:preset-api
 - `data/queue.json` gets a new `pending` job
 - no FFmpeg process starts yet
 
-8. Test worker transition APIs manually:
+8. Test manifest-only worker flow manually:
 
 ```bash
 curl -X POST http://localhost:3100/api/queue/worker/start-next
-curl -X POST http://localhost:3100/api/queue/worker/complete-current -H "Content-Type: application/json" -d "{}"
+curl -X POST http://localhost:3100/api/queue/worker/process-current-manifest
 ```
 
-9. Next implementation target:
+9. Confirm:
 
-- Add a processor skeleton that creates output/temp/log folders and writes `intro-preview-manifest.json` only.
-- Do not run FFmpeg yet.
+- `output/renders/<job-id>/intro-preview-manifest.json` exists
+- `data/queue.json` moved the job to `completed`
+- no MP4 was created yet
+
+10. Next implementation target:
+
+- Review generated manifest and define the first FFmpeg-oriented processor step.
+- Do not connect full video output until manifest data is confirmed correct.
 
 ## Handoff Note
 
-The next worker should not jump directly into FFmpeg execution. First implement manifest-only processing around the output spec, then review the generated manifest and queue result payload.
+The next worker should inspect the generated manifest and only then begin the FFmpeg-oriented processor. The first FFmpeg step should be minimal and reversible.
