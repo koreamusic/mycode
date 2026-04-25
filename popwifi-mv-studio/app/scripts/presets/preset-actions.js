@@ -1,5 +1,6 @@
 import { api } from '../core/api.js';
 import { getPresetById, setRenderDraft, setSelectedPreset } from '../core/state.js';
+import { renderDraftPanel } from '../render/render-draft-panel.js';
 import { loadPresetList } from './preset-loader.js';
 import { renderSelectedPresetPreview } from './preset-preview.js';
 
@@ -72,7 +73,10 @@ async function saveSelectedPresetForRender(kind, ratio, batchId, preset) {
 
   try {
     const result = await api.saveRenderDraftPreset(kind, payload);
-    if (result && result.draft) setRenderDraft(result.draft);
+    if (result && result.draft) {
+      setRenderDraft(result.draft);
+      renderDraftPanel(kind, result.draft);
+    }
   } catch (error) {
     // keep preview usable even when draft save fails
   }
