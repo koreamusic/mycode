@@ -1,0 +1,40 @@
+{
+  "presetId": "intro-006-city-pop-sunset-grid",
+  "sourceFile": "presets_02_10.html",
+  "sourceKey": "rose",
+  "sourceNumber": 6,
+  "sourceName": "06 · 장미 정원",
+  "song": "붉은 장미",
+  "lyric": "가시 속에 피어난 너의 이름",
+  "brandMain": "POP WiFi",
+  "brandSub": "팝 와이파이",
+  "diskIcon": "🌹",
+  "theme": {
+    "background": "radial-gradient(ellipse at 28% 35%, rgba(200,40,60,0.14) 0%, transparent 55%), radial-gradient(ellipse at 80% 70%, rgba(140,20,40,0.10) 0%, transparent 50%), linear-gradient(155deg, #180608 0%, #120406 40%, #0e0408 100%)",
+    "accent": "#c83040",
+    "accentSoft": "rgba(200,60,80,0.28)",
+    "titleColor": "#fff0f2",
+    "titleGlow": "rgba(220,60,80,0.65)",
+    "subTextColor": "rgba(240,180,190,0.72)",
+    "subBg": "rgba(16,4,6,0.82)",
+    "subBorder": "rgba(200,60,80,0.25)",
+    "barGradient": "linear-gradient(180deg,rgba(12,4,6,0) 0%,rgba(12,4,6,0.8) 28%,rgba(8,2,4,0.97) 100%)",
+    "barTopline": "linear-gradient(90deg,transparent,rgba(200,60,80,0.18) 20%,rgba(200,60,80,0.32) 50%,rgba(200,60,80,0.18) 80%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#180608 0deg,#100404 45deg,#180608 90deg,#100404 135deg,#180608 180deg,#100404 225deg,#180608 270deg,#100404 315deg,#180608 360deg)",
+    "diskCenterBg": "#0a0204"
+  },
+  "sourceFunctions": {
+    "frame": "buildRoseFrame",
+    "particles": "buildRoseParticles",
+    "equalizer": "buildRoseEq"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0.4,
+    "titleIn": 1,
+    "titleOut": 5,
+    "ctaIn": 5,
+    "ctaOut": 10,
+    "bottomBarIn": 10
+  }
+}
