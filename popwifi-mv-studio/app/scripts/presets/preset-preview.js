@@ -26,7 +26,7 @@ const ALLOWED_PRESET_VARIANTS = new Set([
 ]);
 
 const MOTION_DEFAULTS = {
-  frameExit: 'reverse-soft-collapse',
+  frameExit: 'reverse-warm-fade',
   title: 'soft-rise',
   cta: 'soft-pop',
   bottomBar: 'soft-rise',
@@ -35,7 +35,7 @@ const MOTION_DEFAULTS = {
 };
 
 const MOTION_TOKENS = {
-  frameExit: new Set(['reverse-soft-collapse', 'reverse-fade-slide', 'reverse-card-fold', 'reverse-neon-scan', 'reverse-film-fade', 'reverse-grid-slide', 'reverse-smoke-dissolve', 'reverse-cloud-wipe', 'reverse-tape-rewind', 'reverse-warm-fade', 'none']),
+  frameExit: new Set(['reverse-fade-slide', 'reverse-card-fold', 'reverse-neon-scan', 'reverse-film-fade', 'reverse-grid-slide', 'reverse-smoke-dissolve', 'reverse-cloud-wipe', 'reverse-tape-rewind', 'reverse-warm-fade', 'none']),
   title: new Set(['soft-rise', 'fade-up', 'film-fade', 'neon-pop', 'gentle-breathe', 'slide-left', 'cloud-drift', 'type-glow', 'none']),
   cta: new Set(['soft-pop', 'badge-pulse', 'neon-pulse', 'sticker-pop', 'stamp-in', 'arcade-blink', 'float-pop', 'synth-glow', 'none']),
   bottomBar: new Set(['soft-rise', 'glass-slide', 'lyric-float', 'warm-fade', 'neon-rise', 'none']),
@@ -63,19 +63,19 @@ function getPresetVariant(preset) {
 
   const source = [preset.id, preset.title, preset.mood, preset.category].filter(Boolean).join(' ').toLowerCase();
   if (source.includes('lofi')) return 'lofi';
-  if (source.includes('acoustic')) return 'acoustic';
-  if (source.includes('spring')) return 'spring';
-  if (source.includes('k-pop') || source.includes('kpop') || source.includes('neon')) return 'kpop';
-  if (source.includes('ballad') || source.includes('memory')) return 'ballad';
-  if (source.includes('city')) return 'citypop';
-  if (source.includes('retro')) return 'retro';
-  if (source.includes('blues') || source.includes('smoke')) return 'blues';
-  if (source.includes('anime') || source.includes('sky')) return 'anime';
-  if (source.includes('chillwave') || source.includes('dream')) return 'chillwave';
-  if (source.includes('cafe') || source.includes('smooth')) return 'cafe';
-  if (source.includes('cinematic')) return 'cinematic';
+  if (source.includes('acoustic') || source.includes('folk') || source.includes('guitar') || source.includes('country')) return 'acoustic';
+  if (source.includes('spring') || source.includes('flower') || source.includes('picnic')) return 'spring';
+  if (source.includes('k-pop') || source.includes('kpop') || source.includes('stage') || source.includes('pulse')) return 'kpop';
+  if (source.includes('ballad') || source.includes('memory') || source.includes('moon')) return 'ballad';
+  if (source.includes('city') || source.includes('harbor')) return 'citypop';
+  if (source.includes('retro') || source.includes('tv') || source.includes('cassette')) return 'retro';
+  if (source.includes('blues') || source.includes('smoke') || source.includes('rust')) return 'blues';
+  if (source.includes('anime') || source.includes('school') || source.includes('sky')) return 'anime';
+  if (source.includes('chillwave') || source.includes('dream') || source.includes('cosmic') || source.includes('dawn')) return 'chillwave';
+  if (source.includes('cafe') || source.includes('coffee') || source.includes('smooth jazz')) return 'cafe';
+  if (source.includes('cinematic') || source.includes('cinema')) return 'cinematic';
   if (source.includes('minimal')) return 'minimal';
-  if (source.includes('night')) return 'night';
+  if (source.includes('night') || source.includes('subway') || source.includes('drive')) return 'night';
   return 'jazz';
 }
 
@@ -89,55 +89,107 @@ function normalizeMotionToken(value) {
     .join('-');
 }
 
-function inferFrameExitToken(value) {
-  const source = String(value || '').toLowerCase();
+function textOf(...values) {
+  return values.filter(Boolean).join(' ').toLowerCase();
+}
+
+function inferFrameExitToken(value, preset, variant) {
+  const source = textOf(value, preset && preset.id, preset && preset.title, preset && preset.mood, variant);
+
+  if (source.includes('none')) return 'none';
+  if (source.includes('neon') || source.includes('stage') || source.includes('glass') || source.includes('subway') || source.includes('light-streak') || source.includes('road-light')) return 'reverse-neon-scan';
+  if (source.includes('grid') || source.includes('city') || source.includes('harbor') || source.includes('star') || source.includes('cosmic') || source.includes('purple') || source.includes('dawn')) return 'reverse-grid-slide';
+  if (source.includes('tape') || source.includes('cassette') || source.includes('vinyl') || source.includes('tv')) return 'reverse-tape-rewind';
+  if (source.includes('paper') || source.includes('book') || source.includes('page') || source.includes('card') || source.includes('folk')) return 'reverse-card-fold';
+  if (source.includes('photo') || source.includes('film') || source.includes('cinema') || source.includes('rain') || source.includes('moon') || source.includes('minimal') || source.includes('line') || source.includes('dust-light')) return 'reverse-film-fade';
+  if (source.includes('smoke') || source.includes('blues') || source.includes('rust') || source.includes('road-dust') || source.includes('country-dust')) return 'reverse-smoke-dissolve';
+  if (source.includes('cloud') || source.includes('sky') || source.includes('anime') || source.includes('spring') || source.includes('petal') || source.includes('picnic') || source.includes('breeze') || source.includes('school')) return 'reverse-cloud-wipe';
+  if (source.includes('warm') || source.includes('cafe') || source.includes('coffee') || source.includes('candle') || source.includes('gold') || source.includes('lamp') || source.includes('velvet') || source.includes('silk')) return 'reverse-warm-fade';
   if (source.includes('fade') && source.includes('slide')) return 'reverse-fade-slide';
-  if (source.includes('card') || source.includes('fold')) return 'reverse-card-fold';
-  if (source.includes('neon') || source.includes('scan')) return 'reverse-neon-scan';
-  if (source.includes('film')) return 'reverse-film-fade';
-  if (source.includes('grid')) return 'reverse-grid-slide';
-  if (source.includes('smoke')) return 'reverse-smoke-dissolve';
-  if (source.includes('cloud')) return 'reverse-cloud-wipe';
-  if (source.includes('tape') || source.includes('rewind')) return 'reverse-tape-rewind';
-  if (source.includes('warm')) return 'reverse-warm-fade';
   return MOTION_DEFAULTS.frameExit;
 }
 
-function inferEndToken(value) {
-  const source = String(value || '').toLowerCase();
-  if (source.includes('vinyl')) return 'vinyl-spin';
-  if (source.includes('leaf')) return 'falling-leaf';
-  if (source.includes('equalizer')) return 'equalizer-pulse';
-  if (source.includes('piano')) return 'piano-shimmer';
-  if (source.includes('palm')) return 'palm-blink';
-  if (source.includes('harmonica')) return 'harmonica-wave';
-  if (source.includes('paper') || source.includes('airplane')) return 'paper-airplane';
-  if (source.includes('cassette')) return 'cassette-spin';
-  if (source.includes('coffee') || source.includes('steam')) return 'coffee-steam';
+function inferTitleToken(value, preset, variant) {
+  const source = textOf(value, preset && preset.id, preset && preset.title, preset && preset.mood, variant);
+  if (source.includes('none')) return 'none';
+  if (source.includes('neon') || source.includes('kpop') || source.includes('stage') || source.includes('pulse')) return 'neon-pop';
+  if (source.includes('film') || source.includes('photo') || source.includes('ballad') || source.includes('cinema') || source.includes('rain') || source.includes('moon')) return 'film-fade';
+  if (source.includes('anime') || source.includes('cloud') || source.includes('sky') || source.includes('breeze') || source.includes('spring')) return 'cloud-drift';
+  if (source.includes('tape') || source.includes('cassette') || source.includes('synth') || source.includes('chillwave') || source.includes('cosmic')) return 'type-glow';
+  if (source.includes('city') || source.includes('night') || source.includes('drive') || source.includes('subway')) return 'slide-left';
+  if (source.includes('lofi') || source.includes('rnb') || source.includes('silk') || source.includes('velvet')) return 'gentle-breathe';
+  return 'fade-up';
+}
+
+function inferCtaToken(value, preset, variant) {
+  const source = textOf(value, preset && preset.id, preset && preset.title, preset && preset.mood, variant);
+  if (source.includes('none')) return 'none';
+  if (source.includes('neon')) return 'neon-pulse';
+  if (source.includes('synth') || source.includes('chillwave') || source.includes('cosmic') || source.includes('purple')) return 'synth-glow';
+  if (source.includes('sticker') || source.includes('anime') || source.includes('spring') || source.includes('picnic') || source.includes('pastel')) return 'sticker-pop';
+  if (source.includes('stamp') || source.includes('paper') || source.includes('cafe') || source.includes('coffee') || source.includes('country') || source.includes('folk')) return 'stamp-in';
+  if (source.includes('retro') || source.includes('tv') || source.includes('cassette') || source.includes('arcade')) return 'arcade-blink';
+  if (source.includes('floating') || source.includes('soft') || source.includes('lofi')) return 'float-pop';
+  return 'badge-pulse';
+}
+
+function inferBottomBarToken(value, preset, variant) {
+  const source = textOf(value, preset && preset.id, preset && preset.title, preset && preset.mood, variant);
+  if (source.includes('none')) return 'none';
+  if (source.includes('neon') || source.includes('cyan') || source.includes('pink') || source.includes('stage') || source.includes('subway')) return 'neon-rise';
+  if (source.includes('glass') || source.includes('transparent') || source.includes('translucent')) return 'glass-slide';
+  if (source.includes('lyric') || source.includes('floating') || source.includes('cloud') || source.includes('anime')) return 'lyric-float';
+  if (source.includes('warm') || source.includes('coffee') || source.includes('cafe') || source.includes('sepia') || source.includes('candle') || source.includes('gold') || source.includes('paper')) return 'warm-fade';
+  return MOTION_DEFAULTS.bottomBar;
+}
+
+function inferEndToken(value, preset, variant) {
+  const source = textOf(value, preset && preset.id, preset && preset.title, preset && preset.mood, variant);
+  if (source.includes('none')) return 'none';
+  if (source.includes('vinyl') || source.includes('record') || source.includes('needle')) return 'vinyl-spin';
+  if (source.includes('leaf') || source.includes('petal') || source.includes('wheat') || source.includes('dust') || source.includes('drift')) return 'falling-leaf';
+  if (source.includes('equalizer') || source.includes('pulse') || source.includes('road-line') || source.includes('subway') || source.includes('light streak')) return 'equalizer-pulse';
+  if (source.includes('piano') || source.includes('sax') || source.includes('note') || source.includes('shimmer') || source.includes('sparkle')) return 'piano-shimmer';
+  if (source.includes('palm') || source.includes('blink') || source.includes('neon')) return 'palm-blink';
+  if (source.includes('harmonica') || source.includes('wave') || source.includes('silk') || source.includes('velvet') || source.includes('guitar') || source.includes('string') || source.includes('line')) return 'harmonica-wave';
+  if (source.includes('paper') || source.includes('airplane') || source.includes('plane') || source.includes('umbrella') || source.includes('page') || source.includes('cloud')) return 'paper-airplane';
+  if (source.includes('cassette') || source.includes('tape') || source.includes('wheel') || source.includes('click')) return 'cassette-spin';
+  if (source.includes('coffee') || source.includes('steam') || source.includes('rain') || source.includes('raindrop') || source.includes('ripple')) return 'coffee-steam';
   return MOTION_DEFAULTS.end;
 }
 
-function getMotionToken(group, value, fallback) {
+function inferCadenceToken(preset, variant) {
+  const source = textOf(preset && preset.id, preset && preset.title, preset && preset.mood, variant);
+  if (source.includes('cinema') || source.includes('ballad') || source.includes('blues') || source.includes('moon')) return 'cinematic';
+  if (source.includes('kpop') || source.includes('pop') || source.includes('neon') || source.includes('stage')) return 'snappy';
+  if (source.includes('lofi') || source.includes('minimal') || source.includes('cafe') || source.includes('rnb')) return 'slow';
+  return 'standard';
+}
+
+function getMotionToken(group, value, fallback, preset, variant) {
   const token = normalizeMotionToken(value);
   if (MOTION_TOKENS[group] && MOTION_TOKENS[group].has(token)) return token;
-  if (group === 'frameExit') return inferFrameExitToken(value);
-  if (group === 'end') return inferEndToken(value);
+  if (group === 'frameExit') return inferFrameExitToken(value, preset, variant);
+  if (group === 'title') return inferTitleToken(value, preset, variant);
+  if (group === 'cta') return inferCtaToken(value, preset, variant);
+  if (group === 'bottomBar') return inferBottomBarToken(value, preset, variant);
+  if (group === 'end') return inferEndToken(value, preset, variant);
   return fallback;
 }
 
-function getPresetMotion(preset) {
+function getPresetMotion(preset, variant) {
   const motion = preset.motion || {};
   const flow = preset.flow || {};
   const cta = preset.cta || {};
   const bottomBar = preset.bottomBar || {};
 
   return {
-    frameExit: getMotionToken('frameExit', motion.frameExit || motion.frame || flow.frameExit, MOTION_DEFAULTS.frameExit),
-    title: getMotionToken('title', motion.title || motion.titleReveal, MOTION_DEFAULTS.title),
-    cta: getMotionToken('cta', motion.cta || cta.motion, MOTION_DEFAULTS.cta),
-    bottomBar: getMotionToken('bottomBar', motion.bottomBar || bottomBar.motion, MOTION_DEFAULTS.bottomBar),
-    end: getMotionToken('end', motion.end || motion.endAnimation || bottomBar.endAnimation, MOTION_DEFAULTS.end),
-    cadence: getMotionToken('cadence', motion.cadence || motion.speed, MOTION_DEFAULTS.cadence)
+    frameExit: getMotionToken('frameExit', motion.frameExit || motion.frame || flow.frameExit, MOTION_DEFAULTS.frameExit, preset, variant),
+    title: getMotionToken('title', motion.title || motion.titleReveal || preset.title, MOTION_DEFAULTS.title, preset, variant),
+    cta: getMotionToken('cta', motion.cta || cta.motion || cta.style, MOTION_DEFAULTS.cta, preset, variant),
+    bottomBar: getMotionToken('bottomBar', motion.bottomBar || bottomBar.motion || bottomBar.style, MOTION_DEFAULTS.bottomBar, preset, variant),
+    end: getMotionToken('end', motion.end || motion.endAnimation || bottomBar.endAnimation, MOTION_DEFAULTS.end, preset, variant),
+    cadence: getMotionToken('cadence', motion.cadence || motion.speed || inferCadenceToken(preset, variant), MOTION_DEFAULTS.cadence, preset, variant)
   };
 }
 
@@ -200,7 +252,8 @@ function getPresetMeta(preset) {
   const visual = preset.visual || {};
   const bottomBar = preset.bottomBar || {};
   const cta = preset.cta || {};
-  const motion = getPresetMotion(preset);
+  const variant = getPresetVariant(preset);
+  const motion = getPresetMotion(preset, variant);
 
   return {
     title: preset.title || preset.name || preset.id,
@@ -215,7 +268,7 @@ function getPresetMeta(preset) {
     typography: visual.typography || '',
     accent: visual.accent || '',
     accent2: visual.accent2 || '',
-    variant: getPresetVariant(preset),
+    variant,
     motion,
     motionSummary: getMotionSummary(motion),
     flowSummary: getFlowSummary(preset)
