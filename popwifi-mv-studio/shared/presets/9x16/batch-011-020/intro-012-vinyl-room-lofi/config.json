@@ -1,0 +1,49 @@
+{
+  "id": "intro-012-vinyl-room-lofi",
+  "title": "Vinyl Room Lofi",
+  "category": "intro",
+  "mood": "warm, dusty, bedroom lofi",
+  "description": "9x16 vertical intro — Dusty violet, lamp amber.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-fade"
+  },
+  "layout": {
+    "frameStyle": "dusty-speaker-frame",
+    "titlePosition": "center-upper",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "palette": [
+      "warm",
+      "dusty",
+      "bedroom lofi"
+    ],
+    "texture": "Dusty violet, lamp amber",
+    "typography": "bold sans title, lyric sans"
+  },
+  "cta": {
+    "style": "vertical-stack-cta",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "translucent-rounded-bar",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "9x16",
+  "batchId": "batch-011-020",
+  "accentColor": "#b48cdc",
+  "createdAt": "2026-04-25T07:44:35.656Z",
+  "updatedAt": "2026-04-25T07:44:35.656Z"
+}

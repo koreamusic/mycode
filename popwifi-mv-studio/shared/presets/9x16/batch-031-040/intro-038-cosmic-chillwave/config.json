@@ -1,0 +1,49 @@
+{
+  "id": "intro-038-cosmic-chillwave",
+  "title": "Cosmic Chillwave",
+  "category": "intro",
+  "mood": "cosmic, dreamy, synth",
+  "description": "9x16 vertical intro — Cosmic purple, cyan, stars.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-fade"
+  },
+  "layout": {
+    "frameStyle": "cosmic-star-frame",
+    "titlePosition": "center-upper",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "palette": [
+      "cosmic",
+      "dreamy",
+      "synth"
+    ],
+    "texture": "Cosmic purple, cyan, stars",
+    "typography": "bold sans title, lyric sans"
+  },
+  "cta": {
+    "style": "vertical-stack-cta",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "translucent-rounded-bar",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "9x16",
+  "batchId": "batch-031-040",
+  "accentColor": "#783cf0",
+  "createdAt": "2026-04-25T07:44:35.656Z",
+  "updatedAt": "2026-04-25T07:44:35.656Z"
+}

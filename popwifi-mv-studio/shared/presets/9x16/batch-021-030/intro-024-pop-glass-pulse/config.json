@@ -1,0 +1,49 @@
+{
+  "id": "intro-024-pop-glass-pulse",
+  "title": "Pop Glass Pulse",
+  "category": "intro",
+  "mood": "glossy, bright, pop pulse",
+  "description": "9x16 vertical intro — Black, hot pink, cyan.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-fade"
+  },
+  "layout": {
+    "frameStyle": "glass-pulse-frame",
+    "titlePosition": "center-upper",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "palette": [
+      "glossy",
+      "bright",
+      "pop pulse"
+    ],
+    "texture": "Black, hot pink, cyan",
+    "typography": "bold sans title, lyric sans"
+  },
+  "cta": {
+    "style": "vertical-stack-cta",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "translucent-rounded-bar",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "9x16",
+  "batchId": "batch-021-030",
+  "accentColor": "#ff00a0",
+  "createdAt": "2026-04-25T07:44:35.656Z",
+  "updatedAt": "2026-04-25T07:44:35.656Z"
+}

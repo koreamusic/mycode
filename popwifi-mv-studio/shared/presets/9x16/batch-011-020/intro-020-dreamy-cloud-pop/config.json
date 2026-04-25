@@ -1,0 +1,49 @@
+{
+  "id": "intro-020-dreamy-cloud-pop",
+  "title": "Dreamy Cloud Pop",
+  "category": "intro",
+  "mood": "soft, floating, cloud pop",
+  "description": "9x16 vertical intro — Cloud white, sky blue.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-fade"
+  },
+  "layout": {
+    "frameStyle": "dream-cloud-frame",
+    "titlePosition": "center-upper",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "palette": [
+      "soft",
+      "floating",
+      "cloud pop"
+    ],
+    "texture": "Cloud white, sky blue",
+    "typography": "bold sans title, lyric sans"
+  },
+  "cta": {
+    "style": "vertical-stack-cta",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "translucent-rounded-bar",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "9x16",
+  "batchId": "batch-011-020",
+  "accentColor": "#b4c8f0",
+  "createdAt": "2026-04-25T07:44:35.656Z",
+  "updatedAt": "2026-04-25T07:44:35.656Z"
+}

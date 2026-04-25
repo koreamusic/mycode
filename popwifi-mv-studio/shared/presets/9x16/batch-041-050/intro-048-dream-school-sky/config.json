@@ -1,0 +1,49 @@
+{
+  "id": "intro-048-dream-school-sky",
+  "title": "Dream School Sky",
+  "category": "intro",
+  "mood": "dreamy, school sky, anime",
+  "description": "9x16 vertical intro — Sky blue, cloud white.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-fade"
+  },
+  "layout": {
+    "frameStyle": "school-sky-frame",
+    "titlePosition": "center-upper",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "palette": [
+      "dreamy",
+      "school sky",
+      "anime"
+    ],
+    "texture": "Sky blue, cloud white",
+    "typography": "bold sans title, lyric sans"
+  },
+  "cta": {
+    "style": "vertical-stack-cta",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "translucent-rounded-bar",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "9x16",
+  "batchId": "batch-041-050",
+  "accentColor": "#50a0e0",
+  "createdAt": "2026-04-25T07:44:35.656Z",
+  "updatedAt": "2026-04-25T07:44:35.656Z"
+}

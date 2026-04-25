@@ -1,0 +1,49 @@
+{
+  "id": "intro-009-chillwave-dream-tape",
+  "title": "Chillwave Dream Tape",
+  "category": "intro",
+  "mood": "dreamy, synth, VHS tape",
+  "description": "9x16 vertical intro — Deep purple, scan lines, cyan glow.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-fade"
+  },
+  "layout": {
+    "frameStyle": "cyan-scan-frame",
+    "titlePosition": "center-upper",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "palette": [
+      "dreamy",
+      "synth",
+      "VHS tape"
+    ],
+    "texture": "Deep purple, scan lines, cyan glow",
+    "typography": "bold sans title, lyric sans"
+  },
+  "cta": {
+    "style": "vertical-stack-cta",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "translucent-rounded-bar",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "9x16",
+  "batchId": "batch-001-010",
+  "accentColor": "#a0e8d8",
+  "createdAt": "2026-04-25T07:44:35.656Z",
+  "updatedAt": "2026-04-25T07:44:35.656Z"
+}

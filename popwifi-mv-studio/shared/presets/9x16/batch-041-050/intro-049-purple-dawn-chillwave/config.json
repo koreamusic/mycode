@@ -1,0 +1,49 @@
+{
+  "id": "intro-049-purple-dawn-chillwave",
+  "title": "Purple Dawn Chillwave",
+  "category": "intro",
+  "mood": "purple dawn, dreamy, synth",
+  "description": "9x16 vertical intro — Purple dawn, cyan, dark violet.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-fade"
+  },
+  "layout": {
+    "frameStyle": "purple-dawn-frame",
+    "titlePosition": "center-upper",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "palette": [
+      "purple dawn",
+      "dreamy",
+      "synth"
+    ],
+    "texture": "Purple dawn, cyan, dark violet",
+    "typography": "bold sans title, lyric sans"
+  },
+  "cta": {
+    "style": "vertical-stack-cta",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "translucent-rounded-bar",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "9x16",
+  "batchId": "batch-041-050",
+  "accentColor": "#b450e0",
+  "createdAt": "2026-04-25T07:44:35.656Z",
+  "updatedAt": "2026-04-25T07:44:35.656Z"
+}

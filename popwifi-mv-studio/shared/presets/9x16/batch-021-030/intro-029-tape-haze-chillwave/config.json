@@ -1,0 +1,49 @@
+{
+  "id": "intro-029-tape-haze-chillwave",
+  "title": "Tape Haze Chillwave",
+  "category": "intro",
+  "mood": "hazy, dreamy, chillwave",
+  "description": "9x16 vertical intro — Purple haze, cyan, soft pink.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-fade"
+  },
+  "layout": {
+    "frameStyle": "cassette-haze-frame",
+    "titlePosition": "center-upper",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "palette": [
+      "hazy",
+      "dreamy",
+      "chillwave"
+    ],
+    "texture": "Purple haze, cyan, soft pink",
+    "typography": "bold sans title, lyric sans"
+  },
+  "cta": {
+    "style": "vertical-stack-cta",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "translucent-rounded-bar",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "9x16",
+  "batchId": "batch-021-030",
+  "accentColor": "#b478f0",
+  "createdAt": "2026-04-25T07:44:35.656Z",
+  "updatedAt": "2026-04-25T07:44:35.656Z"
+}

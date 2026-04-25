@@ -1,0 +1,49 @@
+{
+  "id": "intro-028-schoolyard-anime-spring",
+  "title": "Schoolyard Anime Spring",
+  "category": "intro",
+  "mood": "fresh, schoolyard, anime",
+  "description": "9x16 vertical intro — Sky blue, blossom pink.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-fade"
+  },
+  "layout": {
+    "frameStyle": "schoolyard-breeze-frame",
+    "titlePosition": "center-upper",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "palette": [
+      "fresh",
+      "schoolyard",
+      "anime"
+    ],
+    "texture": "Sky blue, blossom pink",
+    "typography": "bold sans title, lyric sans"
+  },
+  "cta": {
+    "style": "vertical-stack-cta",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "translucent-rounded-bar",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "9x16",
+  "batchId": "batch-021-030",
+  "accentColor": "#50a0dc",
+  "createdAt": "2026-04-25T07:44:35.656Z",
+  "updatedAt": "2026-04-25T07:44:35.656Z"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "intro-002-lofi-window-glow",
+  "title": "Lofi Window Glow",
+  "category": "intro",
+  "mood": "cozy, lamp-lit, lofi",
+  "description": "9x16 vertical intro — Warm lamp glow, night window.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-fade"
+  },
+  "layout": {
+    "frameStyle": "warm-lamp-glow-frame",
+    "titlePosition": "center-upper",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "palette": [
+      "cozy",
+      "lamp-lit",
+      "lofi"
+    ],
+    "texture": "Warm lamp glow, night window",
+    "typography": "bold sans title, lyric sans"
+  },
+  "cta": {
+    "style": "vertical-stack-cta",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "translucent-rounded-bar",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "9x16",
+  "batchId": "batch-001-010",
+  "accentColor": "#f5d070",
+  "createdAt": "2026-04-25T07:44:35.656Z",
+  "updatedAt": "2026-04-25T07:44:35.656Z"
+}
