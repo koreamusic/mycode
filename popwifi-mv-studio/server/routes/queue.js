@@ -69,13 +69,22 @@ function processCurrentJob(context, processor) {
   return { status: 200, body: Object.assign({ processed }, completed) };
 }
 
-async function processCurrentJobAsync(context, processor) {
+function normalizeCaptureFps(value) {
+  const fps = Number(value || 6);
+  if (fps === 30) return 30;
+  return 6;
+}
+
+async function processCurrentJobAsync(context, processor, options = {}) {
   const queue = readQueueFromWorker(context.queuePath);
   if (!queue.currentJob) {
     return { status: 409, body: { ok: false, reason: 'no current job', queue } };
   }
 
-  const processed = await processor(context.rootDir, queue.currentJob, { baseUrl: 'http://localhost:' + context.config.port });
+  const processed = await processor(context.rootDir, queue.currentJob, {
+    baseUrl: 'http://localhost:' + context.config.port,
+    fps: normalizeCaptureFps(options.fps)
+  });
   if (!processed.ok) {
     const failed = failCurrentJob(context.queuePath, processed.error);
     return { status: 500, body: Object.assign({ processed }, failed) };
@@ -127,7 +136,7 @@ function registerQueueRoutes(app, context) {
   });
 
   app.post('/api/queue/worker/process-current-capture-mp4', async (req, res) => {
-    const result = await processCurrentJobAsync(context, processIntroPreviewCaptureMp4);
+    const result = await processCurrentJobAsync(context, processIntroPreviewCaptureMp4, req.body || {});
     res.status(result.status).json(result.body);
   });
 
