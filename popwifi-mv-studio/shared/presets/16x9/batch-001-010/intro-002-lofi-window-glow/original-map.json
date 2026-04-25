@@ -1,0 +1,17 @@
+{
+  "presetId": "intro-002-lofi-window-glow",
+  "sourceFile": "presets_02_10.html",
+  "sourceKey": "piano",
+  "sourceNumber": 2,
+  "sourceName": "02 · 깊은 밤 피아노",
+  "song": "깊은 밤의 선율",
+  "lyric": "건반 위에 흐르는 오래된 기억",
+  "sourceFunctions": {
+    "frame": "buildPianoFrame",
+    "particles": "buildNoteParticles",
+    "equalizer": "buildPianoEq"
+  },
+  "preserveOriginal": true,
+  "implementationStatus": "mapped-not-yet-renderer-extracted",
+  "notes": "Current config was previously arbitrary. Future renderer must preserve original piano frame, note particles, CTA, bottom bar, and piano EQ from the source file."
+}
