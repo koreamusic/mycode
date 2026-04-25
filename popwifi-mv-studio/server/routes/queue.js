@@ -3,8 +3,11 @@ const { readRenderDraft } = require('./render-draft');
 const {
   startNextPendingJob,
   completeCurrentJob,
-  failCurrentJob
+  failCurrentJob,
+  readQueue: readQueueFromWorker,
+  writeQueue: writeQueueFromWorker
 } = require('../core/queue-worker');
+const { processIntroPreviewManifestOnly } = require('../core/render-processor');
 
 function readQueue(queuePath) {
   return JSON.parse(fs.readFileSync(queuePath, 'utf8'));
@@ -76,6 +79,22 @@ function registerQueueRoutes(app, context) {
     const result = startNextPendingJob(context.queuePath);
     if (!result.ok) return res.status(409).json(result);
     res.json(result);
+  });
+
+  app.post('/api/queue/worker/process-current-manifest', (req, res) => {
+    const queue = readQueueFromWorker(context.queuePath);
+    if (!queue.currentJob) {
+      return res.status(409).json({ ok: false, reason: 'no current job', queue });
+    }
+
+    const processed = processIntroPreviewManifestOnly(context.rootDir, queue.currentJob);
+    if (!processed.ok) {
+      const failed = failCurrentJob(context.queuePath, processed.error);
+      return res.status(500).json(Object.assign({ processed }, failed));
+    }
+
+    const completed = completeCurrentJob(context.queuePath, processed.result);
+    res.json(Object.assign({ processed }, completed));
   });
 
   app.post('/api/queue/worker/complete-current', (req, res) => {
