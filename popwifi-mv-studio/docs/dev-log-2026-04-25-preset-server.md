@@ -103,12 +103,6 @@ Rules:
 - Duplicate preset ids inside the same import file are rejected.
 - The importer uses the existing preset create API, so the server data path remains single-route.
 
-Usage:
-
-```bash
-npm run import:preset-batch -- shared/presets/examples/preset-batch-example.json
-```
-
 ### 5. First real intro preset batch JSON added
 
 Added:
@@ -127,13 +121,6 @@ This file contains 10 real intro preset config entries for:
 8. Anime Sky Breeze
 9. Chillwave Dream Tape
 10. Cafe Smooth Jazz
-
-Each preset preserves the required intro flow:
-
-- Frame: 10 seconds
-- Title: first 5 seconds
-- Like/Subscribe/Notification CTA: next 5 seconds
-- Bottom lyric/title bar: starts after 10 seconds and stays active
 
 ### 6. Existing preset list UI connected to richer intro preset fields
 
@@ -269,6 +256,25 @@ This file contains 10 additional intro preset config entries:
 39. Cafe Book Corner
 40. Clean Night Minimal
 
+### 15. Fifth real intro preset batch JSON added
+
+Added:
+
+- `shared/presets/imports/intro-batch-041-050.json`
+
+This file contains 10 additional intro preset config entries:
+
+41. Midnight Cinema Rain
+42. Minimal Dust Light
+43. Retro Cassette Orange
+44. Spring Picnic Pop
+45. Night Subway Glow
+46. Smooth Lounge R&B
+47. Country Dust Road
+48. Dream School Sky
+49. Purple Dawn Chillwave
+50. Jazz Candle Table
+
 This batch continues the same data-only approach: existing variants are reused, `visual.accent` and `visual.accent2` provide differentiation, and no new CSS/JS path was introduced.
 
 ## Important Rules Preserved
@@ -286,27 +292,29 @@ This batch continues the same data-only approach: existing variants are reused, 
 
 ## Current Progress
 
-Estimated total project progress after this patch: 68–70%.
+Estimated total project progress after this patch: 72–74%.
 
-The preset server layer now has a local smoke-test path, 10-item batch import tooling, 40 real 16:9 intro preset configs across four batches, richer preset list rendering, selected preset preview binding, animated HTML/CSS preview timeline, variant-based preview styling, token-based visual override, and regression validation to protect future batches.
+The preset server layer now has a local smoke-test path, 10-item batch import tooling, 50 real 16:9 intro preset configs across five batches, richer preset list rendering, selected preset preview binding, animated HTML/CSS preview timeline, variant-based preview styling, token-based visual override, and regression validation to protect future batches.
 
 ## Next Recommended Work
 
 1. Run local server: `npm run dev`.
 2. In another terminal, run: `npm run validate:preset-batches`.
 3. Run: `npm run test:preset-api`.
-4. Test batch imports:
+4. Test all batch imports:
    - `npm run import:preset-batch -- shared/presets/imports/intro-batch-001-010.json`
    - `npm run import:preset-batch -- shared/presets/imports/intro-batch-011-020.json`
    - `npm run import:preset-batch -- shared/presets/imports/intro-batch-021-030.json`
    - `npm run import:preset-batch -- shared/presets/imports/intro-batch-031-040.json`
+   - `npm run import:preset-batch -- shared/presets/imports/intro-batch-041-050.json`
 5. Confirm imported files under:
    - `shared/presets/16x9/batch-001-010/`
    - `shared/presets/16x9/batch-011-020/`
    - `shared/presets/16x9/batch-021-030/`
    - `shared/presets/16x9/batch-031-040/`
-6. Open the Longform Intro page and click presets from all four batches.
-7. Next implementation target: add `intro-batch-041-050.json` only after local validation passes.
+   - `shared/presets/16x9/batch-041-050/`
+6. Open the Longform Intro page and click presets from all five batches.
+7. Next implementation target: local validation/import test pass, then selected preset render/export preparation state.
 
 ## Notes
 
