@@ -4,7 +4,9 @@
 
 This patch continues the Pop WiFi MV Studio handoff work by stabilizing the preset server layer and connecting the existing preset list UI to the richer intro preset data.
 
-No sidebar, page layout, intro preset source data, or Remotion-facing page behavior was changed.
+No sidebar, page layout, intro preset source data, or external render framework behavior was changed.
+
+Important correction: this project continues with Node/Express + HTML/CSS/JS + JSON preset data + FFmpeg-oriented local workflow. Remotion is not part of this implementation path.
 
 ## Completed
 
@@ -181,7 +183,20 @@ Behavior:
   - frame/title/CTA/bottom bar timing summary
   - frame style, title position, CTA style, bottom bar style, end animation, palette, and typography metadata
 
-This is still a safe metadata preview only. It does not yet render the final animated intro preset timeline, and it does not change the page layout or sidebar.
+### 8. HTML/CSS/JS animated preview timeline shell added
+
+Updated:
+
+- `app/scripts/presets/preset-preview.js`
+- `app/styles/app.css`
+
+Behavior:
+
+- 0–5s: title stage is visible.
+- 5–10s: like/subscribe/notification CTA stage is visible.
+- 10s+: bottom bar appears.
+- The preview loops every 12 seconds for quick inspection.
+- This is browser preview only, using HTML/CSS/JS. No Remotion or other external render framework is used.
 
 ## Important Rules Preserved
 
@@ -192,12 +207,14 @@ This is still a safe metadata preview only. It does not yet render the final ani
 - Keep server preset data flow single-path.
 - Do not split intro preset design into unrelated independent pieces from the user perspective.
 - Keep files modular so 10-preset batch import can be added safely later.
+- Keep implementation aligned with Node/Express + HTML/CSS/JS + JSON + FFmpeg-oriented local workflow.
+- Do not introduce Remotion.
 
 ## Current Progress
 
-Estimated total project progress after this patch: 44–46%.
+Estimated total project progress after this patch: 48–50%.
 
-The preset server layer now has a local smoke-test path, 10-item batch import tooling, the first real 16:9 intro preset batch JSON, richer preset list rendering, and selected preset preview binding.
+The preset server layer now has a local smoke-test path, 10-item batch import tooling, the first real 16:9 intro preset batch JSON, richer preset list rendering, selected preset preview binding, and a first-stage animated HTML/CSS preview timeline.
 
 ## Next Recommended Work
 
@@ -208,8 +225,8 @@ The preset server layer now has a local smoke-test path, 10-item batch import to
 4. Confirm imported files under:
    - `shared/presets/16x9/batch-001-010/`
 5. Open the Longform Intro page.
-6. Click each imported preset and confirm the preview card updates.
-7. Next implementation target: first-stage animated preview timeline shell for frame/title/CTA/bottom bar timing, without changing the page layout.
+6. Click each imported preset and confirm the preview card updates and loops title → CTA → bottom bar.
+7. Next implementation target: improve the visual differentiation of the 10 intro presets inside the HTML/CSS preview without changing the page layout.
 
 ## Notes
 
