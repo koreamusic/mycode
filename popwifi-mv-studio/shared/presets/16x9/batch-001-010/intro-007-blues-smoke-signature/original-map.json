@@ -12,6 +12,21 @@
     "equalizer": "buildGuitarEq"
   },
   "preserveOriginal": true,
-  "implementationStatus": "mapped-not-yet-renderer-extracted",
-  "notes": "Future renderer must preserve original acoustic guitar frame, guitar note particles, CTA, bottom bar, and guitar EQ from the source file."
+  "implementationStatus": "renderer-extracted-source-faithful-separated-v1",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "cta": true,
+    "bottomBar": true,
+    "equalizer": true,
+    "timeline": true
+  },
+  "fixedErrors": [],
+  "notes": "Separated renderer files added and linked for isolated iframe preview."
 }
