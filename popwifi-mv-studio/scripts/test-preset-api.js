@@ -1,6 +1,6 @@
 const http = require('http');
 
-const baseUrl = process.env.POPWIFI_API_BASE || 'http://localhost:3100';
+const baseUrl = process.env.POPWIFI_API_BASE || 'http://localhost:3000';
 const ratio = process.env.POPWIFI_TEST_RATIO || '16x9';
 const batchId = process.env.POPWIFI_TEST_BATCH || 'batch-001-010';
 const presetId = process.env.POPWIFI_TEST_PRESET || 'test-api-preset';

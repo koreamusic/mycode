@@ -12,6 +12,11 @@ export const PAGE_FILES = {
   faq: './pages/faq.html'
 };
 
+function setPageContent(outlet, staticHtml) {
+  const doc = new DOMParser().parseFromString(staticHtml, 'text/html');
+  outlet.replaceChildren(...Array.from(doc.body.childNodes));
+}
+
 export function createRouter(options) {
   const pageOutlet = options.pageOutlet;
   const navButtons = options.navButtons;
@@ -25,12 +30,14 @@ export function createRouter(options) {
       btn.classList.toggle('active', btn.dataset.page === safePage);
     });
 
-    pageOutlet.innerHTML = '<section class="page active"><div class="loading-card">페이지를 불러오는 중...</div></section>';
+    setPageContent(pageOutlet, '<section class="page active"><div class="loading-card">페이지를 불러오는 중...</div></section>');
 
     try {
-      pageOutlet.innerHTML = await api.page(PAGE_FILES[safePage]);
+      const html = await api.page(PAGE_FILES[safePage]);
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      pageOutlet.replaceChildren(...Array.from(doc.body.childNodes));
     } catch (error) {
-      pageOutlet.innerHTML = '<section class="page active"><article class="card"><h2>페이지 로드 실패</h2><p>페이지 파일을 확인하세요.</p></article></section>';
+      setPageContent(pageOutlet, '<section class="page active"><article class="card"><h2>페이지 로드 실패</h2><p>페이지 파일을 확인하세요.</p></article></section>');
     }
 
     if (typeof onAfterPageLoad === 'function') {

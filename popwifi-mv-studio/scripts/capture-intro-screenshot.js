@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const jobId = process.argv[2];
-const baseUrl = process.env.POPWIFI_CAPTURE_BASE || 'http://localhost:3100';
+const baseUrl = process.env.POPWIFI_CAPTURE_BASE || 'http://localhost:3000';
 const outArg = process.argv[3];
 
 function fail(message) {

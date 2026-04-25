@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const http = require('http');
 
-const baseUrl = process.env.POPWIFI_API_BASE || 'http://localhost:3100';
+const baseUrl = process.env.POPWIFI_API_BASE || 'http://localhost:3000';
 const inputPath = process.argv[2];
 
 function fail(message) {

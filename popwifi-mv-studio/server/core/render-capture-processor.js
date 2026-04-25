@@ -39,7 +39,7 @@ async function loadPlaywright() {
 async function captureFrames(rootDir, job, paths, options = {}) {
   const fps = Number(options.fps || DEFAULT_CAPTURE_FPS);
   const durationSeconds = Number(options.durationSeconds || INTRO_PREVIEW_DURATION_SECONDS);
-  const baseUrl = options.baseUrl || 'http://localhost:3100';
+  const baseUrl = options.baseUrl || 'http://localhost:3000';
   const viewport = getViewportForJob(job);
   const totalFrames = Math.ceil(fps * durationSeconds);
   const frameDelayMs = 1000 / fps;

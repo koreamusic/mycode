@@ -4,7 +4,7 @@ const path = require('path');
 const jobId = process.argv[2];
 const fps = Number(process.env.POPWIFI_CAPTURE_FPS || 6);
 const durationSeconds = Number(process.env.POPWIFI_CAPTURE_DURATION || 12);
-const baseUrl = process.env.POPWIFI_CAPTURE_BASE || 'http://localhost:3100';
+const baseUrl = process.env.POPWIFI_CAPTURE_BASE || 'http://localhost:3000';
 const outArg = process.argv[3];
 
 function fail(message) {
