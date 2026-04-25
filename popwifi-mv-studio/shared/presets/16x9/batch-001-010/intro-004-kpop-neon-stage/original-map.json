@@ -1,0 +1,17 @@
+{
+  "presetId": "intro-004-kpop-neon-stage",
+  "sourceFile": "presets_02_10.html",
+  "sourceKey": "firefly",
+  "sourceNumber": 4,
+  "sourceName": "04 · 새벽 반딧불",
+  "song": "반딧불 새벽",
+  "lyric": "어둠 속에 빛나던 작은 불꽃",
+  "sourceFunctions": {
+    "frame": "buildFireflyFrame",
+    "particles": "buildFireflyParticles",
+    "equalizer": "buildFireflyEq"
+  },
+  "preserveOriginal": true,
+  "implementationStatus": "mapped-not-yet-renderer-extracted",
+  "notes": "Future renderer must preserve original firefly glow frame, firefly particles, CTA, bottom bar, and firefly EQ from the source file."
+}
