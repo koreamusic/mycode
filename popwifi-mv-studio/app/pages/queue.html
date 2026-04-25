@@ -1,0 +1,39 @@
+<section class="page active" id="page-queue">
+  <div class="page-head">
+    <p>QUEUE</p>
+    <h1>렌더 큐</h1>
+    <span>현재 진행 중인 작업과 대기/완료/실패 목록을 확인합니다.</span>
+  </div>
+
+  <div class="grid two">
+    <article class="card">
+      <h2>현재 작업</h2>
+      <div id="queue-current">
+        <p class="queue-empty">실행 중인 작업 없음</p>
+      </div>
+    </article>
+    <article class="card">
+      <h2>대기 중</h2>
+      <div id="queue-pending">
+        <p class="queue-empty">대기 중인 작업 없음</p>
+      </div>
+    </article>
+    <article class="card">
+      <h2>완료</h2>
+      <div id="queue-completed">
+        <p class="queue-empty">완료된 작업 없음</p>
+      </div>
+    </article>
+    <article class="card">
+      <h2>실패</h2>
+      <div id="queue-failed">
+        <p class="queue-empty">실패한 작업 없음</p>
+      </div>
+    </article>
+  </div>
+
+  <article class="card" style="margin-top: 1rem;">
+    <h2>큐 원본 데이터</h2>
+    <pre id="queueBox" style="font-size: 0.75rem; overflow: auto; max-height: 300px;">큐 데이터를 기다리는 중...</pre>
+  </article>
+</section>
