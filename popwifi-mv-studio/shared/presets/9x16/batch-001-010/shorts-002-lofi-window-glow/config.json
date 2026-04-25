@@ -1,0 +1,53 @@
+{
+  "id": "shorts-002-lofi-window-glow",
+  "title": "Lofi Window Glow Shorts",
+  "category": "intro-shorts",
+  "variant": "lofi",
+  "ratio": "9x16",
+  "batchId": "batch-001-010",
+  "mood": "soft, cozy, night-window lofi shorts",
+  "description": "Vertical shorts lofi intro with a tall soft window-light frame, floating title card, friendly CTA, and calm rounded lyric bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-fade-slide"
+  },
+  "motion": {
+    "frameExit": "reverse-fade-slide",
+    "title": "gentle-breathe",
+    "cta": "float-pop",
+    "bottomBar": "glass-slide",
+    "end": "vinyl-spin",
+    "cadence": "slow"
+  },
+  "layout": {
+    "frameStyle": "vertical-soft-window-light-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "left",
+    "safeArea": "vertical-title-center"
+  },
+  "visual": {
+    "accent": "#D7C0FF",
+    "accent2": "#FFD78A",
+    "palette": ["night navy", "dusty violet", "warm lamp yellow", "cream white"],
+    "texture": "soft blur, dust particles, quiet room tone optimized for vertical shorts",
+    "typography": "rounded modern sans with relaxed spacing"
+  },
+  "cta": {
+    "style": "compact pill-shaped cozy reaction buttons",
+    "items": ["like", "subscribe", "notification"]
+  },
+  "bottomBar": {
+    "style": "vertical-safe translucent lavender-black rounded bar",
+    "endAnimation": "small vinyl spin loop",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "createdAt": "2026-04-25",
+  "updatedAt": "2026-04-25"
+}
