@@ -1,0 +1,406 @@
+{
+  "ratio": "16x9",
+  "batchId": "batch-021-030",
+  "presets": [
+    {
+      "id": "intro-021-sax-club-corner",
+      "title": "Sax Club Corner",
+      "category": "intro",
+      "variant": "jazz",
+      "mood": "smoky, intimate, late club jazz",
+      "description": "Small jazz club intro with corner-light frame, warm saxophone mood, quiet CTA, and old-gold lyric bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-corner-light-dim"
+      },
+      "layout": {
+        "frameStyle": "corner-stage-light-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "center"
+      },
+      "visual": {
+        "accent": "#CFAE68",
+        "accent2": "#F6E3B4",
+        "palette": ["black", "old gold", "warm smoke", "deep brown"],
+        "texture": "club smoke, brass glow, subtle film dust",
+        "typography": "classic jazz serif with compact sans details"
+      },
+      "cta": {
+        "style": "small brass CTA marks",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "black-gold transparent rounded lyric bar",
+        "endAnimation": "tiny sax note shimmer",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-022-blue-hour-lofi",
+      "title": "Blue Hour Lofi",
+      "category": "intro",
+      "variant": "lofi",
+      "mood": "blue hour, quiet, soft lofi focus",
+      "description": "Blue-hour lofi intro with window-edge frame, floating title, soft CTA, and calm lower bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-blue-hour-fade"
+      },
+      "layout": {
+        "frameStyle": "blue-window-edge-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "left"
+      },
+      "visual": {
+        "accent": "#8DA9FF",
+        "accent2": "#E6C88C",
+        "palette": ["blue hour", "soft violet", "lamp gold", "dark navy"],
+        "texture": "soft window reflection, dust particles, low noise",
+        "typography": "soft rounded sans with relaxed tracking"
+      },
+      "cta": {
+        "style": "quiet rounded CTA chips",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "blue-violet transparent rounded bar",
+        "endAnimation": "tiny desk-lamp glow loop",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-023-guitar-sunbeam",
+      "title": "Guitar Sunbeam",
+      "category": "intro",
+      "variant": "acoustic",
+      "mood": "warm, acoustic, morning sunlight",
+      "description": "Acoustic guitar intro with sunbeam frame, honest title, gentle CTA, and warm wood-tone lyric bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-sunbeam-soften"
+      },
+      "layout": {
+        "frameStyle": "sunbeam-wood-line-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "center"
+      },
+      "visual": {
+        "accent": "#D7A85A",
+        "accent2": "#F7E8C7",
+        "palette": ["wood brown", "sun cream", "soft green", "warm black"],
+        "texture": "wood grain, morning dust, soft acoustic room",
+        "typography": "warm serif title with simple humanist sans"
+      },
+      "cta": {
+        "style": "acoustic paper-tag CTA",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "wood-cream translucent lyric bar",
+        "endAnimation": "tiny guitar-string vibration",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-024-pop-glass-pulse",
+      "title": "Pop Glass Pulse",
+      "category": "intro",
+      "variant": "kpop",
+      "mood": "glossy, bright, modern pop pulse",
+      "description": "Glossy pop intro with glass pulse frame, bright title hit, energetic CTA, and neon lower bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-glass-pulse"
+      },
+      "layout": {
+        "frameStyle": "glass-pulse-neon-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "center"
+      },
+      "visual": {
+        "accent": "#FF4FD8",
+        "accent2": "#5EFAFF",
+        "palette": ["black", "hot pink", "cyan", "clean white"],
+        "texture": "glossy glass, subtle stage fog, digital shine",
+        "typography": "bold geometric sans with crisp caption"
+      },
+      "cta": {
+        "style": "pop pulse CTA capsule trio",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "cyan-pink glass lyric bar",
+        "endAnimation": "tiny pulse equalizer",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-025-old-photo-ballad",
+      "title": "Old Photo Ballad",
+      "category": "intro",
+      "variant": "ballad",
+      "mood": "nostalgic, warm, old-photo ballad",
+      "description": "Old photo ballad intro with sepia frame, slow title reveal, tender CTA, and quiet memory-like lower bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-photo-fade"
+      },
+      "layout": {
+        "frameStyle": "sepia-photo-border-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "center"
+      },
+      "visual": {
+        "accent": "#D7A18A",
+        "accent2": "#F4DEC6",
+        "palette": ["sepia", "soft beige", "warm black", "faded rose"],
+        "texture": "photo grain, faint scratches, warm leak light",
+        "typography": "emotional serif with understated subtitle"
+      },
+      "cta": {
+        "style": "soft photo-stamp CTA",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "sepia black-glass rounded bar",
+        "endAnimation": "tiny photo dust sparkle",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-026-city-night-sign",
+      "title": "City Night Sign",
+      "category": "intro",
+      "variant": "citypop",
+      "mood": "retro city, night sign, stylish pop",
+      "description": "City pop intro with neon sign frame, retro title, lively CTA, and polished night-city lyric bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-neon-sign-off"
+      },
+      "layout": {
+        "frameStyle": "retro-neon-sign-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "left"
+      },
+      "visual": {
+        "accent": "#FF8A4C",
+        "accent2": "#FF5FB4",
+        "palette": ["orange neon", "magenta", "deep purple", "night black"],
+        "texture": "neon bloom, wet street reflection, retro grain",
+        "typography": "retro display title with clean sans metadata"
+      },
+      "cta": {
+        "style": "night sign CTA buttons",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "city neon lower-third bar",
+        "endAnimation": "tiny neon blink",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-027-rust-blues-lamp",
+      "title": "Rust Blues Lamp",
+      "category": "intro",
+      "variant": "blues",
+      "mood": "rusty, deep, old lamp blues",
+      "description": "Deep blues intro with rusty lamp frame, heavy title mood, stamped CTA, and dark blue lower bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-lamp-smoke"
+      },
+      "layout": {
+        "frameStyle": "rust-lamp-smoke-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "center"
+      },
+      "visual": {
+        "accent": "#8DA4E8",
+        "accent2": "#B96F44",
+        "palette": ["deep blue", "rust", "aged ivory", "black"],
+        "texture": "lamp smoke, worn metal, scratched film",
+        "typography": "rough serif title with blues-club caption"
+      },
+      "cta": {
+        "style": "rust-stamped CTA marks",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "blue-black rustline lyric bar",
+        "endAnimation": "tiny smoke curl loop",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-028-schoolyard-anime-spring",
+      "title": "Schoolyard Anime Spring",
+      "category": "intro",
+      "variant": "anime",
+      "mood": "fresh, schoolyard, anime spring",
+      "description": "Anime spring intro with schoolyard breeze frame, open title, cute CTA, and sky-blue lyric bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-breeze-wipe"
+      },
+      "layout": {
+        "frameStyle": "schoolyard-breeze-line-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "center"
+      },
+      "visual": {
+        "accent": "#8CD7FF",
+        "accent2": "#FFC5DD",
+        "palette": ["sky blue", "blossom pink", "white", "soft green"],
+        "texture": "cel-shaded clarity, petal air, bright daylight",
+        "typography": "clean anime sans with soft title spacing"
+      },
+      "cta": {
+        "style": "floating anime sticker CTA",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "sky-white translucent lyric bar",
+        "endAnimation": "tiny petal plane loop",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-029-tape-haze-chillwave",
+      "title": "Tape Haze Chillwave",
+      "category": "intro",
+      "variant": "chillwave",
+      "mood": "hazy, dreamy, analog chillwave",
+      "description": "Hazy chillwave intro with cassette edge frame, soft title glow, synth CTA, and purple-cyan bottom bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-tape-haze"
+      },
+      "layout": {
+        "frameStyle": "cassette-edge-haze-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "left"
+      },
+      "visual": {
+        "accent": "#A987FF",
+        "accent2": "#66F0FF",
+        "palette": ["purple haze", "cyan", "soft pink", "midnight"],
+        "texture": "VHS shimmer, cassette blur, chromatic glow",
+        "typography": "thin synth sans with glowing subtitle"
+      },
+      "cta": {
+        "style": "synth tape CTA capsules",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "purple-cyan rounded glass bar",
+        "endAnimation": "tiny tape wheel shimmer",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-030-cafe-rain-jazz",
+      "title": "Cafe Rain Jazz",
+      "category": "intro",
+      "variant": "cafe",
+      "mood": "rainy cafe, warm, smooth jazz",
+      "description": "Rainy cafe jazz intro with window-cafe frame, warm title, small CTA, and coffee-rain lower bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-cafe-rain-fade"
+      },
+      "layout": {
+        "frameStyle": "cafe-window-rain-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "center"
+      },
+      "visual": {
+        "accent": "#C98B58",
+        "accent2": "#FFE0A3",
+        "palette": ["espresso", "rain gray", "cream", "soft amber"],
+        "texture": "coffee steam, rainy glass, warm cafe grain",
+        "typography": "refined cafe serif with soft sans support"
+      },
+      "cta": {
+        "style": "coffee-stamp CTA badges",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "coffee-rain translucent rounded bar",
+        "endAnimation": "tiny steam and raindrop loop",
+        "contentFallback": "title"
+      },
+      "layers": []
+    }
+  ]
+}
