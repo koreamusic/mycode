@@ -1,0 +1,57 @@
+{
+  "id": "preset-shorts-001",
+  "name": "Neon Box",
+  "title": "Neon Box",
+  "category": "shorts-preset",
+  "variant": "kpop",
+  "ratio": "9x16",
+  "batchId": "batch-001-010",
+  "accentColor": "#7850ff",
+  "tags": ["neon", "cyber", "intense"],
+  "fonts": { "title": "Montserrat", "lyric": "Noto Sans KR", "karaoke": "Noto Sans KR" },
+  "karaokeMode": false,
+  "karaokeGlow": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-neon-scan"
+  },
+  "layout": {
+    "frameStyle": "neon-box-rotating-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center",
+    "safeArea": "vertical-center"
+  },
+  "visual": {
+    "accent": "#7850ff",
+    "accent2": "#ff50c8",
+    "palette": ["deep navy", "electric violet", "hot pink", "cyan glow"],
+    "texture": "cyber grid, rotating neon boxes, glow waves",
+    "typography": "Montserrat title with Noto Sans KR lyric"
+  },
+  "motion": {
+    "frameExit": "reverse-neon-scan",
+    "title": "neon-pop",
+    "cta": "neon-pulse",
+    "bottomBar": "neon-rise",
+    "end": "glow-pulse",
+    "cadence": "snappy"
+  },
+  "cta": {
+    "style": "neon cyber CTA capsule",
+    "items": ["like", "subscribe", "notification"]
+  },
+  "bottomBar": {
+    "style": "dark neon rounded bar",
+    "endAnimation": "neon glow pulse",
+    "contentFallback": "title"
+  },
+  "templateFile": "template.js",
+  "sourceZip": "shorts-presets.zip",
+  "createdAt": "2026-04-25",
+  "active": true
+}
