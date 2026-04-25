@@ -46,6 +46,12 @@ export const api = {
       body: JSON.stringify({})
     });
   },
+  processCurrentQueueManifest() {
+    return writeJson('/api/queue/worker/process-current-manifest', {
+      method: 'POST',
+      body: JSON.stringify({})
+    });
+  },
   completeCurrentQueueJob(result = {}) {
     return writeJson('/api/queue/worker/complete-current', {
       method: 'POST',
