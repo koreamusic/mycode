@@ -77,6 +77,8 @@ function failCurrentJob(queuePath, error = {}) {
 }
 
 module.exports = {
+  readQueue,
+  writeQueue,
   normalizeQueue,
   startNextPendingJob,
   completeCurrentJob,
