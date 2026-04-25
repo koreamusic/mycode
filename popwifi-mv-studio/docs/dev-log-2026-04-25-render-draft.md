@@ -2,7 +2,7 @@
 
 ## Scope
 
-This patch connects selected intro presets to a render/export preparation state.
+This patch connects selected intro presets to a render/export preparation state and exposes that state in the existing preset pages.
 
 It does not start actual rendering.
 It does not add a new render engine.
@@ -91,8 +91,31 @@ Behavior:
 3. Preview card updates.
 4. Selected preset is saved to `data/render-draft.json` through `PUT /api/render-draft/:kind`.
 5. App state stores returned render draft.
+6. Render draft confirmation panel refreshes immediately.
 
 If draft save fails, the preview remains usable. This avoids breaking the visible preset browsing flow.
+
+### 6. Render draft confirmation panel added
+
+Updated/added:
+
+- `app/pages/longform.html`
+- `app/pages/shorts.html`
+- `app/scripts/render/render-draft-panel.js`
+- `app/scripts/pages/page-init.js`
+
+Behavior:
+
+- Existing preset pages now include a small render draft panel inside the existing side panel.
+- The panel reuses the existing `empty-state` style to avoid creating a new CSS route.
+- On page hydration, the panel reads `GET /api/render-draft` and displays any saved selected preset.
+- After clicking a preset, the panel updates immediately with:
+  - title
+  - ratio
+  - batchId
+  - presetId
+  - flow summary
+  - variant
 
 ## Important Rules Preserved
 
@@ -103,10 +126,11 @@ If draft save fails, the preview remains usable. This avoids breaking the visibl
 - Do not change intro timing.
 - Do not add Remotion.
 - Keep selected preset as data, not hardcoded UI state.
+- Do not add a new CSS file for this panel.
 
 ## Current Progress
 
-Estimated total project progress after this patch: 75–77%.
+Estimated total project progress after this patch: 78–80%.
 
 The system now supports:
 
@@ -117,6 +141,7 @@ The system now supports:
 - Visual token differentiation.
 - Regression validation.
 - Selected preset render/export preparation state.
+- Visible render draft confirmation panel in existing preset pages.
 
 ## Next Recommended Work
 
@@ -142,12 +167,16 @@ npm run test:preset-api
 
 5. Open Longform Intro page.
 
-6. Click a preset and confirm `data/render-draft.json` is created/updated.
+6. Click a preset and confirm:
+
+- preview updates
+- render draft panel updates
+- `data/render-draft.json` is created/updated
 
 7. Next implementation target:
 
-- Add a render/export preparation panel that reads `GET /api/render-draft` and displays the selected preset before an actual local FFmpeg-oriented render job is created.
+- Add a render/export preparation action that turns the confirmed render draft into a queued local render job. Do not start actual FFmpeg processing until the queue payload shape is defined and reviewed.
 
 ## Handoff Note
 
-The next worker should not jump directly into rendering. First expose the render draft state in the UI so the user can confirm the selected preset before queueing an actual job.
+The next worker should not jump directly into rendering. First define the render job payload shape from `data/render-draft.json`, then queue it through the existing Node/Express workflow.
