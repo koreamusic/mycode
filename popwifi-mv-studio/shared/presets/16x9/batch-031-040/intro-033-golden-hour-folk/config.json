@@ -1,0 +1,53 @@
+{
+  "id": "intro-033-golden-hour-folk",
+  "title": "Golden Hour Folk",
+  "category": "intro",
+  "variant": "acoustic",
+  "mood": "golden, honest, open-air folk",
+  "description": "Golden-hour folk intro with handmade frame, warm title, paper CTA, and sunset acoustic lyric bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-golden-fade"
+  },
+  "layout": {
+    "frameStyle": "golden-paper-folk-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "accent": "#E3AE5E",
+    "accent2": "#F7ECCB",
+    "palette": [
+      "golden hour",
+      "paper cream",
+      "field green",
+      "soft brown"
+    ],
+    "texture": "paper fiber, sunlight dust, acoustic warmth",
+    "typography": "warm serif with handwritten folk hint"
+  },
+  "cta": {
+    "style": "paper folk CTA tags",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "sunset cream rounded lyric bar",
+    "endAnimation": "tiny wheat sway loop",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-031-040",
+  "createdAt": "2026-04-25T07:44:35.666Z",
+  "updatedAt": "2026-04-25T07:44:35.666Z"
+}

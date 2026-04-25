@@ -1,0 +1,50 @@
+{
+  "id": "intro-005-ballad-memory-film",
+  "title": "Ballad Memory Film",
+  "category": "intro",
+  "mood": "emotional, nostalgic, cinematic ballad",
+  "description": "Emotional ballad intro with film-photo frame, restrained title, soft CTA, and quiet lyric bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-film-fade"
+  },
+  "layout": {
+    "frameStyle": "soft-film-photo-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "palette": [
+      "warm black",
+      "sepia brown",
+      "soft beige",
+      "muted rose"
+    ],
+    "texture": "old film grain, faint light leak",
+    "typography": "emotional serif title with simple sans body"
+  },
+  "cta": {
+    "style": "subtle soft-glow CTA buttons",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "transparent sepia rounded bar",
+    "endAnimation": "small piano-key shimmer",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-001-010",
+  "createdAt": "2026-04-25T07:44:35.655Z",
+  "updatedAt": "2026-04-25T07:44:35.655Z"
+}

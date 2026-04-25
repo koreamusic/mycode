@@ -1,0 +1,53 @@
+{
+  "id": "intro-047-country-dust-road",
+  "title": "Country Dust Road",
+  "category": "intro",
+  "variant": "acoustic",
+  "mood": "dusty, warm, country acoustic road",
+  "description": "Country road intro with dusty paper frame, honest title, warm CTA, and sun-brown lyric bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-country-dust"
+  },
+  "layout": {
+    "frameStyle": "country-road-paper-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "left"
+  },
+  "visual": {
+    "accent": "#C99557",
+    "accent2": "#F2D39B",
+    "palette": [
+      "dust brown",
+      "sun cream",
+      "field green",
+      "warm black"
+    ],
+    "texture": "road dust, paper grain, acoustic warmth",
+    "typography": "warm folk serif with simple sans caption"
+  },
+  "cta": {
+    "style": "country paper stamp CTA",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "dusty sun-brown rounded lyric bar",
+    "endAnimation": "tiny dust road drift",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-041-050",
+  "createdAt": "2026-04-25T07:44:35.672Z",
+  "updatedAt": "2026-04-25T07:44:35.672Z"
+}

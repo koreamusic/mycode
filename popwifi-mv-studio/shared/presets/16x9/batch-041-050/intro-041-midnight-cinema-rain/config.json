@@ -1,0 +1,53 @@
+{
+  "id": "intro-041-midnight-cinema-rain",
+  "title": "Midnight Cinema Rain",
+  "category": "intro",
+  "variant": "cinematic",
+  "mood": "midnight, cinematic, rain-lit city",
+  "description": "Cinematic rain-night intro with silver-gold frame, dramatic title, refined CTA, and rain-glass lower bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-cinema-rain-fade"
+  },
+  "layout": {
+    "frameStyle": "cinema-rain-glass-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "accent": "#D8B870",
+    "accent2": "#BFD7FF",
+    "palette": [
+      "midnight black",
+      "rain blue",
+      "old gold",
+      "soft white"
+    ],
+    "texture": "rain glass, cinema grain, soft highlight streaks",
+    "typography": "premium serif title with narrow cinematic sans"
+  },
+  "cta": {
+    "style": "cinematic rain CTA capsule",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "rain-glass black-gold rounded bar",
+    "endAnimation": "tiny rain light sweep",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-041-050",
+  "createdAt": "2026-04-25T07:44:35.670Z",
+  "updatedAt": "2026-04-25T07:44:35.670Z"
+}

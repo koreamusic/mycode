@@ -1,0 +1,53 @@
+{
+  "id": "intro-029-tape-haze-chillwave",
+  "title": "Tape Haze Chillwave",
+  "category": "intro",
+  "variant": "chillwave",
+  "mood": "hazy, dreamy, analog chillwave",
+  "description": "Hazy chillwave intro with cassette edge frame, soft title glow, synth CTA, and purple-cyan bottom bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-tape-haze"
+  },
+  "layout": {
+    "frameStyle": "cassette-edge-haze-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "left"
+  },
+  "visual": {
+    "accent": "#A987FF",
+    "accent2": "#66F0FF",
+    "palette": [
+      "purple haze",
+      "cyan",
+      "soft pink",
+      "midnight"
+    ],
+    "texture": "VHS shimmer, cassette blur, chromatic glow",
+    "typography": "thin synth sans with glowing subtitle"
+  },
+  "cta": {
+    "style": "synth tape CTA capsules",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "purple-cyan rounded glass bar",
+    "endAnimation": "tiny tape wheel shimmer",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-021-030",
+  "createdAt": "2026-04-25T07:44:35.664Z",
+  "updatedAt": "2026-04-25T07:44:35.664Z"
+}

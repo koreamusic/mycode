@@ -1,0 +1,53 @@
+{
+  "id": "intro-024-pop-glass-pulse",
+  "title": "Pop Glass Pulse",
+  "category": "intro",
+  "variant": "kpop",
+  "mood": "glossy, bright, modern pop pulse",
+  "description": "Glossy pop intro with glass pulse frame, bright title hit, energetic CTA, and neon lower bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-glass-pulse"
+  },
+  "layout": {
+    "frameStyle": "glass-pulse-neon-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "accent": "#FF4FD8",
+    "accent2": "#5EFAFF",
+    "palette": [
+      "black",
+      "hot pink",
+      "cyan",
+      "clean white"
+    ],
+    "texture": "glossy glass, subtle stage fog, digital shine",
+    "typography": "bold geometric sans with crisp caption"
+  },
+  "cta": {
+    "style": "pop pulse CTA capsule trio",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "cyan-pink glass lyric bar",
+    "endAnimation": "tiny pulse equalizer",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-021-030",
+  "createdAt": "2026-04-25T07:44:35.663Z",
+  "updatedAt": "2026-04-25T07:44:35.663Z"
+}

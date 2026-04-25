@@ -705,6 +705,14 @@ pre { white-space: pre-wrap; color: var(--muted); }
 .render-result-item code { display: block; font-size: 10px; color: var(--muted); word-break: break-all; margin-bottom: 6px; }
 .render-result-actions { display: flex; gap: 8px; }
 
+/* Font list */
+.font-list-row { display: grid; grid-template-columns: 1fr 1.4fr auto; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 12px; }
+.font-list-row:last-child { border-bottom: none; }
+.font-list-name { font-weight: 600; color: var(--text); }
+.font-list-presets { color: var(--muted); font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.font-list-link { color: var(--gold); text-decoration: none; font-size: 11px; white-space: nowrap; }
+.font-list-link:hover { text-decoration: underline; }
+
 /* Queue job cards */
 .queue-empty { color: var(--muted); font-size: 13px; padding: 8px 0; margin: 0; }
 .queue-job-card {

@@ -1,0 +1,50 @@
+{
+  "id": "intro-008-anime-sky-breeze",
+  "title": "Anime Sky Breeze",
+  "category": "intro",
+  "mood": "open, lyrical, anime outdoor breeze",
+  "description": "Anime-style intro with sky-air frame, clean title readability, charming CTA, and bright lyric bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-cloud-wipe"
+  },
+  "layout": {
+    "frameStyle": "airy-cloud-line-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "palette": [
+      "sky blue",
+      "soft white",
+      "blossom pink",
+      "sea-glass turquoise"
+    ],
+    "texture": "clean cel-shaded glow, soft wind motion",
+    "typography": "clean anime title sans with gentle handwritten accent"
+  },
+  "cta": {
+    "style": "cute floating anime CTA icons",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "soft blue-white translucent rounded bar",
+    "endAnimation": "tiny paper airplane loop",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-001-010",
+  "createdAt": "2026-04-25T07:44:35.656Z",
+  "updatedAt": "2026-04-25T07:44:35.656Z"
+}

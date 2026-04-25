@@ -1,0 +1,53 @@
+{
+  "id": "intro-017-night-drive-synth",
+  "title": "Night Drive Synth",
+  "category": "intro",
+  "variant": "night",
+  "mood": "dark, moving, night-drive synth pop",
+  "description": "Night-drive intro with highway light frame, sleek title, glowing CTA, and dark neon bottom bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-road-light-streak"
+  },
+  "layout": {
+    "frameStyle": "moving-highway-light-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "accent": "#4FD7FF",
+    "accent2": "#9A6BFF",
+    "palette": [
+      "night black",
+      "cyan",
+      "violet",
+      "wet asphalt"
+    ],
+    "texture": "moving light streaks, road reflection, digital haze",
+    "typography": "sleek futuristic sans with narrow caption"
+  },
+  "cta": {
+    "style": "night neon CTA capsule",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "dark cyan-violet rounded glass bar",
+    "endAnimation": "tiny road-line pulse",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-011-020",
+  "createdAt": "2026-04-25T07:44:35.660Z",
+  "updatedAt": "2026-04-25T07:44:35.660Z"
+}

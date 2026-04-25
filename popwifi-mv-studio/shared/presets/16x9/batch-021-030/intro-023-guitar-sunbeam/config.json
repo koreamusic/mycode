@@ -1,0 +1,53 @@
+{
+  "id": "intro-023-guitar-sunbeam",
+  "title": "Guitar Sunbeam",
+  "category": "intro",
+  "variant": "acoustic",
+  "mood": "warm, acoustic, morning sunlight",
+  "description": "Acoustic guitar intro with sunbeam frame, honest title, gentle CTA, and warm wood-tone lyric bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-sunbeam-soften"
+  },
+  "layout": {
+    "frameStyle": "sunbeam-wood-line-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "accent": "#D7A85A",
+    "accent2": "#F7E8C7",
+    "palette": [
+      "wood brown",
+      "sun cream",
+      "soft green",
+      "warm black"
+    ],
+    "texture": "wood grain, morning dust, soft acoustic room",
+    "typography": "warm serif title with simple humanist sans"
+  },
+  "cta": {
+    "style": "acoustic paper-tag CTA",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "wood-cream translucent lyric bar",
+    "endAnimation": "tiny guitar-string vibration",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-021-030",
+  "createdAt": "2026-04-25T07:44:35.663Z",
+  "updatedAt": "2026-04-25T07:44:35.663Z"
+}

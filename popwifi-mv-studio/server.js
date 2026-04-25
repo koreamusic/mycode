@@ -12,6 +12,7 @@ const { registerConfigRoutes } = require('./server/routes/config');
 const { registerQueueRoutes } = require('./server/routes/queue');
 const { registerPresetRoutes } = require('./server/routes/presets');
 const { registerRenderDraftRoutes } = require('./server/routes/render-draft');
+const { registerFontsRoutes } = require('./server/routes/fonts');
 const logger = require('./server/core/logger');
 
 const rootDir = __dirname;
@@ -61,6 +62,7 @@ registerConfigRoutes(app, context);
 registerQueueRoutes(app, context);
 registerPresetRoutes(app, context);
 registerRenderDraftRoutes(app, context);
+registerFontsRoutes(app, context);
 
 wss.on('connection', (ws) => {
   try {

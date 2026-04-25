@@ -124,6 +124,9 @@ export const api = {
       body: JSON.stringify(payload)
     });
   },
+  fonts() {
+    return readJson('/api/fonts');
+  },
   page(path) {
     return readText(path);
   }

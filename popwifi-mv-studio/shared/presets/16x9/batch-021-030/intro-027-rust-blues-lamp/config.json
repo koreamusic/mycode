@@ -1,0 +1,53 @@
+{
+  "id": "intro-027-rust-blues-lamp",
+  "title": "Rust Blues Lamp",
+  "category": "intro",
+  "variant": "blues",
+  "mood": "rusty, deep, old lamp blues",
+  "description": "Deep blues intro with rusty lamp frame, heavy title mood, stamped CTA, and dark blue lower bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-lamp-smoke"
+  },
+  "layout": {
+    "frameStyle": "rust-lamp-smoke-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "accent": "#8DA4E8",
+    "accent2": "#B96F44",
+    "palette": [
+      "deep blue",
+      "rust",
+      "aged ivory",
+      "black"
+    ],
+    "texture": "lamp smoke, worn metal, scratched film",
+    "typography": "rough serif title with blues-club caption"
+  },
+  "cta": {
+    "style": "rust-stamped CTA marks",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "blue-black rustline lyric bar",
+    "endAnimation": "tiny smoke curl loop",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-021-030",
+  "createdAt": "2026-04-25T07:44:35.664Z",
+  "updatedAt": "2026-04-25T07:44:35.664Z"
+}

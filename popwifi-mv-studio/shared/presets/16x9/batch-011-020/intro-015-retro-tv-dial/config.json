@@ -1,0 +1,53 @@
+{
+  "id": "intro-015-retro-tv-dial",
+  "title": "Retro TV Dial",
+  "category": "intro",
+  "variant": "retro",
+  "mood": "nostalgic, analog, old television",
+  "description": "Retro TV intro with analog frame, warm title, tactile CTA moment, and broadcast-like lower bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-tv-power-down"
+  },
+  "layout": {
+    "frameStyle": "old-brown-tv-dial-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "left"
+  },
+  "visual": {
+    "accent": "#C98242",
+    "accent2": "#F4D58D",
+    "palette": [
+      "brown",
+      "amber",
+      "muted cream",
+      "dark glass"
+    ],
+    "texture": "analog scanline, subtle CRT glow, vintage dust",
+    "typography": "retro broadcast sans with rounded title"
+  },
+  "cta": {
+    "style": "analog button CTA badges",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "broadcast lower-third rounded bar",
+    "endAnimation": "tiny TV scan pulse",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-011-020",
+  "createdAt": "2026-04-25T07:44:35.658Z",
+  "updatedAt": "2026-04-25T07:44:35.658Z"
+}

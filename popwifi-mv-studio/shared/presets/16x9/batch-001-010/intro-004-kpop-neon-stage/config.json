@@ -1,0 +1,50 @@
+{
+  "id": "intro-004-kpop-neon-stage",
+  "title": "K-Pop Neon Stage",
+  "category": "intro",
+  "mood": "sleek, energetic, modern pop",
+  "description": "Modern pop intro with neon stage frame, punchy title reveal, icon-led CTA, and polished lyric bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-neon-scan"
+  },
+  "layout": {
+    "frameStyle": "neon-scanline-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "palette": [
+      "deep black",
+      "electric pink",
+      "cyan blue",
+      "white"
+    ],
+    "texture": "clean digital glow with subtle stage haze",
+    "typography": "bold geometric sans with compact subtitle"
+  },
+  "cta": {
+    "style": "animated neon icon capsule CTA",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "dark glass rounded bar with cyan-pink edge glow",
+    "endAnimation": "tiny equalizer pulse",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-001-010",
+  "createdAt": "2026-04-25T07:44:35.654Z",
+  "updatedAt": "2026-04-25T07:44:35.654Z"
+}

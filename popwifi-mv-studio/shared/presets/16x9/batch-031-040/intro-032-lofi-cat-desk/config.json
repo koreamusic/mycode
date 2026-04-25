@@ -1,0 +1,53 @@
+{
+  "id": "intro-032-lofi-cat-desk",
+  "title": "Lofi Cat Desk",
+  "category": "intro",
+  "variant": "lofi",
+  "mood": "cozy, playful, desk lofi night",
+  "description": "Cozy desk lofi intro with cat-like warmth, lamp frame, gentle title, friendly CTA, and soft bottom bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-lamp-purr"
+  },
+  "layout": {
+    "frameStyle": "desk-lamp-rounded-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "left"
+  },
+  "visual": {
+    "accent": "#D5B7FF",
+    "accent2": "#FFC97A",
+    "palette": [
+      "dusty purple",
+      "lamp amber",
+      "cream",
+      "warm black"
+    ],
+    "texture": "desk grain, lamp blur, soft dust motes",
+    "typography": "rounded soft sans with small cozy accent"
+  },
+  "cta": {
+    "style": "cozy desk sticker CTA",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "purple-amber translucent rounded bar",
+    "endAnimation": "tiny paw pulse loop",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-031-040",
+  "createdAt": "2026-04-25T07:44:35.666Z",
+  "updatedAt": "2026-04-25T07:44:35.666Z"
+}

@@ -1,0 +1,53 @@
+{
+  "id": "intro-019-folk-paper-diary",
+  "title": "Folk Paper Diary",
+  "category": "intro",
+  "variant": "acoustic",
+  "mood": "honest, handmade, folk diary",
+  "description": "Handmade folk intro with paper diary frame, sincere title, small CTA, and warm acoustic lower bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-paper-close"
+  },
+  "layout": {
+    "frameStyle": "paper-diary-torn-edge-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "left"
+  },
+  "visual": {
+    "accent": "#C7A36B",
+    "accent2": "#F5E5C0",
+    "palette": [
+      "paper beige",
+      "soft brown",
+      "cream",
+      "ink gray"
+    ],
+    "texture": "paper fiber, pencil dust, warm lamp grain",
+    "typography": "gentle serif title with diary-like accent"
+  },
+  "cta": {
+    "style": "small paper stamp CTA",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "warm paper-tint rounded lyric bar",
+    "endAnimation": "tiny pencil line loop",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-011-020",
+  "createdAt": "2026-04-25T07:44:35.660Z",
+  "updatedAt": "2026-04-25T07:44:35.660Z"
+}

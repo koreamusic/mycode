@@ -1,0 +1,53 @@
+{
+  "id": "intro-030-cafe-rain-jazz",
+  "title": "Cafe Rain Jazz",
+  "category": "intro",
+  "variant": "cafe",
+  "mood": "rainy cafe, warm, smooth jazz",
+  "description": "Rainy cafe jazz intro with window-cafe frame, warm title, small CTA, and coffee-rain lower bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-cafe-rain-fade"
+  },
+  "layout": {
+    "frameStyle": "cafe-window-rain-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "accent": "#C98B58",
+    "accent2": "#FFE0A3",
+    "palette": [
+      "espresso",
+      "rain gray",
+      "cream",
+      "soft amber"
+    ],
+    "texture": "coffee steam, rainy glass, warm cafe grain",
+    "typography": "refined cafe serif with soft sans support"
+  },
+  "cta": {
+    "style": "coffee-stamp CTA badges",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "coffee-rain translucent rounded bar",
+    "endAnimation": "tiny steam and raindrop loop",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-021-030",
+  "createdAt": "2026-04-25T07:44:35.665Z",
+  "updatedAt": "2026-04-25T07:44:35.665Z"
+}

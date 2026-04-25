@@ -1,0 +1,53 @@
+{
+  "id": "intro-044-spring-picnic-pop",
+  "title": "Spring Picnic Pop",
+  "category": "intro",
+  "variant": "spring",
+  "mood": "picnic, bright, soft spring pop",
+  "description": "Spring picnic intro with pastel frame, fresh title, friendly CTA, and cream-green lyric bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-picnic-petal"
+  },
+  "layout": {
+    "frameStyle": "pastel-picnic-line-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "accent": "#F9B8CF",
+    "accent2": "#C7EFA8",
+    "palette": [
+      "picnic pink",
+      "fresh green",
+      "cream",
+      "sky blue"
+    ],
+    "texture": "soft daylight, picnic cloth grain, petal air",
+    "typography": "soft rounded serif with clean subtitle"
+  },
+  "cta": {
+    "style": "picnic sticker CTA set",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "cream-green translucent rounded bar",
+    "endAnimation": "tiny picnic leaf loop",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-041-050",
+  "createdAt": "2026-04-25T07:44:35.671Z",
+  "updatedAt": "2026-04-25T07:44:35.671Z"
+}

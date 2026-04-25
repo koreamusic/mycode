@@ -1,0 +1,50 @@
+{
+  "id": "intro-009-chillwave-dream-tape",
+  "title": "Chillwave Dream Tape",
+  "category": "intro",
+  "mood": "dreamy, synth, late-night chillwave",
+  "description": "Dreamy chillwave intro with tape-like frame, soft synth title, luminous CTA, and floating lyric bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-tape-rewind"
+  },
+  "layout": {
+    "frameStyle": "soft-vhs-tape-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "left"
+  },
+  "visual": {
+    "palette": [
+      "midnight purple",
+      "soft cyan",
+      "hazy pink",
+      "white"
+    ],
+    "texture": "dream blur, light chromatic shimmer, quiet VHS grain",
+    "typography": "thin futuristic sans with soft glow"
+  },
+  "cta": {
+    "style": "glowing synthwave CTA capsules",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "purple-cyan glass rounded bar",
+    "endAnimation": "tiny cassette reel spin",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-001-010",
+  "createdAt": "2026-04-25T07:44:35.656Z",
+  "updatedAt": "2026-04-25T07:44:35.656Z"
+}

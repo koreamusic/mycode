@@ -1,0 +1,50 @@
+{
+  "id": "intro-002-lofi-window-glow",
+  "title": "Lofi Window Glow",
+  "category": "intro",
+  "mood": "soft, cozy, night-window lofi",
+  "description": "Gentle lofi intro with soft window-light frame, floating title card, friendly CTA, and calm rounded lyric bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-fade-slide"
+  },
+  "layout": {
+    "frameStyle": "soft-window-light-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "left"
+  },
+  "visual": {
+    "palette": [
+      "night navy",
+      "dusty violet",
+      "warm lamp yellow",
+      "cream white"
+    ],
+    "texture": "soft blur, dust particles, quiet room tone",
+    "typography": "rounded modern sans with relaxed spacing"
+  },
+  "cta": {
+    "style": "pill-shaped cozy reaction buttons",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "translucent lavender-black rounded bar",
+    "endAnimation": "small vinyl spin loop",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-001-010",
+  "createdAt": "2026-04-25T07:44:35.653Z",
+  "updatedAt": "2026-04-25T07:44:35.653Z"
+}

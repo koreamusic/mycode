@@ -1,0 +1,53 @@
+{
+  "id": "intro-011-rainy-piano-window",
+  "title": "Rainy Piano Window",
+  "category": "intro",
+  "variant": "ballad",
+  "mood": "quiet, rainy, emotional piano ballad",
+  "description": "Soft rainy-window intro with misty frame, restrained title, gentle CTA, and blue-tinted lyric bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-rain-fade"
+  },
+  "layout": {
+    "frameStyle": "misty-rain-glass-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "accent": "#9BB8FF",
+    "accent2": "#E8D4B0",
+    "palette": [
+      "rain blue",
+      "soft gray",
+      "warm ivory",
+      "deep navy"
+    ],
+    "texture": "rain glass blur and soft piano room glow",
+    "typography": "delicate serif title with understated sans support"
+  },
+  "cta": {
+    "style": "soft misty CTA pills",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "blue-gray transparent rounded bar",
+    "endAnimation": "tiny raindrop ripple loop",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-011-020",
+  "createdAt": "2026-04-25T07:44:35.657Z",
+  "updatedAt": "2026-04-25T07:44:35.657Z"
+}

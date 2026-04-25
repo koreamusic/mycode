@@ -1,0 +1,53 @@
+{
+  "id": "intro-038-cosmic-chillwave",
+  "title": "Cosmic Chillwave",
+  "category": "intro",
+  "variant": "chillwave",
+  "mood": "cosmic, dreamy, synth chillwave",
+  "description": "Cosmic chillwave intro with star-synth frame, floating title, glowing CTA, and purple-cyan lyric bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-star-drift"
+  },
+  "layout": {
+    "frameStyle": "cosmic-synth-star-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "left"
+  },
+  "visual": {
+    "accent": "#B18CFF",
+    "accent2": "#6FF4FF",
+    "palette": [
+      "cosmic purple",
+      "cyan",
+      "deep navy",
+      "soft pink"
+    ],
+    "texture": "star dust, synth glow, dreamy chromatic haze",
+    "typography": "thin futuristic sans with glowing title"
+  },
+  "cta": {
+    "style": "cosmic synth CTA capsules",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "cosmic purple-cyan glass bar",
+    "endAnimation": "tiny star orbit loop",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-031-040",
+  "createdAt": "2026-04-25T07:44:35.668Z",
+  "updatedAt": "2026-04-25T07:44:35.668Z"
+}

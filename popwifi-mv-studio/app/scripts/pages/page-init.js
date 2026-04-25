@@ -164,6 +164,12 @@ async function hydrateSettingsPage() {
     });
   }
 
+  const fontsRefreshBtn = document.getElementById('fonts-refresh-btn');
+  if (fontsRefreshBtn) {
+    loadFontList();
+    fontsRefreshBtn.addEventListener('click', loadFontList);
+  }
+
   const importBtn = document.getElementById('preset-import-btn');
   const importFile = document.getElementById('preset-import-file');
   const importResult = document.getElementById('preset-import-result');
@@ -191,5 +197,45 @@ async function hydrateSettingsPage() {
         importBtn.disabled = false;
       }
     });
+  }
+}
+
+async function loadFontList() {
+  const container = document.getElementById('fonts-list');
+  if (!container) return;
+  container.textContent = '스캔 중...';
+  try {
+    const { fonts } = await api.fonts();
+    if (!fonts.length) {
+      container.textContent = '프리셋에서 사용 중인 폰트가 없습니다.';
+      return;
+    }
+    container.innerHTML = '';
+    fonts.forEach(({ name, presets, googleFontsUrl }) => {
+      const row = document.createElement('div');
+      row.className = 'font-list-row';
+
+      const nameEl = document.createElement('span');
+      nameEl.className = 'font-list-name';
+      nameEl.textContent = name;
+
+      const presetEl = document.createElement('span');
+      presetEl.className = 'font-list-presets';
+      presetEl.textContent = presets.join(', ');
+
+      const linkEl = document.createElement('a');
+      linkEl.className = 'font-list-link';
+      linkEl.textContent = 'Google Fonts';
+      linkEl.href = googleFontsUrl;
+      linkEl.target = '_blank';
+      linkEl.rel = 'noopener';
+
+      row.appendChild(nameEl);
+      row.appendChild(presetEl);
+      row.appendChild(linkEl);
+      container.appendChild(row);
+    });
+  } catch (_) {
+    container.textContent = '폰트 목록을 불러오지 못했습니다.';
   }
 }

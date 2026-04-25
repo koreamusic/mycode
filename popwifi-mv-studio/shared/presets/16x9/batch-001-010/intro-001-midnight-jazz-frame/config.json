@@ -1,0 +1,50 @@
+{
+  "id": "intro-001-midnight-jazz-frame",
+  "title": "Midnight Jazz Frame",
+  "category": "intro",
+  "mood": "smoky, elegant, late-night jazz",
+  "description": "Dark smoky jazz intro with thin cinematic frame, refined title lockup, warm CTA moment, and transparent lyric bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-soft-collapse"
+  },
+  "layout": {
+    "frameStyle": "thin-gold-corner-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "palette": [
+      "deep black",
+      "smoky charcoal",
+      "old gold",
+      "warm ivory"
+    ],
+    "texture": "subtle film grain and smoke haze",
+    "typography": "elegant serif title with clean sans subtitle"
+  },
+  "cta": {
+    "style": "warm minimal subscribe badge trio",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "transparent rounded black-glass bar with faint gold line",
+    "endAnimation": "tiny saxophone glow pulse",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-001-010",
+  "createdAt": "2026-04-25T07:44:35.652Z",
+  "updatedAt": "2026-04-25T07:44:35.652Z"
+}

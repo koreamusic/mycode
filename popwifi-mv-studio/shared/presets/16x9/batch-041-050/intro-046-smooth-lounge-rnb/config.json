@@ -1,0 +1,53 @@
+{
+  "id": "intro-046-smooth-lounge-rnb",
+  "title": "Smooth Lounge R&B",
+  "category": "intro",
+  "variant": "minimal",
+  "mood": "smooth, lounge, intimate R&B",
+  "description": "Smooth lounge R&B intro with velvet frame, elegant title, soft CTA, and muted mauve lyric bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-velvet-glide"
+  },
+  "layout": {
+    "frameStyle": "velvet-lounge-soft-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "accent": "#CFA0C9",
+    "accent2": "#F6D6B8",
+    "palette": [
+      "mauve",
+      "cream",
+      "black",
+      "warm gray"
+    ],
+    "texture": "velvet sheen, low light, smooth grain",
+    "typography": "thin elegant serif with soft sans metadata"
+  },
+  "cta": {
+    "style": "velvet soft CTA lozenges",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "mauve velvet translucent lyric bar",
+    "endAnimation": "tiny velvet wave loop",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-041-050",
+  "createdAt": "2026-04-25T07:44:35.671Z",
+  "updatedAt": "2026-04-25T07:44:35.671Z"
+}

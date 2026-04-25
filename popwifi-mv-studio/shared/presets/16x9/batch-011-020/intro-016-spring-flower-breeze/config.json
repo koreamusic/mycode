@@ -1,0 +1,53 @@
+{
+  "id": "intro-016-spring-flower-breeze",
+  "title": "Spring Flower Breeze",
+  "category": "intro",
+  "variant": "spring",
+  "mood": "bright, floral, soft spring pop",
+  "description": "Spring breeze intro with flower-line frame, airy title, friendly CTA, and pastel lower lyric bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-petal-float"
+  },
+  "layout": {
+    "frameStyle": "soft-flower-line-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "accent": "#F7B7D2",
+    "accent2": "#BFE6A8",
+    "palette": [
+      "blossom pink",
+      "fresh green",
+      "cream",
+      "sky blue"
+    ],
+    "texture": "petal dust, soft daylight, airy bloom",
+    "typography": "gentle rounded serif with handwritten accent"
+  },
+  "cta": {
+    "style": "pastel sticker CTA set",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "pastel cream translucent rounded bar",
+    "endAnimation": "tiny petal drift loop",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-011-020",
+  "createdAt": "2026-04-25T07:44:35.659Z",
+  "updatedAt": "2026-04-25T07:44:35.659Z"
+}

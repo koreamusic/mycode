@@ -1,0 +1,53 @@
+{
+  "id": "intro-026-city-night-sign",
+  "title": "City Night Sign",
+  "category": "intro",
+  "variant": "citypop",
+  "mood": "retro city, night sign, stylish pop",
+  "description": "City pop intro with neon sign frame, retro title, lively CTA, and polished night-city lyric bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-neon-sign-off"
+  },
+  "layout": {
+    "frameStyle": "retro-neon-sign-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "left"
+  },
+  "visual": {
+    "accent": "#FF8A4C",
+    "accent2": "#FF5FB4",
+    "palette": [
+      "orange neon",
+      "magenta",
+      "deep purple",
+      "night black"
+    ],
+    "texture": "neon bloom, wet street reflection, retro grain",
+    "typography": "retro display title with clean sans metadata"
+  },
+  "cta": {
+    "style": "night sign CTA buttons",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "city neon lower-third bar",
+    "endAnimation": "tiny neon blink",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-021-030",
+  "createdAt": "2026-04-25T07:44:35.663Z",
+  "updatedAt": "2026-04-25T07:44:35.663Z"
+}

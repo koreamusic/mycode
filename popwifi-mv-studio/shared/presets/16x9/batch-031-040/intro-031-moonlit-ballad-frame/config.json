@@ -1,0 +1,53 @@
+{
+  "id": "intro-031-moonlit-ballad-frame",
+  "title": "Moonlit Ballad Frame",
+  "category": "intro",
+  "variant": "ballad",
+  "mood": "moonlit, tender, emotional night ballad",
+  "description": "Moonlit ballad intro with silver-blue frame, quiet title, soft CTA, and night-tinted lyric bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-moonlight-fade"
+  },
+  "layout": {
+    "frameStyle": "silver-moonlight-thin-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center"
+  },
+  "visual": {
+    "accent": "#AFC7FF",
+    "accent2": "#F2E6D8",
+    "palette": [
+      "moon blue",
+      "silver",
+      "warm ivory",
+      "night black"
+    ],
+    "texture": "soft moon haze, subtle film grain, quiet air",
+    "typography": "emotional serif title with simple sans subtitle"
+  },
+  "cta": {
+    "style": "soft moonlit CTA pills",
+    "items": [
+      "like",
+      "subscribe",
+      "notification"
+    ]
+  },
+  "bottomBar": {
+    "style": "moon-blue transparent rounded lyric bar",
+    "endAnimation": "tiny moon shimmer loop",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "ratio": "16x9",
+  "batchId": "batch-031-040",
+  "createdAt": "2026-04-25T07:44:35.666Z",
+  "updatedAt": "2026-04-25T07:44:35.666Z"
+}
