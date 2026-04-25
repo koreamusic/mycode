@@ -4,101 +4,70 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>02 · 깊은 밤 피아노 — Source Faithful Renderer</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;700&display=swap');
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html,body{width:100%;height:100%;overflow:hidden;background:#05060e;font-family:'Noto Sans KR',sans-serif;}
-  body{display:grid;place-items:center;}
-  .mv-wrap{width:100%;height:100%;position:relative;overflow:hidden;background:#080c1a;isolation:isolate;}
-  .bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 30%, rgba(100,130,200,0.14) 0%, transparent 55%),radial-gradient(ellipse at 80% 75%, rgba(180,150,80,0.10) 0%, transparent 50%),linear-gradient(155deg,#080c1a 0%,#0c1028 40%,#0a0818 100%);} 
-  .bg::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");mix-blend-mode:overlay;}
-  .particles{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
-  .frame-layer{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .9s ease;}
-  .frame-layer.show{opacity:1;}
-  .frame-layer.hide{opacity:0;transition:opacity 1.2s ease;}
-  .title-layer{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;pointer-events:none;}
-  .title-main{font-family:'Nanum Myeongjo','Noto Serif KR',serif;font-weight:800;font-size:clamp(32px,6vw,58px);color:#fff;letter-spacing:.1em;opacity:0;transform:translateY(22px);transition:opacity 1.3s ease,transform 1.3s cubic-bezier(.16,1,.3,1);text-shadow:0 0 36px rgba(200,168,74,.6),0 0 72px rgba(80,120,220,.18);}
-  .title-main.show{opacity:1;transform:translateY(0);}
-  .title-main.hide{opacity:0;transform:translateY(-14px);transition:opacity .8s ease,transform .8s ease;}
-  .title-row{display:flex;align-items:center;gap:18px;opacity:0;transition:opacity 1s ease .5s;}
-  .title-row.show{opacity:1;}
-  .title-row.hide{opacity:0;transition:opacity .6s ease;}
-  .title-line{width:55px;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,74,.6),transparent);}
-  .title-sub{font-family:'Noto Serif KR',serif;font-weight:300;font-size:12px;letter-spacing:.3em;color:rgba(220,190,100,.7);}
-  .sub-layer{position:absolute;bottom:130px;left:50%;transform:translateX(-50%) translateY(28px);opacity:0;transition:opacity .8s ease,transform .8s cubic-bezier(.16,1,.3,1);pointer-events:none;white-space:nowrap;}
-  .sub-layer.show{opacity:1;transform:translateX(-50%) translateY(0);}
-  .sub-layer.hide{opacity:0;transform:translateX(-50%) translateY(-14px);transition:opacity .7s ease,transform .7s ease;}
-  .sub-card{border-radius:50px;padding:16px 36px;display:flex;align-items:center;gap:32px;background:rgba(8,10,22,.8);border:1px solid rgba(200,168,74,.25);box-shadow:0 8px 40px rgba(200,140,30,.12);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);}
-  .sub-item{display:flex;align-items:center;gap:11px;}
-  .sub-text{font-family:'Noto Serif KR',serif;font-weight:400;font-size:15px;letter-spacing:.06em;color:rgba(220,190,100,.92);}
-  .sub-divider{width:1px;height:22px;background:rgba(200,168,74,.22);}
-  .heart-path{stroke-dasharray:130;stroke-dashoffset:130;}
-  .heart-path.draw{animation:drawHeart 1s cubic-bezier(.4,0,.2,1) .15s forwards;}
-  @keyframes drawHeart{to{stroke-dashoffset:0;}}
-  .bell-g{transform-origin:14px 5px;}
-  .bell-g.ring{animation:bellRing .55s ease .5s 2;}
-  @keyframes bellRing{0%,100%{transform:rotate(0);}25%{transform:rotate(-13deg);}75%{transform:rotate(13deg);}}
-  .bottom-bar{position:absolute;bottom:0;left:0;right:0;height:80px;transform:translateY(100%);opacity:0;transition:transform 1s cubic-bezier(.16,1,.3,1),opacity 1s ease;}
-  .bottom-bar.show{transform:translateY(0);opacity:1;}
-  .bar-gradient{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,10,22,0) 0%,rgba(8,10,22,.78) 28%,rgba(5,7,18,.96) 100%);}
-  .bar-topline{position:absolute;top:0;left:20px;right:20px;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,74,.18) 20%,rgba(200,168,74,.32) 50%,rgba(200,168,74,.18) 80%,transparent);}
-  .bar-inner{position:absolute;inset:0;display:flex;align-items:center;padding:0 24px 0 20px;gap:16px;}
-  .disk-wrap{flex-shrink:0;width:52px;height:52px;position:relative;}
-  .disk{width:52px;height:52px;border-radius:50%;animation:diskSpin 8s linear infinite;display:flex;align-items:center;justify-content:center;background:conic-gradient(from 0deg,#0e1428 0deg,#080c1e 45deg,#0e1428 90deg,#080c1e 135deg,#0e1428 180deg,#080c1e 225deg,#0e1428 270deg,#080c1e 315deg,#0e1428 360deg);border:1px solid rgba(200,168,74,.28);box-shadow:inset 0 0 14px rgba(0,0,0,.45),0 0 18px rgba(200,140,30,.18);}
-  @keyframes diskSpin{to{transform:rotate(360deg);}}
-  .disk-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:14px;height:14px;border-radius:50%;z-index:2;background:#06091a;border:1px solid rgba(200,168,74,.32);}
-  .disk-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:18px;z-index:1;}
-  .eq-wrap{flex-shrink:0;display:flex;align-items:flex-end;height:52px;gap:1px;}
-  .bar-text{flex:1;display:flex;flex-direction:column;gap:4px;overflow:hidden;min-width:0;}
-  .bar-song{font-family:'Nanum Myeongjo',serif;font-weight:700;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:.03em;color:rgba(230,210,160,.95);}
-  .bar-lyric{font-weight:300;font-size:11px;letter-spacing:.09em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:rgba(200,170,100,.55);}
-  .bar-logo{flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;gap:2px;border-left:1px solid rgba(200,168,74,.14);padding-left:16px;}
-  .bar-logo-name{font-family:'Noto Serif KR',serif;font-weight:600;font-size:12px;letter-spacing:.18em;white-space:nowrap;color:rgba(200,170,100,.8);}
-  .bar-logo-sub{font-size:10px;letter-spacing:.12em;color:rgba(255,255,255,.42);}
-  @media(max-width:720px){.sub-layer{bottom:105px}.sub-card{gap:18px;padding:12px 20px}.bar-inner{gap:10px;padding:0 12px}.eq-wrap{max-width:96px;overflow:hidden}.bar-logo{display:none}.title-main{font-size:clamp(26px,8vw,48px)}}
-</style>
+<link rel="stylesheet" href="./renderer.css" />
 </head>
 <body>
 <div class="mv-wrap" id="mv">
   <div class="bg"></div>
   <div class="particles" id="particles"></div>
-  <div class="frame-layer" id="frameLayer"><svg id="frameSvg" viewBox="0 0 900 506" fill="none" width="100%" height="100%" style="position:absolute;inset:0;"></svg></div>
+
+  <div class="frame-layer" id="frameLayer">
+    <svg id="frameSvg" viewBox="0 0 900 506" fill="none" width="100%" height="100%" style="position:absolute;inset:0;"></svg>
+  </div>
+
   <div class="title-layer">
     <div class="title-main" id="titleMain">깊은 밤의 선율</div>
-    <div class="title-row" id="titleRow"><div class="title-line"></div><div class="title-sub">POP WiFi · 팝 와이파이</div><div class="title-line"></div></div>
+    <div class="title-row" id="titleRow">
+      <div class="title-line"></div>
+      <div class="title-sub">POP WiFi · 팝 와이파이</div>
+      <div class="title-line"></div>
+    </div>
   </div>
-  <div class="sub-layer" id="subLayer"><div class="sub-card" id="subCard">
-    <div class="sub-item"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path id="heartPath" class="heart-path" d="M14 23 C14 23 4 16 4 10 C4 7 6.5 4.5 9.5 4.5 C11.5 4.5 13 5.5 14 7 C15 5.5 16.5 4.5 18.5 4.5 C21.5 4.5 24 7 24 10 C24 16 14 23 14 23Z" stroke="#c8a84a" stroke-width="1.8" fill="rgba(200,168,74,0.12)" stroke-linejoin="round"/></svg><span class="sub-text">좋아요</span></div>
-    <div class="sub-divider"></div>
-    <div class="sub-item"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><g id="bellG" class="bell-g"><rect x="8" y="6" width="12" height="10" rx="6" stroke="#d4b456" stroke-width="1.5" fill="rgba(212,180,86,0.1)"/><path d="M6 17H22" stroke="#d4b456" stroke-width="1.5" stroke-linecap="round"/><path d="M11 17C11 18.66 12.34 20 14 20S17 18.66 17 17" stroke="#d4b456" stroke-width="1.2" fill="none"/><line x1="14" y1="4" x2="14" y2="6" stroke="#d4b456" stroke-width="1.5" stroke-linecap="round"/></g></svg><span class="sub-text">구독</span></div>
-  </div></div>
-  <div class="bottom-bar" id="bottomBar"><div class="bar-gradient"></div><div class="bar-topline"></div><div class="bar-inner"><div class="disk-wrap"><div class="disk"></div><div class="disk-center"></div><div class="disk-icon">🎹</div></div><div class="eq-wrap" id="eqWrap"></div><div class="bar-text"><div class="bar-song">깊은 밤의 선율</div><div class="bar-lyric">건반 위에 흐르는 오래된 기억</div></div><div class="bar-logo"><div class="bar-logo-name">POP WiFi</div><div class="bar-logo-sub">팝 와이파이</div></div></div></div>
-</div>
-<script>
-const frameLayer=document.getElementById('frameLayer');
-const frameSvg=document.getElementById('frameSvg');
-const particles=document.getElementById('particles');
-const titleMain=document.getElementById('titleMain');
-const titleRow=document.getElementById('titleRow');
-const subLayer=document.getElementById('subLayer');
-const heartPath=document.getElementById('heartPath');
-const bellG=document.getElementById('bellG');
-const bottomBar=document.getElementById('bottomBar');
-const eqWrap=document.getElementById('eqWrap');
 
-function buildPianoFrame(c, cs){
-  const corner=()=>`<g filter="url(#sf)">${[['26,26','1,1'],['874,26','-1,1'],['26,480','1,-1'],['874,480','-1,-1']].map(([t,s])=>`<g transform="translate(${t}) scale(${s})"><path d="M0,70 L0,0 L70,0" stroke="${c}" stroke-width="2" fill="none" opacity="0.8"/><path d="M0,50 L0,8 L50,8" stroke="${c}" stroke-width="0.8" fill="none" opacity="0.4"/><rect x="0" y="0" width="4" height="35" rx="1" fill="${c}" opacity="0.6"/><rect x="0" y="0" width="35" height="4" rx="1" fill="${c}" opacity="0.6"/><rect x="8" y="8" width="2.5" height="22" rx="1" fill="${c}" opacity="0.35"/><rect x="8" y="8" width="22" height="2.5" rx="1" fill="${c}" opacity="0.35"/><circle cx="4" cy="4" r="3" fill="${c}" opacity="0.7"/></g>`).join('')}</g>`;
-  return `<defs><linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="${c}" stop-opacity="0.9"/><stop offset="50%" stop-color="${c}" stop-opacity="0.6"/><stop offset="100%" stop-color="${c}" stop-opacity="0.8"/></linearGradient><filter id="sf"><feGaussianBlur stdDeviation="0.7"/></filter></defs><rect x="16" y="16" width="868" height="474" rx="2" stroke="url(#fg)" stroke-width="0.6" opacity="0.35"/><rect x="26" y="26" width="848" height="454" rx="1" stroke="url(#fg)" stroke-width="1.5" opacity="0.8"/><rect x="36" y="36" width="828" height="434" rx="1" stroke="${cs}" stroke-width="0.5" opacity="0.5"/>${corner()}<line x1="180" y1="26" x2="720" y2="26" stroke="url(#fg)" stroke-width="0.5" opacity="0.3"/><line x1="180" y1="480" x2="720" y2="480" stroke="url(#fg)" stroke-width="0.5" opacity="0.3"/>`;
-}
-function buildNoteParticles(layer,c){layer.innerHTML='';const notes=['♩','♪','♫','♬'];for(let i=0;i<14;i++){const el=document.createElement('div');const size=12+Math.random()*14;const dur=6+Math.random()*8;const del=-(Math.random()*dur);const x=Math.random()*100;const op=0.15+Math.random()*0.3;const sx=(Math.random()-0.5)*80;el.style.cssText=`position:absolute;left:${x}%;top:-20px;font-size:${size}px;color:${c};opacity:${op};animation:noteFall${i} ${dur}s ${del}s linear infinite;pointer-events:none;`;el.innerHTML=`<style>@keyframes noteFall${i}{0%{transform:translateY(-20px) translateX(0) rotate(0deg);opacity:0;}8%{opacity:${op};}88%{opacity:${op};}100%{transform:translateY(540px) translateX(${sx}px) rotate(${(Math.random()-0.5)*180}deg);opacity:0;}}</style>${notes[i%4]}`;layer.appendChild(el);}}
-function buildPianoEq(){const svgW=130,svgH=48,wW=14,wCount=9,bPos=[1,2,4,5,6,8];const durs=[0.5,0.38,0.62,0.41,0.55,0.35,0.48,0.67,0.44];let svg=`<svg width="${svgW}" height="${svgH}" viewBox="0 0 ${svgW} ${svgH}"><defs><linearGradient id="wkg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8dfd0"/><stop offset="100%" stop-color="#c8b89a"/></linearGradient></defs>`;for(let i=0;i<wCount;i++){const x=i*wW+1,an=`wk${i}`;svg+=`<style>@keyframes ${an}{0%{transform:translateY(0);}100%{transform:translateY(3px);}}</style><rect x="${x}" y="2" width="${wW-2}" height="${svgH-2}" rx="2" fill="url(#wkg)" stroke="rgba(100,80,40,0.3)" stroke-width="0.5" style="animation:${an} ${durs[i]}s ease-in-out infinite alternate;transform-origin:top center;transform-box:fill-box;"/>`;}bPos.forEach((bi,j)=>{const x=bi*wW-5,an=`bk${j}`;svg+=`<style>@keyframes ${an}{0%{transform:translateY(0);}100%{transform:translateY(4px);}}</style><rect x="${x}" y="2" width="8" height="${svgH*0.6}" rx="1.5" fill="#1c1410" style="animation:${an} ${[0.44,0.58,0.39,0.52,0.63,0.46][j]}s ease-in-out infinite alternate;transform-origin:top center;transform-box:fill-box;"/>`;});return svg+'</svg>';}
-function clearState(){frameLayer.classList.remove('show','hide');titleMain.classList.remove('show','hide');titleRow.classList.remove('show','hide');subLayer.classList.remove('show','hide');bottomBar.classList.remove('show');heartPath.classList.remove('draw');bellG.classList.remove('ring');}
-function applyPhase(t){clearState();if(t>=0.4&&t<10)frameLayer.classList.add('show');if(t>=1&&t<5){titleMain.classList.add('show');titleRow.classList.add('show');}else if(t>=5){titleMain.classList.add('hide');titleRow.classList.add('hide');}if(t>=5&&t<10){subLayer.classList.add('show');heartPath.classList.add('draw');bellG.classList.add('ring');}else if(t>=10){subLayer.classList.add('hide');}if(t>=10)bottomBar.classList.add('show');}
-function loop(){const cycle=12;const start=performance.now();function tick(now){const t=((now-start)/1000)%cycle;applyPhase(t);requestAnimationFrame(tick);}requestAnimationFrame(tick);} 
-frameSvg.innerHTML=buildPianoFrame('#c8a84a','rgba(200,168,74,0.7)');
-buildNoteParticles(particles,'#c8a84a');
-eqWrap.innerHTML=buildPianoEq();
-loop();
-</script>
+  <div class="sub-layer" id="subLayer">
+    <div class="sub-card" id="subCard">
+      <div class="sub-item">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <path id="heartPath" class="heart-path" d="M14 23 C14 23 4 16 4 10 C4 7 6.5 4.5 9.5 4.5 C11.5 4.5 13 5.5 14 7 C15 5.5 16.5 4.5 18.5 4.5 C21.5 4.5 24 7 24 10 C24 16 14 23 14 23Z" stroke="#c8a84a" stroke-width="1.8" fill="rgba(200,168,74,0.12)" stroke-linejoin="round"/>
+        </svg>
+        <span class="sub-text">좋아요</span>
+      </div>
+      <div class="sub-divider"></div>
+      <div class="sub-item">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <g id="bellG" class="bell-g">
+            <rect x="8" y="6" width="12" height="10" rx="6" stroke="#d4b456" stroke-width="1.5" fill="rgba(212,180,86,0.1)"/>
+            <path d="M6 17H22" stroke="#d4b456" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M11 17C11 18.66 12.34 20 14 20S17 18.66 17 17" stroke="#d4b456" stroke-width="1.2" fill="none"/>
+            <line x1="14" y1="4" x2="14" y2="6" stroke="#d4b456" stroke-width="1.5" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <span class="sub-text">구독</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-bar" id="bottomBar">
+    <div class="bar-gradient"></div>
+    <div class="bar-topline"></div>
+    <div class="bar-inner">
+      <div class="disk-wrap">
+        <div class="disk"></div>
+        <div class="disk-center"></div>
+        <div class="disk-icon">🎹</div>
+      </div>
+      <div class="eq-wrap" id="eqWrap"></div>
+      <div class="bar-text">
+        <div class="bar-song">깊은 밤의 선율</div>
+        <div class="bar-lyric">건반 위에 흐르는 오래된 기억</div>
+      </div>
+      <div class="bar-logo">
+        <div class="bar-logo-name">POP WiFi</div>
+        <div class="bar-logo-sub">팝 와이파이</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="./renderer.js"></script>
 </body>
 </html>
