@@ -58,6 +58,12 @@ export const api = {
       body: JSON.stringify({})
     });
   },
+  processCurrentQueueCaptureMp4() {
+    return writeJson('/api/queue/worker/process-current-capture-mp4', {
+      method: 'POST',
+      body: JSON.stringify({})
+    });
+  },
   completeCurrentQueueJob(result = {}) {
     return writeJson('/api/queue/worker/complete-current', {
       method: 'POST',
