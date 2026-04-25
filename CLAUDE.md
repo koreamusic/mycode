@@ -110,8 +110,35 @@ mycode/
 - [ ] 랜딩 검수 비디오 재생 — FFmpeg 필요
 
 ### 우선순위 낮음
-- [ ] intro-001~050 template.js — config만 있음, 50개 미구현
 - [ ] 인증/토큰 — 현재 localhost CORS만 있음
+
+---
+
+## GPT 위임 작업 (별도 진행)
+
+### intro-001~050 template.js 구현 (50개)
+
+**작업 명세 문서:** `docs/INTRO_PRESET_TEMPLATE_TASK.md`  
+**담당:** GPT  
+**Claude 역할:** GPT 완성 후 검수 + preview.jpg 생성 + 커밋
+
+대상 폴더:
+```
+shared/presets/16x9/batch-001-010/intro-001 ~ intro-010  (10개)
+shared/presets/16x9/batch-011-020/intro-011 ~ intro-020  (10개)
+shared/presets/16x9/batch-021-030/intro-021 ~ intro-030  (10개)
+shared/presets/16x9/batch-031-040/intro-031 ~ intro-040  (10개)
+shared/presets/16x9/batch-041-050/intro-041 ~ intro-050  (10개)
+```
+
+각 폴더에 `template.js` 추가 필요. config.json은 이미 있음.  
+작업 명세 문서에 디자인 방향, 규칙, 체크리스트 전부 기술되어 있음.
+
+**GPT 작업 완료 후 Claude가 할 일:**
+1. `node popwifi-mv-studio/scripts/generate-preset-previews.js` 실행
+2. 실패 항목 수정
+3. 전체 커밋 & 푸시
+4. 9x16 숏츠 intro 프리셋 50개 설계 착수
 
 ---
 
