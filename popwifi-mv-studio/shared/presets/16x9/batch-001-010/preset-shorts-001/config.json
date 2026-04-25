@@ -1,0 +1,59 @@
+{
+  "id": "preset-shorts-001",
+  "name": "Neon Box · 롱폼",
+  "title": "Neon Box",
+  "category": "longform-preset",
+  "variant": "kpop",
+  "ratio": "16x9",
+  "batchId": "batch-001-010",
+  "sourceRole": "longform-redesign-from-shorts",
+  "sourcePreset": "shared/presets/9x16/batch-001-010/preset-shorts-001",
+  "accentColor": "#7850ff",
+  "tags": ["neon", "cyber", "intense", "longform", "redesign"],
+  "fonts": { "title": "Montserrat", "lyric": "Noto Sans KR", "karaoke": "Noto Sans KR" },
+  "karaokeMode": false,
+  "karaokeGlow": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-neon-scan"
+  },
+  "layout": {
+    "frameStyle": "neon-box-wide-dual-frame",
+    "titlePosition": "center-left",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center",
+    "safeArea": "horizontal-center"
+  },
+  "visual": {
+    "accent": "#7850ff",
+    "accent2": "#ff50c8",
+    "palette": ["deep navy", "electric violet", "hot pink", "cyan glow"],
+    "texture": "wide cyber grid, dual neon box frame, horizontal glow sweep",
+    "typography": "Montserrat title with Noto Sans KR lyric"
+  },
+  "motion": {
+    "frameExit": "reverse-neon-scan",
+    "title": "neon-pop",
+    "cta": "neon-pulse",
+    "bottomBar": "neon-rise",
+    "end": "glow-pulse",
+    "cadence": "snappy"
+  },
+  "cta": {
+    "style": "neon cyber CTA capsule row",
+    "items": ["like", "subscribe", "notification"]
+  },
+  "bottomBar": {
+    "style": "dark neon wide bar",
+    "endAnimation": "neon glow pulse",
+    "contentFallback": "title"
+  },
+  "redesignNotes": "9x16 단일 박스를 16x9 듀얼 박스 구도로 재설계. 좌측에 타이틀, 우측에 비주얼 슬롯 배치. 네온 스캔 방향을 수평으로 전환.",
+  "templateFile": "template.js",
+  "createdAt": "2026-04-25",
+  "active": true
+}

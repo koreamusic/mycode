@@ -1,0 +1,59 @@
+{
+  "id": "preset-shorts-005",
+  "name": "Minimal Line · 롱폼",
+  "title": "Minimal Line",
+  "category": "longform-preset",
+  "variant": "minimal",
+  "ratio": "16x9",
+  "batchId": "batch-001-010",
+  "sourceRole": "longform-redesign-from-shorts",
+  "sourcePreset": "shared/presets/9x16/batch-001-010/preset-shorts-005",
+  "accentColor": "#1e1e1e",
+  "tags": ["minimal", "premium", "slide", "longform", "redesign"],
+  "fonts": { "title": "Cormorant Garamond", "lyric": "Noto Sans KR", "karaoke": "Noto Sans KR" },
+  "karaokeMode": false,
+  "karaokeGlow": false,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-film-fade"
+  },
+  "layout": {
+    "frameStyle": "minimal-line-wide-anchor",
+    "titlePosition": "center-left",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "left",
+    "safeArea": "left-anchor"
+  },
+  "visual": {
+    "accent": "#1e1e1e",
+    "accent2": "#f5f0e8",
+    "palette": ["paper cream", "deep black", "soft gray", "premium beige"],
+    "texture": "paper grain wide, minimal horizontal line layers, premium left-anchored composition",
+    "typography": "Cormorant Garamond title with Noto Sans KR lyric"
+  },
+  "motion": {
+    "frameExit": "reverse-film-fade",
+    "title": "slide-left",
+    "cta": "soft-pop",
+    "bottomBar": "glass-slide",
+    "end": "glow-pulse",
+    "cadence": "slow"
+  },
+  "cta": {
+    "style": "premium minimal left-aligned monochrome CTA",
+    "items": ["like", "subscribe", "notification"]
+  },
+  "bottomBar": {
+    "style": "paper-tone minimal wide lyric bar left-aligned",
+    "endAnimation": "thin horizontal breathing line",
+    "contentFallback": "title"
+  },
+  "redesignNotes": "9x16 수직 레이어를 16x9 좌측 앵커 구도로 재설계. 와이드에서 좌측 정렬 타이포가 더 고급스럽게 보임. 수평 라인이 프리미엄 컴포지션 중심.",
+  "templateFile": "template.js",
+  "createdAt": "2026-04-25",
+  "active": true
+}

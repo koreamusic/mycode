@@ -1,0 +1,59 @@
+{
+  "id": "preset-shorts-002",
+  "name": "Slide Frame · 롱폼",
+  "title": "Slide Frame",
+  "category": "longform-preset",
+  "variant": "minimal",
+  "ratio": "16x9",
+  "batchId": "batch-001-010",
+  "sourceRole": "longform-redesign-from-shorts",
+  "sourcePreset": "shared/presets/9x16/batch-001-010/preset-shorts-002",
+  "accentColor": "#ffffff",
+  "tags": ["modern", "clean", "slide", "longform", "redesign"],
+  "fonts": { "title": "Inter", "lyric": "Noto Sans KR", "karaoke": "Noto Sans KR" },
+  "karaokeMode": false,
+  "karaokeGlow": false,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-fade-slide"
+  },
+  "layout": {
+    "frameStyle": "slide-frame-horizontal-lines",
+    "titlePosition": "lower-left",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center",
+    "safeArea": "lower-bar"
+  },
+  "visual": {
+    "accent": "#ffffff",
+    "accent2": "#b7b7b7",
+    "palette": ["black", "white", "deep blue", "clean gray"],
+    "texture": "horizontal sliding border lines, wide dark gradient, cinematic letterbox feel",
+    "typography": "Inter title with Noto Sans KR lyric"
+  },
+  "motion": {
+    "frameExit": "reverse-fade-slide",
+    "title": "fade-up",
+    "cta": "soft-pop",
+    "bottomBar": "glass-slide",
+    "end": "glow-pulse",
+    "cadence": "standard"
+  },
+  "cta": {
+    "style": "clean monochrome horizontal CTA row",
+    "items": ["like", "subscribe", "notification"]
+  },
+  "bottomBar": {
+    "style": "clean dark wide lyric bar",
+    "endAnimation": "horizontal line breathing loop",
+    "contentFallback": "title"
+  },
+  "redesignNotes": "9x16 수직 슬라이드 라인을 16x9 수평 라인으로 전환. 타이틀을 하단 좌측 third 배치. 와이드 스크린의 시네마틱 레터박스 느낌 강조.",
+  "templateFile": "template.js",
+  "createdAt": "2026-04-25",
+  "active": true
+}
