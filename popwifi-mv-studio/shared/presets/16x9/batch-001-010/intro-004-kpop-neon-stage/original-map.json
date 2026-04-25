@@ -12,6 +12,21 @@
     "equalizer": "buildFireflyEq"
   },
   "preserveOriginal": true,
-  "implementationStatus": "mapped-not-yet-renderer-extracted",
-  "notes": "Future renderer must preserve original firefly glow frame, firefly particles, CTA, bottom bar, and firefly EQ from the source file."
+  "implementationStatus": "renderer-extracted-source-faithful-separated-v1",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "cta": true,
+    "bottomBar": true,
+    "equalizer": true,
+    "timeline": true
+  },
+  "fixedErrors": [],
+  "notes": "Renderer v1 is separated into HTML/CSS/JS/data files and preserves the original firefly glow frame, firefly particles, animated like/subscription CTA, bottom bar, disk, and firefly EQ inside an isolated iframe renderer."
 }
