@@ -1,0 +1,406 @@
+{
+  "ratio": "16x9",
+  "batchId": "batch-031-040",
+  "presets": [
+    {
+      "id": "intro-031-moonlit-ballad-frame",
+      "title": "Moonlit Ballad Frame",
+      "category": "intro",
+      "variant": "ballad",
+      "mood": "moonlit, tender, emotional night ballad",
+      "description": "Moonlit ballad intro with silver-blue frame, quiet title, soft CTA, and night-tinted lyric bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-moonlight-fade"
+      },
+      "layout": {
+        "frameStyle": "silver-moonlight-thin-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "center"
+      },
+      "visual": {
+        "accent": "#AFC7FF",
+        "accent2": "#F2E6D8",
+        "palette": ["moon blue", "silver", "warm ivory", "night black"],
+        "texture": "soft moon haze, subtle film grain, quiet air",
+        "typography": "emotional serif title with simple sans subtitle"
+      },
+      "cta": {
+        "style": "soft moonlit CTA pills",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "moon-blue transparent rounded lyric bar",
+        "endAnimation": "tiny moon shimmer loop",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-032-lofi-cat-desk",
+      "title": "Lofi Cat Desk",
+      "category": "intro",
+      "variant": "lofi",
+      "mood": "cozy, playful, desk lofi night",
+      "description": "Cozy desk lofi intro with cat-like warmth, lamp frame, gentle title, friendly CTA, and soft bottom bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-lamp-purr"
+      },
+      "layout": {
+        "frameStyle": "desk-lamp-rounded-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "left"
+      },
+      "visual": {
+        "accent": "#D5B7FF",
+        "accent2": "#FFC97A",
+        "palette": ["dusty purple", "lamp amber", "cream", "warm black"],
+        "texture": "desk grain, lamp blur, soft dust motes",
+        "typography": "rounded soft sans with small cozy accent"
+      },
+      "cta": {
+        "style": "cozy desk sticker CTA",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "purple-amber translucent rounded bar",
+        "endAnimation": "tiny paw pulse loop",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-033-golden-hour-folk",
+      "title": "Golden Hour Folk",
+      "category": "intro",
+      "variant": "acoustic",
+      "mood": "golden, honest, open-air folk",
+      "description": "Golden-hour folk intro with handmade frame, warm title, paper CTA, and sunset acoustic lyric bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-golden-fade"
+      },
+      "layout": {
+        "frameStyle": "golden-paper-folk-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "center"
+      },
+      "visual": {
+        "accent": "#E3AE5E",
+        "accent2": "#F7ECCB",
+        "palette": ["golden hour", "paper cream", "field green", "soft brown"],
+        "texture": "paper fiber, sunlight dust, acoustic warmth",
+        "typography": "warm serif with handwritten folk hint"
+      },
+      "cta": {
+        "style": "paper folk CTA tags",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "sunset cream rounded lyric bar",
+        "endAnimation": "tiny wheat sway loop",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-034-pink-stage-pop",
+      "title": "Pink Stage Pop",
+      "category": "intro",
+      "variant": "kpop",
+      "mood": "bright, stage, polished pink pop",
+      "description": "Pink stage pop intro with glossy frame, bold title, sparkling CTA, and clean neon lower bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-stage-flash"
+      },
+      "layout": {
+        "frameStyle": "pink-stage-glass-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "center"
+      },
+      "visual": {
+        "accent": "#FF74D6",
+        "accent2": "#7DF2FF",
+        "palette": ["hot pink", "cyan", "black", "clean white"],
+        "texture": "stage haze, glass shine, clean digital bloom",
+        "typography": "bold pop sans with compact title lockup"
+      },
+      "cta": {
+        "style": "sparkling pop CTA capsule",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "pink-cyan glossy rounded bar",
+        "endAnimation": "tiny stage sparkle loop",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-035-harbor-citypop",
+      "title": "Harbor Citypop",
+      "category": "intro",
+      "variant": "citypop",
+      "mood": "harbor night, retro, smooth city pop",
+      "description": "Harbor city pop intro with sea-neon frame, stylish title, retro CTA, and sunset-night lyric bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-harbor-neon"
+      },
+      "layout": {
+        "frameStyle": "harbor-neon-line-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "left"
+      },
+      "visual": {
+        "accent": "#FF9A5A",
+        "accent2": "#3FE6FF",
+        "palette": ["sunset orange", "sea cyan", "deep purple", "night navy"],
+        "texture": "harbor reflection, neon bloom, retro film grain",
+        "typography": "retro rounded display with clean sans support"
+      },
+      "cta": {
+        "style": "harbor neon CTA chips",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "sea-neon lower-third rounded bar",
+        "endAnimation": "tiny wave neon blink",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-036-deep-road-blues",
+      "title": "Deep Road Blues",
+      "category": "intro",
+      "variant": "blues",
+      "mood": "lonely road, heavy, deep blues",
+      "description": "Road blues intro with dusty frame, deep title, understated CTA, and blue-rust lower bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-road-dust"
+      },
+      "layout": {
+        "frameStyle": "dusty-road-rust-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "center"
+      },
+      "visual": {
+        "accent": "#7896D8",
+        "accent2": "#B66B3F",
+        "palette": ["deep blue", "dust brown", "rust", "aged cream"],
+        "texture": "road dust, old film scratches, low lamp glow",
+        "typography": "rough serif title with weathered sans caption"
+      },
+      "cta": {
+        "style": "road-stamp CTA marks",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "blue-rust transparent rounded lyric bar",
+        "endAnimation": "tiny dust drift loop",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-037-anime-rain-platform",
+      "title": "Anime Rain Platform",
+      "category": "intro",
+      "variant": "anime",
+      "mood": "rainy, cinematic, anime station platform",
+      "description": "Anime rain-platform intro with soft station frame, readable title, charming CTA, and rainy blue lower bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-rain-platform-wipe"
+      },
+      "layout": {
+        "frameStyle": "anime-rain-platform-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "center"
+      },
+      "visual": {
+        "accent": "#7FCBFF",
+        "accent2": "#FFD6E6",
+        "palette": ["rain blue", "platform gray", "soft pink", "white"],
+        "texture": "cel-shaded rain, reflective platform, soft bloom",
+        "typography": "clean anime sans with gentle emotional spacing"
+      },
+      "cta": {
+        "style": "rainy anime CTA icons",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "rain-blue translucent rounded bar",
+        "endAnimation": "tiny umbrella drift loop",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-038-cosmic-chillwave",
+      "title": "Cosmic Chillwave",
+      "category": "intro",
+      "variant": "chillwave",
+      "mood": "cosmic, dreamy, synth chillwave",
+      "description": "Cosmic chillwave intro with star-synth frame, floating title, glowing CTA, and purple-cyan lyric bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-star-drift"
+      },
+      "layout": {
+        "frameStyle": "cosmic-synth-star-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "left"
+      },
+      "visual": {
+        "accent": "#B18CFF",
+        "accent2": "#6FF4FF",
+        "palette": ["cosmic purple", "cyan", "deep navy", "soft pink"],
+        "texture": "star dust, synth glow, dreamy chromatic haze",
+        "typography": "thin futuristic sans with glowing title"
+      },
+      "cta": {
+        "style": "cosmic synth CTA capsules",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "cosmic purple-cyan glass bar",
+        "endAnimation": "tiny star orbit loop",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-039-cafe-book-corner",
+      "title": "Cafe Book Corner",
+      "category": "intro",
+      "variant": "cafe",
+      "mood": "quiet cafe, book corner, warm jazz",
+      "description": "Book-corner cafe intro with warm reading frame, tasteful title, coffee CTA, and amber lyric bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-book-page"
+      },
+      "layout": {
+        "frameStyle": "book-corner-cafe-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "center"
+      },
+      "visual": {
+        "accent": "#C58A55",
+        "accent2": "#FFE1A8",
+        "palette": ["coffee brown", "book cream", "soft amber", "dark olive"],
+        "texture": "book paper, coffee steam, warm lamp grain",
+        "typography": "refined serif title with friendly sans caption"
+      },
+      "cta": {
+        "style": "book cafe stamp CTA",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "coffee-book translucent rounded bar",
+        "endAnimation": "tiny page turn loop",
+        "contentFallback": "title"
+      },
+      "layers": []
+    },
+    {
+      "id": "intro-040-clean-night-minimal",
+      "title": "Clean Night Minimal",
+      "category": "intro",
+      "variant": "minimal",
+      "mood": "clean, dark, night minimal pop",
+      "description": "Clean night minimal intro with dark line frame, focused title, subtle CTA, and nearly invisible lower bar.",
+      "active": true,
+      "flow": {
+        "frameSeconds": 10,
+        "titleSeconds": 5,
+        "ctaSeconds": 5,
+        "bottomBarStartsAfterSeconds": 10,
+        "frameExit": "reverse-minimal-line"
+      },
+      "layout": {
+        "frameStyle": "dark-minimal-line-frame",
+        "titlePosition": "center-middle",
+        "ctaPosition": "center-middle",
+        "bottomBarPosition": "bottom-safe",
+        "bottomBarAlign": "center"
+      },
+      "visual": {
+        "accent": "#DADADA",
+        "accent2": "#7C8CFF",
+        "palette": ["black", "soft white", "muted blue", "charcoal"],
+        "texture": "matte black, faint grain, restrained glow",
+        "typography": "minimal modern sans with precise spacing"
+      },
+      "cta": {
+        "style": "thin clean CTA outline",
+        "items": ["like", "subscribe", "notification"]
+      },
+      "bottomBar": {
+        "style": "dark transparent minimal rounded bar",
+        "endAnimation": "tiny line pulse loop",
+        "contentFallback": "title"
+      },
+      "layers": []
+    }
+  ]
+}
