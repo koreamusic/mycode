@@ -1,1 +1,53 @@
-{"id":"intro-011-rainy-piano-window","title":"Rainy Piano Window","category":"intro","variant":"ballad","mood":"quiet, rainy, emotional piano ballad","description":"Soft rainy-window intro with misty frame, restrained title, gentle CTA, and blue-tinted lyric bar.","active":true,"ratio":"16x9","batchId":"batch-011-020","flow":{"frameSeconds":10,"titleSeconds":5,"ctaSeconds":5,"bottomBarStartsAfterSeconds":10,"frameExit":"reverse-rain-fade"},"layout":{"frameStyle":"misty-rain-glass-frame","titlePosition":"center-middle","ctaPosition":"center-middle","bottomBarPosition":"bottom-safe","bottomBarAlign":"center"},"visual":{"accent":"#9BB8FF","accent2":"#E8D4B0","palette":["rain blue","soft gray","warm ivory","deep navy"],"texture":"rain glass blur and soft piano room glow","typography":"delicate serif title with understated sans support"},"cta":{"style":"soft misty CTA pills","items":["like","subscribe","notification"]},"bottomBar":{"style":"blue-gray transparent rounded bar","endAnimation":"tiny raindrop ripple loop","contentFallback":"title"},"layers":[]}
+{
+  "id": "intro-011-rainy-piano-window",
+  "title": "11 · 빈티지 카세트",
+  "category": "intro",
+  "variant": "lofi",
+  "mood": "vintage cassette, analog tape, dusty lofi memory",
+  "description": "원본 presets_11_30.html의 11 빈티지 카세트 프리셋 기준 메타입니다. 원본 카세트 릴 프레임, 먼지/스캔라인 파티클, 좋아요/구독 CTA, 하단바, 카세트 EQ를 보존해야 합니다.",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-011-020",
+  "sourceOriginal": {
+    "sourceFile": "presets_11_30.html",
+    "sourceKey": "cassette",
+    "sourceNumber": 11,
+    "sourceName": "11 · 빈티지 카세트",
+    "song": "Tape Rewind",
+    "lyric": "낡은 테이프처럼 돌아가는 기억들",
+    "frameFunction": "cassette.frame",
+    "particleFunction": "cassette.particles",
+    "equalizerFunction": "cassette.eq",
+    "status": "metadata-aligned-renderer-not-yet-extracted"
+  },
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "source-original"
+  },
+  "layout": {
+    "frameStyle": "source: cassette reel frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-bottom",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "left"
+  },
+  "visual": {
+    "accent": "#c8a040",
+    "palette": ["vintage amber", "tape brown", "warm cream", "analog black"],
+    "texture": "source original dust particles and scanline overlay",
+    "typography": "source original Nanum Myeongjo lofi mood"
+  },
+  "cta": {
+    "style": "source original analog cassette like / subscribe CTA",
+    "items": ["like", "subscribe", "notification"]
+  },
+  "bottomBar": {
+    "style": "source original cassette bottom bar with disk and cassette EQ",
+    "endAnimation": "source original cassette EQ",
+    "contentFallback": "title"
+  },
+  "layers": []
+}
