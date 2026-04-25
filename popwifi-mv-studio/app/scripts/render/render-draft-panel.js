@@ -27,10 +27,25 @@ function getFlowText(preset) {
   ].filter(Boolean).join(' · ') || '타이밍 정보 없음';
 }
 
+function getStatusClass(statusText) {
+  if (String(statusText).includes('완료')) return 'done';
+  if (String(statusText).includes('실패')) return 'fail';
+  if (String(statusText).includes('중')) return 'running';
+  if (String(statusText).includes('추가')) return 'queued';
+  return 'ready';
+}
+
 function getResultText(result) {
   if (!result || !result.job || !result.job.result) return '';
   const output = result.job.result.primaryFile || result.job.result.manifestFile || '';
-  return output ? '<small>출력: ' + escapeHtml(output) + '</small>' : '';
+  if (!output) return '';
+  return [
+    '<div class="render-output-card">',
+    '  <span>출력 파일</span>',
+    '  <code>' + escapeHtml(output) + '</code>',
+    '  <button class="control-btn subtle" data-action="copy-render-output" data-output="' + escapeHtml(output) + '">경로 복사</button>',
+    '</div>'
+  ].join('');
 }
 
 export function renderDraftPanel(kind, draft, options = {}) {
@@ -45,18 +60,19 @@ export function renderDraftPanel(kind, draft, options = {}) {
   }
 
   const statusText = options.statusText || '렌더 준비됨';
+  const statusClass = getStatusClass(statusText);
   const resultText = getResultText(options.result);
   panel.classList.add('ready');
   panel.innerHTML = [
-    '<div class="render-draft-kicker">' + escapeHtml(statusText) + '</div>',
+    '<div class="render-draft-kicker ' + escapeHtml(statusClass) + '"><span></span>' + escapeHtml(statusText) + '</div>',
     '<strong>' + escapeHtml(preset.title || preset.presetId || 'Untitled preset') + '</strong>',
-    '<span>' + escapeHtml([preset.ratio, preset.batchId, preset.presetId].filter(Boolean).join(' · ')) + '</span>',
+    '<span class="render-draft-path">' + escapeHtml([preset.ratio, preset.batchId, preset.presetId].filter(Boolean).join(' · ')) + '</span>',
     '<small>' + escapeHtml(getFlowText(preset)) + '</small>',
     preset.variant ? '<em>' + escapeHtml('variant: ' + preset.variant) + '</em>' : '',
     resultText,
-    '<div class="transport-row">',
-    '  <button class="control-btn" data-action="queue-render-draft" data-kind="' + escapeHtml(kind) + '">큐에 추가</button>',
+    '<div class="transport-row render-actions">',
     '  <button class="control-btn primary" data-action="run-capture-render" data-kind="' + escapeHtml(kind) + '">렌더 실행</button>',
+    '  <button class="control-btn subtle" data-action="queue-render-draft" data-kind="' + escapeHtml(kind) + '">큐에만 추가</button>',
     '</div>'
   ].join('');
 }
