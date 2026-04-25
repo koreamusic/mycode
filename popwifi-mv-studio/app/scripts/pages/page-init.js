@@ -6,6 +6,7 @@ import { renderDraftPanel } from '../render/render-draft-panel.js';
 import { hydrateRenderResults } from '../project/render-results.js';
 import { hydrateLyricsPage } from './lyrics.js';
 import { hydrateLandingPage } from './landing.js';
+import { renderQueueCards } from './queue.js';
 
 export async function hydratePage(pageName) {
   if (pageName === 'queue') await hydrateQueuePage();
@@ -50,6 +51,7 @@ async function hydrateQueuePage() {
   try {
     const queue = await api.queue();
     setQueue(queue);
+    renderQueueCards(queue);
     if (queueBox) queueBox.textContent = JSON.stringify(queue, null, 2);
   } catch (error) {
     if (queueBox) queueBox.textContent = '큐 정보를 불러오지 못했습니다.';

@@ -1,4 +1,5 @@
 import { setQueue } from './state.js';
+import { renderQueueCards } from '../pages/queue.js';
 
 export function connectSocket(options) {
   const serverStatus = options.serverStatus;
@@ -17,6 +18,7 @@ export function connectSocket(options) {
 
       if (data.type === 'sync') {
         setQueue(data.queue);
+        renderQueueCards(data.queue);
         const queueBox = document.getElementById('queueBox');
         if (queueBox) queueBox.textContent = JSON.stringify(data.queue, null, 2);
       }
