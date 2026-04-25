@@ -3,7 +3,7 @@ function escapeHtml(value) {
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
+    .replace(/\"/g, '&quot;')
     .replace(/'/g, '&#039;');
 }
 
@@ -27,7 +27,7 @@ function getFlowText(preset) {
   ].filter(Boolean).join(' · ') || '타이밍 정보 없음';
 }
 
-export function renderDraftPanel(kind, draft) {
+export function renderDraftPanel(kind, draft, options = {}) {
   const panel = document.getElementById(getPanelId(kind));
   if (!panel) return;
 
@@ -38,12 +38,16 @@ export function renderDraftPanel(kind, draft) {
     return;
   }
 
+  const statusText = options.statusText || '렌더 준비됨';
   panel.classList.add('ready');
   panel.innerHTML = [
-    '<div class="render-draft-kicker">렌더 준비됨</div>',
+    '<div class="render-draft-kicker">' + escapeHtml(statusText) + '</div>',
     '<strong>' + escapeHtml(preset.title || preset.presetId || 'Untitled preset') + '</strong>',
     '<span>' + escapeHtml([preset.ratio, preset.batchId, preset.presetId].filter(Boolean).join(' · ')) + '</span>',
     '<small>' + escapeHtml(getFlowText(preset)) + '</small>',
-    preset.variant ? '<em>' + escapeHtml('variant: ' + preset.variant) + '</em>' : ''
+    preset.variant ? '<em>' + escapeHtml('variant: ' + preset.variant) + '</em>' : '',
+    '<div class="transport-row">',
+    '  <button class="control-btn primary" data-action="queue-render-draft" data-kind="' + escapeHtml(kind) + '">큐에 추가</button>',
+    '</div>'
   ].join('');
 }
