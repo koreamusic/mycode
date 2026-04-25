@@ -12,6 +12,18 @@
     "equalizer": "buildPianoEq"
   },
   "preserveOriginal": true,
-  "implementationStatus": "mapped-not-yet-renderer-extracted",
-  "notes": "Current config was previously arbitrary. Future renderer must preserve original piano frame, note particles, CTA, bottom bar, and piano EQ from the source file."
+  "implementationStatus": "renderer-extracted-source-faithful-v1",
+  "rendererFiles": [
+    "renderer.html"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "cta": true,
+    "bottomBar": true,
+    "equalizer": true,
+    "timeline": true
+  },
+  "fixedErrors": [],
+  "notes": "Renderer v1 preserves the original piano frame, note particles, animated like/subscription CTA, bottom bar, disk, and piano EQ inside an isolated iframe renderer."
 }
