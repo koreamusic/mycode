@@ -1,5 +1,10 @@
 const fs = require('fs');
 const { readRenderDraft } = require('./render-draft');
+const {
+  startNextPendingJob,
+  completeCurrentJob,
+  failCurrentJob
+} = require('../core/queue-worker');
 
 function readQueue(queuePath) {
   return JSON.parse(fs.readFileSync(queuePath, 'utf8'));
@@ -65,6 +70,24 @@ function registerQueueRoutes(app, context) {
     writeQueue(context.queuePath, queue);
 
     res.json({ ok: true, job, queue });
+  });
+
+  app.post('/api/queue/worker/start-next', (req, res) => {
+    const result = startNextPendingJob(context.queuePath);
+    if (!result.ok) return res.status(409).json(result);
+    res.json(result);
+  });
+
+  app.post('/api/queue/worker/complete-current', (req, res) => {
+    const result = completeCurrentJob(context.queuePath, req.body || {});
+    if (!result.ok) return res.status(409).json(result);
+    res.json(result);
+  });
+
+  app.post('/api/queue/worker/fail-current', (req, res) => {
+    const result = failCurrentJob(context.queuePath, req.body || {});
+    if (!result.ok) return res.status(409).json(result);
+    res.json(result);
   });
 }
 
