@@ -1,24 +1,23 @@
 {
   "id": "intro-012-vinyl-room-lofi",
-  "title": "12 - Vinyl Room Lofi",
+  "title": "12 - Afternoon Coffee",
   "category": "intro",
   "variant": "lofi",
-  "mood": "warm, dusty, bedroom lofi",
-  "description": "Source-faithful metadata for preset 12 from presets_11_30.html. Preserve the original vinyl room frame, dust particles, CTA, bottom bar, record disk, and arm pulse.",
+  "mood": "warm, coffee, afternoon lofi",
+  "description": "Source-faithful metadata for preset 12 from presets_11_30.html. Preserve the original coffee cup frame, steam particles, CTA, bottom bar, and coffee-drop equalizer.",
   "active": true,
   "ratio": "16x9",
   "batchId": "batch-011-020",
   "sourceOriginal": {
     "sourceFile": "presets_11_30.html",
-    "sourceKey": "vinyl",
+    "sourceKey": "coffee",
     "sourceNumber": 12,
-    "sourceName": "12 - Vinyl Room Lofi",
-    "song": "Vinyl Room",
-    "lyric": "먼지 낀 방 안에 천천히 도는 밤",
-    "frameFunction": "vinyl.frame",
-    "particleFunction": "vinyl.particles",
-    "recordFunction": "vinyl.record",
-    "armFunction": "vinyl.arm",
+    "sourceName": "12 - Afternoon Coffee",
+    "song": "Afternoon Brew",
+    "lyric": "따뜻한 커피 한 잔처럼 스며드는 오후",
+    "frameFunction": "coffee.frame",
+    "particleFunction": "coffee.particles",
+    "equalizerFunction": "coffee.eq",
     "status": "renderer-extracted-source-faithful-separated-v1"
   },
   "flow": {
@@ -29,26 +28,26 @@
     "frameExit": "source-original"
   },
   "layout": {
-    "frameStyle": "source: vinyl room frame",
+    "frameStyle": "source: coffee cup and steam corner frame",
     "titlePosition": "center-middle",
     "ctaPosition": "center-bottom",
     "bottomBarPosition": "bottom-safe",
     "bottomBarAlign": "left"
   },
   "visual": {
-    "accent": "#D7C0FF",
-    "accent2": "#FFD78A",
-    "palette": ["dusty violet", "lamp amber", "warm black", "cream"],
-    "texture": "source original vinyl dust, lamp glow, and quiet grain",
-    "typography": "source original relaxed lofi title typography"
+    "accent": "#B87840",
+    "accent2": "#C88850",
+    "palette": ["coffee brown", "warm cream", "deep espresso", "soft amber"],
+    "texture": "source original coffee steam, warm cafe light, subtle grain",
+    "typography": "source original Nanum Myeongjo warm lofi title"
   },
   "cta": {
-    "style": "source original vinyl sticker CTA set",
+    "style": "source original warm coffee like / subscribe / notification CTA",
     "items": ["like", "subscribe", "notification"]
   },
   "bottomBar": {
-    "style": "source original vinyl bottom bar with record disk",
-    "endAnimation": "source original record arm pulse",
+    "style": "source original coffee-toned bottom bar with coffee drop equalizer",
+    "endAnimation": "source original coffee drop equalizer",
     "contentFallback": "title"
   },
   "layers": []
