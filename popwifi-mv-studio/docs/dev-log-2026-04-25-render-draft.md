@@ -2,7 +2,7 @@
 
 ## Scope
 
-This patch connects selected intro presets to a render/export preparation state, exposes that state in the existing preset pages, allows the confirmed render draft to be added to the local render queue as a pending job, and adds a safe queue worker state-transition skeleton.
+This patch connects selected intro presets to a render/export preparation state, exposes that state in the existing preset pages, allows the confirmed render draft to be added to the local render queue as a pending job, adds a safe queue worker state-transition skeleton, and defines the local render output artifact shape.
 
 It does not start actual rendering.
 It does not execute FFmpeg.
@@ -193,6 +193,40 @@ Frontend API helpers added:
 
 Important: these are state-transition helpers only. They do not execute FFmpeg or create output files.
 
+### 9. Render output artifact spec added
+
+Added:
+
+- `docs/render-output-spec.md`
+
+Defines:
+
+- output root: `output/renders/`
+- temp root: `temp/renders/`
+- render log root: `logs/renders/`
+- job folder naming using queue job id
+- primary future output file: `intro-preview.mp4`
+- safe first processor output: `intro-preview-manifest.json`
+- completed job result payload shape
+- failed job error payload shape
+- 12-second intro preview target duration
+
+### 10. Render output path helper added
+
+Added:
+
+- `server/core/render-output.js`
+
+Provides:
+
+- `INTRO_PREVIEW_DURATION_SECONDS`
+- `getRenderOutputPaths(rootDir, job)`
+- `ensureRenderOutputDirs(rootDir, job)`
+- `createRenderResultPayload(rootDir, job)`
+- `createRenderErrorPayload(rootDir, job, message, code)`
+
+Important: this module only defines paths and payloads. It does not run FFmpeg.
+
 ## Important Rules Preserved
 
 - Do not touch sidebar.
@@ -207,7 +241,7 @@ Important: these are state-transition helpers only. They do not execute FFmpeg o
 
 ## Current Progress
 
-Estimated total project progress after this patch: 85–87%.
+Estimated total project progress after this patch: 87–88%.
 
 The system now supports:
 
@@ -221,6 +255,7 @@ The system now supports:
 - Visible render draft confirmation panel in existing preset pages.
 - Queue pending job creation from confirmed render draft.
 - Queue state transitions: pending → running → completed/failed.
+- Render output path/result/error payload spec.
 
 ## Next Recommended Work
 
@@ -267,9 +302,9 @@ curl -X POST http://localhost:3100/api/queue/worker/complete-current -H "Content
 
 9. Next implementation target:
 
-- Define the actual local output artifact shape for pending `intro-preview-render` jobs.
-- Only after that, connect FFmpeg-oriented processing.
+- Add a processor skeleton that creates output/temp/log folders and writes `intro-preview-manifest.json` only.
+- Do not run FFmpeg yet.
 
 ## Handoff Note
 
-The next worker should not jump directly into FFmpeg execution. First define output file naming, temp folder behavior, and render job result payload shape, then build processing around that shape.
+The next worker should not jump directly into FFmpeg execution. First implement manifest-only processing around the output spec, then review the generated manifest and queue result payload.
