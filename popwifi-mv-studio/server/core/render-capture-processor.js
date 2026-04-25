@@ -21,6 +21,13 @@ function ensureFramesDir(paths) {
   return framesDir;
 }
 
+function getViewportForJob(job) {
+  if (job && job.kind === 'shorts') {
+    return { width: 1080, height: 1920, ratio: '9x16' };
+  }
+  return { width: 1920, height: 1080, ratio: '16x9' };
+}
+
 async function loadPlaywright() {
   try {
     return require('playwright');
@@ -33,6 +40,7 @@ async function captureFrames(rootDir, job, paths, options = {}) {
   const fps = Number(options.fps || DEFAULT_CAPTURE_FPS);
   const durationSeconds = Number(options.durationSeconds || INTRO_PREVIEW_DURATION_SECONDS);
   const baseUrl = options.baseUrl || 'http://localhost:3100';
+  const viewport = getViewportForJob(job);
   const totalFrames = Math.ceil(fps * durationSeconds);
   const frameDelayMs = 1000 / fps;
   const framesDir = ensureFramesDir(paths);
@@ -41,7 +49,7 @@ async function captureFrames(rootDir, job, paths, options = {}) {
   const browser = await chromium.launch({ headless: true });
 
   try {
-    const page = await browser.newPage({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 1 });
+    const page = await browser.newPage({ viewport: { width: viewport.width, height: viewport.height }, deviceScaleFactor: 1 });
     const url = baseUrl.replace(/\/$/, '') + '/app/capture/intro-preview.html?jobId=' + encodeURIComponent(job.id);
     await page.goto(url, { waitUntil: 'networkidle' });
     await page.waitForTimeout(500);
@@ -54,7 +62,7 @@ async function captureFrames(rootDir, job, paths, options = {}) {
     await browser.close();
   }
 
-  return { framesDir, totalFrames, fps, durationSeconds };
+  return { framesDir, totalFrames, fps, durationSeconds, viewport };
 }
 
 function assembleFrames(paths, captureResult) {
@@ -73,6 +81,7 @@ function assembleFrames(paths, captureResult) {
     'COMMAND ffmpeg ' + ffmpegArgs.join(' '),
     'FRAME_COUNT ' + captureResult.totalFrames,
     'FPS ' + captureResult.fps,
+    'VIEWPORT ' + captureResult.viewport.width + 'x' + captureResult.viewport.height,
     '',
     'STDOUT',
     result.stdout || '',
@@ -103,6 +112,7 @@ async function processIntroPreviewCaptureMp4(rootDir, job, options = {}) {
         fps: captureResult.fps,
         durationSeconds: captureResult.durationSeconds,
         totalFrames: captureResult.totalFrames,
+        viewport: captureResult.viewport,
         framesDir: path.relative(rootDir, captureResult.framesDir).replace(/\\/g, '/')
       },
       note: 'HTML/CSS preview captured with browser screenshots and assembled with FFmpeg.'
@@ -126,5 +136,6 @@ async function processIntroPreviewCaptureMp4(rootDir, job, options = {}) {
 
 module.exports = {
   DEFAULT_CAPTURE_FPS,
+  getViewportForJob,
   processIntroPreviewCaptureMp4
 };
