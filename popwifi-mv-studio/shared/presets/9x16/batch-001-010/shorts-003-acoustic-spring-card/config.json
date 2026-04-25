@@ -1,0 +1,53 @@
+{
+  "id": "shorts-003-acoustic-spring-card",
+  "title": "Acoustic Spring Card Shorts",
+  "category": "intro-shorts",
+  "variant": "acoustic",
+  "ratio": "9x16",
+  "batchId": "batch-001-010",
+  "mood": "fresh, acoustic, spring morning shorts",
+  "description": "Vertical shorts acoustic intro with an airy tall card frame, gentle title reveal, clean CTA, and light lyric bar.",
+  "active": true,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-card-fold"
+  },
+  "motion": {
+    "frameExit": "reverse-card-fold",
+    "title": "fade-up",
+    "cta": "sticker-pop",
+    "bottomBar": "warm-fade",
+    "end": "falling-leaf",
+    "cadence": "standard"
+  },
+  "layout": {
+    "frameStyle": "vertical-rounded-cream-paper-frame",
+    "titlePosition": "center-middle",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center",
+    "safeArea": "vertical-title-center"
+  },
+  "visual": {
+    "accent": "#B9D47A",
+    "accent2": "#F6DFAA",
+    "palette": ["cream", "fresh green", "soft sky blue", "light wood"],
+    "texture": "paper grain and soft daylight bloom optimized for vertical shorts",
+    "typography": "clean serif title with handwritten accent"
+  },
+  "cta": {
+    "style": "compact light paper sticker CTA icons",
+    "items": ["like", "subscribe", "notification"]
+  },
+  "bottomBar": {
+    "style": "vertical-safe clear cream-tinted rounded bar",
+    "endAnimation": "small falling leaf loop",
+    "contentFallback": "title"
+  },
+  "layers": [],
+  "createdAt": "2026-04-25",
+  "updatedAt": "2026-04-25"
+}
