@@ -6,6 +6,7 @@ const WebSocket = require('ws');
 
 const { loadConfig } = require('./server/core/config');
 const { ensureBaseDirs, ensureQueueFile } = require('./server/core/paths');
+const { materializeImportedPresetBatches } = require('./server/core/preset-import-materializer');
 const { registerHealthRoutes } = require('./server/routes/health');
 const { registerConfigRoutes } = require('./server/routes/config');
 const { registerQueueRoutes } = require('./server/routes/queue');
@@ -16,6 +17,7 @@ const rootDir = __dirname;
 const config = loadConfig(rootDir);
 
 ensureBaseDirs(rootDir);
+const presetImportSummary = materializeImportedPresetBatches(rootDir);
 const queuePath = ensureQueueFile(rootDir);
 
 const app = express();
@@ -55,4 +57,5 @@ wss.on('connection', (ws) => {
 
 server.listen(config.port, () => {
   console.log(`Pop WiFi MV Studio running at http://localhost:${config.port}`);
+  console.log(`Preset imports materialized: created=${presetImportSummary.created} skipped=${presetImportSummary.skipped} failed=${presetImportSummary.failed}`);
 });
