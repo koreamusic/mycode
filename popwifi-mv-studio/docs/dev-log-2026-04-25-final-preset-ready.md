@@ -111,27 +111,46 @@ shared/presets/imports/intro-batch-031-040.json
 shared/presets/imports/intro-batch-041-050.json
 ```
 
-The app API does not read these import files directly. It reads real config files under:
+Important correction:
+
+The 50 presets are not merely authoring notes. They are official preset data and must be visible in the app.
+
+`server/core/preset-store.js` now reads both sources:
 
 ```txt
-shared/presets/<ratio>/<batchId>/<presetId>/config.json
+1. Materialized config files:
+   shared/presets/<ratio>/<batchId>/<presetId>/config.json
+
+2. Import batch source files:
+   shared/presets/imports/intro-batch-001-010.json
+   shared/presets/imports/intro-batch-011-020.json
+   shared/presets/imports/intro-batch-021-030.json
+   shared/presets/imports/intro-batch-031-040.json
+   shared/presets/imports/intro-batch-041-050.json
 ```
 
-To close that gap, a startup materializer was added:
+This means the app preset API must expose all five 16:9 batches even when some presets have not yet been physically materialized into individual `config.json` folders.
+
+Expected API result:
 
 ```txt
-server/core/preset-import-materializer.js
+/api/presets/16x9/batches
+-> batch-001-010 count 10
+-> batch-011-020 count 10
+-> batch-021-030 count 10
+-> batch-031-040 count 10
+-> batch-041-050 count 10
 ```
 
-It is wired in:
+Expected UI behavior:
 
 ```txt
-server.js
+Longform intro preset list shows 5 batch chips.
+Each batch chip opens 10 presets.
+Total imported 16:9 intro presets available: 50.
 ```
 
-On server start, the import batches are materialized into real config folders if they do not already exist.
-
-Existing configs are not overwritten.
+Physical `config.json` files may still be created later for edited/overridden presets. Existing physical configs take priority over imported source presets.
 
 ## Uploaded Shorts Zip Status
 
@@ -172,11 +191,10 @@ Do not decide this during preset production unless the user explicitly asks.
 These are not blockers for making more presets, but they remain future work:
 
 1. Local visual test on the user's machine.
-2. Confirm server startup materialization result in logs.
-3. Confirm 16:9 001-050 appear in the UI.
-4. Confirm `preset-shorts-001~005` appear in the shorts UI.
-5. Decide whether uploaded canvas `template.js` becomes a render adapter source or gets converted to HTML/CSS preview.
-6. Future high-fidelity capture automation and preview-to-MP4 rendering.
+2. Confirm 16:9 001-050 appear in the UI through the updated store loader.
+3. Confirm `preset-shorts-001~005` appear in the shorts UI.
+4. Decide whether uploaded canvas `template.js` becomes a render adapter source or gets converted to HTML/CSS preview.
+5. Future high-fidelity capture automation and preview-to-MP4 rendering.
 
 ## Current Development Progress
 
