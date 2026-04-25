@@ -64,6 +64,23 @@ registerPresetRoutes(app, context);
 registerRenderDraftRoutes(app, context);
 registerFontsRoutes(app, context);
 
+// Express 500 error handler — must be last middleware (4 params)
+// eslint-disable-next-line no-unused-vars
+app.use((err, req, res, next) => {
+  logger.error('Unhandled route error: ' + (err.message || err));
+  if (!res.headersSent) {
+    res.status(500).json({ error: 'internal server error' });
+  }
+});
+
+process.on('uncaughtException', (err) => {
+  logger.error('Uncaught exception: ' + err.message + '\n' + (err.stack || ''));
+});
+
+process.on('unhandledRejection', (reason) => {
+  logger.error('Unhandled rejection: ' + (reason instanceof Error ? reason.message : String(reason)));
+});
+
 wss.on('connection', (ws) => {
   try {
     const queue = JSON.parse(fs.readFileSync(queuePath, 'utf8'));
