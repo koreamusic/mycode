@@ -1,0 +1,57 @@
+{
+  "id": "preset-shorts-003",
+  "name": "Draw Frame",
+  "title": "Draw Frame",
+  "category": "shorts-preset",
+  "variant": "ballad",
+  "ratio": "9x16",
+  "batchId": "batch-001-010",
+  "accentColor": "#d4a050",
+  "tags": ["emotional", "warm", "typing"],
+  "fonts": { "title": "Noto Serif KR", "lyric": "Noto Serif KR", "karaoke": "Noto Serif KR" },
+  "karaokeMode": false,
+  "karaokeGlow": false,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "reverse-film-fade"
+  },
+  "layout": {
+    "frameStyle": "draw-frame-warm-line",
+    "titlePosition": "upper-third",
+    "ctaPosition": "center-middle",
+    "bottomBarPosition": "bottom-safe",
+    "bottomBarAlign": "center",
+    "safeArea": "vertical-upper-third"
+  },
+  "visual": {
+    "accent": "#d4a050",
+    "accent2": "#f5e5c0",
+    "palette": ["warm brown", "old gold", "paper cream", "deep black"],
+    "texture": "warm vignette, drawing frame animation, typing lyric feel",
+    "typography": "Noto Serif KR title and lyric"
+  },
+  "motion": {
+    "frameExit": "reverse-film-fade",
+    "title": "type-glow",
+    "cta": "stamp-in",
+    "bottomBar": "warm-fade",
+    "end": "piano-shimmer",
+    "cadence": "cinematic"
+  },
+  "cta": {
+    "style": "warm paper stamp CTA",
+    "items": ["like", "subscribe", "notification"]
+  },
+  "bottomBar": {
+    "style": "warm gold-brown rounded lyric bar",
+    "endAnimation": "typing line shimmer",
+    "contentFallback": "title"
+  },
+  "templateFile": "template.js",
+  "sourceZip": "shorts-presets.zip",
+  "createdAt": "2026-04-25",
+  "active": true
+}
