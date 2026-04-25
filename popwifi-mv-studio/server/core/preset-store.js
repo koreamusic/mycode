@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const {
   getPresetRoot,
   isBatchDir,
@@ -8,20 +9,105 @@ const {
   getNextBatchId
 } = require('./preset-utils');
 
-function readBatches(rootDir, ratio) {
-  const presetRoot = getPresetRoot(rootDir, ratio);
-  if (!fs.existsSync(presetRoot)) return [];
+function readJsonSafe(filePath) {
+  try {
+    return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  } catch (error) {
+    return null;
+  }
+}
 
-  return fs.readdirSync(presetRoot)
-    .filter(isBatchDir)
+function getImportRoot(rootDir) {
+  return path.join(rootDir, 'shared', 'presets', 'imports');
+}
+
+function isImportBatchFile(name) {
+  return /^intro-batch-\d{3}-\d{3}\.json$/.test(name);
+}
+
+function normalizeImportedPreset(ratio, batchId, preset) {
+  if (!preset || typeof preset !== 'object' || !preset.id) return null;
+  return Object.assign({}, preset, {
+    id: preset.id,
+    ratio,
+    batchId,
+    active: preset.active === false ? false : true
+  });
+}
+
+function readImportedBatchPayload(rootDir, ratio, batchId) {
+  const importRoot = getImportRoot(rootDir);
+  if (!fs.existsSync(importRoot)) return null;
+
+  const filePath = path.join(importRoot, 'intro-' + batchId + '.json');
+  const payload = fs.existsSync(filePath) ? readJsonSafe(filePath) : null;
+  if (!payload || payload.ratio !== ratio || payload.batchId !== batchId) return null;
+  if (!Array.isArray(payload.presets)) return null;
+  return payload;
+}
+
+function readImportedPresetBatch(rootDir, ratio, batchId) {
+  const payload = readImportedBatchPayload(rootDir, ratio, batchId);
+  if (!payload) return [];
+
+  return payload.presets
+    .map((preset) => normalizeImportedPreset(ratio, batchId, preset))
+    .filter(Boolean)
+    .sort((a, b) => String(a.id).localeCompare(String(b.id)));
+}
+
+function readImportedPresetConfig(rootDir, ratio, batchId, presetId) {
+  return readImportedPresetBatch(rootDir, ratio, batchId)
+    .find((preset) => preset.id === presetId) || null;
+}
+
+function readImportedBatches(rootDir, ratio) {
+  const importRoot = getImportRoot(rootDir);
+  if (!fs.existsSync(importRoot)) return [];
+
+  return fs.readdirSync(importRoot)
+    .filter(isImportBatchFile)
     .sort()
-    .map((batchId) => {
-      const batchRoot = getBatchRoot(rootDir, ratio, batchId);
-      const count = fs.readdirSync(batchRoot)
-        .filter((presetId) => fs.existsSync(getPresetConfigPath(rootDir, ratio, batchId, presetId)))
-        .length;
-      return { id: batchId, ratio, count };
-    });
+    .map((name) => readJsonSafe(path.join(importRoot, name)))
+    .filter((payload) => payload && payload.ratio === ratio && payload.batchId && Array.isArray(payload.presets))
+    .map((payload) => ({
+      id: payload.batchId,
+      ratio,
+      count: payload.presets.filter((preset) => preset && preset.active !== false).length,
+      source: 'import'
+    }));
+}
+
+function readBatches(rootDir, ratio) {
+  const batchMap = new Map();
+  const presetRoot = getPresetRoot(rootDir, ratio);
+
+  if (fs.existsSync(presetRoot)) {
+    fs.readdirSync(presetRoot)
+      .filter(isBatchDir)
+      .sort()
+      .forEach((batchId) => {
+        const batchRoot = getBatchRoot(rootDir, ratio, batchId);
+        const count = fs.readdirSync(batchRoot)
+          .filter((presetId) => fs.existsSync(getPresetConfigPath(rootDir, ratio, batchId, presetId)))
+          .length;
+        batchMap.set(batchId, { id: batchId, ratio, count, source: 'config' });
+      });
+  }
+
+  readImportedBatches(rootDir, ratio).forEach((batch) => {
+    const current = batchMap.get(batch.id);
+    if (!current) {
+      batchMap.set(batch.id, batch);
+      return;
+    }
+    batchMap.set(batch.id, Object.assign({}, current, {
+      count: Math.max(current.count || 0, batch.count || 0),
+      source: current.source === 'config' ? 'config+import' : batch.source
+    }));
+  });
+
+  return Array.from(batchMap.values()).sort((a, b) => String(a.id).localeCompare(String(b.id)));
 }
 
 function createNextBatch(rootDir, ratio) {
@@ -36,23 +122,36 @@ function createNextBatch(rootDir, ratio) {
 
 function readPresetConfig(rootDir, ratio, batchId, presetId) {
   const configPath = getPresetConfigPath(rootDir, ratio, batchId, presetId);
-  if (!fs.existsSync(configPath)) return null;
-
-  try {
-    const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-    return Object.assign({ id: presetId, ratio, batchId }, config);
-  } catch (error) {
-    return null;
+  if (fs.existsSync(configPath)) {
+    try {
+      const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+      return Object.assign({ id: presetId, ratio, batchId }, config);
+    } catch (error) {
+      return null;
+    }
   }
+
+  return readImportedPresetConfig(rootDir, ratio, batchId, presetId);
 }
 
 function readPresetBatch(rootDir, ratio, batchId, options = {}) {
-  const batchRoot = getBatchRoot(rootDir, ratio, batchId);
-  if (!fs.existsSync(batchRoot)) return [];
+  const byId = new Map();
 
-  return fs.readdirSync(batchRoot)
-    .map((presetId) => readPresetConfig(rootDir, ratio, batchId, presetId))
-    .filter(Boolean)
+  readImportedPresetBatch(rootDir, ratio, batchId).forEach((preset) => {
+    byId.set(preset.id, preset);
+  });
+
+  const batchRoot = getBatchRoot(rootDir, ratio, batchId);
+  if (fs.existsSync(batchRoot)) {
+    fs.readdirSync(batchRoot)
+      .map((presetId) => readPresetConfig(rootDir, ratio, batchId, presetId))
+      .filter(Boolean)
+      .forEach((preset) => {
+        byId.set(preset.id, preset);
+      });
+  }
+
+  return Array.from(byId.values())
     .filter((preset) => options.includeInactive ? true : preset.active !== false)
     .sort((a, b) => String(a.id).localeCompare(String(b.id)));
 }
