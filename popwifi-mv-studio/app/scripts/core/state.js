@@ -2,6 +2,7 @@ export const appState = {
   activePage: 'project',
   queue: null,
   config: null,
+  renderDraft: null,
   presets: {
     longform: [],
     shorts: []
@@ -22,6 +23,10 @@ export function setQueue(queue) {
 
 export function setConfig(config) {
   appState.config = config;
+}
+
+export function setRenderDraft(renderDraft) {
+  appState.renderDraft = renderDraft;
 }
 
 export function setPresets(kind, presets) {
