@@ -11,7 +11,25 @@ function getEmptyDraft() {
       longform: null,
       shorts: null
     },
+    source: {
+      title: '',
+      artist: '',
+      musicFile: '',
+      coverImage: '',
+      lyricsFile: ''
+    },
     updatedAt: null
+  };
+}
+
+function sanitizeSource(input) {
+  if (!input || typeof input !== 'object') return null;
+  return {
+    title: String(input.title || '').slice(0, 200),
+    artist: String(input.artist || '').slice(0, 200),
+    musicFile: String(input.musicFile || '').slice(0, 1000),
+    coverImage: String(input.coverImage || '').slice(0, 1000),
+    lyricsFile: String(input.lyricsFile || '').slice(0, 1000)
   };
 }
 
@@ -55,6 +73,20 @@ function sanitizeSelectedPreset(input) {
 function registerRenderDraftRoutes(app, context) {
   app.get('/api/render-draft', (req, res) => {
     res.json(readRenderDraft(context.rootDir));
+  });
+
+  // must be registered before /:kind to avoid param capture
+  app.put('/api/render-draft/source', (req, res) => {
+    const source = sanitizeSource(req.body);
+    if (!source) {
+      return res.status(400).json({ error: 'source object required' });
+    }
+
+    const draft = readRenderDraft(context.rootDir);
+    draft.source = source;
+    draft.updatedAt = new Date().toISOString();
+
+    res.json({ ok: true, draft: writeRenderDraft(context.rootDir, draft) });
   });
 
   app.put('/api/render-draft/:kind', (req, res) => {

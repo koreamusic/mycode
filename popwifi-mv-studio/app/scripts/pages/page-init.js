@@ -34,6 +34,80 @@ async function hydrateShortsPage() {
 
 async function hydrateProjectPage() {
   await hydrateRenderResults();
+
+  try {
+    const draft = await api.renderDraft();
+    const src = draft.source || {};
+    const set = (id, val) => { const el = document.getElementById(id); if (el) el.value = val || ''; };
+    set('source-title', src.title);
+    set('source-artist', src.artist);
+    set('source-music', src.musicFile);
+    set('source-cover', src.coverImage);
+    set('source-lyrics', src.lyricsFile);
+    renderSourcePreview(src);
+  } catch (_) {}
+
+  const saveBtn = document.getElementById('source-save-btn');
+  const saveResult = document.getElementById('source-save-result');
+  if (saveBtn) {
+    saveBtn.addEventListener('click', async () => {
+      const get = (id) => (document.getElementById(id) || {}).value || '';
+      const source = {
+        title: get('source-title'),
+        artist: get('source-artist'),
+        musicFile: get('source-music'),
+        coverImage: get('source-cover'),
+        lyricsFile: get('source-lyrics')
+      };
+      try {
+        saveBtn.disabled = true;
+        if (saveResult) saveResult.textContent = '저장 중...';
+        await api.saveRenderDraftSource(source);
+        renderSourcePreview(source);
+        if (saveResult) saveResult.textContent = '저장 완료';
+      } catch (error) {
+        if (saveResult) saveResult.textContent = '저장 실패: ' + (error.message || '오류');
+      } finally {
+        saveBtn.disabled = false;
+      }
+    });
+  }
+}
+
+function renderSourcePreview(src) {
+  const el = document.getElementById('source-preview');
+  if (!el) return;
+  const items = [
+    { label: '곡 제목', value: src.title },
+    { label: '아티스트', value: src.artist },
+    { label: '음원', value: src.musicFile },
+    { label: '커버', value: src.coverImage },
+    { label: '가사 파일', value: src.lyricsFile }
+  ].filter((i) => i.value);
+
+  if (!items.length) {
+    el.innerHTML = '';
+    const p = document.createElement('p');
+    p.className = 'queue-empty';
+    p.textContent = '저장된 소스 없음';
+    el.appendChild(p);
+    return;
+  }
+
+  el.innerHTML = '';
+  items.forEach(({ label, value }) => {
+    const row = document.createElement('div');
+    row.className = 'source-preview-row';
+    const lEl = document.createElement('span');
+    lEl.className = 'source-preview-label';
+    lEl.textContent = label;
+    const vEl = document.createElement('span');
+    vEl.className = 'source-preview-value';
+    vEl.textContent = value;
+    row.appendChild(lEl);
+    row.appendChild(vEl);
+    el.appendChild(row);
+  });
 }
 
 async function hydrateRenderDraftPanel(kind) {

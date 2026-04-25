@@ -85,6 +85,12 @@ export const api = {
       body: JSON.stringify(preset)
     });
   },
+  saveRenderDraftSource(source) {
+    return writeJson('/api/render-draft/source', {
+      method: 'PUT',
+      body: JSON.stringify(source)
+    });
+  },
   presets(ratio) {
     return readJson('/api/presets/' + ratio);
   },
