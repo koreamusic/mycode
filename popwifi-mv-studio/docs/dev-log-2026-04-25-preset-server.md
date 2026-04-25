@@ -258,6 +258,45 @@ Before adding any future batch, run:
 npm run validate:preset-batches
 ```
 
+### 11. Second real intro preset batch JSON added
+
+Added:
+
+- `shared/presets/imports/intro-batch-011-020.json`
+
+This file contains 10 additional intro preset config entries:
+
+11. Rainy Piano Window
+12. Vinyl Room Lofi
+13. Cinematic Black Gold
+14. Minimal White Line
+15. Retro TV Dial
+16. Spring Flower Breeze
+17. Night Drive Synth
+18. Soft R&B Silk
+19. Folk Paper Diary
+20. Dreamy Cloud Pop
+
+Each preset preserves the same locked intro flow:
+
+- Frame: 10 seconds
+- Title: first 5 seconds
+- Like/Subscribe/Notification CTA: next 5 seconds
+- Bottom lyric/title bar: starts after 10 seconds and stays active
+
+### 12. Preview token path hardened for 50+ presets
+
+Updated:
+
+- `app/scripts/presets/preset-preview.js`
+
+Fix:
+
+- Explicit `preset.variant` now has priority over inferred variant.
+- `visual.accent` and `visual.accent2` are injected as CSS variables directly onto the preview card.
+- This avoids creating one hardcoded CSS rule per preset.
+- This protects future batches from breaking older preview variants.
+
 ## Important Rules Preserved
 
 - Do not touch UI unless explicitly requested.
@@ -273,24 +312,27 @@ npm run validate:preset-batches
 
 ## Current Progress
 
-Estimated total project progress after this patch: 55–57%.
+Estimated total project progress after this patch: 60–62%.
 
-The preset server layer now has a local smoke-test path, 10-item batch import tooling, the first real 16:9 intro preset batch JSON, richer preset list rendering, selected preset preview binding, animated HTML/CSS preview timeline, variant-based preview styling for the first 10 intro presets, and regression validation to protect future batches.
+The preset server layer now has a local smoke-test path, 10-item batch import tooling, 20 real 16:9 intro preset configs across two batches, richer preset list rendering, selected preset preview binding, animated HTML/CSS preview timeline, variant-based preview styling, token-based visual override, and regression validation to protect future batches.
 
 ## Next Recommended Work
 
 1. Run local server: `npm run dev`.
 2. In another terminal, run: `npm run validate:preset-batches`.
 3. Run: `npm run test:preset-api`.
-4. Test real batch import:
+4. Test batch imports:
    - `npm run import:preset-batch -- shared/presets/imports/intro-batch-001-010.json`
+   - `npm run import:preset-batch -- shared/presets/imports/intro-batch-011-020.json`
 5. Confirm imported files under:
    - `shared/presets/16x9/batch-001-010/`
+   - `shared/presets/16x9/batch-011-020/`
 6. Open the Longform Intro page.
-7. Click each imported preset and confirm:
+7. Click presets from both batches and confirm:
    - title → CTA → bottom bar loop works
-   - each preset has a visually different accent/frame/glow direction
-8. Next implementation target: add `intro-batch-011-020.json` using the same schema, then validate before import.
+   - old batch still works
+   - new batch has visually distinct accent/frame/glow from JSON tokens
+8. Next implementation target: add `intro-batch-021-030.json` only after local validation passes.
 
 ## Notes
 
