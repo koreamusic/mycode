@@ -34,6 +34,15 @@ export const api = {
   queue() {
     return readJson('/api/queue');
   },
+  renderDraft() {
+    return readJson('/api/render-draft');
+  },
+  saveRenderDraftPreset(kind, preset) {
+    return writeJson('/api/render-draft/' + kind, {
+      method: 'PUT',
+      body: JSON.stringify(preset)
+    });
+  },
   presets(ratio) {
     return readJson('/api/presets/' + ratio);
   },
