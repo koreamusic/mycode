@@ -4,10 +4,12 @@ const {
   startNextPendingJob,
   completeCurrentJob,
   failCurrentJob,
-  readQueue: readQueueFromWorker,
-  writeQueue: writeQueueFromWorker
+  readQueue: readQueueFromWorker
 } = require('../core/queue-worker');
-const { processIntroPreviewManifestOnly } = require('../core/render-processor');
+const {
+  processIntroPreviewManifestOnly,
+  processIntroPreviewDummyMp4
+} = require('../core/render-processor');
 
 function readQueue(queuePath) {
   return JSON.parse(fs.readFileSync(queuePath, 'utf8'));
@@ -50,6 +52,22 @@ function createRenderJobFromDraft(kind, draft) {
   };
 }
 
+function processCurrentJob(context, processor) {
+  const queue = readQueueFromWorker(context.queuePath);
+  if (!queue.currentJob) {
+    return { status: 409, body: { ok: false, reason: 'no current job', queue } };
+  }
+
+  const processed = processor(context.rootDir, queue.currentJob);
+  if (!processed.ok) {
+    const failed = failCurrentJob(context.queuePath, processed.error);
+    return { status: 500, body: Object.assign({ processed }, failed) };
+  }
+
+  const completed = completeCurrentJob(context.queuePath, processed.result);
+  return { status: 200, body: Object.assign({ processed }, completed) };
+}
+
 function registerQueueRoutes(app, context) {
   app.get('/api/queue', (req, res) => {
     res.json(readQueue(context.queuePath));
@@ -82,19 +100,13 @@ function registerQueueRoutes(app, context) {
   });
 
   app.post('/api/queue/worker/process-current-manifest', (req, res) => {
-    const queue = readQueueFromWorker(context.queuePath);
-    if (!queue.currentJob) {
-      return res.status(409).json({ ok: false, reason: 'no current job', queue });
-    }
+    const result = processCurrentJob(context, processIntroPreviewManifestOnly);
+    res.status(result.status).json(result.body);
+  });
 
-    const processed = processIntroPreviewManifestOnly(context.rootDir, queue.currentJob);
-    if (!processed.ok) {
-      const failed = failCurrentJob(context.queuePath, processed.error);
-      return res.status(500).json(Object.assign({ processed }, failed));
-    }
-
-    const completed = completeCurrentJob(context.queuePath, processed.result);
-    res.json(Object.assign({ processed }, completed));
+  app.post('/api/queue/worker/process-current-dummy-mp4', (req, res) => {
+    const result = processCurrentJob(context, processIntroPreviewDummyMp4);
+    res.status(result.status).json(result.body);
   });
 
   app.post('/api/queue/worker/complete-current', (req, res) => {
