@@ -27,6 +27,12 @@ function getFlowText(preset) {
   ].filter(Boolean).join(' · ') || '타이밍 정보 없음';
 }
 
+function getResultText(result) {
+  if (!result || !result.job || !result.job.result) return '';
+  const output = result.job.result.primaryFile || result.job.result.manifestFile || '';
+  return output ? '<small>출력: ' + escapeHtml(output) + '</small>' : '';
+}
+
 export function renderDraftPanel(kind, draft, options = {}) {
   const panel = document.getElementById(getPanelId(kind));
   if (!panel) return;
@@ -39,6 +45,7 @@ export function renderDraftPanel(kind, draft, options = {}) {
   }
 
   const statusText = options.statusText || '렌더 준비됨';
+  const resultText = getResultText(options.result);
   panel.classList.add('ready');
   panel.innerHTML = [
     '<div class="render-draft-kicker">' + escapeHtml(statusText) + '</div>',
@@ -46,8 +53,10 @@ export function renderDraftPanel(kind, draft, options = {}) {
     '<span>' + escapeHtml([preset.ratio, preset.batchId, preset.presetId].filter(Boolean).join(' · ')) + '</span>',
     '<small>' + escapeHtml(getFlowText(preset)) + '</small>',
     preset.variant ? '<em>' + escapeHtml('variant: ' + preset.variant) + '</em>' : '',
+    resultText,
     '<div class="transport-row">',
-    '  <button class="control-btn primary" data-action="queue-render-draft" data-kind="' + escapeHtml(kind) + '">큐에 추가</button>',
+    '  <button class="control-btn" data-action="queue-render-draft" data-kind="' + escapeHtml(kind) + '">큐에 추가</button>',
+    '  <button class="control-btn primary" data-action="run-capture-render" data-kind="' + escapeHtml(kind) + '">렌더 실행</button>',
     '</div>'
   ].join('');
 }
