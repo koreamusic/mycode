@@ -47,11 +47,11 @@ mycode/
 |------|------|------|
 | 기획/구조 | 90% | **100%** |
 | 문서화 | 80% | **95%** |
-| 코드 구현 (페이지/API) | 0% | **70%** |
-| 프리셋 이식 (config+template) | 0% | **70%** |
+| 코드 구현 (페이지/API) | 0% | **75%** |
+| 프리셋 이식 (config+template+preview) | 0% | **90%** |
 | 렌더 시스템 (캡처·FFmpeg) | 0% | **40%** |
 | 테스트/안정화 | 0% | **10%** |
-| **전체** | **12%** | **~55%** |
+| **전체** | **12%** | **~63%** |
 
 ---
 
@@ -86,21 +86,26 @@ mycode/
   - `preset-shorts-005` — Minimal Line: 어두운 수직 → 밝은 페이퍼, 좌측 앵커
 - 각 프리셋: `config.json` + `template.js` + `README.md` 완비
 - `sourceRole: "longform-redesign-from-shorts"` + `sourcePreset` 추적 필드 포함
+- 9x16 숏츠 프리셋 5종 `template.js` 신규 추가 (기존 config.json만 있었음)
+  - 각 프리셋 9x16 수직 구도에 맞는 독립 구현
+- `scripts/generate-preset-previews.js` 신규 — node-canvas로 preview.jpg 자동 생성
+- **preview.jpg 생성 완료: 16x9 × 6개 + 9x16 × 6개** (총 12개)
 
 ---
 
 ## 남은 작업
 
 ### 우선순위 높음
-- [ ] `preview.jpg` 생성 — 각 프리셋의 썸네일 이미지 (스크린샷 또는 수동 추가)
+- [x] `preview.jpg` 생성 — node-canvas 스크립트로 12개 자동 생성 완료
 - [ ] 렌더 파이프라인 실제 테스트 — FFmpeg 설치 환경에서 end-to-end 검증
 - [ ] 음원/이미지 파일 연결 UI — 프로젝트 페이지에서 파일 선택 기능
+- [ ] 큐 페이지 동적 렌더링 — currentJob/pending/completed 카드 렌더링 (현재 raw JSON)
 
 ### 우선순위 중간
 - [ ] 폰트 관리 기능 — Settings의 폰트 목록 새로고침 실제 구현
 - [ ] Whisper 연동 — 가사 자동 싱크 (현재 수동 타임코드 마킹만 가능)
-- [ ] 랜딩 검수 비디오 재생 — `<video>` 렌더링 실제 확인 필요
-- [ ] 큐 페이지 — currentJob/pending/completed 동적 렌더링 (현재 raw JSON만)
+- [ ] 랜딩 검수 비디오 재생 — `<video>` 렌더링 실제 확인 필요 (FFmpeg 필요)
+- [ ] moon-dust-window 프리셋 — template.js 없어 preview.jpg 생성 불가
 
 ### 우선순위 낮음
 - [ ] 인증/토큰 — 현재 localhost CORS만 있음
@@ -164,4 +169,11 @@ popwifi-mv-studio/
   shared/presets/16x9/batch-001-010/preset-shorts-003/ (신규)
   shared/presets/16x9/batch-001-010/preset-shorts-004/ (신규)
   shared/presets/16x9/batch-001-010/preset-shorts-005/ (신규)
+  shared/presets/9x16/batch-001-010/preset-shorts-001/template.js (신규)
+  shared/presets/9x16/batch-001-010/preset-shorts-002/template.js (신규)
+  shared/presets/9x16/batch-001-010/preset-shorts-003/template.js (신규)
+  shared/presets/9x16/batch-001-010/preset-shorts-004/template.js (신규)
+  shared/presets/9x16/batch-001-010/preset-shorts-005/template.js (신규)
+  shared/presets/*/preview.jpg (12개, 신규)
+  scripts/generate-preset-previews.js (신규)
 ```
