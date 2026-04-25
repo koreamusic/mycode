@@ -8,7 +8,8 @@
     "start": "node server.js",
     "dev": "node server.js",
     "test:preset-api": "node scripts/test-preset-api.js",
-    "import:preset-batch": "node scripts/import-preset-batch.js"
+    "import:preset-batch": "node scripts/import-preset-batch.js",
+    "validate:preset-batches": "node scripts/validate-preset-batches.js"
   },
   "dependencies": {
     "chokidar": "^3.6.0",
