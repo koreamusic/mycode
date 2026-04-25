@@ -1,0 +1,40 @@
+{
+  "presetId": "intro-003-acoustic-spring-card",
+  "sourceFile": "presets_02_10.html",
+  "sourceKey": "maple",
+  "sourceNumber": 3,
+  "sourceName": "03 · 가을 단풍",
+  "song": "가을 편지",
+  "lyric": "낙엽처럼 떨어지던 그날의 기억",
+  "brandMain": "POP WiFi",
+  "brandSub": "팝 와이파이",
+  "diskIcon": "🍂",
+  "theme": {
+    "background": "radial-gradient(ellipse at 30% 35%, rgba(220,120,40,0.16) 0%, transparent 55%), radial-gradient(ellipse at 75% 70%, rgba(160,80,20,0.12) 0%, transparent 50%), linear-gradient(158deg, #1e0e06 0%, #160a04 40%, #0e0c08 100%)",
+    "accent": "#d4701a",
+    "accentSoft": "rgba(210,120,40,0.3)",
+    "titleColor": "#ffffff",
+    "titleGlow": "rgba(220,130,40,0.65)",
+    "subTextColor": "rgba(240,190,120,0.72)",
+    "subBg": "rgba(18,8,4,0.8)",
+    "subBorder": "rgba(210,120,40,0.26)",
+    "barGradient": "linear-gradient(180deg,rgba(14,8,4,0) 0%,rgba(14,8,4,0.78) 28%,rgba(10,6,2,0.96) 100%)",
+    "barTopline": "linear-gradient(90deg,transparent,rgba(210,120,40,0.18) 20%,rgba(210,120,40,0.32) 50%,rgba(210,120,40,0.18) 80%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#1e0e06 0deg,#140a04 45deg,#1e0e06 90deg,#140a04 135deg,#1e0e06 180deg,#140a04 225deg,#1e0e06 270deg,#140a04 315deg,#1e0e06 360deg)",
+    "diskCenterBg": "#0e0802"
+  },
+  "sourceFunctions": {
+    "frame": "buildMapleFrame",
+    "particles": "buildMapleParticles",
+    "equalizer": "buildMapleEq"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0.4,
+    "titleIn": 1,
+    "titleOut": 5,
+    "ctaIn": 5,
+    "ctaOut": 10,
+    "bottomBarIn": 10
+  }
+}
