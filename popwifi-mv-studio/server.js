@@ -47,12 +47,12 @@ registerPresetRoutes(app, context);
 registerRenderDraftRoutes(app, context);
 
 wss.on('connection', (ws) => {
-  const queue = JSON.parse(fs.readFileSync(queuePath, 'utf8'));
-  ws.send(JSON.stringify({
-    type: 'sync',
-    message: 'Pop WiFi MV Studio connected',
-    queue
-  }));
+  try {
+    const queue = JSON.parse(fs.readFileSync(queuePath, 'utf8'));
+    ws.send(JSON.stringify({ type: 'sync', message: 'Pop WiFi MV Studio connected', queue }));
+  } catch (error) {
+    ws.send(JSON.stringify({ type: 'sync', message: 'Pop WiFi MV Studio connected', queue: {} }));
+  }
 });
 
 server.listen(config.port, () => {

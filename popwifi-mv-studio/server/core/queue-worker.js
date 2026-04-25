@@ -1,7 +1,11 @@
 const fs = require('fs');
 
 function readQueue(queuePath) {
-  return JSON.parse(fs.readFileSync(queuePath, 'utf8'));
+  try {
+    return JSON.parse(fs.readFileSync(queuePath, 'utf8'));
+  } catch (error) {
+    return normalizeQueue(null);
+  }
 }
 
 function writeQueue(queuePath, queue) {
