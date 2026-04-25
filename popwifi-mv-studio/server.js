@@ -10,6 +10,7 @@ const { registerHealthRoutes } = require('./server/routes/health');
 const { registerConfigRoutes } = require('./server/routes/config');
 const { registerQueueRoutes } = require('./server/routes/queue');
 const { registerPresetRoutes } = require('./server/routes/presets');
+const { registerRenderDraftRoutes } = require('./server/routes/render-draft');
 
 const rootDir = __dirname;
 const config = loadConfig(rootDir);
@@ -40,6 +41,7 @@ registerHealthRoutes(app, context);
 registerConfigRoutes(app, context);
 registerQueueRoutes(app, context);
 registerPresetRoutes(app, context);
+registerRenderDraftRoutes(app, context);
 
 wss.on('connection', (ws) => {
   const queue = JSON.parse(fs.readFileSync(queuePath, 'utf8'));
