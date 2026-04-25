@@ -2,6 +2,7 @@ import { api } from './core/api.js';
 import { createRouter } from './core/router.js';
 import { connectSocket } from './core/socket.js';
 import { hydratePage } from './pages/page-init.js';
+import { bindRenderDraftActions } from './render/render-draft-actions.js';
 
 const navButtons = document.querySelectorAll('.nav-btn');
 const pageOutlet = document.getElementById('pageOutlet');
@@ -24,5 +25,6 @@ const router = createRouter({
 });
 
 checkHealth();
+bindRenderDraftActions(document);
 connectSocket({ serverStatus, renderStatus });
 router.setPage('project');
