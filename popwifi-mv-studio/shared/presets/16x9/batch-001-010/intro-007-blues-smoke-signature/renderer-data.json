@@ -1,0 +1,40 @@
+{
+  "presetId": "intro-007-blues-smoke-signature",
+  "sourceFile": "presets_02_10.html",
+  "sourceKey": "guitar",
+  "sourceNumber": 7,
+  "sourceName": "07 · 어쿠스틱 기타",
+  "song": "어쿠스틱 오후",
+  "lyric": "기타 한 줄에 실어 보낸 마음",
+  "brandMain": "POP WiFi",
+  "brandSub": "팝 와이파이",
+  "diskIcon": "🎸",
+  "theme": {
+    "background": "radial-gradient(ellipse at 30% 38%, rgba(180,130,60,0.13) 0%, transparent 55%), radial-gradient(ellipse at 78% 68%, rgba(140,90,30,0.10) 0%, transparent 50%), linear-gradient(158deg, #1a1008 0%, #140c06 40%, #0e0a06 100%)",
+    "accent": "#c89040",
+    "accentSoft": "rgba(200,150,60,0.28)",
+    "titleColor": "#fff8ee",
+    "titleGlow": "rgba(200,150,60,0.6)",
+    "subTextColor": "rgba(235,195,130,0.70)",
+    "subBg": "rgba(18,10,6,0.82)",
+    "subBorder": "rgba(200,150,60,0.25)",
+    "barGradient": "linear-gradient(180deg,rgba(14,10,4,0) 0%,rgba(14,10,4,0.8) 28%,rgba(10,6,2,0.97) 100%)",
+    "barTopline": "linear-gradient(90deg,transparent,rgba(200,150,60,0.17) 20%,rgba(200,150,60,0.30) 50%,rgba(200,150,60,0.17) 80%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#1a1008 0deg,#120c06 45deg,#1a1008 90deg,#120c06 135deg,#1a1008 180deg,#120c06 225deg,#1a1008 270deg,#120c06 315deg,#1a1008 360deg)",
+    "diskCenterBg": "#0e0a04"
+  },
+  "sourceFunctions": {
+    "frame": "buildGuitarFrame",
+    "particles": "buildGuitarParticles",
+    "equalizer": "buildGuitarEq"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0.4,
+    "titleIn": 1,
+    "titleOut": 5,
+    "ctaIn": 5,
+    "ctaOut": 10,
+    "bottomBarIn": 10
+  }
+}
