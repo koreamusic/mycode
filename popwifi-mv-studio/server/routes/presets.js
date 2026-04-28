@@ -1,3 +1,7 @@
+const path = require('path');
+const fs = require('fs');
+const os = require('os');
+const { execSync } = require('child_process');
 const {
   readBatches,
   createNextBatch,
@@ -10,6 +14,25 @@ const {
 } = require('../core/preset-store');
 
 function registerPresetRoutes(app, context) {
+  app.get('/api/presets/:ratio/download', (req, res) => {
+    const ratio = req.params.ratio;
+    const presetsDir = path.join(context.rootDir, 'shared', 'presets', ratio);
+    if (!fs.existsSync(presetsDir)) return res.status(404).json({ error: 'not found' });
+
+    const tmpZip = path.join(os.tmpdir(), `presets-${ratio}-${Date.now()}.zip`);
+    try {
+      execSync(`zip -r "${tmpZip}" .`, { cwd: presetsDir });
+      res.setHeader('Content-Type', 'application/zip');
+      res.setHeader('Content-Disposition', `attachment; filename="presets-${ratio}.zip"`);
+      const stream = fs.createReadStream(tmpZip);
+      stream.pipe(res);
+      stream.on('close', () => fs.unlink(tmpZip, () => {}));
+    } catch (e) {
+      fs.unlink(tmpZip, () => {});
+      res.status(500).json({ error: e.message });
+    }
+  });
+
   app.get('/api/presets/:ratio', (req, res) => {
     const includeInactive = req.query.includeInactive === '1';
     res.json(readPresetList(context.rootDir, req.params.ratio, { includeInactive }));
