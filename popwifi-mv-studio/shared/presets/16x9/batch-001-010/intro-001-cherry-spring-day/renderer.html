@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>01 · 벚꽃 봄날</title>
+  <link rel="stylesheet" href="./renderer.css" />
+</head>
+<body>
+  <div class="mv-wrap" id="mv">
+    <div class="bg"></div>
+    <div class="particles" id="particles"></div>
+    <div class="frame-layer" id="frameLayer">
+      <svg id="frameSvg" viewBox="0 0 900 506" fill="none" width="100%" height="100%" style="position:absolute;inset:0;"></svg>
+    </div>
+
+    <div class="title-layer">
+      <div class="title-main" id="titleMain" data-preview-title>봄날의 그리움</div>
+    </div>
+
+    <div class="sub-layer" id="subLayer">
+      <div class="sub-card">
+        <style>.sub-anim.active #h9tldg{animation:dH9tldg 1s ease forwards 0.1s;}@keyframes dH9tldg{to{stroke-dashoffset:0;}}.sub-anim.active #bg9tldg{animation:bR9tldg 0.55s ease 0.5s 2;}@keyframes bR9tldg{0%,100%{transform:rotate(0);}25%{transform:rotate(-13deg);}75%{transform:rotate(13deg);}}</style><div class="sub-anim sub-item"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path id="h9tldg" d="M14 23C14 23 4 16 4 10C4 7 6.5 4.5 9.5 4.5C11.5 4.5 13 5.5 14 7C15 5.5 16.5 4.5 18.5 4.5C21.5 4.5 24 7 24 10C24 16 14 23 14 23Z" stroke="#ff8fab" stroke-width="1.8" fill="rgba(255,143,171,0.15)" stroke-dasharray="130" stroke-dashoffset="130"/></svg><span class="sub-text" style="color:rgba(255,200,218,0.92)">좋아요</span></div><div class="sub-divider" style="background:rgba(255,130,165,0.25);width:1px;height:22px;"></div><div class="sub-anim sub-item"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><g id="bg9tldg" style="transform-origin:14px 5px"><path d="M14 4.5C14 4.5 9 6.5 9 13L9 18L7 20.5L21 20.5L19 18L19 13C19 6.5 14 4.5 14 4.5Z" stroke="#ffb4c8" stroke-width="1.6" fill="rgba(255,180,200,0.1)"/><path d="M11.5 20.5C11.5 22 12.6 23 14 23S16.5 22 16.5 20.5" stroke="#ffb4c8" stroke-width="1.5" fill="none"/><circle cx="14" cy="5.5" r="1.4" fill="#ffb4c8"/></g></svg><span class="sub-text" style="color:rgba(255,200,218,0.92)">구독 · 알림</span></div>
+      </div>
+    </div>
+
+    <div class="bottom-bar" id="bottomBar">
+      <div class="bar-gradient"></div>
+      <div class="bar-topline"></div>
+      <div class="bar-inner">
+        <div class="disk-wrap">
+          <div class="disk"></div>
+          <div class="disk-center"></div>
+          <div class="disk-icon">🌸</div>
+        </div>
+        <div class="eq-wrap" id="eqWrap"></div>
+        <div class="bar-copy">
+          <div class="bar-line bar-lyric" data-preview-lyric>지금도 눈을 감으면 네가 보여</div>
+          <div class="bar-line bar-song" data-preview-title data-preview-title-fallback style="display:none;">봄날의 그리움</div>
+        </div>
+        <div class="bar-logo">
+          <div class="bar-logo-name">POP WiFi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 28% 38%,rgba(255,190,210,0.14) 0%,transparent 55%),linear-gradient(158deg,#200f18 0%,#140c1a 38%,#0c1020 100%)",
+    "accent": "#ff8fab",
+    "title": "#fff0f5",
+    "titleGlow": "rgba(255,143,171,0.65)",
+    "line": "rgba(255,143,171,0.62)",
+    "titleSub": "rgba(255,200,218,0.72)",
+    "cardBg": "rgba(18,8,14,0.82)",
+    "cardBorder": "rgba(255,130,165,0.26)",
+    "cardShadow": "0 8px 40px rgba(230,80,130,0.14)",
+    "barGradient": "linear-gradient(180deg,rgba(14,6,10,0) 0%,rgba(14,6,10,0.82) 28%,rgba(10,4,8,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(255,130,165,0.3) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#200e18 0deg,#180c14 60deg,#200e18 120deg,#180c14 180deg,#200e18 240deg,#180c14 300deg,#200e18 360deg)",
+    "diskBorder": "rgba(255,130,165,0.28)",
+    "diskGlow": "rgba(220,80,130,0.18)",
+    "diskCenter": "#160a10",
+    "diskCenterBorder": "rgba(255,130,165,0.32)",
+    "song": "rgba(255,228,235,0.95)",
+    "lyric": "rgba(255,228,235,0.95)",
+    "logo": "rgba(255,175,198,0.8)",
+    "logoBorder": "rgba(255,130,165,0.14)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "봄날의 그리움",
+    "lyric": "지금도 눈을 감으면 네가 보여",
+    "diskIcon": "🌸",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

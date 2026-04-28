@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-001-cherry-spring-day",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "cherry",
+  "sourceNumber": 1,
+  "sourceName": "01 · 벚꽃 봄날",
+  "song": "봄날의 그리움",
+  "lyric": "지금도 눈을 감으면 네가 보여",
+  "diskIcon": "🌸",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}
