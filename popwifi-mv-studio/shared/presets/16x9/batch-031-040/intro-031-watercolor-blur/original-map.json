@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-031-watercolor-blur",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "watercolor",
+  "sourceNumber": 31,
+  "sourceName": "31 · 수채화 번짐",
+  "song": "수채화 빗속에",
+  "lyric": "번지는 색처럼 퍼져가는 그리움",
+  "diskIcon": "🖌️",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

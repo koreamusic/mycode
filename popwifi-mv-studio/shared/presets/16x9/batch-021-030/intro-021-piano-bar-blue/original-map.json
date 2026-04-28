@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-021-piano-bar-blue",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "pianobar",
+  "sourceNumber": 21,
+  "sourceName": "21 · 피아노 바 블루",
+  "song": "Blue Piano Bar",
+  "lyric": "피아노 선율에 취하는 밤",
+  "diskIcon": "🎵",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

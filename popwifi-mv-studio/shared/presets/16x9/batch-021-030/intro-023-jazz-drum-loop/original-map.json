@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-023-jazz-drum-loop",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "jazzDrum",
+  "sourceNumber": 23,
+  "sourceName": "23 · 재즈 드럼 루프",
+  "song": "Drum Loop",
+  "lyric": "심장박동처럼 울려 퍼지는 비트",
+  "diskIcon": "🥁",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

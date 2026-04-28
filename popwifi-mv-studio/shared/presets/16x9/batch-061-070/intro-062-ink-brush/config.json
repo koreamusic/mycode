@@ -1,0 +1,21 @@
+{
+  "id": "intro-062-ink-brush",
+  "title": "062 · Ink Brush",
+  "category": "intro",
+  "variant": "viewer",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-061-070",
+  "languageSupport": "both",
+  "sourceKey": "13",
+  "sourceNumber": 62,
+  "flow": {
+    "titleSeconds": 5,
+    "ctaSeconds": 5
+  },
+  "visual": {
+    "accent": "#c8a55a"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

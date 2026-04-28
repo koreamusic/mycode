@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "accent": "#4a6080"
+  },
+  "timeline": {
+    "cycleSeconds": 10,
+    "titleIn": 0,
+    "ctaIn": 5
+  },
+  "content": {
+    "title": "Lo-fi Chill",
+    "tags": [
+      "로파이",
+      "힐링",
+      "차분"
+    ],
+    "titleMode": "html-mount"
+  }
+}

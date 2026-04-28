@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;background:#080808;font-family:'Noto Sans KR',sans-serif}
+body{display:grid;place-items:center}
+
+.mv-wrap{position:relative;width:900px;height:506px;overflow:hidden;isolation:isolate;}
+.layer{position:absolute;inset:0}
+.center{display:flex;flex-direction:column;align-items:center;justify-content:center}
+
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes lineGrow{to{width:120px}}
+@keyframes slideUpIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideLeft{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes cardDrop{from{opacity:0;transform:translateY(-24px) scale(.8)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes scaleReveal{from{opacity:0;transform:scaleY(0)}to{opacity:1;transform:scaleY(1)}}
+@keyframes typewriter{from{width:0}to{width:13em}}
+@keyframes blink{50%{border-color:transparent}}
+
+.p14-bg{background:linear-gradient(145deg,#fdf6f0 0%,#f8ede8 50%,#f0e8f4 100%)}
+.p14-blob1{position:absolute;width:50%;height:50%;background:radial-gradient(#ffd4c822,transparent 70%);top:-10%;left:-10%;animation:blobFloat 6s ease-in-out infinite}
+.p14-blob2{position:absolute;width:40%;height:40%;background:radial-gradient(#d4c8ff22,transparent 70%);bottom:-10%;right:-10%;animation:blobFloat 8s ease-in-out infinite reverse}
+.p14-halo{position:absolute;width:clamp(80px,18vw,200px);height:clamp(80px,18vw,200px);border-radius:50%;background:radial-gradient(rgba(255,180,150,.12),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:haloPulse 3s ease-in-out infinite}
+.p14-title{font-family:'DM Serif Display',serif;font-size:clamp(18px,3.2vw,40px);font-style:italic;color:#4a3830;text-align:center;opacity:0;animation:fadeUp .8s ease .3s forwards}
+.p14-dots{display:flex;gap:6px;margin:10px 0;opacity:0;animation:fadeIn .6s ease 1s forwards}
+.p14-dot{width:5px;height:5px;border-radius:50%;animation:dotColor 3s ease-in-out infinite var(--dc,0s)}
+.p14-artist{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(10px,1.3vw,14px);color:#9a7870;letter-spacing:.15em;opacity:0;animation:fadeIn .5s ease 1.2s forwards}
+.p14-cta{display:flex;gap:clamp(8px,1.5vw,18px);margin-top:clamp(12px,2.5vw,24px)}
+.p14-cta-pill{display:flex;align-items:center;gap:7px;border-radius:999px;padding:clamp(5px,.8vw,9px) clamp(10px,1.8vw,20px);opacity:0;border:1px solid rgba(180,120,100,.2);background:rgba(255,255,255,.5)}
+.p14-cta-pill:nth-child(1){animation:fadeUp .4s ease 1.4s forwards;border-color:rgba(240,140,120,.3);background:rgba(240,140,120,.08)}
+.p14-cta-pill:nth-child(2){animation:fadeUp .4s ease 1.65s forwards;border-color:rgba(180,140,220,.3);background:rgba(180,140,220,.08)}
+.p14-cta-pill:nth-child(3){animation:fadeUp .4s ease 1.9s forwards;border-color:rgba(120,180,160,.3);background:rgba(120,180,160,.08)}
+.p14-cta-pill svg{width:clamp(11px,1.5vw,16px);height:clamp(11px,1.5vw,16px)}
+.p14-cta-pill span{font-family:'Noto Sans KR',sans-serif;font-size:clamp(9px,1.1vw,12px);color:#6a4840;letter-spacing:.06em}

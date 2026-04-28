@@ -1,0 +1,21 @@
+{
+  "id": "intro-063-soft-pastel",
+  "title": "063 · Soft Pastel",
+  "category": "intro",
+  "variant": "viewer",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-061-070",
+  "languageSupport": "both",
+  "sourceKey": "14",
+  "sourceNumber": 63,
+  "flow": {
+    "titleSeconds": 5,
+    "ctaSeconds": 5
+  },
+  "visual": {
+    "accent": "#f0a090"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

@@ -1,0 +1,19 @@
+{
+  "presetId": "intro-068-jazz-noir",
+  "primarySourceFile": "intropresetsviewer.html",
+  "sourceFile": "intropresetsviewer.html",
+  "viewerNumber": 19,
+  "sourceNumber": 68,
+  "sourceName": "Jazz Noir",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "title": true,
+    "cta": true,
+    "css": true
+  }
+}

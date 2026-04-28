@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-032-film-sprocket",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "film",
+  "sourceNumber": 32,
+  "sourceName": "32 · 필름 스프라켓",
+  "song": "오래된 필름",
+  "lyric": "색이 바랜 필름 속 우리의 기억",
+  "diskIcon": "🎬",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

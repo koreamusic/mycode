@@ -1,0 +1,25 @@
+{
+  "id": "intro-044-circuit-board",
+  "title": "44 · 회로기판",
+  "category": "intro",
+  "variant": "pop",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-041-050",
+  "languageSupport": "both",
+  "sourceKey": "circuit",
+  "sourceNumber": 44,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "fade"
+  },
+  "visual": {
+    "accent": "#00e8a0",
+    "font": "Noto Serif KR"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

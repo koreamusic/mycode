@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "accent": "#d4c090"
+  },
+  "timeline": {
+    "cycleSeconds": 10,
+    "titleIn": 0,
+    "ctaIn": 5
+  },
+  "content": {
+    "title": "Jazz Noir",
+    "tags": [
+      "재즈",
+      "빈티지",
+      "감성"
+    ],
+    "titleMode": "html-mount"
+  }
+}

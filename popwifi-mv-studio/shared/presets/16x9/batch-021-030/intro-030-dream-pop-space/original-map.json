@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-030-dream-pop-space",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "dreampop",
+  "sourceNumber": 30,
+  "sourceName": "30 · 드림팝 우주",
+  "song": "Dream Space",
+  "lyric": "우주 끝까지 닿을 것 같은 꿈",
+  "diskIcon": "🌠",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

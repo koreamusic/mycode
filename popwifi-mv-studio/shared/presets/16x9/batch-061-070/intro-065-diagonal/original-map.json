@@ -1,0 +1,19 @@
+{
+  "presetId": "intro-065-diagonal",
+  "primarySourceFile": "intropresetsviewer.html",
+  "sourceFile": "intropresetsviewer.html",
+  "viewerNumber": 16,
+  "sourceNumber": 65,
+  "sourceName": "Diagonal",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "title": true,
+    "cta": true,
+    "css": true
+  }
+}

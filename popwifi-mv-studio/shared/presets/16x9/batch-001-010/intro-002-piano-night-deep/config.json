@@ -1,0 +1,25 @@
+{
+  "id": "intro-002-piano-night-deep",
+  "title": "02 · 깊은 밤 피아노",
+  "category": "intro",
+  "variant": "ballad",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-001-010",
+  "languageSupport": "both",
+  "sourceKey": "piano",
+  "sourceNumber": 2,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "fade"
+  },
+  "visual": {
+    "accent": "#c8a84a",
+    "font": "Nanum Myeongjo"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-026-pop-sunset",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "sunset",
+  "sourceNumber": 26,
+  "sourceName": "26 · 팝 선셋",
+  "song": "Sunset Glow",
+  "lyric": "노을빛으로 물드는 너의 미소",
+  "diskIcon": "🌇",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

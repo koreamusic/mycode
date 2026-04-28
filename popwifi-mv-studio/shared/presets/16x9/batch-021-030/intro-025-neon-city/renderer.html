@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>25 · 네온 시티</title>
+  <link rel="stylesheet" href="./renderer.css" />
+</head>
+<body>
+  <div class="mv-wrap" id="mv">
+    <div class="bg"></div>
+    <div class="particles" id="particles"></div>
+    <div class="frame-layer" id="frameLayer">
+      <svg id="frameSvg" viewBox="0 0 900 506" fill="none" width="100%" height="100%" style="position:absolute;inset:0;"></svg>
+    </div>
+
+    <div class="title-layer">
+      <div class="title-main" id="titleMain" data-preview-title>Neon City</div>
+    </div>
+
+    <div class="sub-layer" id="subLayer">
+      <div class="sub-card">
+        <style>.sub-anim.active .nn2dpmd{animation:nnFlash2dpmd 0.5s ease forwards;}@keyframes nnFlash2dpmd{0%{opacity:0;filter:brightness(3);}40%{opacity:1;filter:brightness(1.5);}100%{opacity:1;filter:brightness(1);}}.sub-anim.active .np2dpmd{animation:npPulse2dpmd 1s ease-in-out infinite;}@keyframes npPulse2dpmd{0%,100%{filter:drop-shadow(0 0 3px #ff2880);}50%{filter:drop-shadow(0 0 8px #ff2880);}}</style><div class="sub-anim sub-item"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><g class="nn2dpmd np2dpmd" style="opacity:0"><path d="M14 23C14 23 4 16 4 10C4 7 6.5 4.5 9.5 4.5C11.5 4.5 13 5.5 14 7C15 5.5 16.5 4.5 18.5 4.5C21.5 4.5 24 7 24 10C24 16 14 23 14 23Z" stroke="#ff2880" stroke-width="1.8" fill="rgba(255,40,128,0.2)"/></g></svg><span class="sub-text" style="color:rgba(255,180,220,0.92)">좋아요</span></div><div class="sub-divider" style="background:rgba(255,60,140,0.30);width:1px;height:22px;"></div><div class="sub-anim sub-item"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><g class="nn2dpmd np2dpmd" style="opacity:0"><path d="M14 4C14 4 8 7 8 14L8 19L6 21H22L20 19L20 14C20 7 14 4 14 4Z" stroke="#ff60a8" stroke-width="1.6" fill="rgba(255,96,168,0.12)"/><path d="M11 21C11 22.66 12.34 24 14 24S17 22.66 17 21" stroke="#ff60a8" stroke-width="1.4" fill="none"/><circle cx="14" cy="5" r="1.5" fill="#ff60a8"/></g></svg><span class="sub-text" style="color:rgba(255,180,220,0.92)">구독</span></div>
+      </div>
+    </div>
+
+    <div class="bottom-bar" id="bottomBar">
+      <div class="bar-gradient"></div>
+      <div class="bar-topline"></div>
+      <div class="bar-inner">
+        <div class="disk-wrap">
+          <div class="disk"></div>
+          <div class="disk-center"></div>
+          <div class="disk-icon">⚡</div>
+        </div>
+        <div class="eq-wrap" id="eqWrap"></div>
+        <div class="bar-copy">
+          <div class="bar-line bar-lyric" data-preview-lyric>빛나는 도시 위를 날아가</div>
+          <div class="bar-line bar-song" data-preview-title data-preview-title-fallback style="display:none;">Neon City</div>
+        </div>
+        <div class="bar-logo">
+          <div class="bar-logo-name">POP WiFi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./renderer.js"></script>
+</body>
+</html>

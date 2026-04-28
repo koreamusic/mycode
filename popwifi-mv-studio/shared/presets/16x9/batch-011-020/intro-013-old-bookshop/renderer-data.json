@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 30% 40%,rgba(160,130,80,0.12) 0%,transparent 55%),linear-gradient(158deg,#14100a 0%,#0e0c06 42%,#100e08 100%)",
+    "accent": "#a88848",
+    "title": "#f8f0e0",
+    "titleGlow": "rgba(168,136,72,0.58)",
+    "line": "rgba(170,140,80,0.55)",
+    "titleSub": "rgba(220,190,140,0.68)",
+    "cardBg": "rgba(16,12,6,0.84)",
+    "cardBorder": "rgba(170,140,80,0.23)",
+    "cardShadow": "0 8px 40px rgba(150,110,50,0.10)",
+    "barGradient": "linear-gradient(180deg,rgba(12,10,6,0) 0%,rgba(12,10,6,0.82) 28%,rgba(8,6,4,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(170,140,80,0.26) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#181208 0deg,#120c06 60deg,#181208 120deg,#120c06 180deg,#181208 240deg,#120c06 300deg,#181208 360deg)",
+    "diskBorder": "rgba(170,140,80,0.25)",
+    "diskGlow": "rgba(150,110,50,0.14)",
+    "diskCenter": "#0c0a04",
+    "diskCenterBorder": "rgba(170,140,80,0.29)",
+    "song": "rgba(238,210,165,0.95)",
+    "lyric": "rgba(238,210,165,0.95)",
+    "logo": "rgba(195,160,100,0.78)",
+    "logoBorder": "rgba(170,140,80,0.12)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "오래된 책방",
+    "lyric": "먼지 쌓인 책장 사이 너의 흔적",
+    "diskIcon": "📖",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

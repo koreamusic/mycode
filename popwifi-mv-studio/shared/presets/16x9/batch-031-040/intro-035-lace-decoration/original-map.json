@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-035-lace-decoration",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "lace",
+  "sourceNumber": 35,
+  "sourceName": "35 · 레이스 장식",
+  "song": "하얀 드레스",
+  "lyric": "레이스처럼 섬세한 너의 손길",
+  "diskIcon": "🌸",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

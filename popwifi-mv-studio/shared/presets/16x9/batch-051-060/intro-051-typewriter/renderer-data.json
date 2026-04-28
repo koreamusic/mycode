@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "accent": "#c8a55a"
+  },
+  "timeline": {
+    "cycleSeconds": 10,
+    "titleIn": 0,
+    "ctaIn": 5
+  },
+  "content": {
+    "title": "Typewriter",
+    "tags": [
+      "빈티지",
+      "발라드",
+      "포크"
+    ],
+    "titleMode": "html-mount"
+  }
+}

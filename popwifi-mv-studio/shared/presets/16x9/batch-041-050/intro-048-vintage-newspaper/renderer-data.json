@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 28% 38%,rgba(180,160,100,0.12) 0%,transparent 55%),linear-gradient(158deg,#100e08 0%,#0c0a04 42%,#100e08 100%)",
+    "accent": "#b0983c",
+    "title": "#f8f4e0",
+    "titleGlow": "rgba(176,152,60,0.56)",
+    "line": "rgba(172,148,55,0.50)",
+    "titleSub": "rgba(225,200,138,0.68)",
+    "cardBg": "rgba(16,12,4,0.84)",
+    "cardBorder": "rgba(172,148,55,0.22)",
+    "cardShadow": "0 8px 40px rgba(150,120,40,0.10)",
+    "barGradient": "linear-gradient(180deg,rgba(12,10,4,0) 0%,rgba(12,10,4,0.82) 28%,rgba(8,6,2,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(172,148,55,0.25) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#16120a 0deg,#100e06 60deg,#16120a 120deg,#100e06 180deg,#16120a 240deg,#100e06 300deg,#16120a 360deg)",
+    "diskBorder": "rgba(172,148,55,0.23)",
+    "diskGlow": "rgba(150,120,40,0.13)",
+    "diskCenter": "#0c0a04",
+    "diskCenterBorder": "rgba(172,148,55,0.27)",
+    "song": "rgba(238,210,155,0.95)",
+    "lyric": "rgba(238,210,155,0.95)",
+    "logo": "rgba(194,162,88,0.78)",
+    "logoBorder": "rgba(172,148,55,0.12)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "오래된 뉴스",
+    "lyric": "누렇게 바랜 신문 속 너의 소식",
+    "diskIcon": "📄",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

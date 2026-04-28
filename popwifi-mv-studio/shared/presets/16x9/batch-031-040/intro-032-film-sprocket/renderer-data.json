@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 28% 38%,rgba(180,150,80,0.12) 0%,transparent 55%),linear-gradient(158deg,#0e0c08 0%,#0a0a06 42%,#0e0c08 100%)",
+    "accent": "#b8982e",
+    "title": "#f8f4e0",
+    "titleGlow": "rgba(184,152,46,0.58)",
+    "line": "rgba(180,150,50,0.52)",
+    "titleSub": "rgba(228,200,138,0.70)",
+    "cardBg": "rgba(14,12,6,0.84)",
+    "cardBorder": "rgba(180,150,50,0.22)",
+    "cardShadow": "0 8px 40px rgba(160,120,30,0.10)",
+    "barGradient": "linear-gradient(180deg,rgba(12,10,5,0) 0%,rgba(12,10,5,0.82) 28%,rgba(8,8,3,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(180,150,50,0.26) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#141208 0deg,#100e06 60deg,#141208 120deg,#100e06 180deg,#141208 240deg,#100e06 300deg,#141208 360deg)",
+    "diskBorder": "rgba(180,150,50,0.25)",
+    "diskGlow": "rgba(160,120,30,0.14)",
+    "diskCenter": "#0c0a04",
+    "diskCenterBorder": "rgba(180,150,50,0.29)",
+    "song": "rgba(240,212,158,0.95)",
+    "lyric": "rgba(240,212,158,0.95)",
+    "logo": "rgba(198,162,92,0.78)",
+    "logoBorder": "rgba(180,150,50,0.12)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "오래된 필름",
+    "lyric": "색이 바랜 필름 속 우리의 기억",
+    "diskIcon": "🎬",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

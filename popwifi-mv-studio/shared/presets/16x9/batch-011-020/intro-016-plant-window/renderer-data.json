@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 30% 38%,rgba(60,140,80,0.13) 0%,transparent 55%),linear-gradient(158deg,#060e08 0%,#050c06 42%,#060e08 100%)",
+    "accent": "#60a868",
+    "title": "#eef8ee",
+    "titleGlow": "rgba(96,168,104,0.58)",
+    "line": "rgba(80,160,90,0.52)",
+    "titleSub": "rgba(150,210,155,0.70)",
+    "cardBg": "rgba(5,10,6,0.82)",
+    "cardBorder": "rgba(80,160,90,0.22)",
+    "cardShadow": "0 8px 40px rgba(50,130,60,0.10)",
+    "barGradient": "linear-gradient(180deg,rgba(4,8,5,0) 0%,rgba(4,8,5,0.82) 28%,rgba(3,6,4,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(80,160,90,0.25) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#080e08 0deg,#050a06 60deg,#080e08 120deg,#050a06 180deg,#080e08 240deg,#050a06 300deg,#080e08 360deg)",
+    "diskBorder": "rgba(80,160,90,0.24)",
+    "diskGlow": "rgba(50,130,60,0.14)",
+    "diskCenter": "#030804",
+    "diskCenterBorder": "rgba(80,160,90,0.28)",
+    "song": "rgba(190,235,195,0.95)",
+    "lyric": "rgba(190,235,195,0.95)",
+    "logo": "rgba(120,190,128,0.78)",
+    "logoBorder": "rgba(80,160,90,0.12)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "초록의 오후",
+    "lyric": "창가에 기대어 바라본 하늘",
+    "diskIcon": "🍃",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

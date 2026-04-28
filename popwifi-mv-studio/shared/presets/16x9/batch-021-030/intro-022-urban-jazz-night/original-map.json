@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-022-urban-jazz-night",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "urbanJazz",
+  "sourceNumber": 22,
+  "sourceName": "22 · 어반 재즈 나이트",
+  "song": "Urban Night",
+  "lyric": "도심의 밤을 물들이는 선율",
+  "diskIcon": "🏙️",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-036-stamp-border",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "stamp",
+  "sourceNumber": 36,
+  "sourceName": "36 · 우표 테두리",
+  "song": "오래된 편지",
+  "lyric": "우표 한 장에 담긴 마음",
+  "diskIcon": "📮",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

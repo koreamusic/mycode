@@ -1,0 +1,25 @@
+{
+  "id": "intro-028-city-pop-sunrise",
+  "title": "28 · 시티팝 선라이즈",
+  "category": "intro",
+  "variant": "pop",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-021-030",
+  "languageSupport": "both",
+  "sourceKey": "citypop",
+  "sourceNumber": 28,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "fade"
+  },
+  "visual": {
+    "accent": "#ff9050",
+    "font": "Nanum Myeongjo"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "accent": "#c8a55a"
+  },
+  "timeline": {
+    "cycleSeconds": 10,
+    "titleIn": 0,
+    "ctaIn": 5
+  },
+  "content": {
+    "title": "Blur Reveal",
+    "tags": [
+      "몽환",
+      "재즈",
+      "힐링"
+    ],
+    "titleMode": "html-mount"
+  }
+}

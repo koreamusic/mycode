@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "accent": "#00d4ff"
+  },
+  "timeline": {
+    "cycleSeconds": 10,
+    "titleIn": 0,
+    "ctaIn": 5
+  },
+  "content": {
+    "title": "Neon Glow",
+    "tags": [
+      "일렉",
+      "신스팝",
+      "미래적"
+    ],
+    "titleMode": "html-mount"
+  }
+}

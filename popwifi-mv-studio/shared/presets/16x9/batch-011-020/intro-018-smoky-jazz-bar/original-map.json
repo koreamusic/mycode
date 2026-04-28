@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-018-smoky-jazz-bar",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "jazz",
+  "sourceNumber": 18,
+  "sourceName": "18 · 스모키 재즈 바",
+  "song": "Smoky Night",
+  "lyric": "담배 연기 자욱한 그 밤의 무대",
+  "diskIcon": "🎷",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

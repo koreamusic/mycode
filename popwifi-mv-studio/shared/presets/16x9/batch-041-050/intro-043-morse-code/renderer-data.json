@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 28% 38%,rgba(40,160,80,0.13) 0%,transparent 55%),linear-gradient(158deg,#040e06 0%,#030c04 42%,#040e06 100%)",
+    "accent": "#40c060",
+    "title": "#eefff2",
+    "titleGlow": "rgba(64,192,96,0.58)",
+    "line": "rgba(50,192,80,0.52)",
+    "titleSub": "rgba(150,235,170,0.70)",
+    "cardBg": "rgba(3,10,4,0.82)",
+    "cardBorder": "rgba(50,192,80,0.22)",
+    "cardShadow": "0 8px 40px rgba(20,160,50,0.10)",
+    "barGradient": "linear-gradient(180deg,rgba(2,8,3,0) 0%,rgba(2,8,3,0.82) 28%,rgba(1,6,2,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(50,192,80,0.25) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#060e06 0deg,#040c04 60deg,#060e06 120deg,#040c04 180deg,#060e06 240deg,#040c04 300deg,#060e06 360deg)",
+    "diskBorder": "rgba(50,192,80,0.24)",
+    "diskGlow": "rgba(20,160,50,0.14)",
+    "diskCenter": "#020802",
+    "diskCenterBorder": "rgba(50,192,80,0.28)",
+    "song": "rgba(180,245,198,0.95)",
+    "lyric": "rgba(180,245,198,0.95)",
+    "logo": "rgba(100,200,130,0.78)",
+    "logoBorder": "rgba(50,192,80,0.12)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "신호",
+    "lyric": "끝없이 보내는 너를 향한 신호",
+    "diskIcon": "·−",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

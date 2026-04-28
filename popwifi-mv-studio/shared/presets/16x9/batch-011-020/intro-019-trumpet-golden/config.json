@@ -1,0 +1,25 @@
+{
+  "id": "intro-019-trumpet-golden",
+  "title": "19 · 트럼펫 골든",
+  "category": "intro",
+  "variant": "jazz",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-011-020",
+  "languageSupport": "both",
+  "sourceKey": "trumpet",
+  "sourceNumber": 19,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "fade"
+  },
+  "visual": {
+    "accent": "#e8b820",
+    "font": "Nanum Myeongjo"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

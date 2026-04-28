@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-012-afternoon-coffee",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "coffee",
+  "sourceNumber": 12,
+  "sourceName": "12 · 오후의 커피",
+  "song": "커피 한 잔",
+  "lyric": "따뜻한 커피 한 잔처럼 네 온기",
+  "diskIcon": "☕",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

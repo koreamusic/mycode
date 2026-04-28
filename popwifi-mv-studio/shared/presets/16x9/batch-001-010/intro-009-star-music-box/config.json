@@ -1,0 +1,25 @@
+{
+  "id": "intro-009-star-music-box",
+  "title": "09 · 별빛 오르골",
+  "category": "intro",
+  "variant": "ballad",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-001-010",
+  "languageSupport": "both",
+  "sourceKey": "star",
+  "sourceNumber": 9,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "fade"
+  },
+  "visual": {
+    "accent": "#b090e8",
+    "font": "Noto Serif KR"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>08 · 겨울 설야</title>
+  <link rel="stylesheet" href="./renderer.css" />
+</head>
+<body>
+  <div class="mv-wrap" id="mv">
+    <div class="bg"></div>
+    <div class="particles" id="particles"></div>
+    <div class="frame-layer" id="frameLayer">
+      <svg id="frameSvg" viewBox="0 0 900 506" fill="none" width="100%" height="100%" style="position:absolute;inset:0;"></svg>
+    </div>
+
+    <div class="title-layer">
+      <div class="title-main" id="titleMain" data-preview-title>눈 내리는 밤</div>
+    </div>
+
+    <div class="sub-layer" id="subLayer">
+      <div class="sub-card">
+        <style>.sub-anim.active .swk5kgb{animation:swFallk5kgb 0.8s ease forwards;}@keyframes swFallk5kgb{0%{transform:translateY(-15px) rotate(-30deg);opacity:0;}100%{transform:translateY(0) rotate(0deg);opacity:1;}}</style><div class="sub-anim sub-item"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><g class="swk5kgb" style="opacity:0"><line x1="14" y1="14" x2="25" y2="14" stroke="#90c0e8" stroke-width="1.5"/><line x1="14" y1="14" x2="19.5" y2="23.526279441628823" stroke="#90c0e8" stroke-width="1.5"/><line x1="14" y1="14" x2="8.500000000000004" y2="23.526279441628827" stroke="#90c0e8" stroke-width="1.5"/><line x1="14" y1="14" x2="3" y2="14.000000000000002" stroke="#90c0e8" stroke-width="1.5"/><line x1="14" y1="14" x2="8.499999999999995" y2="4.473720558371177" stroke="#90c0e8" stroke-width="1.5"/><line x1="14" y1="14" x2="19.5" y2="4.473720558371175" stroke="#90c0e8" stroke-width="1.5"/><circle cx="14" cy="14" r="2.5" fill="#c0e4ff"/></g></svg><span class="sub-text" style="color:rgba(190,225,255,0.92)">좋아요</span></div><div class="sub-divider" style="background:rgba(140,195,240,0.25);width:1px;height:22px;"></div><div class="sub-anim sub-item"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><g class="swk5kgb" style="opacity:0"><path d="M14 4C14 4 8 7 8 14L8 19L6 21H22L20 19L20 14C20 7 14 4 14 4Z" stroke="#a0d0f8" stroke-width="1.6" fill="rgba(160,208,248,0.1)"/><path d="M11 21C11 22.66 12.34 24 14 24S17 22.66 17 21" stroke="#a0d0f8" stroke-width="1.4" fill="none"/><circle cx="14" cy="5" r="1.5" fill="#a0d0f8"/></g></svg><span class="sub-text" style="color:rgba(190,225,255,0.92)">구독</span></div>
+      </div>
+    </div>
+
+    <div class="bottom-bar" id="bottomBar">
+      <div class="bar-gradient"></div>
+      <div class="bar-topline"></div>
+      <div class="bar-inner">
+        <div class="disk-wrap">
+          <div class="disk"></div>
+          <div class="disk-center"></div>
+          <div class="disk-icon">❄️</div>
+        </div>
+        <div class="eq-wrap" id="eqWrap"></div>
+        <div class="bar-copy">
+          <div class="bar-line bar-lyric" data-preview-lyric>창가에 쌓이는 눈처럼 조용히</div>
+          <div class="bar-line bar-song" data-preview-title data-preview-title-fallback style="display:none;">눈 내리는 밤</div>
+        </div>
+        <div class="bar-logo">
+          <div class="bar-logo-name">POP WiFi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./renderer.js"></script>
+</body>
+</html>

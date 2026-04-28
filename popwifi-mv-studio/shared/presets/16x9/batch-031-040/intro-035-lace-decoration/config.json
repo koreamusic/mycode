@@ -1,0 +1,25 @@
+{
+  "id": "intro-035-lace-decoration",
+  "title": "35 · 레이스 장식",
+  "category": "intro",
+  "variant": "ballad",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-031-040",
+  "languageSupport": "both",
+  "sourceKey": "lace",
+  "sourceNumber": 35,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "fade"
+  },
+  "visual": {
+    "accent": "#d0c0e0",
+    "font": "Nanum Myeongjo"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

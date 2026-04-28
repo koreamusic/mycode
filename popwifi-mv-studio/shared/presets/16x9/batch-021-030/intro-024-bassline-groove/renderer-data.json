@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 30% 38%,rgba(40,120,80,0.13) 0%,transparent 55%),linear-gradient(158deg,#040e08 0%,#020a06 42%,#040e08 100%)",
+    "accent": "#30a060",
+    "title": "#eefff5",
+    "titleGlow": "rgba(48,160,96,0.58)",
+    "line": "rgba(40,160,90,0.52)",
+    "titleSub": "rgba(140,220,165,0.68)",
+    "cardBg": "rgba(2,8,4,0.82)",
+    "cardBorder": "rgba(40,160,90,0.22)",
+    "cardShadow": "0 8px 40px rgba(20,130,60,0.10)",
+    "barGradient": "linear-gradient(180deg,rgba(2,6,3,0) 0%,rgba(2,6,3,0.82) 28%,rgba(1,4,2,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(40,160,90,0.25) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#060e08 0deg,#040a06 60deg,#060e08 120deg,#040a06 180deg,#060e08 240deg,#040a06 300deg,#060e08 360deg)",
+    "diskBorder": "rgba(40,160,90,0.24)",
+    "diskGlow": "rgba(20,130,60,0.14)",
+    "diskCenter": "#020604",
+    "diskCenterBorder": "rgba(40,160,90,0.28)",
+    "song": "rgba(180,240,200,0.95)",
+    "lyric": "rgba(180,240,200,0.95)",
+    "logo": "rgba(100,190,130,0.78)",
+    "logoBorder": "rgba(40,160,90,0.12)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "Bassline Groove",
+    "lyric": "묵직하게 울리는 베이스의 그루브",
+    "diskIcon": "🎵",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

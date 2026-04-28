@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-006-rose-garden",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "rose",
+  "sourceNumber": 6,
+  "sourceName": "06 · 장미 정원",
+  "song": "붉은 장미",
+  "lyric": "가시 속에 피어난 너의 이름",
+  "diskIcon": "🌹",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 28% 35%,rgba(200,40,60,0.14) 0%,transparent 55%),linear-gradient(155deg,#180608 0%,#120406 40%,#0e0408 100%)",
+    "accent": "#c83040",
+    "title": "#fff0f2",
+    "titleGlow": "rgba(200,48,64,0.65)",
+    "line": "rgba(200,60,80,0.60)",
+    "titleSub": "rgba(240,180,190,0.72)",
+    "cardBg": "rgba(16,4,6,0.82)",
+    "cardBorder": "rgba(200,60,80,0.25)",
+    "cardShadow": "0 8px 40px rgba(180,30,50,0.14)",
+    "barGradient": "linear-gradient(180deg,rgba(12,4,6,0) 0%,rgba(12,4,6,0.82) 28%,rgba(8,2,4,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(200,60,80,0.3) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#180608 0deg,#100404 60deg,#180608 120deg,#100404 180deg,#180608 240deg,#100404 300deg,#180608 360deg)",
+    "diskBorder": "rgba(200,60,80,0.28)",
+    "diskGlow": "rgba(180,30,50,0.18)",
+    "diskCenter": "#0a0204",
+    "diskCenterBorder": "rgba(200,60,80,0.32)",
+    "song": "rgba(250,210,215,0.95)",
+    "lyric": "rgba(250,210,215,0.95)",
+    "logo": "rgba(210,150,160,0.8)",
+    "logoBorder": "rgba(200,60,80,0.14)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "붉은 장미",
+    "lyric": "가시 속에 피어난 너의 이름",
+    "diskIcon": "🌹",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

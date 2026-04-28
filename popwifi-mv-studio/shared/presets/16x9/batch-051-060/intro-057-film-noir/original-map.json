@@ -1,0 +1,19 @@
+{
+  "presetId": "intro-057-film-noir",
+  "primarySourceFile": "intropresetsviewer.html",
+  "sourceFile": "intropresetsviewer.html",
+  "viewerNumber": 8,
+  "sourceNumber": 57,
+  "sourceName": "Film Noir",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "title": true,
+    "cta": true,
+    "css": true
+  }
+}

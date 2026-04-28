@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-037-triangle-geometric",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "triangle",
+  "sourceNumber": 37,
+  "sourceName": "37 · 삼각형 기하학",
+  "song": "Sharp Edge",
+  "lyric": "날카롭고 선명한 너의 존재",
+  "diskIcon": "⚡",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

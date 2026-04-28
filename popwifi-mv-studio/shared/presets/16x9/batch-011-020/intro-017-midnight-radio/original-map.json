@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-017-midnight-radio",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "radio",
+  "sourceNumber": 17,
+  "sourceName": "17 · 밤의 라디오",
+  "song": "심야 라디오",
+  "lyric": "밤을 달리는 주파수 위의 노래",
+  "diskIcon": "📻",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

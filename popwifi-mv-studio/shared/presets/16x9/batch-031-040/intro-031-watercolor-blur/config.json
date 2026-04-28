@@ -1,0 +1,25 @@
+{
+  "id": "intro-031-watercolor-blur",
+  "title": "31 · 수채화 번짐",
+  "category": "intro",
+  "variant": "ballad",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-031-040",
+  "languageSupport": "both",
+  "sourceKey": "watercolor",
+  "sourceNumber": 31,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "fade"
+  },
+  "visual": {
+    "accent": "#7898d0",
+    "font": "Nanum Myeongjo"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

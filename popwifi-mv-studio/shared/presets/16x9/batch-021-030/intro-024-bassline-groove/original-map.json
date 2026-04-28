@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-024-bassline-groove",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "bassline",
+  "sourceNumber": 24,
+  "sourceName": "24 · 베이스라인 그루브",
+  "song": "Bassline Groove",
+  "lyric": "묵직하게 울리는 베이스의 그루브",
+  "diskIcon": "🎵",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

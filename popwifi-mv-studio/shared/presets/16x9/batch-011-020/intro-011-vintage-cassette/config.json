@@ -1,0 +1,25 @@
+{
+  "id": "intro-011-vintage-cassette",
+  "title": "11 · 빈티지 카세트",
+  "category": "intro",
+  "variant": "lofi",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-011-020",
+  "languageSupport": "both",
+  "sourceKey": "cassette",
+  "sourceNumber": 11,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "fade"
+  },
+  "visual": {
+    "accent": "#c8a858",
+    "font": "Nanum Myeongjo"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

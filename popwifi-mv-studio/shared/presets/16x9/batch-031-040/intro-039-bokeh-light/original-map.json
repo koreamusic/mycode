@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-039-bokeh-light",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "bokeh",
+  "sourceNumber": 39,
+  "sourceName": "39 · 빛 번짐 보케",
+  "song": "Bokeh Light",
+  "lyric": "빛이 번지듯 흐릿한 설렘",
+  "diskIcon": "💡",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

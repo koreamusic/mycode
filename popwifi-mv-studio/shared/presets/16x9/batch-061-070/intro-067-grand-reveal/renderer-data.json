@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "accent": "#c8a55a"
+  },
+  "timeline": {
+    "cycleSeconds": 10,
+    "titleIn": 0,
+    "ctaIn": 5
+  },
+  "content": {
+    "title": "Grand Reveal",
+    "tags": [
+      "클래식",
+      "발라드",
+      "웅장"
+    ],
+    "titleMode": "html-mount"
+  }
+}

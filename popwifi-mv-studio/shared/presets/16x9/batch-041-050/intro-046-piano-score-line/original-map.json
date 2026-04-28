@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-046-piano-score-line",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "score",
+  "sourceNumber": 46,
+  "sourceName": "46 · 피아노 악보선",
+  "song": "오선지",
+  "lyric": "오선지 위에 새겨진 우리의 노래",
+  "diskIcon": "♪",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

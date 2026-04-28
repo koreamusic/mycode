@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-004-dawn-firefly",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "firefly",
+  "sourceNumber": 4,
+  "sourceName": "04 · 새벽 반딧불",
+  "song": "반딧불 새벽",
+  "lyric": "어둠 속에 빛나던 작은 불꽃",
+  "diskIcon": "🌿",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

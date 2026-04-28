@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 28% 38%,rgba(200,140,40,0.14) 0%,transparent 55%),linear-gradient(158deg,#160e04 0%,#120c02 42%,#160e04 100%)",
+    "accent": "#d4a030",
+    "title": "#fffae8",
+    "titleGlow": "rgba(212,160,48,0.62)",
+    "line": "rgba(210,160,50,0.55)",
+    "titleSub": "rgba(248,210,140,0.72)",
+    "cardBg": "rgba(18,10,2,0.82)",
+    "cardBorder": "rgba(210,160,50,0.24)",
+    "cardShadow": "0 8px 40px rgba(200,120,20,0.13)",
+    "barGradient": "linear-gradient(180deg,rgba(14,8,2,0) 0%,rgba(14,8,2,0.82) 28%,rgba(10,6,1,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(210,160,50,0.28) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#1c1006 0deg,#160c02 60deg,#1c1006 120deg,#160c02 180deg,#1c1006 240deg,#160c02 300deg,#1c1006 360deg)",
+    "diskBorder": "rgba(210,160,50,0.26)",
+    "diskGlow": "rgba(200,120,20,0.16)",
+    "diskCenter": "#0e0802",
+    "diskCenterBorder": "rgba(210,160,50,0.30)",
+    "song": "rgba(250,220,165,0.95)",
+    "lyric": "rgba(250,220,165,0.95)",
+    "logo": "rgba(210,168,95,0.80)",
+    "logoBorder": "rgba(210,160,50,0.13)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "꿀빛 오후",
+    "lyric": "달콤하게 흐르는 시간",
+    "diskIcon": "⬡",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "intro-015-cat-afternoon",
+  "title": "15 · 고양이 오후",
+  "category": "intro",
+  "variant": "lofi",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-011-020",
+  "languageSupport": "both",
+  "sourceKey": "cat",
+  "sourceNumber": 15,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "fade"
+  },
+  "visual": {
+    "accent": "#d4a848",
+    "font": "Nanum Myeongjo"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 40% 35%,rgba(200,195,240,0.10) 0%,transparent 50%),linear-gradient(158deg,#08080e 0%,#060610 42%,#08080e 100%)",
+    "accent": "#c0b8e0",
+    "title": "#f8f8ff",
+    "titleGlow": "rgba(192,184,224,0.52)",
+    "line": "rgba(186,178,222,0.46)",
+    "titleSub": "rgba(224,220,248,0.66)",
+    "cardBg": "rgba(6,6,12,0.84)",
+    "cardBorder": "rgba(186,178,222,0.20)",
+    "cardShadow": "0 8px 40px rgba(120,110,200,0.10)",
+    "barGradient": "linear-gradient(180deg,rgba(5,5,10,0) 0%,rgba(5,5,10,0.84) 28%,rgba(3,3,8,0.98) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(186,178,222,0.23) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#0c0c14 0deg,#080810 60deg,#0c0c14 120deg,#080810 180deg,#0c0c14 240deg,#080810 300deg,#0c0c14 360deg)",
+    "diskBorder": "rgba(186,178,222,0.22)",
+    "diskGlow": "rgba(120,110,200,0.12)",
+    "diskCenter": "#040410",
+    "diskCenterBorder": "rgba(186,178,222,0.26)",
+    "song": "rgba(228,224,255,0.95)",
+    "lyric": "rgba(228,224,255,0.95)",
+    "logo": "rgba(178,172,235,0.76)",
+    "logoBorder": "rgba(186,178,222,0.10)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "달빛 소나타",
+    "lyric": "달빛 아래 흐르는 너의 선율",
+    "diskIcon": "🌙",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

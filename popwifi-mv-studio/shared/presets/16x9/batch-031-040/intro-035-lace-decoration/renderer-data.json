@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 28% 38%,rgba(220,210,230,0.10) 0%,transparent 55%),linear-gradient(158deg,#0a0810 0%,#080610 42%,#0a0810 100%)",
+    "accent": "#d0c0e0",
+    "title": "#fdfaff",
+    "titleGlow": "rgba(208,192,224,0.55)",
+    "line": "rgba(210,195,228,0.50)",
+    "titleSub": "rgba(232,220,248,0.68)",
+    "cardBg": "rgba(8,6,14,0.82)",
+    "cardBorder": "rgba(210,195,228,0.20)",
+    "cardShadow": "0 8px 40px rgba(160,130,210,0.10)",
+    "barGradient": "linear-gradient(180deg,rgba(6,5,10,0) 0%,rgba(6,5,10,0.82) 28%,rgba(4,3,8,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(210,195,228,0.24) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#0c0a14 0deg,#080610 60deg,#0c0a14 120deg,#080610 180deg,#0c0a14 240deg,#080610 300deg,#0c0a14 360deg)",
+    "diskBorder": "rgba(210,195,228,0.22)",
+    "diskGlow": "rgba(160,130,210,0.12)",
+    "diskCenter": "#060410",
+    "diskCenterBorder": "rgba(210,195,228,0.26)",
+    "song": "rgba(240,232,255,0.95)",
+    "lyric": "rgba(240,232,255,0.95)",
+    "logo": "rgba(200,185,235,0.78)",
+    "logoBorder": "rgba(210,195,228,0.10)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "하얀 드레스",
+    "lyric": "레이스처럼 섬세한 너의 손길",
+    "diskIcon": "🌸",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

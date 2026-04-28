@@ -1,0 +1,19 @@
+{
+  "presetId": "intro-062-ink-brush",
+  "primarySourceFile": "intropresetsviewer.html",
+  "sourceFile": "intropresetsviewer.html",
+  "viewerNumber": 13,
+  "sourceNumber": 62,
+  "sourceName": "Ink Brush",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "title": true,
+    "cta": true,
+    "css": true
+  }
+}

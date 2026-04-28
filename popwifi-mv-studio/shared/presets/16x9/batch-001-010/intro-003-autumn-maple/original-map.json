@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-003-autumn-maple",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "maple",
+  "sourceNumber": 3,
+  "sourceName": "03 · 가을 단풍",
+  "song": "가을 편지",
+  "lyric": "낙엽처럼 떨어지던 그날의 기억",
+  "diskIcon": "🍂",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

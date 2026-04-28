@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 30% 38%,rgba(255,80,200,0.17) 0%,transparent 48%),radial-gradient(ellipse at 70% 62%,rgba(80,180,255,0.14) 0%,transparent 45%),linear-gradient(158deg,#0e0416 0%,#0a0412 42%,#0e0416 100%)",
+    "accent": "#ff50c8",
+    "title": "#fff0ff",
+    "titleGlow": "rgba(255,80,200,0.70)",
+    "line": "rgba(255,100,210,0.65)",
+    "titleSub": "rgba(255,200,240,0.75)",
+    "cardBg": "rgba(12,4,20,0.82)",
+    "cardBorder": "rgba(255,100,210,0.30)",
+    "cardShadow": "0 8px 40px rgba(255,50,190,0.20)",
+    "barGradient": "linear-gradient(180deg,rgba(10,3,16,0) 0%,rgba(10,3,16,0.82) 28%,rgba(7,2,14,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(255,100,210,0.35) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#180620 0deg,#100416 60deg,#180620 120deg,#100416 180deg,#180620 240deg,#100416 300deg,#180620 360deg)",
+    "diskBorder": "rgba(255,100,210,0.35)",
+    "diskGlow": "rgba(255,50,190,0.25)",
+    "diskCenter": "#0a0318",
+    "diskCenterBorder": "rgba(255,100,210,0.40)",
+    "song": "rgba(255,218,248,0.95)",
+    "lyric": "rgba(255,218,248,0.95)",
+    "logo": "rgba(255,155,225,0.87)",
+    "logoBorder": "rgba(255,100,210,0.20)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "Glitter Pop",
+    "lyric": "빛나는 순간이 영원하길",
+    "diskIcon": "⭐",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

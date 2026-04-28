@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 25% 35%,rgba(120,80,200,0.14) 0%,transparent 55%),linear-gradient(158deg,#0c0818 0%,#08061a 40%,#0a081e 100%)",
+    "accent": "#b090e8",
+    "title": "#f5f0ff",
+    "titleGlow": "rgba(176,144,232,0.65)",
+    "line": "rgba(180,150,240,0.55)",
+    "titleSub": "rgba(210,190,250,0.72)",
+    "cardBg": "rgba(8,6,20,0.82)",
+    "cardBorder": "rgba(160,130,220,0.24)",
+    "cardShadow": "0 8px 40px rgba(120,80,200,0.14)",
+    "barGradient": "linear-gradient(180deg,rgba(6,4,16,0) 0%,rgba(6,4,16,0.82) 28%,rgba(4,2,14,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(160,130,220,0.28) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#100c1e 0deg,#080618 60deg,#100c1e 120deg,#080618 180deg,#100c1e 240deg,#080618 300deg,#100c1e 360deg)",
+    "diskBorder": "rgba(160,130,220,0.27)",
+    "diskGlow": "rgba(120,80,200,0.17)",
+    "diskCenter": "#060418",
+    "diskCenterBorder": "rgba(160,130,220,0.31)",
+    "song": "rgba(230,218,255,0.95)",
+    "lyric": "rgba(230,218,255,0.95)",
+    "logo": "rgba(180,155,235,0.8)",
+    "logoBorder": "rgba(160,130,220,0.13)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "별에게 닿는 노래",
+    "lyric": "별 하나에 담은 너의 이름",
+    "diskIcon": "⭐",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

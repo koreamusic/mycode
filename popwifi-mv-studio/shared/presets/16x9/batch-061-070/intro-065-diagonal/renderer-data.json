@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "accent": "#dc80ff"
+  },
+  "timeline": {
+    "cycleSeconds": 10,
+    "titleIn": 0,
+    "ctaIn": 5
+  },
+  "content": {
+    "title": "Diagonal",
+    "tags": [
+      "힙합",
+      "팝",
+      "모던"
+    ],
+    "titleMode": "html-mount"
+  }
+}

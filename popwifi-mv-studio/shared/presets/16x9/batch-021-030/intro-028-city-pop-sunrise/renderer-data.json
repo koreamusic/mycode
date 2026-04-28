@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 35% 40%,rgba(255,160,60,0.16) 0%,transparent 50%),radial-gradient(ellipse at 65% 60%,rgba(255,80,180,0.12) 0%,transparent 45%),linear-gradient(158deg,#14080c 0%,#180c08 45%,#14080c 100%)",
+    "accent": "#ff9050",
+    "title": "#fff8f0",
+    "titleGlow": "rgba(255,144,80,0.65)",
+    "line": "rgba(255,150,80,0.60)",
+    "titleSub": "rgba(255,210,175,0.73)",
+    "cardBg": "rgba(18,8,6,0.82)",
+    "cardBorder": "rgba(255,150,80,0.28)",
+    "cardShadow": "0 8px 40px rgba(255,100,40,0.17)",
+    "barGradient": "linear-gradient(180deg,rgba(16,8,4,0) 0%,rgba(16,8,4,0.82) 28%,rgba(12,6,2,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(255,150,80,0.32) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#1e1008 0deg,#180c06 60deg,#1e1008 120deg,#180c06 180deg,#1e1008 240deg,#180c06 300deg,#1e1008 360deg)",
+    "diskBorder": "rgba(255,150,80,0.30)",
+    "diskGlow": "rgba(255,100,40,0.20)",
+    "diskCenter": "#100804",
+    "diskCenterBorder": "rgba(255,150,80,0.34)",
+    "song": "rgba(255,228,200,0.95)",
+    "lyric": "rgba(255,228,200,0.95)",
+    "logo": "rgba(255,175,115,0.85)",
+    "logoBorder": "rgba(255,150,80,0.18)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "City Pop Sunrise",
+    "lyric": "도시의 아침이 빛나고 있어",
+    "diskIcon": "🌆",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 30% 38%,rgba(80,100,140,0.14) 0%,transparent 55%),linear-gradient(158deg,#080c14 0%,#06091a 42%,#080c14 100%)",
+    "accent": "#7090b8",
+    "title": "#eef4ff",
+    "titleGlow": "rgba(112,144,184,0.58)",
+    "line": "rgba(100,140,190,0.52)",
+    "titleSub": "rgba(170,195,230,0.70)",
+    "cardBg": "rgba(6,8,18,0.82)",
+    "cardBorder": "rgba(100,140,190,0.23)",
+    "cardShadow": "0 8px 40px rgba(60,100,160,0.12)",
+    "barGradient": "linear-gradient(180deg,rgba(6,8,14,0) 0%,rgba(6,8,14,0.82) 28%,rgba(4,6,12,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(100,140,190,0.26) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#0a0e18 0deg,#060a14 60deg,#0a0e18 120deg,#060a14 180deg,#0a0e18 240deg,#060a14 300deg,#0a0e18 360deg)",
+    "diskBorder": "rgba(100,140,190,0.25)",
+    "diskGlow": "rgba(60,100,160,0.15)",
+    "diskCenter": "#04060e",
+    "diskCenterBorder": "rgba(100,140,190,0.29)",
+    "song": "rgba(200,220,248,0.95)",
+    "lyric": "rgba(200,220,248,0.95)",
+    "logo": "rgba(140,175,220,0.78)",
+    "logoBorder": "rgba(100,140,190,0.12)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "빗소리",
+    "lyric": "빗소리에 묻어나는 너의 목소리",
+    "diskIcon": "🌂",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

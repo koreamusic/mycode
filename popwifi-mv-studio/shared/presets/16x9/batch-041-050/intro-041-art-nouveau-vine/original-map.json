@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-041-art-nouveau-vine",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "nouveau",
+  "sourceNumber": 41,
+  "sourceName": "41 · 아르누보 덩굴",
+  "song": "덩굴의 노래",
+  "lyric": "감고 감기는 덩굴처럼 깊어지는",
+  "diskIcon": "🌱",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

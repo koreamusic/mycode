@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "accent": "#00ff88"
+  },
+  "timeline": {
+    "cycleSeconds": 10,
+    "titleIn": 0,
+    "ctaIn": 5
+  },
+  "content": {
+    "title": "Glitch",
+    "tags": [
+      "일렉",
+      "EDM",
+      "강렬"
+    ],
+    "titleMode": "html-mount"
+  }
+}

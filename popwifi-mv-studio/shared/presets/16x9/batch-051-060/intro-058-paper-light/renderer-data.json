@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "accent": "#8a7a60"
+  },
+  "timeline": {
+    "cycleSeconds": 10,
+    "titleIn": 0,
+    "ctaIn": 5
+  },
+  "content": {
+    "title": "Paper Light",
+    "tags": [
+      "클래식",
+      "발라드",
+      "감성"
+    ],
+    "titleMode": "html-mount"
+  }
+}

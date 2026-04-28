@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 28% 38%,rgba(120,160,220,0.15) 0%,transparent 55%),linear-gradient(158deg,#080c16 0%,#060a14 42%,#080c16 100%)",
+    "accent": "#7898d0",
+    "title": "#eef4ff",
+    "titleGlow": "rgba(120,152,208,0.60)",
+    "line": "rgba(110,160,220,0.55)",
+    "titleSub": "rgba(180,210,248,0.72)",
+    "cardBg": "rgba(6,8,20,0.82)",
+    "cardBorder": "rgba(110,160,220,0.24)",
+    "cardShadow": "0 8px 40px rgba(70,130,200,0.12)",
+    "barGradient": "linear-gradient(180deg,rgba(5,7,16,0) 0%,rgba(5,7,16,0.82) 28%,rgba(3,5,14,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(110,160,220,0.28) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#0a0e1c 0deg,#060a18 60deg,#0a0e1c 120deg,#060a18 180deg,#0a0e1c 240deg,#060a18 300deg,#0a0e1c 360deg)",
+    "diskBorder": "rgba(110,160,220,0.26)",
+    "diskGlow": "rgba(70,130,200,0.16)",
+    "diskCenter": "#040614",
+    "diskCenterBorder": "rgba(110,160,220,0.30)",
+    "song": "rgba(205,228,255,0.95)",
+    "lyric": "rgba(205,228,255,0.95)",
+    "logo": "rgba(140,185,240,0.80)",
+    "logoBorder": "rgba(110,160,220,0.13)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "수채화 빗속에",
+    "lyric": "번지는 색처럼 퍼져가는 그리움",
+    "diskIcon": "🖌️",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

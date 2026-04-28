@@ -1,0 +1,25 @@
+{
+  "id": "intro-004-dawn-firefly",
+  "title": "04 · 새벽 반딧불",
+  "category": "intro",
+  "variant": "ballad",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-001-010",
+  "languageSupport": "both",
+  "sourceKey": "firefly",
+  "sourceNumber": 4,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "fade"
+  },
+  "visual": {
+    "accent": "#7ae840",
+    "font": "Noto Serif KR"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

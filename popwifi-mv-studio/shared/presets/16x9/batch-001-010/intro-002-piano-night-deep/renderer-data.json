@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 20% 30%,rgba(100,130,200,0.14) 0%,transparent 55%),linear-gradient(155deg,#080c1a 0%,#0c1028 40%,#0a0818 100%)",
+    "accent": "#c8a84a",
+    "title": "#fffbee",
+    "titleGlow": "rgba(200,168,74,0.62)",
+    "line": "rgba(200,168,74,0.60)",
+    "titleSub": "rgba(220,190,100,0.70)",
+    "cardBg": "rgba(8,10,22,0.82)",
+    "cardBorder": "rgba(200,168,74,0.25)",
+    "cardShadow": "0 8px 40px rgba(200,140,30,0.12)",
+    "barGradient": "linear-gradient(180deg,rgba(8,10,22,0) 0%,rgba(8,10,22,0.82) 28%,rgba(5,7,18,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(200,168,74,0.3) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#0e1428 0deg,#080c1e 60deg,#0e1428 120deg,#080c1e 180deg,#0e1428 240deg,#080c1e 300deg,#0e1428 360deg)",
+    "diskBorder": "rgba(200,168,74,0.28)",
+    "diskGlow": "rgba(200,140,30,0.18)",
+    "diskCenter": "#06091a",
+    "diskCenterBorder": "rgba(200,168,74,0.32)",
+    "song": "rgba(230,210,160,0.95)",
+    "lyric": "rgba(230,210,160,0.95)",
+    "logo": "rgba(200,170,100,0.8)",
+    "logoBorder": "rgba(200,168,74,0.14)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "깊은 밤의 선율",
+    "lyric": "건반 위에 흐르는 오래된 기억",
+    "diskIcon": "🎹",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

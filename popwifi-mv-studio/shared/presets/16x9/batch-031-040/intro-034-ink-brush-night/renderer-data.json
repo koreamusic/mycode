@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "linear-gradient(158deg,#080808 0%,#060606 42%,#080808 100%)",
+    "accent": "#c8c0b8",
+    "title": "#f0f0f0",
+    "titleGlow": "rgba(200,192,184,0.50)",
+    "line": "rgba(200,190,180,0.45)",
+    "titleSub": "rgba(225,220,215,0.68)",
+    "cardBg": "rgba(8,8,8,0.86)",
+    "cardBorder": "rgba(200,190,180,0.20)",
+    "cardShadow": "0 8px 40px rgba(0,0,0,0.40)",
+    "barGradient": "linear-gradient(180deg,rgba(6,6,6,0) 0%,rgba(6,6,6,0.85) 28%,rgba(4,4,4,0.98) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(200,190,180,0.22) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#101010 0deg,#080808 60deg,#101010 120deg,#080808 180deg,#101010 240deg,#080808 300deg,#101010 360deg)",
+    "diskBorder": "rgba(200,190,180,0.22)",
+    "diskGlow": "rgba(180,170,160,0.12)",
+    "diskCenter": "#060606",
+    "diskCenterBorder": "rgba(200,190,180,0.26)",
+    "song": "rgba(230,228,225,0.95)",
+    "lyric": "rgba(230,228,225,0.95)",
+    "logo": "rgba(195,190,185,0.78)",
+    "logoBorder": "rgba(200,190,180,0.10)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "먹빛 달밤",
+    "lyric": "먹물처럼 스미는 밤의 노래",
+    "diskIcon": "🌑",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

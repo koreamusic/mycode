@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-027-pop-bubble",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "bubble",
+  "sourceNumber": 27,
+  "sourceName": "27 · 팝 버블",
+  "song": "Pop Bubble",
+  "lyric": "터질 것 같은 설레임",
+  "diskIcon": "✨",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

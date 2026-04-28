@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-009-star-music-box",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "star",
+  "sourceNumber": 9,
+  "sourceName": "09 · 별빛 오르골",
+  "song": "별에게 닿는 노래",
+  "lyric": "별 하나에 담은 너의 이름",
+  "diskIcon": "⭐",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}
