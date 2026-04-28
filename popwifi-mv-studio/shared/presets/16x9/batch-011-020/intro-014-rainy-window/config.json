@@ -1,0 +1,25 @@
+{
+  "id": "intro-014-rainy-window",
+  "title": "14 · 비 오는 창가",
+  "category": "intro",
+  "variant": "lofi",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-011-020",
+  "languageSupport": "both",
+  "sourceKey": "rain",
+  "sourceNumber": 14,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "fade"
+  },
+  "visual": {
+    "accent": "#7090b8",
+    "font": "Noto Serif KR"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

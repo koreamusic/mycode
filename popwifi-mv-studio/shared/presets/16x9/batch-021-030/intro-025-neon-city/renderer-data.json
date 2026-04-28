@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 30% 38%,rgba(255,40,120,0.16) 0%,transparent 50%),radial-gradient(ellipse at 70% 60%,rgba(40,120,255,0.14) 0%,transparent 50%),linear-gradient(158deg,#100618 0%,#080412 42%,#100618 100%)",
+    "accent": "#ff2880",
+    "title": "#fff0fa",
+    "titleGlow": "rgba(255,40,128,0.70)",
+    "line": "rgba(255,60,140,0.65)",
+    "titleSub": "rgba(255,180,220,0.75)",
+    "cardBg": "rgba(12,4,20,0.82)",
+    "cardBorder": "rgba(255,60,140,0.30)",
+    "cardShadow": "0 8px 40px rgba(255,20,100,0.20)",
+    "barGradient": "linear-gradient(180deg,rgba(10,4,18,0) 0%,rgba(10,4,18,0.82) 28%,rgba(6,2,14,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(255,60,140,0.35) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#180820 0deg,#100618 60deg,#180820 120deg,#100618 180deg,#180820 240deg,#100618 300deg,#180820 360deg)",
+    "diskBorder": "rgba(255,60,140,0.35)",
+    "diskGlow": "rgba(255,20,100,0.25)",
+    "diskCenter": "#0a0416",
+    "diskCenterBorder": "rgba(255,60,140,0.40)",
+    "song": "rgba(255,220,240,0.95)",
+    "lyric": "rgba(255,220,240,0.95)",
+    "logo": "rgba(255,140,200,0.85)",
+    "logoBorder": "rgba(255,60,140,0.18)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "Neon City",
+    "lyric": "빛나는 도시 위를 날아가",
+    "diskIcon": "⚡",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

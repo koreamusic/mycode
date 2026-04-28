@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>02 · 깊은 밤 피아노</title>
+  <link rel="stylesheet" href="./renderer.css" />
+</head>
+<body>
+  <div class="mv-wrap" id="mv">
+    <div class="bg"></div>
+    <div class="particles" id="particles"></div>
+    <div class="frame-layer" id="frameLayer">
+      <svg id="frameSvg" viewBox="0 0 900 506" fill="none" width="100%" height="100%" style="position:absolute;inset:0;"></svg>
+    </div>
+
+    <div class="title-layer">
+      <div class="title-main" id="titleMain" data-preview-title>깊은 밤의 선율</div>
+    </div>
+
+    <div class="sub-layer" id="subLayer">
+      <div class="sub-card">
+        <style>.sub-anim.active .spzpjk8{animation:sPopzpjk8 0.6s cubic-bezier(0.34,1.56,0.64,1) forwards;}@keyframes sPopzpjk8{0%{transform:scale(0) rotate(-30deg);}100%{transform:scale(1) rotate(0deg);}}.sub-anim.active .blzpjk8{animation:bRingzpjk8 0.5s ease 0.4s 2;}@keyframes bRingzpjk8{0%,100%{transform:rotate(0);}30%{transform:rotate(-15deg);}70%{transform:rotate(15deg);}}</style><div class="sub-anim sub-item"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path class="spzpjk8" d="M14 4L16.5 11H24L18 15.5L20.5 22.5L14 18L7.5 22.5L10 15.5L4 11H11.5Z" fill="#c8a84a" opacity="0.9" style="transform-origin:14px 14px;transform:scale(0)"/><path d="M14 4L16.5 11H24L18 15.5L20.5 22.5L14 18L7.5 22.5L10 15.5L4 11H11.5Z" stroke="#c8a84a" stroke-width="0.8" fill="none" opacity="0.4"/></svg><span class="sub-text" style="color:rgba(220,190,100,0.92)">좋아요</span></div><div class="sub-divider" style="background:rgba(200,168,74,0.25);width:1px;height:22px;"></div><div class="sub-anim sub-item"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><g class="blzpjk8" style="transform-origin:14px 6px"><rect x="8" y="6" width="12" height="10" rx="6" stroke="#d4b456" stroke-width="1.5" fill="rgba(212,180,86,0.1)"/><path d="M6 17H22" stroke="#d4b456" stroke-width="1.5" stroke-linecap="round"/><path d="M11 17C11 18.66 12.34 20 14 20S17 18.66 17 17" stroke="#d4b456" stroke-width="1.2" fill="none"/><line x1="14" y1="4" x2="14" y2="6" stroke="#d4b456" stroke-width="1.5" stroke-linecap="round"/></g></svg><span class="sub-text" style="color:rgba(220,190,100,0.92)">구독</span></div>
+      </div>
+    </div>
+
+    <div class="bottom-bar" id="bottomBar">
+      <div class="bar-gradient"></div>
+      <div class="bar-topline"></div>
+      <div class="bar-inner">
+        <div class="disk-wrap">
+          <div class="disk"></div>
+          <div class="disk-center"></div>
+          <div class="disk-icon">🎹</div>
+        </div>
+        <div class="eq-wrap" id="eqWrap"></div>
+        <div class="bar-copy">
+          <div class="bar-line bar-lyric" data-preview-lyric>건반 위에 흐르는 오래된 기억</div>
+          <div class="bar-line bar-song" data-preview-title data-preview-title-fallback style="display:none;">깊은 밤의 선율</div>
+        </div>
+        <div class="bar-logo">
+          <div class="bar-logo-name">POP WiFi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./renderer.js"></script>
+</body>
+</html>

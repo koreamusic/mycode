@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 30% 35%,rgba(160,200,240,0.12) 0%,transparent 55%),linear-gradient(158deg,#08101e 0%,#060c18 40%,#08101a 100%)",
+    "accent": "#90c0e8",
+    "title": "#f0f8ff",
+    "titleGlow": "rgba(144,192,232,0.60)",
+    "line": "rgba(160,210,250,0.55)",
+    "titleSub": "rgba(190,225,255,0.72)",
+    "cardBg": "rgba(6,12,24,0.82)",
+    "cardBorder": "rgba(140,195,240,0.24)",
+    "cardShadow": "0 8px 40px rgba(80,150,220,0.12)",
+    "barGradient": "linear-gradient(180deg,rgba(6,10,18,0) 0%,rgba(6,10,18,0.82) 28%,rgba(4,8,16,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(140,195,240,0.28) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#0a1420 0deg,#060e18 60deg,#0a1420 120deg,#060e18 180deg,#0a1420 240deg,#060e18 300deg,#0a1420 360deg)",
+    "diskBorder": "rgba(140,195,240,0.26)",
+    "diskGlow": "rgba(80,150,220,0.16)",
+    "diskCenter": "#040c16",
+    "diskCenterBorder": "rgba(140,195,240,0.30)",
+    "song": "rgba(220,238,255,0.95)",
+    "lyric": "rgba(220,238,255,0.95)",
+    "logo": "rgba(160,200,240,0.8)",
+    "logoBorder": "rgba(140,195,240,0.13)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "눈 내리는 밤",
+    "lyric": "창가에 쌓이는 눈처럼 조용히",
+    "diskIcon": "❄️",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

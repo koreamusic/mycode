@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-005-ink-bamboo",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "bamboo",
+  "sourceNumber": 5,
+  "sourceName": "05 · 수묵 대나무",
+  "song": "대숲의 바람",
+  "lyric": "푸른 대숲 사이로 스며드는 새벽",
+  "diskIcon": "🎋",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

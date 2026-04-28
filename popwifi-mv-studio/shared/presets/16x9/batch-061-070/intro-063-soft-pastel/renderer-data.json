@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "accent": "#f0a090"
+  },
+  "timeline": {
+    "cycleSeconds": 10,
+    "titleIn": 0,
+    "ctaIn": 5
+  },
+  "content": {
+    "title": "Soft Pastel",
+    "tags": [
+      "팝",
+      "발랄",
+      "귀여운"
+    ],
+    "titleMode": "html-mount"
+  }
+}

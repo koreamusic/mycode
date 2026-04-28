@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-049-compass-map",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "compass",
+  "sourceNumber": 49,
+  "sourceName": "49 · 나침반 지도",
+  "song": "어딘가에서",
+  "lyric": "나침반이 가리키는 너의 방향",
+  "diskIcon": "🗺️",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

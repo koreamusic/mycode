@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-034-ink-brush-night",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "ink",
+  "sourceNumber": 34,
+  "sourceName": "34 · 붓터치 먹",
+  "song": "먹빛 달밤",
+  "lyric": "먹물처럼 스미는 밤의 노래",
+  "diskIcon": "🌑",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

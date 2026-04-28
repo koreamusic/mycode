@@ -1,0 +1,19 @@
+{
+  "presetId": "intro-063-soft-pastel",
+  "primarySourceFile": "intropresetsviewer.html",
+  "sourceFile": "intropresetsviewer.html",
+  "viewerNumber": 14,
+  "sourceNumber": 63,
+  "sourceName": "Soft Pastel",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "title": true,
+    "cta": true,
+    "css": true
+  }
+}

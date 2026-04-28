@@ -1,0 +1,19 @@
+{
+  "presetId": "intro-060-minimal-line",
+  "primarySourceFile": "intropresetsviewer.html",
+  "sourceFile": "intropresetsviewer.html",
+  "viewerNumber": 11,
+  "sourceNumber": 60,
+  "sourceName": "Minimal Line",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "title": true,
+    "cta": true,
+    "css": true
+  }
+}

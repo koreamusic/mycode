@@ -1,0 +1,21 @@
+{
+  "id": "intro-059-neon-glow",
+  "title": "059 · Neon Glow",
+  "category": "intro",
+  "variant": "viewer",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-051-060",
+  "languageSupport": "both",
+  "sourceKey": "10",
+  "sourceNumber": 59,
+  "flow": {
+    "titleSeconds": 5,
+    "ctaSeconds": 5
+  },
+  "visual": {
+    "accent": "#00d4ff"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

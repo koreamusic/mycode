@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-038-hexagon-honeycomb",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "hex",
+  "sourceNumber": 38,
+  "sourceName": "38 · 육각 허니컴",
+  "song": "꿀빛 오후",
+  "lyric": "달콤하게 흐르는 시간",
+  "diskIcon": "⬡",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

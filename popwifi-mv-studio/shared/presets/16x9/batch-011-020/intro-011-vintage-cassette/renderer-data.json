@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 30% 38%,rgba(180,150,90,0.13) 0%,transparent 55%),linear-gradient(158deg,#1a1408 0%,#140e04 42%,#100c06 100%)",
+    "accent": "#c8a858",
+    "title": "#fff8e8",
+    "titleGlow": "rgba(200,168,88,0.62)",
+    "line": "rgba(200,160,80,0.58)",
+    "titleSub": "rgba(235,200,135,0.70)",
+    "cardBg": "rgba(18,12,4,0.82)",
+    "cardBorder": "rgba(200,160,80,0.25)",
+    "cardShadow": "0 8px 40px rgba(180,130,40,0.12)",
+    "barGradient": "linear-gradient(180deg,rgba(14,10,4,0) 0%,rgba(14,10,4,0.82) 28%,rgba(10,8,2,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(200,160,80,0.28) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#1c1408 0deg,#140e04 60deg,#1c1408 120deg,#140e04 180deg,#1c1408 240deg,#140e04 300deg,#1c1408 360deg)",
+    "diskBorder": "rgba(200,160,80,0.27)",
+    "diskGlow": "rgba(180,130,40,0.16)",
+    "diskCenter": "#0e0a02",
+    "diskCenterBorder": "rgba(200,160,80,0.31)",
+    "song": "rgba(245,215,160,0.95)",
+    "lyric": "rgba(245,215,160,0.95)",
+    "logo": "rgba(205,165,95,0.8)",
+    "logoBorder": "rgba(200,160,80,0.13)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "오래된 테이프",
+    "lyric": "늘어진 테이프처럼 흐릿한 기억",
+    "diskIcon": "📼",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

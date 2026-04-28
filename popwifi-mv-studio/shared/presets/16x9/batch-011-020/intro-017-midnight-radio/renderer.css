@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;700&family=Noto+Serif+KR:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+:root{
+  --radio-bg:radial-gradient(ellipse at 28% 38%,rgba(80,60,140,0.14) 0%,transparent 55%),linear-gradient(158deg,#0c0818 0%,#080614 42%,#0c0818 100%);
+  --radio-accent:#a880e0;
+  --radio-title:#f5f0ff;
+  --radio-title-glow:rgba(168,128,224,0.60);
+  --radio-line:rgba(160,120,220,0.55);
+  --radio-subtext:rgba(210,185,250,0.70);
+  --radio-card-bg:rgba(8,6,18,0.82);
+  --radio-card-border:rgba(160,120,220,0.23);
+  --radio-card-shadow:0 8px 40px rgba(110,70,200,0.12);
+  --radio-bar-grad:linear-gradient(180deg,rgba(6,4,14,0) 0%,rgba(6,4,14,0.82) 28%,rgba(4,2,12,0.97) 100%);
+  --radio-bar-top:linear-gradient(90deg,transparent,rgba(160,120,220,0.27) 50%,transparent);
+  --radio-disk:conic-gradient(from 0deg,#100818 0deg,#080614 60deg,#100818 120deg,#080614 180deg,#100818 240deg,#080614 300deg,#100818 360deg);
+  --radio-disk-border:rgba(160,120,220,0.25);
+  --radio-disk-glow:rgba(110,70,200,0.15);
+  --radio-disk-center:#060412;
+  --radio-disk-center-border:rgba(160,120,220,0.29);
+  --radio-song:rgba(228,210,255,0.95);
+  --radio-lyric:rgba(228,210,255,0.95);
+  --radio-logo:rgba(175,145,235,0.78);
+  --radio-logo-border:rgba(160,120,220,0.12);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;background:#080808;font-family:'Noto Sans KR',sans-serif}
+body{display:grid;place-items:center}
+
+.mv-wrap{
+  position:relative;width:100%;height:100%;
+  overflow:hidden;isolation:isolate;
+  background:var(--radio-bg);
+}
+
+.bg,.particles,.frame-layer{position:absolute;inset:0}
+.particles{pointer-events:none;overflow:hidden;z-index:1}
+.frame-layer{pointer-events:none;opacity:0;transition:opacity .9s ease}
+.frame-layer.show{opacity:1}
+.frame-layer.hide{opacity:0;transition:opacity 1.2s ease}
+
+.title-layer{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  padding:0 96px;pointer-events:none;z-index:2;
+}
+
+.title-main{
+  font-family:'Noto Serif KR',serif;
+  font-weight:700;font-size:52px;line-height:1.24;
+  letter-spacing:.04em;text-align:center;
+  color:var(--radio-title);
+  opacity:0;transform:translateY(22px);
+  text-shadow:0 0 48px var(--radio-title-glow),0 4px 10px rgba(0,0,0,.45);
+  transition:opacity 1.3s ease,transform 1.3s cubic-bezier(.16,1,.3,1);
+}
+.title-main.show{opacity:1;transform:translateY(0)}
+.title-main.hide{opacity:0;transform:translateY(-14px);transition:opacity .8s ease,transform .8s ease}
+
+.sub-layer{
+  position:absolute;left:50%;bottom:130px;
+  transform:translateX(-50%) translateY(28px);
+  opacity:0;transition:opacity .8s ease,transform .8s cubic-bezier(.16,1,.3,1);
+  pointer-events:none;white-space:nowrap;z-index:2;
+}
+.sub-layer.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.sub-layer.hide{opacity:0;transform:translateX(-50%) translateY(-14px);transition:opacity .7s ease,transform .7s ease}
+
+.sub-card{
+  display:flex;align-items:center;gap:32px;
+  padding:16px 36px;border-radius:50px;
+  background:var(--radio-card-bg);
+  border:1px solid var(--radio-card-border);
+  box-shadow:var(--radio-card-shadow);
+  backdrop-filter:blur(16px);
+}
+
+.sub-item{display:flex;align-items:center;gap:11px}
+.sub-divider{width:1px;height:22px;background:var(--radio-accent);opacity:0.25}
+.sub-text{
+  font-family:'Noto Serif KR',serif;
+  font-weight:700;font-size:15px;letter-spacing:.06em;
+  color:var(--radio-subtext);
+}
+
+.bottom-bar{
+  position:absolute;left:0;right:0;bottom:0;height:80px;
+  transform:translateY(100%);opacity:0;
+  transition:transform 1s cubic-bezier(.16,1,.3,1),opacity 1s ease;z-index:2;
+}
+.bottom-bar.show{transform:translateY(0);opacity:1}
+
+.bar-gradient{position:absolute;inset:0;background:var(--radio-bar-grad)}
+.bar-topline{position:absolute;top:0;left:20px;right:20px;height:1px;background:var(--radio-bar-top)}
+.bar-inner{
+  position:absolute;inset:0;display:flex;align-items:center;
+  gap:16px;padding:0 24px 0 20px;
+}
+
+.disk-wrap{position:relative;flex-shrink:0;width:52px;height:52px}
+.disk{
+  width:52px;height:52px;border-radius:50%;
+  background:var(--radio-disk);
+  border:1.5px solid var(--radio-disk-border);
+  box-shadow:0 0 14px var(--radio-disk-glow),inset 0 0 10px rgba(0,0,0,.5);
+  animation:diskSpin 8s linear infinite;
+}
+.disk-center{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:14px;height:14px;border-radius:50%;
+  background:var(--radio-disk-center);
+  border:1px solid var(--radio-disk-center-border);z-index:2;
+}
+.disk-icon{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-size:18px;z-index:1;
+}
+
+.eq-wrap{display:flex;align-items:flex-end;flex-shrink:0;height:52px;gap:1px}
+.eq-wrap svg{display:block}
+
+.bar-copy{position:relative;flex:1;min-width:0;height:52px;}
+
+.bar-line{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:clamp(220px,40vw,460px);text-align:center;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  font-family:'Noto Serif KR',serif;font-weight:700;font-size:18px;letter-spacing:.02em;
+}
+
+.bar-lyric{color:var(--radio-lyric)}
+.bar-song{color:var(--radio-song)}
+
+.bar-logo{
+  flex-shrink:0;display:flex;align-items:center;
+  justify-content:flex-end;padding-left:16px;
+  border-left:1px solid var(--radio-logo-border);
+}
+.bar-logo-name{
+  font-family:'Noto Sans KR',sans-serif;font-weight:700;
+  font-size:12px;letter-spacing:.18em;white-space:nowrap;
+  color:var(--radio-logo);
+}
+
+@keyframes diskSpin{to{transform:rotate(360deg)}}
+
+@media(max-width:720px){
+  .title-layer{padding:0 56px}
+  .title-main{font-size:40px}
+  .sub-layer{bottom:118px}
+  .sub-card{padding:14px 24px;gap:22px}
+  .bar-line{width:clamp(170px,50vw,340px);font-size:16px}
+}

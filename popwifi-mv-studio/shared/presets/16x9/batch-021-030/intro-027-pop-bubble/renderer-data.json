@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 30% 38%,rgba(120,180,255,0.16) 0%,transparent 50%),radial-gradient(ellipse at 70% 60%,rgba(200,120,255,0.12) 0%,transparent 45%),linear-gradient(158deg,#060c18 0%,#080c20 42%,#060c18 100%)",
+    "accent": "#80c0ff",
+    "title": "#f0f8ff",
+    "titleGlow": "rgba(128,192,255,0.62)",
+    "line": "rgba(120,190,255,0.55)",
+    "titleSub": "rgba(200,230,255,0.72)",
+    "cardBg": "rgba(5,10,20,0.82)",
+    "cardBorder": "rgba(120,190,255,0.26)",
+    "cardShadow": "0 8px 40px rgba(80,160,255,0.15)",
+    "barGradient": "linear-gradient(180deg,rgba(5,8,16,0) 0%,rgba(5,8,16,0.82) 28%,rgba(3,6,14,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(120,190,255,0.30) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#0a1020 0deg,#060c18 60deg,#0a1020 120deg,#060c18 180deg,#0a1020 240deg,#060c18 300deg,#0a1020 360deg)",
+    "diskBorder": "rgba(120,190,255,0.28)",
+    "diskGlow": "rgba(80,160,255,0.18)",
+    "diskCenter": "#040810",
+    "diskCenterBorder": "rgba(120,190,255,0.32)",
+    "song": "rgba(215,238,255,0.95)",
+    "lyric": "rgba(215,238,255,0.95)",
+    "logo": "rgba(150,200,255,0.82)",
+    "logoBorder": "rgba(120,190,255,0.16)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "Pop Bubble",
+    "lyric": "터질 것 같은 설레임",
+    "diskIcon": "✨",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

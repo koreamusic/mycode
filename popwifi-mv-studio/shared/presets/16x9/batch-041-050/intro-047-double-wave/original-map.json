@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-047-double-wave",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "doublewave",
+  "sourceNumber": 47,
+  "sourceName": "47 · 파도 이중선",
+  "song": "Double Wave",
+  "lyric": "두 겹의 파도처럼 밀려오는 설렘",
+  "diskIcon": "〰️",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

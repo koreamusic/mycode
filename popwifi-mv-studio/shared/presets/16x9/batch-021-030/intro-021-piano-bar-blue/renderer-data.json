@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 28% 38%,rgba(40,80,160,0.15) 0%,transparent 55%),linear-gradient(158deg,#060814 0%,#040610 42%,#060814 100%)",
+    "accent": "#4868c0",
+    "title": "#eef2ff",
+    "titleGlow": "rgba(72,104,192,0.60)",
+    "line": "rgba(70,110,200,0.55)",
+    "titleSub": "rgba(165,185,245,0.70)",
+    "cardBg": "rgba(4,6,18,0.82)",
+    "cardBorder": "rgba(70,110,200,0.23)",
+    "cardShadow": "0 8px 40px rgba(40,80,180,0.12)",
+    "barGradient": "linear-gradient(180deg,rgba(4,5,14,0) 0%,rgba(4,5,14,0.82) 28%,rgba(2,3,12,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(70,110,200,0.27) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#080c1a 0deg,#060a16 60deg,#080c1a 120deg,#060a16 180deg,#080c1a 240deg,#060a16 300deg,#080c1a 360deg)",
+    "diskBorder": "rgba(70,110,200,0.25)",
+    "diskGlow": "rgba(40,80,180,0.15)",
+    "diskCenter": "#030512",
+    "diskCenterBorder": "rgba(70,110,200,0.29)",
+    "song": "rgba(198,215,255,0.95)",
+    "lyric": "rgba(198,215,255,0.95)",
+    "logo": "rgba(140,165,235,0.78)",
+    "logoBorder": "rgba(70,110,200,0.12)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "Blue Piano Bar",
+    "lyric": "피아노 선율에 취하는 밤",
+    "diskIcon": "🎵",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

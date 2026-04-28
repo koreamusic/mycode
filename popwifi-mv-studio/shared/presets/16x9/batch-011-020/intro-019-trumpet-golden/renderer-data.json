@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 30% 38%,rgba(220,170,40,0.15) 0%,transparent 55%),linear-gradient(158deg,#180e02 0%,#120a00 42%,#0e0802 100%)",
+    "accent": "#e8b820",
+    "title": "#fffae0",
+    "titleGlow": "rgba(232,184,32,0.65)",
+    "line": "rgba(230,190,40,0.60)",
+    "titleSub": "rgba(250,220,140,0.72)",
+    "cardBg": "rgba(18,10,0,0.82)",
+    "cardBorder": "rgba(230,190,40,0.26)",
+    "cardShadow": "0 8px 40px rgba(220,150,10,0.15)",
+    "barGradient": "linear-gradient(180deg,rgba(14,8,0,0) 0%,rgba(14,8,0,0.82) 28%,rgba(10,6,0,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(230,190,40,0.32) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#1e1004 0deg,#160c00 60deg,#1e1004 120deg,#160c00 180deg,#1e1004 240deg,#160c00 300deg,#1e1004 360deg)",
+    "diskBorder": "rgba(230,190,40,0.30)",
+    "diskGlow": "rgba(220,150,10,0.20)",
+    "diskCenter": "#0e0800",
+    "diskCenterBorder": "rgba(230,190,40,0.34)",
+    "song": "rgba(255,230,160,0.95)",
+    "lyric": "rgba(255,230,160,0.95)",
+    "logo": "rgba(220,185,100,0.82)",
+    "logoBorder": "rgba(230,190,40,0.15)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "Golden Hour",
+    "lyric": "황금빛 노을 속 울려 퍼진 트럼펫",
+    "diskIcon": "🎺",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

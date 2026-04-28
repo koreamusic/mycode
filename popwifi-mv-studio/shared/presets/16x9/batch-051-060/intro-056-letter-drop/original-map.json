@@ -1,0 +1,19 @@
+{
+  "presetId": "intro-056-letter-drop",
+  "primarySourceFile": "intropresetsviewer.html",
+  "sourceFile": "intropresetsviewer.html",
+  "viewerNumber": 7,
+  "sourceNumber": 56,
+  "sourceName": "Letter Drop",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "title": true,
+    "cta": true,
+    "css": true
+  }
+}

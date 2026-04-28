@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 30% 38%,rgba(80,40,160,0.18) 0%,transparent 50%),radial-gradient(ellipse at 70% 62%,rgba(180,60,220,0.14) 0%,transparent 45%),linear-gradient(158deg,#060412 0%,#080418 42%,#060412 100%)",
+    "accent": "#9050e0",
+    "title": "#f5f0ff",
+    "titleGlow": "rgba(144,80,224,0.68)",
+    "line": "rgba(160,90,240,0.62)",
+    "titleSub": "rgba(220,190,255,0.75)",
+    "cardBg": "rgba(5,3,16,0.82)",
+    "cardBorder": "rgba(160,90,240,0.30)",
+    "cardShadow": "0 8px 40px rgba(120,50,220,0.20)",
+    "barGradient": "linear-gradient(180deg,rgba(5,3,14,0) 0%,rgba(5,3,14,0.82) 28%,rgba(3,2,12,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(160,90,240,0.35) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#0e0820 0deg,#080418 60deg,#0e0820 120deg,#080418 180deg,#0e0820 240deg,#080418 300deg,#0e0820 360deg)",
+    "diskBorder": "rgba(160,90,240,0.35)",
+    "diskGlow": "rgba(120,50,220,0.25)",
+    "diskCenter": "#040216",
+    "diskCenterBorder": "rgba(160,90,240,0.40)",
+    "song": "rgba(228,208,255,0.95)",
+    "lyric": "rgba(228,208,255,0.95)",
+    "logo": "rgba(175,140,240,0.87)",
+    "logoBorder": "rgba(160,90,240,0.20)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "Dream Space",
+    "lyric": "우주 끝까지 닿을 것 같은 꿈",
+    "diskIcon": "🌠",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

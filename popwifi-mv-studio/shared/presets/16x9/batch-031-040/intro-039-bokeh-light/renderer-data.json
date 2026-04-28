@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 30% 38%,rgba(255,200,80,0.16) 0%,transparent 50%),radial-gradient(ellipse at 70% 62%,rgba(255,100,200,0.12) 0%,transparent 45%),linear-gradient(158deg,#0e0c04 0%,#100a02 42%,#0e0c04 100%)",
+    "accent": "#f0c040",
+    "title": "#fffcee",
+    "titleGlow": "rgba(240,192,64,0.65)",
+    "line": "rgba(240,200,70,0.60)",
+    "titleSub": "rgba(255,235,170,0.73)",
+    "cardBg": "rgba(14,10,2,0.82)",
+    "cardBorder": "rgba(240,200,70,0.28)",
+    "cardShadow": "0 8px 40px rgba(230,160,20,0.17)",
+    "barGradient": "linear-gradient(180deg,rgba(12,8,2,0) 0%,rgba(12,8,2,0.82) 28%,rgba(8,6,1,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(240,200,70,0.32) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#181208 0deg,#120e04 60deg,#181208 120deg,#120e04 180deg,#181208 240deg,#120e04 300deg,#181208 360deg)",
+    "diskBorder": "rgba(240,200,70,0.30)",
+    "diskGlow": "rgba(230,160,20,0.20)",
+    "diskCenter": "#0c0a02",
+    "diskCenterBorder": "rgba(240,200,70,0.34)",
+    "song": "rgba(255,238,190,0.95)",
+    "lyric": "rgba(255,238,190,0.95)",
+    "logo": "rgba(240,200,115,0.84)",
+    "logoBorder": "rgba(240,200,70,0.17)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "Bokeh Light",
+    "lyric": "빛이 번지듯 흐릿한 설렘",
+    "diskIcon": "💡",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

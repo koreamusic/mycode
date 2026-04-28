@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "accent": "#f5f0e8"
+  },
+  "timeline": {
+    "cycleSeconds": 10,
+    "titleIn": 0,
+    "ctaIn": 5
+  },
+  "content": {
+    "title": "Spotlight",
+    "tags": [
+      "영화적",
+      "재즈",
+      "감성"
+    ],
+    "titleMode": "html-mount"
+  }
+}

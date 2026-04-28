@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-014-rainy-window",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "rain",
+  "sourceNumber": 14,
+  "sourceName": "14 · 비 오는 창가",
+  "song": "빗소리",
+  "lyric": "빗소리에 묻어나는 너의 목소리",
+  "diskIcon": "🌂",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

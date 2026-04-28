@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 50% 60%,rgba(255,100,40,0.18) 0%,transparent 55%),radial-gradient(ellipse at 20% 30%,rgba(255,60,120,0.14) 0%,transparent 45%),linear-gradient(175deg,#0c0810 0%,#180c08 50%,#1c0808 100%)",
+    "accent": "#ff7030",
+    "title": "#fff5ee",
+    "titleGlow": "rgba(255,112,48,0.68)",
+    "line": "rgba(255,120,60,0.62)",
+    "titleSub": "rgba(255,200,160,0.75)",
+    "cardBg": "rgba(18,8,4,0.82)",
+    "cardBorder": "rgba(255,120,60,0.28)",
+    "cardShadow": "0 8px 40px rgba(255,80,20,0.18)",
+    "barGradient": "linear-gradient(180deg,rgba(16,8,4,0) 0%,rgba(16,8,4,0.82) 28%,rgba(12,6,2,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(255,120,60,0.32) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#201008 0deg,#180c06 60deg,#201008 120deg,#180c06 180deg,#201008 240deg,#180c06 300deg,#201008 360deg)",
+    "diskBorder": "rgba(255,120,60,0.32)",
+    "diskGlow": "rgba(255,80,20,0.22)",
+    "diskCenter": "#100804",
+    "diskCenterBorder": "rgba(255,120,60,0.36)",
+    "song": "rgba(255,225,195,0.95)",
+    "lyric": "rgba(255,225,195,0.95)",
+    "logo": "rgba(255,175,120,0.85)",
+    "logoBorder": "rgba(255,120,60,0.18)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "Sunset Glow",
+    "lyric": "노을빛으로 물드는 너의 미소",
+    "diskIcon": "🌇",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

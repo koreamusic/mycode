@@ -1,0 +1,21 @@
+{
+  "id": "intro-053-slide-up",
+  "title": "053 · Slide Up",
+  "category": "intro",
+  "variant": "viewer",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-051-060",
+  "languageSupport": "both",
+  "sourceKey": "4",
+  "sourceNumber": 53,
+  "flow": {
+    "titleSeconds": 5,
+    "ctaSeconds": 5
+  },
+  "visual": {
+    "accent": "#4a9eff"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

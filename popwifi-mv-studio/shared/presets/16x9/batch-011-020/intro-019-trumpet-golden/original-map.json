@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-019-trumpet-golden",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "trumpet",
+  "sourceNumber": 19,
+  "sourceName": "19 · 트럼펫 골든",
+  "song": "Golden Hour",
+  "lyric": "황금빛 노을 속 울려 퍼진 트럼펫",
+  "diskIcon": "🎺",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

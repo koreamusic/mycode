@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-025-neon-city",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "neon",
+  "sourceNumber": 25,
+  "sourceName": "25 · 네온 시티",
+  "song": "Neon City",
+  "lyric": "빛나는 도시 위를 날아가",
+  "diskIcon": "⚡",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

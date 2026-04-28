@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "accent": "#4aaa60"
+  },
+  "timeline": {
+    "cycleSeconds": 10,
+    "titleIn": 0,
+    "ctaIn": 5
+  },
+  "content": {
+    "title": "Letter Drop",
+    "tags": [
+      "팝",
+      "발랄",
+      "애니"
+    ],
+    "titleMode": "html-mount"
+  }
+}

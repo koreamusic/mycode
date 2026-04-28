@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-015-cat-afternoon",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "cat",
+  "sourceNumber": 15,
+  "sourceName": "15 · 고양이 오후",
+  "song": "냥이의 오후",
+  "lyric": "햇살 속에 졸고 있는 너의 곁",
+  "diskIcon": "🐾",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

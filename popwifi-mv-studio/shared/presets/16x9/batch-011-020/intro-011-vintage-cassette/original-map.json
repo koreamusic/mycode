@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-011-vintage-cassette",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "cassette",
+  "sourceNumber": 11,
+  "sourceName": "11 · 빈티지 카세트",
+  "song": "오래된 테이프",
+  "lyric": "늘어진 테이프처럼 흐릿한 기억",
+  "diskIcon": "📼",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-048-vintage-newspaper",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "newspaper",
+  "sourceNumber": 48,
+  "sourceName": "48 · 빈티지 신문",
+  "song": "오래된 뉴스",
+  "lyric": "누렇게 바랜 신문 속 너의 소식",
+  "diskIcon": "📄",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

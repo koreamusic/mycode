@@ -1,0 +1,25 @@
+{
+  "id": "intro-008-winter-snow-night",
+  "title": "08 · 겨울 설야",
+  "category": "intro",
+  "variant": "ballad",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-001-010",
+  "languageSupport": "both",
+  "sourceKey": "snow",
+  "sourceNumber": 8,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "fade"
+  },
+  "visual": {
+    "accent": "#90c0e8",
+    "font": "Noto Serif KR"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

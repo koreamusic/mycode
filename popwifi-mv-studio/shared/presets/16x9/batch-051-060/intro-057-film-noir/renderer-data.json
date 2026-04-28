@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "accent": "#888"
+  },
+  "timeline": {
+    "cycleSeconds": 10,
+    "titleIn": 0,
+    "ctaIn": 5
+  },
+  "content": {
+    "title": "Film Noir",
+    "tags": [
+      "영화적",
+      "재즈",
+      "감성"
+    ],
+    "titleMode": "html-mount"
+  }
+}

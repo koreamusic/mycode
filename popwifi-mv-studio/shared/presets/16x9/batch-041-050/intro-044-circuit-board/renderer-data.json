@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 28% 38%,rgba(0,255,180,0.12) 0%,transparent 50%),linear-gradient(158deg,#040a06 0%,#020804 42%,#040a06 100%)",
+    "accent": "#00e8a0",
+    "title": "#e8fff8",
+    "titleGlow": "rgba(0,232,160,0.60)",
+    "line": "rgba(0,232,160,0.52)",
+    "titleSub": "rgba(150,255,220,0.72)",
+    "cardBg": "rgba(2,8,4,0.82)",
+    "cardBorder": "rgba(0,232,160,0.24)",
+    "cardShadow": "0 8px 40px rgba(0,200,140,0.12)",
+    "barGradient": "linear-gradient(180deg,rgba(2,6,3,0) 0%,rgba(2,6,3,0.82) 28%,rgba(1,4,2,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(0,232,160,0.28) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#060c06 0deg,#040a04 60deg,#060c06 120deg,#040a04 180deg,#060c06 240deg,#040a04 300deg,#060c06 360deg)",
+    "diskBorder": "rgba(0,232,160,0.26)",
+    "diskGlow": "rgba(0,200,140,0.16)",
+    "diskCenter": "#020602",
+    "diskCenterBorder": "rgba(0,232,160,0.30)",
+    "song": "rgba(180,255,230,0.95)",
+    "lyric": "rgba(180,255,230,0.95)",
+    "logo": "rgba(100,230,180,0.80)",
+    "logoBorder": "rgba(0,232,160,0.13)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "Electric Circuit",
+    "lyric": "전류처럼 흐르는 감정",
+    "diskIcon": "⚡",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

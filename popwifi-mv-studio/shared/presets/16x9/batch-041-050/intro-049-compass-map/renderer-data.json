@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 28% 38%,rgba(80,130,160,0.14) 0%,transparent 55%),linear-gradient(158deg,#080c10 0%,#060a0e 42%,#080c10 100%)",
+    "accent": "#6098b8",
+    "title": "#eef4f8",
+    "titleGlow": "rgba(96,152,184,0.58)",
+    "line": "rgba(88,150,180,0.52)",
+    "titleSub": "rgba(175,210,230,0.70)",
+    "cardBg": "rgba(6,9,14,0.82)",
+    "cardBorder": "rgba(88,150,180,0.22)",
+    "cardShadow": "0 8px 40px rgba(50,110,160,0.10)",
+    "barGradient": "linear-gradient(180deg,rgba(5,7,10,0) 0%,rgba(5,7,10,0.82) 28%,rgba(3,5,8,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(88,150,180,0.26) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#0a0e12 0deg,#060a0e 60deg,#0a0e12 120deg,#060a0e 180deg,#0a0e12 240deg,#060a0e 300deg,#0a0e12 360deg)",
+    "diskBorder": "rgba(88,150,180,0.24)",
+    "diskGlow": "rgba(50,110,160,0.14)",
+    "diskCenter": "#040810",
+    "diskCenterBorder": "rgba(88,150,180,0.28)",
+    "song": "rgba(200,228,245,0.95)",
+    "lyric": "rgba(200,228,245,0.95)",
+    "logo": "rgba(130,185,218,0.78)",
+    "logoBorder": "rgba(88,150,180,0.12)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "어딘가에서",
+    "lyric": "나침반이 가리키는 너의 방향",
+    "diskIcon": "🗺️",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

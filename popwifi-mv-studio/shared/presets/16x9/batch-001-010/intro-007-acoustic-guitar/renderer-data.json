@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 30% 38%,rgba(180,130,60,0.13) 0%,transparent 55%),linear-gradient(158deg,#1a1008 0%,#140c06 40%,#0e0a06 100%)",
+    "accent": "#c89040",
+    "title": "#fff8ee",
+    "titleGlow": "rgba(200,144,64,0.62)",
+    "line": "rgba(200,150,60,0.58)",
+    "titleSub": "rgba(235,195,130,0.70)",
+    "cardBg": "rgba(18,10,6,0.82)",
+    "cardBorder": "rgba(200,150,60,0.25)",
+    "cardShadow": "0 8px 40px rgba(180,110,30,0.13)",
+    "barGradient": "linear-gradient(180deg,rgba(14,10,4,0) 0%,rgba(14,10,4,0.82) 28%,rgba(10,6,2,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(200,150,60,0.3) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#1a1008 0deg,#120c06 60deg,#1a1008 120deg,#120c06 180deg,#1a1008 240deg,#120c06 300deg,#1a1008 360deg)",
+    "diskBorder": "rgba(200,150,60,0.27)",
+    "diskGlow": "rgba(180,110,30,0.17)",
+    "diskCenter": "#0e0a04",
+    "diskCenterBorder": "rgba(200,150,60,0.31)",
+    "song": "rgba(245,215,165,0.95)",
+    "lyric": "rgba(245,215,165,0.95)",
+    "logo": "rgba(205,165,95,0.8)",
+    "logoBorder": "rgba(200,150,60,0.13)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "어쿠스틱 오후",
+    "lyric": "기타 한 줄에 실어 보낸 마음",
+    "diskIcon": "🎸",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "presetId": "intro-055-blur-reveal",
+  "primarySourceFile": "intropresetsviewer.html",
+  "sourceFile": "intropresetsviewer.html",
+  "viewerNumber": 6,
+  "sourceNumber": 55,
+  "sourceName": "Blur Reveal",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "title": true,
+    "cta": true,
+    "css": true
+  }
+}

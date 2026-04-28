@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-050-ink-moon",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "moon",
+  "sourceNumber": 50,
+  "sourceName": "50 · 수묵 달",
+  "song": "달빛 소나타",
+  "lyric": "달빛 아래 흐르는 너의 선율",
+  "diskIcon": "🌙",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

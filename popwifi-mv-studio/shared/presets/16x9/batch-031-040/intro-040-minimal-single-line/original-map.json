@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-040-minimal-single-line",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "minimal",
+  "sourceNumber": 40,
+  "sourceName": "40 · 미니멀 단선",
+  "song": "Minimal Room",
+  "lyric": "비워진 공간에 남은 너의 흔적",
+  "diskIcon": "◻️",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

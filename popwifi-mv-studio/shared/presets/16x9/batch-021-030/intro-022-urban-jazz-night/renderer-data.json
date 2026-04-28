@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 30% 38%,rgba(80,60,120,0.15) 0%,transparent 55%),linear-gradient(158deg,#080610 0%,#060408 42%,#0a0812 100%)",
+    "accent": "#9070c0",
+    "title": "#f5f0ff",
+    "titleGlow": "rgba(144,112,192,0.60)",
+    "line": "rgba(140,110,200,0.55)",
+    "titleSub": "rgba(205,185,245,0.70)",
+    "cardBg": "rgba(6,4,14,0.82)",
+    "cardBorder": "rgba(140,110,200,0.23)",
+    "cardShadow": "0 8px 40px rgba(90,60,180,0.12)",
+    "barGradient": "linear-gradient(180deg,rgba(5,3,10,0) 0%,rgba(5,3,10,0.82) 28%,rgba(3,2,8,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(140,110,200,0.27) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#0c0814 0deg,#080610 60deg,#0c0814 120deg,#080610 180deg,#0c0814 240deg,#080610 300deg,#0c0814 360deg)",
+    "diskBorder": "rgba(140,110,200,0.25)",
+    "diskGlow": "rgba(90,60,180,0.15)",
+    "diskCenter": "#040310",
+    "diskCenterBorder": "rgba(140,110,200,0.29)",
+    "song": "rgba(222,210,255,0.95)",
+    "lyric": "rgba(222,210,255,0.95)",
+    "logo": "rgba(168,148,232,0.78)",
+    "logoBorder": "rgba(140,110,200,0.12)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "Urban Night",
+    "lyric": "도심의 밤을 물들이는 선율",
+    "diskIcon": "🏙️",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

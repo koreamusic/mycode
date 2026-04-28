@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 28% 38%,rgba(80,60,140,0.14) 0%,transparent 55%),linear-gradient(158deg,#0c0818 0%,#080614 42%,#0c0818 100%)",
+    "accent": "#a880e0",
+    "title": "#f5f0ff",
+    "titleGlow": "rgba(168,128,224,0.60)",
+    "line": "rgba(160,120,220,0.55)",
+    "titleSub": "rgba(210,185,250,0.70)",
+    "cardBg": "rgba(8,6,18,0.82)",
+    "cardBorder": "rgba(160,120,220,0.23)",
+    "cardShadow": "0 8px 40px rgba(110,70,200,0.12)",
+    "barGradient": "linear-gradient(180deg,rgba(6,4,14,0) 0%,rgba(6,4,14,0.82) 28%,rgba(4,2,12,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(160,120,220,0.27) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#100818 0deg,#080614 60deg,#100818 120deg,#080614 180deg,#100818 240deg,#080614 300deg,#100818 360deg)",
+    "diskBorder": "rgba(160,120,220,0.25)",
+    "diskGlow": "rgba(110,70,200,0.15)",
+    "diskCenter": "#060412",
+    "diskCenterBorder": "rgba(160,120,220,0.29)",
+    "song": "rgba(228,210,255,0.95)",
+    "lyric": "rgba(228,210,255,0.95)",
+    "logo": "rgba(175,145,235,0.78)",
+    "logoBorder": "rgba(160,120,220,0.12)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "심야 라디오",
+    "lyric": "밤을 달리는 주파수 위의 노래",
+    "diskIcon": "📻",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

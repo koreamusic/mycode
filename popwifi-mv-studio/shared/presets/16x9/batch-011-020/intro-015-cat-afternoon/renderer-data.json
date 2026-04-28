@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 30% 38%,rgba(200,170,100,0.13) 0%,transparent 55%),linear-gradient(158deg,#1a1408 0%,#150f06 42%,#110c06 100%)",
+    "accent": "#d4a848",
+    "title": "#fff8e0",
+    "titleGlow": "rgba(212,168,72,0.60)",
+    "line": "rgba(210,170,80,0.56)",
+    "titleSub": "rgba(240,200,130,0.70)",
+    "cardBg": "rgba(18,12,4,0.82)",
+    "cardBorder": "rgba(210,170,80,0.24)",
+    "cardShadow": "0 8px 40px rgba(190,140,40,0.12)",
+    "barGradient": "linear-gradient(180deg,rgba(14,10,4,0) 0%,rgba(14,10,4,0.82) 28%,rgba(10,8,2,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(210,170,80,0.28) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#1c1608 0deg,#160e04 60deg,#1c1608 120deg,#160e04 180deg,#1c1608 240deg,#160e04 300deg,#1c1608 360deg)",
+    "diskBorder": "rgba(210,170,80,0.26)",
+    "diskGlow": "rgba(190,140,40,0.16)",
+    "diskCenter": "#100c02",
+    "diskCenterBorder": "rgba(210,170,80,0.30)",
+    "song": "rgba(248,218,158,0.95)",
+    "lyric": "rgba(248,218,158,0.95)",
+    "logo": "rgba(208,168,98,0.8)",
+    "logoBorder": "rgba(210,170,80,0.13)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "냥이의 오후",
+    "lyric": "햇살 속에 졸고 있는 너의 곁",
+    "diskIcon": "🐾",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

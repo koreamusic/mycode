@@ -1,0 +1,25 @@
+{
+  "id": "intro-048-vintage-newspaper",
+  "title": "48 · 빈티지 신문",
+  "category": "intro",
+  "variant": "lofi",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-041-050",
+  "languageSupport": "both",
+  "sourceKey": "newspaper",
+  "sourceNumber": 48,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "fade"
+  },
+  "visual": {
+    "accent": "#b0983c",
+    "font": "Nanum Myeongjo"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

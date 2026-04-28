@@ -1,0 +1,25 @@
+{
+  "id": "intro-007-acoustic-guitar",
+  "title": "07 · 어쿠스틱 기타",
+  "category": "intro",
+  "variant": "ballad",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-001-010",
+  "languageSupport": "both",
+  "sourceKey": "guitar",
+  "sourceNumber": 7,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "fade"
+  },
+  "visual": {
+    "accent": "#c89040",
+    "font": "Nanum Myeongjo"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

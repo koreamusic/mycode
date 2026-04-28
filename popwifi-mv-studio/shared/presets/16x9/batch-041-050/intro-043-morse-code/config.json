@@ -1,0 +1,25 @@
+{
+  "id": "intro-043-morse-code",
+  "title": "43 · 모스 부호",
+  "category": "intro",
+  "variant": "lofi",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-041-050",
+  "languageSupport": "both",
+  "sourceKey": "morse",
+  "sourceNumber": 43,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "fade"
+  },
+  "visual": {
+    "accent": "#40c060",
+    "font": "Noto Serif KR"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

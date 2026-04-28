@@ -1,0 +1,25 @@
+{
+  "id": "intro-026-pop-sunset",
+  "title": "26 · 팝 선셋",
+  "category": "intro",
+  "variant": "pop",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-021-030",
+  "languageSupport": "both",
+  "sourceKey": "sunset",
+  "sourceNumber": 26,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "fade"
+  },
+  "visual": {
+    "accent": "#ff7030",
+    "font": "Nanum Myeongjo"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

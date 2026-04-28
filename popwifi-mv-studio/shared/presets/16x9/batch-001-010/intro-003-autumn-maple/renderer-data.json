@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 30% 35%,rgba(220,120,40,0.16) 0%,transparent 55%),linear-gradient(158deg,#1e0e06 0%,#160a04 40%,#0e0c08 100%)",
+    "accent": "#d4701a",
+    "title": "#fff8ee",
+    "titleGlow": "rgba(212,112,26,0.65)",
+    "line": "rgba(210,120,40,0.62)",
+    "titleSub": "rgba(240,190,120,0.72)",
+    "cardBg": "rgba(18,8,4,0.82)",
+    "cardBorder": "rgba(210,120,40,0.26)",
+    "cardShadow": "0 8px 40px rgba(200,90,20,0.14)",
+    "barGradient": "linear-gradient(180deg,rgba(14,8,4,0) 0%,rgba(14,8,4,0.82) 28%,rgba(10,6,2,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(210,120,40,0.3) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#1e0e06 0deg,#140a04 60deg,#1e0e06 120deg,#140a04 180deg,#1e0e06 240deg,#140a04 300deg,#1e0e06 360deg)",
+    "diskBorder": "rgba(210,120,40,0.28)",
+    "diskGlow": "rgba(200,90,20,0.18)",
+    "diskCenter": "#0e0802",
+    "diskCenterBorder": "rgba(210,120,40,0.32)",
+    "song": "rgba(245,210,160,0.95)",
+    "lyric": "rgba(245,210,160,0.95)",
+    "logo": "rgba(210,160,90,0.8)",
+    "logoBorder": "rgba(210,120,40,0.14)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "가을 편지",
+    "lyric": "낙엽처럼 떨어지던 그날의 기억",
+    "diskIcon": "🍂",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

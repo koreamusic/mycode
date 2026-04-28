@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;background:#080808;font-family:'Noto Sans KR',sans-serif}
+body{display:grid;place-items:center}
+
+.mv-wrap{position:relative;width:900px;height:506px;overflow:hidden;isolation:isolate;}
+.layer{position:absolute;inset:0}
+.center{display:flex;flex-direction:column;align-items:center;justify-content:center}
+
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes lineGrow{to{width:120px}}
+@keyframes slideUpIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideLeft{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes cardDrop{from{opacity:0;transform:translateY(-24px) scale(.8)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes scaleReveal{from{opacity:0;transform:scaleY(0)}to{opacity:1;transform:scaleY(1)}}
+@keyframes typewriter{from{width:0}to{width:13em}}
+@keyframes blink{50%{border-color:transparent}}
+
+.p03-bg{background:#000}
+.p03-spot{position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 50% 48%,rgba(255,240,200,.08) 0%,transparent 70%);animation:spotPulse 3s ease-in-out infinite}
+.p03-title{font-family:'Playfair Display',serif;font-size:clamp(22px,3.8vw,46px);font-weight:700;font-style:italic;color:#f5f0e8;text-align:center;text-shadow:0 0 60px rgba(255,240,180,.3),0 0 120px rgba(255,240,180,.1);animation:spotReveal 1.2s ease forwards}
+.p03-line{width:0;height:1px;background:linear-gradient(90deg,transparent,#c8a55a,transparent);margin:14px 0 10px;animation:lineGrow 1s ease .8s forwards}
+.p03-cta{display:flex;gap:clamp(16px,3vw,40px);margin-top:6px}
+.p03-cta-btn{display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0}
+.p03-cta-btn:nth-child(1){animation:fadeUp .6s ease .4s forwards}
+.p03-cta-btn:nth-child(2){animation:fadeUp .6s ease .7s forwards}
+.p03-cta-btn:nth-child(3){animation:fadeUp .6s ease 1s forwards}
+.p03-icon{width:clamp(32px,5vw,52px);height:clamp(32px,5vw,52px);border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,240,200,.2);display:flex;align-items:center;justify-content:center;box-shadow:0 0 20px rgba(255,240,180,.08);animation:iconGlowPulse 2s ease-in-out infinite}
+.p03-icon svg{width:clamp(14px,2.2vw,22px);height:clamp(14px,2.2vw,22px)}
+.p03-lbl{font-family:'Cormorant Garamond',serif;font-size:clamp(9px,1.1vw,12px);color:rgba(200,165,90,.75);letter-spacing:.2em}

@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 28% 38%,rgba(160,80,40,0.14) 0%,transparent 55%),linear-gradient(158deg,#180a04 0%,#120806 42%,#160a04 100%)",
+    "accent": "#c86030",
+    "title": "#fff5ee",
+    "titleGlow": "rgba(200,96,48,0.60)",
+    "line": "rgba(200,100,50,0.55)",
+    "titleSub": "rgba(240,180,140,0.70)",
+    "cardBg": "rgba(18,8,4,0.82)",
+    "cardBorder": "rgba(200,100,50,0.23)",
+    "cardShadow": "0 8px 40px rgba(180,60,20,0.12)",
+    "barGradient": "linear-gradient(180deg,rgba(14,6,2,0) 0%,rgba(14,6,2,0.82) 28%,rgba(10,5,2,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(200,100,50,0.27) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#1c0e06 0deg,#140a04 60deg,#1c0e06 120deg,#140a04 180deg,#1c0e06 240deg,#140a04 300deg,#1c0e06 360deg)",
+    "diskBorder": "rgba(200,100,50,0.25)",
+    "diskGlow": "rgba(180,60,20,0.15)",
+    "diskCenter": "#0e0804",
+    "diskCenterBorder": "rgba(200,100,50,0.29)",
+    "song": "rgba(245,205,175,0.95)",
+    "lyric": "rgba(245,205,175,0.95)",
+    "logo": "rgba(205,150,110,0.78)",
+    "logoBorder": "rgba(200,100,50,0.12)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "Drum Loop",
+    "lyric": "심장박동처럼 울려 퍼지는 비트",
+    "diskIcon": "🥁",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

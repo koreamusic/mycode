@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 28% 38%,rgba(60,80,160,0.14) 0%,transparent 55%),linear-gradient(158deg,#080a1a 0%,#060814 42%,#080a1a 100%)",
+    "accent": "#6878d0",
+    "title": "#f0f2ff",
+    "titleGlow": "rgba(104,120,208,0.60)",
+    "line": "rgba(100,120,210,0.55)",
+    "titleSub": "rgba(185,195,248,0.70)",
+    "cardBg": "rgba(6,8,20,0.82)",
+    "cardBorder": "rgba(100,120,210,0.23)",
+    "cardShadow": "0 8px 40px rgba(60,80,200,0.12)",
+    "barGradient": "linear-gradient(180deg,rgba(5,6,16,0) 0%,rgba(5,6,16,0.82) 28%,rgba(3,4,14,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(100,120,210,0.27) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#0c0e1e 0deg,#080a18 60deg,#0c0e1e 120deg,#080a18 180deg,#0c0e1e 240deg,#080a18 300deg,#0c0e1e 360deg)",
+    "diskBorder": "rgba(100,120,210,0.25)",
+    "diskGlow": "rgba(60,80,200,0.15)",
+    "diskCenter": "#040612",
+    "diskCenterBorder": "rgba(100,120,210,0.29)",
+    "song": "rgba(210,218,255,0.95)",
+    "lyric": "rgba(210,218,255,0.95)",
+    "logo": "rgba(155,170,240,0.78)",
+    "logoBorder": "rgba(100,120,210,0.12)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "Blue Midnight",
+    "lyric": "파란 자정의 재즈",
+    "diskIcon": "🪗",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

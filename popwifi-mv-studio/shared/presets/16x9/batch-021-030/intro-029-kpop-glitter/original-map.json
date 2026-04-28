@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-029-kpop-glitter",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "kpop",
+  "sourceNumber": 29,
+  "sourceName": "29 · K팝 글리터",
+  "song": "Glitter Pop",
+  "lyric": "빛나는 순간이 영원하길",
+  "diskIcon": "⭐",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

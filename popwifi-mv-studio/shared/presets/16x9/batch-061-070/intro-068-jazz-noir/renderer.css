@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;background:#080808;font-family:'Noto Sans KR',sans-serif}
+body{display:grid;place-items:center}
+
+.mv-wrap{position:relative;width:900px;height:506px;overflow:hidden;isolation:isolate;}
+.layer{position:absolute;inset:0}
+.center{display:flex;flex-direction:column;align-items:center;justify-content:center}
+
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes lineGrow{to{width:120px}}
+@keyframes slideUpIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideLeft{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes cardDrop{from{opacity:0;transform:translateY(-24px) scale(.8)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes scaleReveal{from{opacity:0;transform:scaleY(0)}to{opacity:1;transform:scaleY(1)}}
+@keyframes typewriter{from{width:0}to{width:13em}}
+@keyframes blink{50%{border-color:transparent}}
+
+.p19-bg{background:linear-gradient(160deg,#080608 0%,#100c10 100%)}
+.p19-staff{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-around;padding:18% 0;opacity:.07}
+.p19-staff-line{height:1px;background:#d4c090}
+.p19-note{position:absolute;opacity:0;animation:noteFloat var(--nd,3s) ease-in-out infinite var(--np,0s)}
+.p19-note svg{width:var(--ns,18px);height:var(--ns,18px)}
+.p19-title-area{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center}
+.p19-title{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,3.2vw,40px);font-weight:300;font-style:italic;color:#d4c090;letter-spacing:.08em;opacity:0;animation:fadeIn .8s ease .5s forwards;text-shadow:0 0 30px rgba(212,192,144,.1)}
+.p19-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(9px,1.2vw,13px);color:#8a7850;letter-spacing:.3em;text-transform:uppercase;margin-top:6px;opacity:0;animation:fadeIn .5s ease 1.2s forwards}
+.p19-cta{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:clamp(10px,2vw,20px);opacity:0;animation:fadeIn .6s ease 1.5s forwards}
+.p19-cta-row{display:flex;align-items:center;gap:clamp(12px,2.5vw,30px)}
+.p19-cta-jazz{display:flex;flex-direction:column;align-items:center;gap:5px}
+.p19-jazz-icon{width:clamp(28px,4.5vw,46px);height:clamp(28px,4.5vw,46px);border:1px solid rgba(212,192,144,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;animation:jazzSway 2s ease-in-out infinite var(--js,0s)}
+.p19-jazz-icon svg{width:clamp(12px,1.8vw,20px);height:clamp(12px,1.8vw,20px)}
+.p19-jazz-lbl{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(8px,1vw,11px);color:#8a785088;letter-spacing:.15em}
+.p19-cta-divider{font-family:'Cormorant Garamond',serif;font-size:clamp(12px,2vw,22px);color:#8a785044}

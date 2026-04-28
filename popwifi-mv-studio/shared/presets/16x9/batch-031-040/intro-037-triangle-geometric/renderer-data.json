@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 30% 38%,rgba(60,200,180,0.14) 0%,transparent 55%),linear-gradient(158deg,#060e0e 0%,#04100e 42%,#060e0e 100%)",
+    "accent": "#30d8c0",
+    "title": "#eefffc",
+    "titleGlow": "rgba(48,216,192,0.62)",
+    "line": "rgba(40,220,195,0.55)",
+    "titleSub": "rgba(160,240,232,0.72)",
+    "cardBg": "rgba(4,12,10,0.82)",
+    "cardBorder": "rgba(40,220,195,0.24)",
+    "cardShadow": "0 8px 40px rgba(20,190,170,0.12)",
+    "barGradient": "linear-gradient(180deg,rgba(3,10,8,0) 0%,rgba(3,10,8,0.82) 28%,rgba(2,8,6,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(40,220,195,0.28) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#080e0c 0deg,#060c0a 60deg,#080e0c 120deg,#060c0a 180deg,#080e0c 240deg,#060c0a 300deg,#080e0c 360deg)",
+    "diskBorder": "rgba(40,220,195,0.26)",
+    "diskGlow": "rgba(20,190,170,0.16)",
+    "diskCenter": "#030a08",
+    "diskCenterBorder": "rgba(40,220,195,0.30)",
+    "song": "rgba(195,248,240,0.95)",
+    "lyric": "rgba(195,248,240,0.95)",
+    "logo": "rgba(120,220,205,0.80)",
+    "logoBorder": "rgba(40,220,195,0.13)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "Sharp Edge",
+    "lyric": "날카롭고 선명한 너의 존재",
+    "diskIcon": "⚡",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

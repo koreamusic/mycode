@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>38 · 육각 허니컴</title>
+  <link rel="stylesheet" href="./renderer.css" />
+</head>
+<body>
+  <div class="mv-wrap" id="mv">
+    <div class="bg"></div>
+    <div class="particles" id="particles"></div>
+    <div class="frame-layer" id="frameLayer">
+      <svg id="frameSvg" viewBox="0 0 900 506" fill="none" width="100%" height="100%" style="position:absolute;inset:0;"></svg>
+    </div>
+
+    <div class="title-layer">
+      <div class="title-main" id="titleMain" data-preview-title>꿀빛 오후</div>
+    </div>
+
+    <div class="sub-layer" id="subLayer">
+      <div class="sub-card">
+        <style>.sub-anim.active .hxav6qv{animation:hxSpinav6qv 0.7s cubic-bezier(0.34,1.4,0.64,1) forwards;}@keyframes hxSpinav6qv{0%{transform:scale(0) rotate(-30deg);}60%{transform:scale(1.15) rotate(3deg);}100%{transform:scale(1) rotate(0);}}</style><div class="sub-anim sub-item"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><polygon class="hxav6qv" points="14,3 24,8.5 24,19.5 14,25 4,19.5 4,8.5" stroke="#d4a030" stroke-width="1.5" fill="rgba(212,160,48,0.15)" style="transform-origin:14px 14px;transform:scale(0)"/></svg><span class="sub-text" style="color:rgba(248,210,140,0.92)">좋아요</span></div><div class="sub-divider" style="background:rgba(210,160,50,0.24);width:1px;height:22px;"></div><div class="sub-anim sub-item"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><g class="hxav6qv" style="transform-origin:14px 14px;transform:scale(0)"><path d="M14 4C14 4 8 7 8 14L8 19L6 21H22L20 19L20 14C20 7 14 4 14 4Z" stroke="#e4b040" stroke-width="1.5" fill="rgba(228,176,64,0.1)"/><path d="M11 21C11 22.66 12.34 24 14 24S17 22.66 17 21" stroke="#e4b040" stroke-width="1.3" fill="none"/><circle cx="14" cy="5" r="1.5" fill="#e4b040"/></g></svg><span class="sub-text" style="color:rgba(248,210,140,0.92)">구독</span></div>
+      </div>
+    </div>
+
+    <div class="bottom-bar" id="bottomBar">
+      <div class="bar-gradient"></div>
+      <div class="bar-topline"></div>
+      <div class="bar-inner">
+        <div class="disk-wrap">
+          <div class="disk"></div>
+          <div class="disk-center"></div>
+          <div class="disk-icon">⬡</div>
+        </div>
+        <div class="eq-wrap" id="eqWrap"></div>
+        <div class="bar-copy">
+          <div class="bar-line bar-lyric" data-preview-lyric>달콤하게 흐르는 시간</div>
+          <div class="bar-line bar-song" data-preview-title data-preview-title-fallback style="display:none;">꿀빛 오후</div>
+        </div>
+        <div class="bar-logo">
+          <div class="bar-logo-name">POP WiFi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./renderer.js"></script>
+</body>
+</html>

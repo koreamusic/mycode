@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-013-old-bookshop",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "bookshop",
+  "sourceNumber": 13,
+  "sourceName": "13 · 낡은 책방",
+  "song": "오래된 책방",
+  "lyric": "먼지 쌓인 책장 사이 너의 흔적",
+  "diskIcon": "📖",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-007-acoustic-guitar",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "guitar",
+  "sourceNumber": 7,
+  "sourceName": "07 · 어쿠스틱 기타",
+  "song": "어쿠스틱 오후",
+  "lyric": "기타 한 줄에 실어 보낸 마음",
+  "diskIcon": "🎸",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

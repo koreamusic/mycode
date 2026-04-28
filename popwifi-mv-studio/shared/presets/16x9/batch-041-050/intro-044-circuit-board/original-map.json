@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-044-circuit-board",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "circuit",
+  "sourceNumber": 44,
+  "sourceName": "44 · 회로기판",
+  "song": "Electric Circuit",
+  "lyric": "전류처럼 흐르는 감정",
+  "diskIcon": "⚡",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

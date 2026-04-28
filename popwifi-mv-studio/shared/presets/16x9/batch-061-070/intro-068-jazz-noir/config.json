@@ -1,0 +1,21 @@
+{
+  "id": "intro-068-jazz-noir",
+  "title": "068 · Jazz Noir",
+  "category": "intro",
+  "variant": "viewer",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-061-070",
+  "languageSupport": "both",
+  "sourceKey": "19",
+  "sourceNumber": 68,
+  "flow": {
+    "titleSeconds": 5,
+    "ctaSeconds": 5
+  },
+  "visual": {
+    "accent": "#d4c090"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

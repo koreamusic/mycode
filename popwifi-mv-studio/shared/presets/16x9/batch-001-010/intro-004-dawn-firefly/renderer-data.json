@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 25% 40%,rgba(80,180,100,0.12) 0%,transparent 55%),linear-gradient(160deg,#040e08 0%,#060e0a 40%,#04100c 100%)",
+    "accent": "#7ae840",
+    "title": "#e8ffe0",
+    "titleGlow": "rgba(100,220,60,0.6)",
+    "line": "rgba(100,220,60,0.55)",
+    "titleSub": "rgba(160,240,120,0.72)",
+    "cardBg": "rgba(4,14,8,0.82)",
+    "cardBorder": "rgba(80,200,60,0.24)",
+    "cardShadow": "0 8px 40px rgba(60,180,40,0.12)",
+    "barGradient": "linear-gradient(180deg,rgba(4,12,6,0) 0%,rgba(4,12,6,0.82) 28%,rgba(2,10,4,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(80,200,60,0.28) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#060e08 0deg,#040a06 60deg,#060e08 120deg,#040a06 180deg,#060e08 240deg,#040a06 300deg,#060e08 360deg)",
+    "diskBorder": "rgba(80,200,60,0.26)",
+    "diskGlow": "rgba(60,180,40,0.16)",
+    "diskCenter": "#030a04",
+    "diskCenterBorder": "rgba(80,200,60,0.30)",
+    "song": "rgba(200,255,180,0.95)",
+    "lyric": "rgba(200,255,180,0.95)",
+    "logo": "rgba(140,220,100,0.8)",
+    "logoBorder": "rgba(80,200,60,0.14)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "반딧불 새벽",
+    "lyric": "어둠 속에 빛나던 작은 불꽃",
+    "diskIcon": "🌿",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

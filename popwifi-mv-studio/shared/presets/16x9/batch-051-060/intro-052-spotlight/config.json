@@ -1,0 +1,21 @@
+{
+  "id": "intro-052-spotlight",
+  "title": "052 · Spotlight",
+  "category": "intro",
+  "variant": "viewer",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-051-060",
+  "languageSupport": "both",
+  "sourceKey": "3",
+  "sourceNumber": 52,
+  "flow": {
+    "titleSeconds": 5,
+    "ctaSeconds": 5
+  },
+  "visual": {
+    "accent": "#f5f0e8"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

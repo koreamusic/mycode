@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 28% 38%,rgba(200,200,240,0.10) 0%,transparent 55%),linear-gradient(158deg,#0c0c14 0%,#0a0a12 42%,#0c0c14 100%)",
+    "accent": "#c0b8e8",
+    "title": "#f8f8ff",
+    "titleGlow": "rgba(192,184,232,0.52)",
+    "line": "rgba(185,180,230,0.46)",
+    "titleSub": "rgba(220,216,248,0.66)",
+    "cardBg": "rgba(10,10,18,0.82)",
+    "cardBorder": "rgba(185,180,230,0.20)",
+    "cardShadow": "0 8px 40px rgba(130,120,210,0.10)",
+    "barGradient": "linear-gradient(180deg,rgba(8,8,14,0) 0%,rgba(8,8,14,0.82) 28%,rgba(6,6,12,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(185,180,230,0.23) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#10101a 0deg,#0c0c16 60deg,#10101a 120deg,#0c0c16 180deg,#10101a 240deg,#0c0c16 300deg,#10101a 360deg)",
+    "diskBorder": "rgba(185,180,230,0.22)",
+    "diskGlow": "rgba(130,120,210,0.12)",
+    "diskCenter": "#080812",
+    "diskCenterBorder": "rgba(185,180,230,0.26)",
+    "song": "rgba(228,225,255,0.95)",
+    "lyric": "rgba(228,225,255,0.95)",
+    "logo": "rgba(180,175,238,0.76)",
+    "logoBorder": "rgba(185,180,230,0.10)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "종이학",
+    "lyric": "천 개의 학처럼 쌓아온 소원",
+    "diskIcon": "🕊️",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

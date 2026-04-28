@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-033-hanji-torn",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "hanji",
+  "sourceNumber": 33,
+  "sourceName": "33 · 한지 찢김",
+  "song": "한지 위의 편지",
+  "lyric": "찢어진 한지처럼 낡은 이야기",
+  "diskIcon": "✍️",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

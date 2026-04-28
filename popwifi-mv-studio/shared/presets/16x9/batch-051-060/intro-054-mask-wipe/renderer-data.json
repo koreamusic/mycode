@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "accent": "#b470ff"
+  },
+  "timeline": {
+    "cycleSeconds": 10,
+    "titleIn": 0,
+    "ctaIn": 5
+  },
+  "content": {
+    "title": "Mask Wipe",
+    "tags": [
+      "팝",
+      "역동적",
+      "K팝"
+    ],
+    "titleMode": "html-mount"
+  }
+}

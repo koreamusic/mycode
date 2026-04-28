@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-028-city-pop-sunrise",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "citypop",
+  "sourceNumber": 28,
+  "sourceName": "28 · 시티팝 선라이즈",
+  "song": "City Pop Sunrise",
+  "lyric": "도시의 아침이 빛나고 있어",
+  "diskIcon": "🌆",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

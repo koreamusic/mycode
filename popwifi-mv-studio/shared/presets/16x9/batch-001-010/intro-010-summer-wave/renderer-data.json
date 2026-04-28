@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "radial-gradient(ellipse at 28% 35%,rgba(40,160,200,0.14) 0%,transparent 55%),linear-gradient(158deg,#040e18 0%,#06101a 40%,#041018 100%)",
+    "accent": "#40c0d8",
+    "title": "#f0feff",
+    "titleGlow": "rgba(64,192,216,0.60)",
+    "line": "rgba(60,200,220,0.55)",
+    "titleSub": "rgba(160,230,240,0.72)",
+    "cardBg": "rgba(4,12,20,0.82)",
+    "cardBorder": "rgba(40,180,210,0.24)",
+    "cardShadow": "0 8px 40px rgba(20,150,190,0.12)",
+    "barGradient": "linear-gradient(180deg,rgba(4,10,16,0) 0%,rgba(4,10,16,0.82) 28%,rgba(2,8,14,0.97) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(40,180,210,0.28) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#060e18 0deg,#041018 60deg,#060e18 120deg,#041018 180deg,#060e18 240deg,#041018 300deg,#060e18 360deg)",
+    "diskBorder": "rgba(40,180,210,0.26)",
+    "diskGlow": "rgba(20,150,190,0.16)",
+    "diskCenter": "#030a10",
+    "diskCenterBorder": "rgba(40,180,210,0.30)",
+    "song": "rgba(200,242,250,0.95)",
+    "lyric": "rgba(200,242,250,0.95)",
+    "logo": "rgba(120,200,220,0.8)",
+    "logoBorder": "rgba(40,180,210,0.13)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "파도 소리",
+    "lyric": "파도가 밀려오듯 네 생각이 와",
+    "diskIcon": "🌊",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}

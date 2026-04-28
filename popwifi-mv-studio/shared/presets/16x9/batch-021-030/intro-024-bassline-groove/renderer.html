@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>24 · 베이스라인 그루브</title>
+  <link rel="stylesheet" href="./renderer.css" />
+</head>
+<body>
+  <div class="mv-wrap" id="mv">
+    <div class="bg"></div>
+    <div class="particles" id="particles"></div>
+    <div class="frame-layer" id="frameLayer">
+      <svg id="frameSvg" viewBox="0 0 900 506" fill="none" width="100%" height="100%" style="position:absolute;inset:0;"></svg>
+    </div>
+
+    <div class="title-layer">
+      <div class="title-main" id="titleMain" data-preview-title>Bassline Groove</div>
+    </div>
+
+    <div class="sub-layer" id="subLayer">
+      <div class="sub-card">
+        <style>.sub-anim.active .blgjsm1{animation:blPulsegjsm1 0.5s ease forwards;}@keyframes blPulsegjsm1{0%{transform:scale(0);opacity:0;}70%{transform:scale(1.15);}100%{transform:scale(1);opacity:1;}}.sub-anim.active .bvgjsm1{animation:bvVibgjsm1 0.2s ease-in-out infinite alternate;}@keyframes bvVibgjsm1{0%{transform:scaleX(0.96);}100%{transform:scaleX(1.04);}}</style><div class="sub-anim sub-item"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><g class="blgjsm1" style="transform-origin:14px 14px;transform:scale(0);opacity:0"><path class="bvgjsm1" d="M5,8 L23,8" stroke="#30a060" stroke-width="1.4" stroke-linecap="round" opacity="0.7" style="animation-delay:0s"/><path class="bvgjsm1" d="M5,13 L23,13" stroke="#30a060" stroke-width="1.2" stroke-linecap="round" opacity="0.6" style="animation-delay:0.05s"/><path class="bvgjsm1" d="M5,18 L23,18" stroke="#30a060" stroke-width="0.9999999999999999" stroke-linecap="round" opacity="0.49999999999999994" style="animation-delay:0.1s"/><path class="bvgjsm1" d="M5,23 L23,23" stroke="#30a060" stroke-width="0.7999999999999998" stroke-linecap="round" opacity="0.3999999999999999" style="animation-delay:0.15000000000000002s"/></g></svg><span class="sub-text" style="color:rgba(140,220,165,0.92)">좋아요</span></div><div class="sub-divider" style="background:rgba(40,160,90,0.22);width:1px;height:22px;"></div><div class="sub-anim sub-item"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><g class="blgjsm1" style="transform-origin:14px 14px;transform:scale(0);opacity:0"><path d="M14 4C14 4 8 7 8 14L8 19L6 21H22L20 19L20 14C20 7 14 4 14 4Z" stroke="#40b070" stroke-width="1.6" fill="rgba(64,176,112,0.1)"/><path d="M11 21C11 22.66 12.34 24 14 24S17 22.66 17 21" stroke="#40b070" stroke-width="1.4" fill="none"/><circle cx="14" cy="5" r="1.5" fill="#40b070"/></g></svg><span class="sub-text" style="color:rgba(140,220,165,0.92)">구독</span></div>
+      </div>
+    </div>
+
+    <div class="bottom-bar" id="bottomBar">
+      <div class="bar-gradient"></div>
+      <div class="bar-topline"></div>
+      <div class="bar-inner">
+        <div class="disk-wrap">
+          <div class="disk"></div>
+          <div class="disk-center"></div>
+          <div class="disk-icon">🎵</div>
+        </div>
+        <div class="eq-wrap" id="eqWrap"></div>
+        <div class="bar-copy">
+          <div class="bar-line bar-lyric" data-preview-lyric>묵직하게 울리는 베이스의 그루브</div>
+          <div class="bar-line bar-song" data-preview-title data-preview-title-fallback style="display:none;">Bassline Groove</div>
+        </div>
+        <div class="bar-logo">
+          <div class="bar-logo-name">POP WiFi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "id": "intro-029-kpop-glitter",
+  "title": "29 · K팝 글리터",
+  "category": "intro",
+  "variant": "pop",
+  "active": true,
+  "ratio": "16x9",
+  "batchId": "batch-021-030",
+  "languageSupport": "both",
+  "sourceKey": "kpop",
+  "sourceNumber": 29,
+  "flow": {
+    "frameSeconds": 10,
+    "titleSeconds": 5,
+    "ctaSeconds": 5,
+    "bottomBarStartsAfterSeconds": 10,
+    "frameExit": "fade"
+  },
+  "visual": {
+    "accent": "#ff50c8",
+    "font": "Noto Serif KR"
+  },
+  "createdAt": "2026-04-28T00:00:00.000Z",
+  "updatedAt": "2026-04-28T00:00:00.000Z"
+}

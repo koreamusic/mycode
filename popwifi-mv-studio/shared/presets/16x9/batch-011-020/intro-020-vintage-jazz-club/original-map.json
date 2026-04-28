@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-020-vintage-jazz-club",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "vintagejazz",
+  "sourceNumber": 20,
+  "sourceName": "20 · 빈티지 재즈 클럽",
+  "song": "Blue Midnight",
+  "lyric": "파란 자정의 재즈",
+  "diskIcon": "🪗",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

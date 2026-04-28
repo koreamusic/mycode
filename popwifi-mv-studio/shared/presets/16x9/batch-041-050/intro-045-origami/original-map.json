@@ -1,0 +1,23 @@
+{
+  "presetId": "intro-045-origami",
+  "primarySourceFile": "popwifi_presets_all_50.html",
+  "sourceFile": "popwifi_presets_all_50.html",
+  "sourceKey": "origami",
+  "sourceNumber": 45,
+  "sourceName": "45 · 오리가미",
+  "song": "종이학",
+  "lyric": "천 개의 학처럼 쌓아온 소원",
+  "diskIcon": "🕊️",
+  "rendererFiles": [
+    "renderer.html",
+    "renderer.css",
+    "renderer.js",
+    "renderer-data.json"
+  ],
+  "preserved": {
+    "frame": true,
+    "particles": true,
+    "sub": true,
+    "eq": true
+  }
+}

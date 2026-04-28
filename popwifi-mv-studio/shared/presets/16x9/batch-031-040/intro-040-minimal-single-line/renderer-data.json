@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "background": "linear-gradient(158deg,#0a0a0c 0%,#080808 42%,#0a0a0c 100%)",
+    "accent": "#a0a0b0",
+    "title": "#f0f0f5",
+    "titleGlow": "rgba(160,160,176,0.48)",
+    "line": "rgba(160,160,180,0.42)",
+    "titleSub": "rgba(205,205,220,0.65)",
+    "cardBg": "rgba(8,8,10,0.84)",
+    "cardBorder": "rgba(160,160,180,0.18)",
+    "cardShadow": "0 8px 40px rgba(100,100,120,0.08)",
+    "barGradient": "linear-gradient(180deg,rgba(6,6,8,0) 0%,rgba(6,6,8,0.84) 28%,rgba(4,4,6,0.98) 100%)",
+    "barTop": "linear-gradient(90deg,transparent,rgba(160,160,180,0.20) 50%,transparent)",
+    "diskBg": "conic-gradient(from 0deg,#0e0e10 0deg,#0a0a0c 60deg,#0e0e10 120deg,#0a0a0c 180deg,#0e0e10 240deg,#0a0a0c 300deg,#0e0e10 360deg)",
+    "diskBorder": "rgba(160,160,180,0.20)",
+    "diskGlow": "rgba(100,100,120,0.10)",
+    "diskCenter": "#060608",
+    "diskCenterBorder": "rgba(160,160,180,0.24)",
+    "song": "rgba(225,225,235,0.95)",
+    "lyric": "rgba(225,225,235,0.95)",
+    "logo": "rgba(175,175,195,0.76)",
+    "logoBorder": "rgba(160,160,180,0.10)"
+  },
+  "timeline": {
+    "cycleSeconds": 12,
+    "frameIn": 0,
+    "titleIn": 0,
+    "ctaIn": 5,
+    "frameOut": 10,
+    "bottomBarIn": 10
+  },
+  "content": {
+    "title": "Minimal Room",
+    "lyric": "비워진 공간에 남은 너의 흔적",
+    "diskIcon": "◻️",
+    "cta": [
+      "좋아요",
+      "구독 · 알림"
+    ],
+    "titleMode": "title"
+  }
+}
